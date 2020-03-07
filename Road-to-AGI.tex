@@ -149,7 +149,7 @@
 
 \frameinlbftrue
 \begin{frame}
-\frametitle{BERT 的革命性意义}
+\frametitle{BERT 的革命性意义：「闭环路训练」}
 \begin{itemize}
 	\item BERT 利用平常的文本 induce 出知识，而这 representation 具有 \emp{通用性 (universality)} :
 	\begin{equation}
@@ -157,7 +157,7 @@
 	\end{equation}
 	换句话说： 隐状态的 representation 压缩了句子的意思，而它可以应用在别的场景下
 	
-	\item This implies that human-level AI can be \textit{induced} from existing corpora, 而\emp{不需要重复像人类婴儿成长的学习阶段}
+	\item This implies that human-level AI can be \textit{induced} from existing corpora, 而\emp{不需重复 像人类婴儿成长的学习阶段}
 	
 	\item Such corpora can include items such as images, movies with dialogues / subtitles
 	
@@ -251,7 +251,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Attention 在逻辑中的用处}
+\frametitle{Attention 给逻辑 AI 的启发}
 我这样理解 attention：
 \begin{itemize}
 	\item 例如，翻译时，输入／输出句子中「动词」的位置可以是不同的
@@ -273,7 +273,7 @@
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{要设计一种新的 attention}
+\frametitle{Attention... is not what we want}
 \begin{itemize}
 	\item 逻辑 attention 和 传统 attention 要求略有不同，这是关键的一步
 
@@ -285,6 +285,47 @@
 
 	\item 换句话说，selection 所带来的 bias 如果足够强，似乎不需要 symmetric. \  很巧合地，再次应验了 ``attention is all you need'' 这句话
 \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fourier 神经网络}
+\begin{itemize}
+	\item 之前说过，需要 symmetric 神经网络。 可以用 \emp{多项式} 激活函数，得出一大堆 多项式的 weight-sharing 条件。 这方法在 层数 增大时，计算变得很复杂，我暂时搁置
+	
+	\item 命题空间 $\mathbb{P}rop$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{「神经」知识表示}
+为什么要研究 神经知识表示？
+\begin{itemize}
+	\item 从经典 logic-based AI 的传统，一直在使用「符号」的知识表示法
+
+	\item 符号逻辑 很容易转换成 抽象代数／范畴论 形式（它们是同一个大家庭的「近亲」）
+	
+	\item 然而 或许存在 截然不同 的知识表示法? 但我们很难想像它长什么样子
+	
+	\item 人脑的「神经」知识表示，可以作为参考,然后再研究它和逻辑表示之间的 correspondence
+\end{itemize}
+
+\vspace*{0.5cm} 神经知识表示 的特点：
+\begin{itemize}
+	\item distributive（分布性）
+	
+	\item \textit{in situ}（固定性）--- 例如辨认「猫」的时候，大脑中 相应的神经元被 激活，但这些 神经元 \emp{不能移动}，所以「猫」的表示 也不可移动
+\end{itemize}
+问题是： 如果要辨认「白猫追黑猫」，「猫」的表示是固定的，则这两个「猫」表示 如何\emp{共存}於神经网络中？\\
+答案很可能是： 两个「猫」\emp{交替}地 出现在 \emp{时间}上
+\end{frame}
+
+\begin{frame}
+\frametitle{神经知识表示,长什么样子？}
+例如，以「匙羹在杯中」作例子：
+\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.5]{neural-representation-alternating-glass-spoon.png}}}
+\end{equation}
+
 \end{frame}
 
 \frame[allowframebreaks]{
