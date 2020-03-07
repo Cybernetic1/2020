@@ -292,7 +292,7 @@
 \begin{itemize}
 	\item 之前说过，需要 symmetric 神经网络。 可以用 \emp{多项式} 激活函数，得出一大堆 多项式的 weight-sharing 条件。 这方法在 层数 增大时，计算变得很复杂，我暂时搁置
 	
-	\item 命题空间 $\mathbb{P}rop$
+	\item 命题空间 $\mathbb{P}\mathrm{rop}$
 \end{itemize}
 \end{frame}
 
@@ -304,12 +304,12 @@
 
 	\item 符号逻辑 很容易转换成 抽象代数／范畴论 形式（它们是同一个大家庭的「近亲」）
 	
-	\item 然而 或许存在 截然不同 的知识表示法? 但我们很难想像它长什么样子
-	
+	\item 然而 或许存在 截然不同 的知识表示法? 但我们很难想像它 \emp{长什么样子}
+
 	\item 人脑的「神经」知识表示，可以作为参考,然后再研究它和逻辑表示之间的 correspondence
 \end{itemize}
 
-\vspace*{0.5cm} 神经知识表示 的特点：
+\vspace*{0.4cm} 神经知识表示 的特点：
 \begin{itemize}
 	\item distributive（分布性）
 	
@@ -320,13 +320,31 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{神经知识表示,长什么样子？}
+\frametitle{神经 特征簇 (feature clusters)}
 例如，以「匙羹在杯中」作例子：
 \begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.5]{neural-representation-alternating-glass-spoon.png}}}
 \end{equation}
-
+每个 复杂物体 由一个 \emp{feature cluster} 辨认。 多个「特征簇」在时间上交替出现，可以看成是一种 composition，例如 $A \cdot B$ 或 $A \circ B$.
 \end{frame}
+
+\begin{frame}
+\frametitle{神经 $\leftrightarrow$ 逻辑 correspondence}
+\begin{itemize}
+	\item 一串 特征簇 的时间序列，例如 $A \cdot B$，可以被 更\emp{高阶} 的神经网络 用作输入。 高阶辨认 的结果是一些关系 (relations)，例如「匙羹\emp{在}杯\emp{内}」
+
+	\item 定义 复杂情境 (complex scenario)，是 感知材料 (sensory data) 的一个片段，如:
+	\begin{equation}
+		\vcenter{\hbox{\includegraphics[scale=0.5]{sensory-movie.png}}}
+	\end{equation}
+	又或者一个故事，例如「John 爱 Mary 但 Mary 不爱他」
+	
+	\item 一个复杂情境 可以用若干个 特征簇 描述
+	
+	\item 
+\end{itemize}
+\end{frame}
+
 
 \frame[allowframebreaks]{
 \cc{多谢收看}{Thanks for watching} \smiley

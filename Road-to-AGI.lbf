@@ -15,4 +15,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}8\hfill }{「神经」知识表示}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}9\hfill }{神经知识表示,长什么样子？}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}9\hfill }{神经 特征簇 (feature clusters)}\par }
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}10\hfill }{神经 $\leftrightarrow $ 逻辑 correspondence}\par }

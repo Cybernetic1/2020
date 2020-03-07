@@ -674,7 +674,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1669,7 +1669,9 @@
        transform="rotate(6.3558415)" />
     <g
        id="g11295"
-       transform="translate(16.404167,8.466667)">
+       transform="translate(16.404167,8.466667)"
+       inkscape:export-xdpi="576"
+       inkscape:export-ydpi="576">
       <path
          sodipodi:nodetypes="ccccc"
          inkscape:connector-curvature="0"
