@@ -290,8 +290,9 @@
 \begin{frame}
 \frametitle{Fourier 神经网络}
 \begin{itemize}
-	\item 之前说过，需要 symmetric 神经网络。 可以用 \emp{多项式} 激活函数，得出一大堆 多项式的 weight-sharing 条件。 这方法在 层数 增大时，计算变得很复杂，我暂时搁置
+	\item 之前说过，需要 symmetric 神经网络。 可以用 \emp{多项式} 激活函数，得出一大堆 多项式的 weight-sharing 条件。 这方法在 层数 增大时，计算变得很复杂。 这是一个 computational invariant theory 的问题，我暂时未有时间深入研究
 	
+	\item 另一个方法我称之为 Fourier 神经网络
 	\item 命题空间 $\mathbb{P}\mathrm{rop}$
 \end{itemize}
 \end{frame}
@@ -312,7 +313,9 @@
 \vspace*{0.4cm} 神经知识表示 的特点：
 \begin{itemize}
 	\item distributive（分布性）
-	
+
+	\item model-based (vs rule-based)
+
 	\item \textit{in situ}（固定性）--- 例如辨认「猫」的时候，大脑中 相应的神经元被 激活，但这些 神经元 \emp{不能移动}，所以「猫」的表示 也不可移动
 \end{itemize}
 问题是： 如果要辨认「白猫追黑猫」，「猫」的表示是固定的，则这两个「猫」表示 如何\emp{共存}於神经网络中？\\
@@ -336,13 +339,17 @@
 		\vcenter{\hbox{\includegraphics[scale=0.5]{higher-order-NN.png}}}
 	\end{equation}
 	
-	\item time $X \times T$
-\end{itemize}	
+	\item 这似乎是一个 $\mbox{特征空间} \times \mbox{时间}$ 的映射 $f: X \times T \rightarrow Y$
+	
+	\item {\color{red}关於这部分其实我仍未肯定，或许有其他方法}
+\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{神经 $\leftrightarrow$ 逻辑 correspondence}
 \begin{itemize}
+	\item 我们的目标是了解 神经表示 和 逻辑表示 之间的关系，这关系或许可以用范畴论描述?
+	
 	\item 定义 复杂情境 (complex scenario) 是 感知材料 (sensory data) 的一个片段，如:
 	\begin{equation}
 		\vcenter{\hbox{\includegraphics[scale=0.5]{sensory-movie.png}}}
@@ -351,7 +358,7 @@
 	
 	\item 一个复杂情境 可以用若干个 特征簇 描述
 	
-	\item 
+	\item Equivalently, 复杂情境 可以用 \emp{逻辑} 表示，就是一大堆 逻辑命题 的 conjunction，这些命题 钜细无遗 地描述该情境
 \end{itemize}
 \end{frame}
 
