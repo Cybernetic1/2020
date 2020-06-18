@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="lower-triangular.svg"
+   inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+   inkscape:export-xdpi="400"
+   inkscape:export-ydpi="400">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective3106" />
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path3759"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3762"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path3768"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.0641711"
+     inkscape:cx="401.70586"
+     inkscape:cy="522.52688"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     inkscape:window-width="1050"
+     inkscape:window-height="1659"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:snap-global="false" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Extras"
+     style="display:inline">
+    <rect
+       style="opacity:1;vector-effect:none;fill:#ffeeaa;fill-opacity:1"
+       id="rect9448-9"
+       width="23.738354"
+       height="218.00517"
+       x="-442.18991"
+       y="272.26425"
+       transform="rotate(-90)"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#ffeeaa;fill-opacity:1"
+       id="rect9448"
+       width="23.738354"
+       height="218.00517"
+       x="371.09326"
+       y="325.67825"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <path
+       style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:1, 3;stroke-dashoffset:0"
+       d="M 490.26943,442.18991 H 272.26425 m 0,-23.73836 h 218.00518"
+       id="rect9448-1-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <path
+       style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:1, 3;stroke-dashoffset:0"
+       d="m 394.83162,325.67825 v 218.00518 m -23.73836,0 V 325.67825"
+       id="rect9448-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart);marker-end:url(#Arrow1Lend)"
+       d="M 306.79548,322.46941 V 507.55373 H 495.93297"
+       id="path2985"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4573"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(135.13742,230.56597)"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768"><flowRegion
+         id="flowRegion4575"><rect
+           id="rect4577"
+           width="77.193611"
+           height="63.436333"
+           x="336.289"
+           y="265.1402" /></flowRegion><flowPara
+         id="flowPara4579"
+         style="font-size:20px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'"><flowSpan
+           style="font-style:italic"
+           id="flowSpan4589">P</flowSpan><flowSpan
+           style="font-size:65.00091553%;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:sub"
+           id="flowSpan4581">1</flowSpan></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4573-2"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(-67.15176,32.167395)"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768"><flowRegion
+         id="flowRegion4575-1"><rect
+           id="rect4577-7"
+           width="77.193611"
+           height="63.436333"
+           x="336.289"
+           y="265.1402" /></flowRegion><flowPara
+         id="flowPara4579-5"
+         style="font-size:20px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'"><flowSpan
+           style="font-style:italic"
+           id="flowSpan4589-6">P</flowSpan><flowSpan
+           style="font-size:65.00091553%;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:sub"
+           id="flowSpan4581-5">2</flowSpan></flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:6, 6;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 301.45343,512.60291 174.928,-175.10313"
+       id="path4624"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4573-0"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(-30.9371,252.56687)"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768"><flowRegion
+         id="flowRegion4575-2"><rect
+           id="rect4577-5"
+           width="77.193611"
+           height="63.436333"
+           x="336.289"
+           y="265.1402" /></flowRegion><flowPara
+         id="flowPara4579-8"
+         style="font-size:20px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'"><flowSpan
+           style="font-style:italic"
+           id="flowSpan4589-9">A</flowSpan><flowSpan
+           style="font-size:65.00091553%;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:sub"
+           id="flowSpan4581-50" /></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4573-0-6"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(-88.26306,190.84849)"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768"><flowRegion
+         id="flowRegion4575-2-0"><rect
+           id="rect4577-5-8"
+           width="77.193611"
+           height="63.436333"
+           x="336.289"
+           y="265.1402" /></flowRegion><flowPara
+         id="flowPara4579-8-3"
+         style="font-size:20px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'"><flowSpan
+           style="font-style:italic"
+           id="flowSpan4589-9-7">A</flowSpan><flowSpan
+           style="font-size:65.00091553%;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:sub"
+           id="flowSpan4581-50-8" /></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4573-0-2"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(7.2347,252.23687)"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768"><flowRegion
+         id="flowRegion4575-2-1"><rect
+           id="rect4577-5-0"
+           width="77.193611"
+           height="63.436333"
+           x="336.289"
+           y="265.1402" /></flowRegion><flowPara
+         id="flowPara4579-8-5"
+         style="font-size:20px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'"><flowSpan
+           style="font-style:italic"
+           id="flowSpan4589-9-8">B</flowSpan><flowSpan
+           style="font-size:65.00091553%;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:sub"
+           id="flowSpan4581-50-5" /></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4573-0-2-5"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(-88.77708,152.3047)"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768"><flowRegion
+         id="flowRegion4575-2-1-0"><rect
+           id="rect4577-5-0-7"
+           width="77.193611"
+           height="63.436333"
+           x="336.289"
+           y="265.1402" /></flowRegion><flowPara
+         id="flowPara4579-8-5-3"
+         style="font-size:20px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'"><flowSpan
+           style="font-style:italic"
+           id="flowSpan4589-9-8-8">B</flowSpan><flowSpan
+           style="font-size:65.00091553%;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:sub"
+           id="flowSpan4581-50-5-2" /></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4934"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(52.68205,315.43061)"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768"><flowRegion
+         id="flowRegion4936"><rect
+           id="rect4938"
+           width="100.12241"
+           height="85.600838"
+           x="189.54471"
+           y="198.6467" /></flowRegion><flowPara
+         id="flowPara4940"
+         style="font-size:20px;line-height:1.25">∅</flowPara></flowRoot>    <path
+       style="opacity:1;fill:#ffaaaa;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 381.63989,762.87042 -60.19623,-36.9782 -0.25094,-80.92124 z"
+       id="path3124"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/home/yky/latex/AGI-17/cube-corner.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <path
+       style="opacity:1;fill:#ffd5d5;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 382.28361,763.01596 15.28875,-73.36928 -75.92459,-45.09617 z"
+       id="path3122"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/home/yky/latex/AGI-17/cube-corner.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600" />
+    <g
+       id="g3108"
+       style="fill:none;stroke:#000000"
+       inkscape:export-filename="/home/yky/latex/AGI-17/cube-corner.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600">
+      <path
+         d="m 321.4641,725.93424 60.801,37.78087 75.17245,-49.34926 -59.61151,-24.52352"
+         style="fill:none;stroke:#000000"
+         id="path3174"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccc" />
+      <path
+         d="m 397.82604,689.84233 0,-67.13541 -76.36194,21.28667 0,81.94065"
+         style="fill:none;stroke:#000000"
+         id="path3176"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccc" />
+      <path
+         d="m 397.82604,622.70692 59.61151,14.46374 0,77.19519 -59.61151,-24.52352 z"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:bevel"
+         id="path3178" />
+      <path
+         d="m 321.4641,643.99359 60.801,22.28279 75.17245,-29.10572 -59.61151,-14.46374 z"
+         style="opacity:1;fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:square;stroke-linejoin:bevel"
+         id="path3180" />
+      <path
+         d="m 382.2651,666.27638 0,97.43873 75.17245,-49.34926 0,-77.19519 z"
+         style="opacity:1;fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:round"
+         id="path3182" />
+      <path
+         d="m 321.4641,643.99359 60.801,22.28279 0,97.43873 -60.801,-37.78087 z"
+         style="opacity:1;fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:bevel"
+         id="path3184" />
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4573-0-2-3"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(44.50865,252.23687)"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768"><flowRegion
+         id="flowRegion4575-2-1-5"><rect
+           id="rect4577-5-0-6"
+           width="77.193611"
+           height="63.436333"
+           x="336.289"
+           y="265.1402" /></flowRegion><flowPara
+         id="flowPara4579-8-5-2"
+         style="font-size:20px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'"><flowSpan
+           style="font-style:italic"
+           id="flowSpan4589-9-8-9">C</flowSpan><flowSpan
+           style="font-size:65.00091553%;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:sub"
+           id="flowSpan4581-50-5-1" /></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4573-0-2-3-2"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(-90.18896,114.09095)"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768"><flowRegion
+         id="flowRegion4575-2-1-5-6"><rect
+           id="rect4577-5-0-6-1"
+           width="77.193611"
+           height="63.436333"
+           x="336.289"
+           y="265.1402" /></flowRegion><flowPara
+         id="flowPara4579-8-5-2-8"
+         style="font-size:20px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'"><flowSpan
+           style="font-style:italic"
+           id="flowSpan4589-9-8-9-7">C</flowSpan><flowSpan
+           style="font-size:65.00091553%;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';baseline-shift:sub"
+           id="flowSpan4581-50-5-1-9" /></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4573-0-2-3-3"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(84.63837,252.23687)"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768"><flowRegion
+         id="flowRegion4575-2-1-5-67"><rect
+           id="rect4577-5-0-6-5"
+           width="77.193611"
+           height="63.436333"
+           x="336.289"
+           y="265.1402" /></flowRegion><flowPara
+         id="flowPara4579-8-5-2-3"
+         style="font-size:20px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'"><flowSpan
+           style="font-style:italic"
+           id="flowSpan4589-9-8-9-5">D</flowSpan></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4573-0-2-3-3-2"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(-88.74504,75.877146)"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768"><flowRegion
+         id="flowRegion4575-2-1-5-67-9"><rect
+           id="rect4577-5-0-6-5-1"
+           width="77.193611"
+           height="63.436333"
+           x="336.289"
+           y="265.1402" /></flowRegion><flowPara
+         id="flowPara4579-8-5-2-3-2"
+         style="font-size:20px;line-height:1.25;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math'"><flowSpan
+           style="font-style:italic"
+           id="flowSpan4589-9-8-9-5-7">D</flowSpan></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4626-5-2-8"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill-opacity:1;stroke:none"
+       transform="translate(42.20945,77.863891)"
+       inkscape:export-filename="/home/yky/latex/AGI-17/lower-triangular.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768"
+       inkscape:tile-cx="37.787562"
+       inkscape:tile-cy="296.61088"
+       inkscape:tile-w="8.6035156"
+       inkscape:tile-h="8.6035156"
+       inkscape:tile-x0="33.485804"
+       inkscape:tile-y0="292.30912"><flowRegion
+         id="flowRegion4628-7-0-3"><rect
+           id="rect4630-8-2-0"
+           width="55.02911"
+           height="58.086281"
+           x="236.93088"
+           y="262.08304" /></flowRegion><flowPara
+         id="flowPara4632-5-3-1"
+         style="font-size:20px;line-height:1.25">●</flowPara></flowRoot>    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(88.620373,286.83089,371.68123)"
+       id="use9400"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(26.266873,140.72801,391.03914)"
+       id="use9402"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(95.845286,254.22865,410.39704)"
+       id="use9404"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(-112.50894,358.39005,429.75496)"
+       id="use9406"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(-32.407213,326.02283,285.6938)"
+       id="use9408"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(65.478415,295.91513,401.79563)"
+       id="use9410"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(94.856052,290.45675,408.82614)"
+       id="use9412"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(104.40867,280.98327,425.41357)"
+       id="use9414"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(23.950613,-39.037973,521.04039)"
+       id="use9416"
+       style="fill:#ff0000"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(73.076755,345.38505,404.58313)"
+       id="use9418"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(-123.03037,355.8889,350.66886)"
+       id="use9420"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(83.192187,301.77238,434.66149)"
+       id="use9422"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(29.072904,121.41851,559.7413)"
+       id="use9424"
+       style="fill:#ff0000"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(5.3243379,-1319.9162,1262.5905)"
+       id="use9426"
+       style="fill:#ff0000"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(135.3799,364.74726,376.15829)"
+       id="use9428"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(-133.35535,373.09303,346.63833)"
+       id="use9430"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(19.41998,138.48793,730.50357)"
+       id="use9432"
+       style="fill:#ff0000"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(-168.58372,370.55212,404.5909)"
+       id="use9434"
+       style="fill:#ff0000"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(50.248918,199.63193,553.61897)"
+       id="use9436"
+       style="fill:#ff0000"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(106.09173,384.10947,410.58807)"
+       id="use9438"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(-103.79758,399.28867,310.95093)"
+       id="use9440"
+       style="fill:#ff0000"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(-128.49159,402.78727,353.67523)"
+       id="use9442"
+       style="fill:#ff0000"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(125.90455,354.45847,449.94049)"
+       id="use9444"
+       style="fill:#ff0000"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#flowRoot4626-5-2-8"
+       xlink:href="#flowRoot4626-5-2-8"
+       transform="rotate(55.07891,235.61443,578.283)"
+       id="use9446"
+       style="fill:#ff0000"
+       width="100%"
+       height="100%"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
+  </g>
+</svg>
