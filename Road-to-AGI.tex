@@ -362,6 +362,52 @@
 \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{再谈 逻辑结构，这是最后一次}
+\begin{itemize}
+	\item 以前曾经说过，机器视觉 的成功，有赖於 将 视觉的几何结构 impose 在深度神经网络上
+	\item 这 深度神经网络 原本是 ``free'' 的，但加了限制之后，权重空间 变小了（例如维数降低），所以学习加速了
+	\item 所谓 symmetry 的意义，简单例子：「如果知道左边等於右边，那就只需计算一次」
+	\item 换句话说，数学家喜欢对称性，是因为它经常可以简化计算
+	\item 同理，我们想将 逻辑结构 的对称性 impose 到神经网络
+	\item 实际上，可能只需要逻辑上的交换律，就可以达到 强人工智能，正如 机器视觉的成功，在於引入了 CNN 的 convolution 结构，后者只是 视觉不变性 的其中一个最显著的 invariant
+	\item 现代逻辑理论 非常漂亮，我花了十多年时间才弄懂，我希望将这套 逻辑-学习 理论简单讲解一下，也算功德完满了
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{itemize}
+	\item 在经典时代，逻辑的 代数形式 可以用 Boolean algebra 表述，然而这方法只适用於 命题逻辑
+	\item Boolean algebra 是中学生熟悉的，类似 Venn diagram 的结构
+	\item 这种结构和 拓樸学 的 open sets 结构一样，所以 命题逻辑 也可以看成是一种 topology
+	\item 然而 predicate logic 的结构更复杂，直到最近才有比较完善的表述
+	\item 现代逻辑结构和 type theory 有深刻的关系，此即 Curry-Howard isomorphism
+	\item 现代逻辑也涉及 topos theory，那是一种由 algebraic geometry 引入的结构
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Type theory and the Curry-Howard isomorphism}
+\begin{itemize}
+	\item 大家都知道 Lisp 语言没有 type，它是一种 untyped $\lambda$-calculus
+	\item 在 Lisp 之上引入 type system，衍生成 ML, Caml, OCaml, Haskell 等 一系列语言
+	\item 每一个 program 属於某个 type，例如 length() 函数，输入一个字串，输出它的长度，$\mathrm{length} : \mathrm{String} \rightarrow \mathrm{Integer}$
+	\item 有些逻辑学家 察觉到 类型论 的 $T_1 \rightarrow T_2$ 和逻辑中的 $P \rightarrow Q$ 是一模一样的
+	\item 这个关系的发现者至少包括 Brouwer-Heyting-Kolmogorov-Curry-Howard
+	\item 这关系的深刻之处，在於把 符号逻辑上的 proofs 和 程式语言 的 programs 划上等号，前者是 符号／静态的，后者是 程序／动态的
+	\item 每个 proof 就是一个 program，它输入一些 arguments，输出 关於那些 arguments 的证明
+	\item 例如： 「所有人都会死」是一个 program，它输入「苏格拉底」，输出「苏格拉底会死」 
+	\item 这个对应正好可以应用到深度学习： 神经网络 是一个 function mapping，它将 逻辑前提 map 到结论
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Topos theory and fibrations}
+\begin{itemize}
+	\item Topos 是一种 Cartesian-closed category (CCC)
+	\item 
+\end{itemize}
+\end{frame}
 
 \frame[allowframebreaks]{
 \cc{多谢收看}{Thanks for watching} \smiley
