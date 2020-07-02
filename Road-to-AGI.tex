@@ -2,7 +2,8 @@
 
 \ifdefined\chinchin
 \usepackage[CJKspace]{xeCJK}
-\setCJKmainfont[BoldFont=SimHei,ItalicFont=AR PL KaitiM GB]{SimSun}
+%\setCJKmainfont[BoldFont=SimHei,ItalicFont=AR PL KaitiM GB]{Alibaba PuHuiTi}
+\setCJKmainfont{Alibaba PuHuiTi}
 \newcommand{\cc}[2]{#1}
 \else
 \newcommand{\cc}[2]{#2}
@@ -84,14 +85,15 @@
 % \newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
 % \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 % \usepackage{amssymb}  % \leftrightharpoons
-\usepackage{wasysym} % frownie face
-\usepackage{newtxtext,newtxmath}	% Times New Roman font
+% \usepackage{wasysym} % frownie face
+% \usepackage{newtxtext,newtxmath}	% Times New Roman font
+% \usepackage{sansmath}
 
 \newcommand{\emp}[1]{{\color{violet}#1}}
 \newcommand{\vect}[1]{\boldsymbol{#1}}
 \newcommand{\tab}{\hspace*{1cm}}
 \newcommand*\confoundFace{$\vcenter{\hbox{\includegraphics[scale=0.2]{../confounded-face.jpg}}}$}
-\renewcommand{\smiley}{$\vcenter{\hbox{\includegraphics[scale=0.05]{../smiling-face.png}}}$}
+\newcommand{\smiley}{$\vcenter{\hbox{\includegraphics[scale=0.05]{../smiling-face.png}}}$}
 
 %%%%%%%% Make table of contents %%%%%%%
 
@@ -363,7 +365,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{再谈 逻辑结构，这是最后一次}
+\frametitle{再谈一次 逻辑结构}
 \begin{itemize}
 	\item 以前曾经说过，机器视觉 的成功，有赖於 将 视觉的几何结构 impose 在深度神经网络上
 	\item 这 深度神经网络 原本是 ``free'' 的，但加了限制之后，权重空间 变小了（例如维数降低），所以学习加速了
@@ -391,8 +393,8 @@
 \begin{itemize}
 	\item 大家都知道 Lisp 语言没有 type，它是一种 untyped $\lambda$-calculus
 	\item 在 Lisp 之上引入 type system，衍生成 ML, Caml, OCaml, Haskell 等 一系列语言
-	\item 每一个 program 属於某个 type，例如 length() 函数，输入一个字串，输出它的长度，$\mathrm{length} : \mathrm{String} \rightarrow \mathrm{Integer}$
-	\item 有些逻辑学家 察觉到 类型论 的 $T_1 \rightarrow T_2$ 和逻辑中的 $P \rightarrow Q$ 是一模一样的
+	\item 每一个 program 属於某个 type，例如 $\mathrm{length}()$ 函数，输入一个字串，输出它的长度； $\mathrm{length} : \mathsf{String} \rightarrow \mathsf{Integer}$
+	\item 有些逻辑学家 察觉到 类型论 的 $\tau_1 \rightarrow \tau_2$ 和逻辑中 $P \rightarrow Q$ 是一模一样的
 	\item 这个关系的发现者至少包括 Brouwer-Heyting-Kolmogorov-Curry-Howard
 	\item 这关系的深刻之处，在於把 符号逻辑上的 proofs 和 程式语言 的 programs 划上等号，前者是 符号／静态的，后者是 程序／动态的
 	\item 每个 proof 就是一个 program，它输入一些 arguments，输出 关於那些 arguments 的证明
@@ -404,6 +406,15 @@
 \begin{frame}
 \frametitle{Topos theory and fibrations}
 \begin{itemize}
+	\item Predicate logic （谓词逻辑）和 命题逻辑 之间的差异在於 fibration 结构
+	\item Fibration 通常用 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle \pi}}$ 表示，$\mathbb{B}$ = base space, $\mathbb{E}$ = \'{e}tale space, $\pi$ = projection
+	\item Base space 是 type 的空间，\'{e}tale space 是 predicate 的空间
+	\item 例如 $\mathbb{B}$ 空间的一个 type 是 $\mathrm{Human}$，$\mathbb{E}$ 空间的一个谓词是 $\mathrm{Mortal}$
+	\item 於是有以下这个 type inference rule:
+	\begin{equation}
+	i:\mathrm{Human} \vdash \mathrm{Mortal}(i): \mathsf{Prop}
+	\end{equation}
+	意思是说，如果 $i$ 属於 $\mathrm{Human}$ 类型，则 $\mathrm{Mortal}(i)$ 属於 $\mathsf{Prop}$ 类型
 	\item Topos 是一种 Cartesian-closed category (CCC)
 	\item 
 \end{itemize}
