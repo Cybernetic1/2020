@@ -1,17 +1,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}1\hfill }{BERT 的革命性意义：「闭环路训练」}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}2\hfill }{从 BERT 过渡到 AGI}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}2\hfill }{BERT 的内部结构}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}3\hfill }{「集」结构 带来麻烦}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}3\hfill }{从 BERT 过渡到 AGI}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}4\hfill }{Attention 是什么？}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}4\hfill }{「集」结构 带来麻烦}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}5\hfill }{Attention 给逻辑 AI 的启发}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}5\hfill }{Attention 是什么？}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}6\hfill }{Attention... is not what we want}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}6\hfill }{Attention 给逻辑 AI 的启发}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}7\hfill }{Fourier 神经网络}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}7\hfill }{Attention... is not what we want}\par }
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}8\hfill }{「神经」知识表示}\par }
 \defcounter {refsection}{0}\relax 
@@ -19,10 +19,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}10\hfill }{高阶 特徵}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}11\hfill }{神经 $\leftrightarrow $ 逻辑 correspondence}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}11\hfill }{关於 ``model-based reasoning'' 的质疑}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}12\hfill }{再谈一次 逻辑结构}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}12\hfill }{神经 $\leftrightarrow $ 逻辑 correspondence}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}14\hfill }{Type theory and the Curry-Howard isomorphism}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}13\hfill }{再谈一次 逻辑结构}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}15\hfill }{Topos theory and fibrations}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}15\hfill }{Type theory and the Curry-Howard isomorphism}\par }
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}16\hfill }{Topos theory and fibrations}\par }

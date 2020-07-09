@@ -168,6 +168,17 @@
 \end{frame}
 
 \begin{frame}
+\frametitle{BERT 的内部结构}
+其实，BERT 也是混合了很多技巧 发展而成的：
+\begin{itemize}
+	\item BERT 基本上是一个 seq-to-seq 的运算过程
+	\item Seq-to-seq 问题最初是用 RNN 解决的
+	\item 但 RNN 速度较慢，有人提出用 CNN 取代
+	\item CNN 加上 attention mechanism 变成 Transformer
+\end{itemize}
+\end{frame}
+
+\begin{frame}
 \frametitle{从 BERT 过渡到 AGI}
 \begin{itemize}
 	\item \emp{词语} 组成 \emp{句子}，类比於 逻辑中，\emp{概念} 组成 \emp{逻辑命题}
@@ -289,15 +300,15 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Fourier 神经网络}
-\begin{itemize}
-	\item 之前说过，需要 symmetric 神经网络。 可以用 \emp{多项式} 激活函数，得出一大堆 多项式的 weight-sharing 条件。 这方法在 层数 增大时，计算变得很复杂。 这是一个 computational invariant theory 的问题，我暂时未有时间深入研究
-	
-	\item 另一个方法我称之为 Fourier 神经网络
-	\item 命题空间 $\mathbb{P}\mathrm{rop}$
-\end{itemize}
-\end{frame}
+%\begin{frame}
+%\frametitle{Fourier 神经网络}
+%\begin{itemize}
+%	\item 之前说过，需要 symmetric 神经网络。 可以用 \emp{多项式} 激活函数，得出一大堆 多项式的 weight-sharing 条件。 这方法在 层数 增大时，计算变得很复杂。 这是一个 computational invariant theory 的问题，我暂时未有时间深入研究
+%	
+%	\item 另一个方法我称之为 Fourier 神经网络
+%	\item 命题空间 $\mathbb{P}\mathrm{rop}$
+%\end{itemize}
+%\end{frame}
 
 \begin{frame}
 \frametitle{「神经」知识表示}
@@ -344,6 +355,22 @@
 	\item 这似乎是一个 $\mbox{特征空间} \times \mbox{时间}$ 的映射 $f: X \times T \rightarrow Y$
 	
 	\item {\color{red}关於这部分其实我仍未肯定，或许有其他方法}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{关於 ``model-based reasoning'' 的质疑}
+\begin{itemize}
+	\item 很多人认为大脑的思考方式是 先在脑中构造 models，然后再从 models 中「读出」一些结论
+	\item 例如给定一个描述：「已婚妇人出轨，用刀刺死丈夫」
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.7]{murder-scene.png}}}
+	\end{equation}
+	\item 如果假设「妻子有长头发」、「丈夫死时穿著西装」，这些都是 \emp{臆想} 出来的细节，是不正确的
+	\item 那么这 model 可以有哪些细节？ 答案是： 任何细节都不可以有，除非是 逻辑上蕴含的
+	\item 例如我们可以假设妻子 probably 有一双手臂，但也有例外的情况是独臂的，这是一种 逻辑推导
+	\item 所以，其实所谓 ``model-based reasoning'' 并没有那么神奇，也并不一定正确，它的细节必需被 \emp{逻辑} 约束
+	\item 而 model 本身也可以用一些 抽象的逻辑命题 构成，这也是合理的； 反而，一个有很多感官细节的 model 并不合理
 \end{itemize}
 \end{frame}
 
@@ -395,11 +422,11 @@
 	\item 在 Lisp 之上引入 type system，衍生成 ML, Caml, OCaml, Haskell 等 一系列语言
 	\item 每一个 program 属於某个 type，例如 $\mathrm{length}()$ 函数，输入一个字串，输出它的长度； $\mathrm{length} : \mathsf{String} \rightarrow \mathsf{Integer}$
 	\item 有些逻辑学家 察觉到 类型论 的 $\tau_1 \rightarrow \tau_2$ 和逻辑中 $P \rightarrow Q$ 是一模一样的
-	\item 这个关系的发现者至少包括 Brouwer-Heyting-Kolmogorov-Curry-Howard
+	\item 这个关系的发现者至少包括:  Brouwer-Heyting-Kolmogorov-Curry-\mbox{de Bruijn}-Howard
 	\item 这关系的深刻之处，在於把 符号逻辑上的 proofs 和 程式语言 的 programs 划上等号，前者是 符号／静态的，后者是 程序／动态的
 	\item 每个 proof 就是一个 program，它输入一些 arguments，输出 关於那些 arguments 的证明
 	\item 例如： 「所有人都会死」是一个 program，它输入「苏格拉底」，输出「苏格拉底会死」 
-	\item 这个对应正好可以应用到深度学习： 神经网络 是一个 function mapping，它将 逻辑前提 map 到结论
+	\item 这个对应也許可以应用到深度学习： 神经网络 也是一種 函數 / mapping，它将 逻辑前提 map 到结论
 \end{itemize}
 \end{frame}
 
@@ -407,15 +434,15 @@
 \frametitle{Topos theory and fibrations}
 \begin{itemize}
 	\item Predicate logic （谓词逻辑）和 命题逻辑 之间的差异在於 fibration 结构
-	\item Fibration 通常用 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle \pi}}$ 表示，$\mathbb{B}$ = base space, $\mathbb{E}$ = \'{e}tale space, $\pi$ = projection
-	\item Base space 是 type 的空间，\'{e}tale space 是 predicate 的空间
+	\item Fibration 通常用 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle \pi}}$ 表示，$\mathbb{B}$ = base space, $\mathbb{E}$ = entire space, $\pi$ = projection
+	\item Base space 是 type 的空间，entire space 是 predicate 的空间
+	\item 由於 Curry-Howard 对应, type = propositions，在 base 空间上只有 命题逻辑
 	\item 例如 $\mathbb{B}$ 空间的一个 type 是 $\mathrm{Human}$，$\mathbb{E}$ 空间的一个谓词是 $\mathrm{Mortal}$
 	\item 於是有以下这个 type inference rule:
 	\begin{equation}
 	i:\mathrm{Human} \vdash \mathrm{Mortal}(i): \mathsf{Prop}
 	\end{equation}
 	意思是说，如果 $i$ 属於 $\mathrm{Human}$ 类型，则 $\mathrm{Mortal}(i)$ 属於 $\mathsf{Prop}$ 类型
-	\item Topos 是一种 Cartesian-closed category (CCC)
 	\item 
 \end{itemize}
 \end{frame}
