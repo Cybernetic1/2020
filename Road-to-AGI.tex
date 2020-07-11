@@ -173,31 +173,31 @@
 \begin{itemize}
 	\item BERT 基本上是一个 seq-to-seq 的运算过程
 	\item Seq-to-seq 问题最初是用 RNN 解决的
-	\item 但 RNN 速度较慢，有人提出用 CNN 取代
+	\item 但 RNN 速度较慢，有人提出用 CNN 取代：
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.5]{RNN-2-CNN.png}}}
+	\end{equation}
 	\item CNN 加上 attention mechanism 变成 Transformer
+	\item 我的目标是重复这个思路，但引入 symmetric NN 的结构
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{从 BERT 过渡到 AGI}
+\frametitle{BERT 赋予逻辑结构}
 \begin{itemize}
-	\item \emp{词语} 组成 \emp{句子}，类比於 逻辑中，\emp{概念} 组成 \emp{逻辑命题}
+	\item 逻辑结构 可以用 \emp{对称化的} 的 BERT 模型 处理：
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.5]{new-BERT.png}}}
+	\end{equation}
+
+	\item 这时，输出对 $\vcenter{\hbox{\includegraphics[scale=0.4]{proposition.png}}}$ 的交换不变性 is automatically satisfied by the architecture of the decoder
 	
-	\item 抽象地说，逻辑语言 可以看成是一种有 2个运算的 \emp{代数结构}，可以看成是 加法 $\wedge$ 和 乘法 $\cdot$，其中 乘法 是不可交换的，但加法 可交换
+	\item 而如果假设 BERT's encoder is a universal seq-to-seq mapping, 似乎满足了对称性的要求（还要考虑 注意力机制 有什么影响，这一点我仍未有时间想）
+	
+	\item 当然最好还是用实验证实 \smiley
+	%（{\color{red}第一层}似乎可以纳入到{\color{darkgreen}第二层}，简化整个模型）
 
-	\item 例如 两个命题：
-	\begin{equation}
-	\mbox{我} \cdot \mbox{爱} \cdot \mbox{妳} \; \wedge \; \mbox{妳} \cdot \mbox{爱} \cdot \mbox{我}
-	\end{equation}
-
-	\definecolor{darkgreen}{rgb}{0.1, 0.5, 0.2}
-	\item 这种逻辑结构 可以用 \emp{两层} 的 BERT 模型 处理：
-	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=0.5]{2-BERT-architecture.png}}}
-	\end{equation}
-	（{\color{red}第一层}似乎可以纳入到{\color{darkgreen}第二层}，简化整个模型）
-
-	\item 我发现 最难处理的问题，是在第2层 的状态 $\vec{x}$.  它是一个 逻辑命题 的 \emp{集合}，集合中元素有可交换性，亦即 \emp{permutation invariance}.  这看似简单的特性，其实带来很大的麻烦
+	% \item 我发现 最难处理的问题，是在第2层 的状态 $\vec{x}$.  它是一个 逻辑命题 的 \emp{集合}，集合中元素有可交换性，亦即 \emp{permutation invariance}.  这看似简单的特性，其实带来很大的麻烦
 
 	% \item 如何 standardize 输入空间，使之可以接受任何形式的输入?
 	
@@ -213,6 +213,16 @@
 \begin{frame}
 \frametitle{「集」结构 带来麻烦}
 \begin{itemize}
+	\item \emp{词语} 组成 \emp{句子}，类比於 逻辑中，\emp{概念} 组成 \emp{逻辑命题}
+	
+	\item 抽象地说，逻辑语言 可以看成是一种有 2个运算的 \emp{代数结构}，可以看成是 加法 $\wedge$ 和 乘法 $\cdot$，其中 乘法 是不可交换的，但加法 可交换
+	
+	\item 例如 两个命题：
+	\begin{equation}
+	\mbox{我} \cdot \mbox{爱} \cdot \mbox{妳} \; \wedge \; \mbox{妳} \cdot \mbox{爱} \cdot \mbox{我}
+	\end{equation}
+	
+	
 	\item Word2Vec 也是革命性的； 由 Word2Vec 演变成 Sentence2Vec 则比较容易，基本上只是 向量的 \emp{延长} (concatenation)； 逻辑命题 类似於 sentence
 
 	\item 假设 全体逻辑命题的空间是 $\mathbb{P}$，则 \emp{命题集合} 的空间是 $2^{\mathbb{P}}$，非常庞大
