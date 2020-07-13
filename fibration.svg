@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1779"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="fibration.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="400"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1050"
+     inkscape:window-height="1659"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:snap-global="false" />
+  <defs
+     id="defs1773" />
+  <metadata
+     id="metadata1776">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.56444448;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 61.79056,160.28391 V 184.3041"
+       id="path3678-8-2-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384" />
+    <ellipse
+       transform="matrix(0,1,1,0,0,0)"
+       id="path3336-6-9-5-3-9-6"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#00ff00;fill-opacity:0.25824178;fill-rule:evenodd;stroke:#00ff00;stroke-width:0.84666669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       ry="4.2333331"
+       rx="17.286112"
+       cy="62.072781"
+       cx="143.14468"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.56444448;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 104.44139,165.8514 v 10.66618"
+       id="path3678-8-2-5-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.56444448;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 123.31503,160.49939 v 16.01819"
+       id="path3678-8-2-5-44"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384" />
+    <ellipse
+       transform="matrix(0,1,1,0,0,0)"
+       id="path3336-6-9-5-3-9-6-7"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#00ff00;fill-opacity:0.25824178;fill-rule:evenodd;stroke:#00ff00;stroke-width:0.84666669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       ry="2.2577779"
+       rx="7.9022222"
+       cy="123.31501"
+       cx="152.66978"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384" />
+    <path
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:0.13186813;fill-rule:evenodd;stroke:#000000;stroke-width:0.84666669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98431373;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 38.965837,189.92314 c 0,-8.72856 16.712986,-21.16667 64.064443,-20.03778 47.33801,1.12856 64.34667,11.30922 64.34667,20.03778"
+       id="path3336-6-9-5-1-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csc"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384" />
+    <text
+       id="text5041-50-3"
+       y="178.53255"
+       x="121.61037"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         style="stroke-width:0.28222224px"
+         y="178.53255"
+         x="121.61037"
+         id="tspan5043-36-2"
+         sodipodi:role="line">●</tspan></text>
+    <text
+       id="text5041-50-3-0"
+       y="186.57585"
+       x="60.085926"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         style="stroke-width:0.28222224px"
+         y="186.57585"
+         x="60.085926"
+         id="tspan5043-36-2-6"
+         sodipodi:role="line">●</tspan></text>
+    <text
+       id="text5041-50-3-5"
+       y="178.00339"
+       x="102.73676"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         style="stroke-width:0.28222224px"
+         y="178.00339"
+         x="102.73676"
+         id="tspan5043-36-2-4"
+         sodipodi:role="line">●</tspan></text>
+    <text
+       id="text5041-50-3-0-0"
+       y="134.15298"
+       x="60.650372"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         style="stroke-width:0.28222224px"
+         y="134.15298"
+         x="60.650372"
+         id="tspan5043-36-2-6-7"
+         sodipodi:role="line">●</tspan></text>
+    <text
+       id="text5041-50-3-0-8"
+       y="141.84354"
+       x="59.239262"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         style="stroke-width:0.28222224px"
+         y="141.84354"
+         x="59.239262"
+         id="tspan5043-36-2-6-6"
+         sodipodi:role="line">●</tspan></text>
+    <text
+       id="text5041-50-3-0-88"
+       y="149.1813"
+       x="61.497036"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         style="stroke-width:0.28222224px"
+         y="149.1813"
+         x="61.497036"
+         id="tspan5043-36-2-6-4"
+         sodipodi:role="line">●</tspan></text>
+    <text
+       id="text5041-50-3-0-3"
+       y="156.23686"
+       x="59.803707"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         style="stroke-width:0.28222224px"
+         y="156.23686"
+         x="59.803707"
+         id="tspan5043-36-2-6-1"
+         sodipodi:role="line">●</tspan></text>
+    <g
+       id="g3154"
+       transform="translate(56.223958,5.55625)"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384">
+      <path
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path3678-8-2-5-4"
+         d="M 84.403613,164.20252 V 176.7998"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.56444448;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <ellipse
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         cx="146.74313"
+         cy="84.403618"
+         rx="17.49778"
+         ry="3.1044445"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#00ff00;fill-opacity:0.25824178;fill-rule:evenodd;stroke:#00ff00;stroke-width:0.84666669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         id="path3336-6-9-5-3-9-6-9"
+         transform="matrix(0,1,1,0,0,0)" />
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="82.698982"
+         y="177.79173"
+         id="text5041-50-3-1"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-5"
+           x="82.698982"
+           y="177.79173"
+           style="stroke-width:0.28222224px">●</tspan></text>
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="82.698982"
+         y="138.17476"
+         id="text5041-50-3-0-4"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-6-9"
+           x="82.698982"
+           y="138.17476"
+           style="stroke-width:0.28222224px">●</tspan></text>
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="82.698982"
+         y="146.07698"
+         id="text5041-50-3-0-2"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-6-0"
+           x="82.698982"
+           y="146.07698"
+           style="stroke-width:0.28222224px">●</tspan></text>
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="83.545662"
+         y="153.41476"
+         id="text5041-50-3-0-6"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-6-8"
+           x="83.545662"
+           y="153.41476"
+           style="stroke-width:0.28222224px">●</tspan></text>
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="82.557869"
+         y="159.34143"
+         id="text5041-50-3-0-9"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-6-2"
+           x="82.557869"
+           y="159.34143"
+           style="stroke-width:0.28222224px">●</tspan></text>
+    </g>
+    <text
+       id="text5041-50-3-0-61"
+       y="150.0452"
+       x="121.61037"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         style="stroke-width:0.28222224px"
+         y="150.0452"
+         x="121.61037"
+         id="tspan5043-36-2-6-06"
+         sodipodi:role="line">●</tspan></text>
+    <text
+       id="text5041-50-3-0-1"
+       y="152.9572"
+       x="121.85126"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         style="stroke-width:0.28222224px"
+         y="152.9572"
+         x="121.85126"
+         id="tspan5043-36-2-6-5"
+         sodipodi:role="line">●</tspan></text>
+    <text
+       id="text5041-50-3-0-94"
+       y="155.82076"
+       x="121.61037"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         style="stroke-width:0.28222224px"
+         y="155.82076"
+         x="121.61037"
+         id="tspan5043-36-2-6-90"
+         sodipodi:role="line">●</tspan></text>
+    <text
+       id="text5041-50-3-0-91"
+       y="158.64297"
+       x="121.61037"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         style="stroke-width:0.28222224px"
+         y="158.64297"
+         x="121.61037"
+         id="tspan5043-36-2-6-77"
+         sodipodi:role="line">●</tspan></text>
+    <g
+       id="g3140"
+       transform="translate(-57.017708,-3.96875)"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384">
+      <path
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path3678-8-2-5-3"
+         d="m 139.19003,166.75963 v 12.29795"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.56444448;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <ellipse
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         cx="156.6209"
+         cy="139.18994"
+         rx="10.160001"
+         ry="4.2333331"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#00ff00;fill-opacity:0.25824178;fill-rule:evenodd;stroke:#00ff00;stroke-width:0.84666669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         id="path3336-6-9-5-3-9-6-4"
+         transform="matrix(0,1,1,0,0,0)" />
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="137.48532"
+         y="181.63699"
+         id="text5041-50-3-7"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-65"
+           x="137.48532"
+           y="181.63699"
+           style="stroke-width:0.28222224px">●</tspan></text>
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="136.92088"
+         y="152.85031"
+         id="text5041-50-3-0-11"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-6-59"
+           x="136.92088"
+           y="152.85031"
+           style="stroke-width:0.28222224px">●</tspan></text>
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="135.50977"
+         y="160.47032"
+         id="text5041-50-3-0-7"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-6-76"
+           x="135.50977"
+           y="160.47032"
+           style="stroke-width:0.28222224px">●</tspan></text>
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="138.89642"
+         y="157.6481"
+         id="text5041-50-3-0-73"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-6-65"
+           x="138.89642"
+           y="157.6481"
+           style="stroke-width:0.28222224px">●</tspan></text>
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="138.33199"
+         y="163.85699"
+         id="text5041-50-3-0-63"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-6-94"
+           x="138.33199"
+           y="163.85699"
+           style="stroke-width:0.28222224px">●</tspan></text>
+    </g>
+    <g
+       transform="matrix(0.28222223,0,0,0.25279367,3.8867183,64.092118)"
+       inkscape:label="Layer 1"
+       id="layer1-1"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384">
+      <g
+         transform="matrix(-0.20634921,0,0,0.72265114,552.39489,120.67011)"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:64px;line-height:125%;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#4d4d4d;fill-opacity:1;stroke:none"
+         id="flowRoot6939">
+        <path
+           d="m 179.75619,427.56922 c -15.8381,-5.04692 -26.11059,-15.1561 -29.93864,-38.59417 l -8.38841,-51.35994 c -4.70025,-28.77839 -20.93109,-36.8129 -38.58668,-43.04735 17.13631,-5.93755 34.62022,-14.26491 38.58668,-40.37544 l 8.38841,-55.21935 c 3.56081,-23.44013 13.58126,-32.65661 29.93864,-38.89105 -15.8381,0.29687 -15.23894,2.37503 -21.21069,7.71883 -7.26995,6.8282 -16.28422,18.11981 -19.03371,36.21915 l -8.38841,55.21935 c -3.2453,21.36315 -29.57913,29.39096 -44.897963,35.32851 16.097753,5.93757 40.906253,12.48534 44.897963,36.21915 l 8.38841,49.87555 c 3.44286,20.47041 11.50412,32.06286 18.25478,38.89105 5.71211,5.64068 5.11295,7.71883 21.98962,8.01571"
+           style="font-size:300px;font-family:'TeX Gyre Pagella';-inkscape-font-specification:'TeX Gyre Pagella';fill:#4d4d4d;stroke:none"
+           id="path7003"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="csscssccsscsscc" />
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="93.787506"
+       y="187.10089"
+       id="text14958"
+       inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         style="stroke-width:0.28222224px"
+         sodipodi:role="line"
+         id="tspan14960"
+         x="93.787506"
+         y="187.10089">base space</tspan></text>
+    <g
+       id="g3126"
+       transform="translate(0,6.879167)"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384">
+      <ellipse
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         cx="138.62909"
+         cy="104.4414"
+         rx="20.196527"
+         ry="5.3622222"
+         style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#00ff00;fill-opacity:0.25824178;fill-rule:evenodd;stroke:#00ff00;stroke-width:0.84666669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         id="path3336-6-9-5-3-9-6-3"
+         transform="matrix(0,1,1,0,0,0)" />
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="103.01897"
+         y="124.41638"
+         id="text5041-50-3-0-66"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-6-49"
+           x="103.01897"
+           y="124.41638"
+           style="stroke-width:0.28222224px">●</tspan></text>
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="103.30119"
+         y="135.14075"
+         id="text5041-50-3-0-5"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-6-04"
+           x="103.30119"
+           y="135.14075"
+           style="stroke-width:0.28222224px">●</tspan></text>
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="102.17233"
+         y="146.71182"
+         id="text5041-50-3-0-87"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-6-17"
+           x="102.17233"
+           y="146.71182"
+           style="stroke-width:0.28222224px">●</tspan></text>
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="103.86565"
+         y="153.76738"
+         id="text5041-50-3-0-27"><tspan
+           sodipodi:role="line"
+           id="tspan5043-36-2-6-22"
+           x="103.86565"
+           y="153.76738"
+           style="stroke-width:0.28222224px">●</tspan></text>
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         id="text14954"
+         y="120.84921"
+         x="124.47918"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="120.84921"
+           x="124.47918"
+           id="tspan14956"
+           sodipodi:role="line"
+           style="stroke-width:0.28222224px">fibre</tspan></text>
+      <path
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         inkscape:connector-curvature="0"
+         id="path14962"
+         d="m 109.23917,129.31597 14.11111,-10.16"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         inkscape:connector-curvature="0"
+         id="path14962-2"
+         d="m 104.15917,132.98487 -14.111104,-10.16"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         id="text14979"
+         y="123.95366"
+         x="76.21917"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="123.95366"
+           x="76.21917"
+           id="tspan14981"
+           sodipodi:role="line"
+           style="stroke-width:0.28222224px">germ</tspan></text>
+    </g>
+    <ellipse
+       transform="scale(-1,1)"
+       id="path3336-6-9-5-3-9-3"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#60ddff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.84666669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98431373;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       ry="12.999863"
+       rx="21.196692"
+       cy="57.243397"
+       cx="-50.960285"
+       inkscape:export-filename="/home/yky/latex/2020/Venn-diagram.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384" />
+    <ellipse
+       ry="12.364861"
+       rx="20.535841"
+       cy="56.820065"
+       cx="38.366123"
+       id="path3336-6-9-5-1-67"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ff4040;fill-opacity:0.54901961;fill-rule:evenodd;stroke:none;stroke-width:0.84666669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98431373;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       inkscape:export-filename="/home/yky/latex/2020/Venn-diagram.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384" />
+    <g
+       transform="matrix(0.14111111,0,0,0.14111111,20.599724,9.3095003)"
+       id="g12824-5"
+       inkscape:export-filename="/home/yky/latex/2020/Venn-diagram.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384">
+      <g
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="g12826-3"
+         transform="matrix(1.0629921,0,0,-1.0629921,-186.02362,789.27165)"
+         xml:space="preserve"
+         stroke-miterlimit="10.433"
+         font-style="normal"
+         font-variant="normal"
+         font-weight="normal"
+         font-stretch="normal"
+         font-size-adjust="none"
+         letter-spacing="normal"
+         word-spacing="normal"><path
+           style="fill:#000000;stroke-width:0"
+           inkscape:connector-curvature="0"
+           d="m 471.09,421.74 0.2,1.3 3.39,13.55 c 0.45,1.74 0.55,1.89 2.69,1.89 h 4.78 c 4.14,0 6.78,-1.35 6.78,-4.78 0,-1.95 -1,-6.23 -2.94,-8.02 -2.49,-2.25 -5.48,-2.64 -7.67,-2.64 h -7.03 l -0.2,-1.3 h 8.47 c 7.08,0 14,5.18 14,10.76 0,3.84 -3.29,7.52 -9.81,7.52 h -16.14 c -0.95,0 -1.5,0 -1.5,-0.95 0,-0.59 0.45,-0.59 1.45,-0.59 0.64,0 1.54,-0.05 2.14,-0.1 0.8,-0.1 1.09,-0.25 1.09,-0.8 0,-0.2 -0.04,-0.35 -0.2,-0.94 l -6.67,-26.75 c -0.5,-1.95 -0.6,-2.35 -4.53,-2.35 -0.85,0 -1.4,0 -1.4,-0.94 0,-0.6 0.6,-0.6 0.75,-0.6 h 12.75 c 0.35,0 1,0 1,1 0,0.54 -0.45,0.54 -1.4,0.54 -1.84,0 -3.23,0 -3.23,0.9 0,0.3 0.1,0.55 0.14,0.85 z"
+           id="path12828-5" /></g>    </g>
+    <g
+       transform="matrix(0.14111111,0,0,0.14111111,-21.946387,8.5051143)"
+       id="g13050-6"
+       inkscape:export-filename="/home/yky/latex/2020/Venn-diagram.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384">
+      <g
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         word-spacing="normal"
+         letter-spacing="normal"
+         font-size-adjust="none"
+         font-stretch="normal"
+         font-weight="normal"
+         font-variant="normal"
+         font-style="normal"
+         stroke-miterlimit="10.433"
+         xml:space="preserve"
+         transform="matrix(1.0629921,0,0,-1.0629921,-186.02362,789.27165)"
+         id="g13052-2"><path
+           style="fill:#000000;stroke-width:0"
+           inkscape:connector-curvature="0"
+           id="path13054-9"
+           d="m 477.82,406.3 0.72,0.29 0.72,0.33 0.71,0.36 0.71,0.39 0.7,0.42 0.69,0.45 0.68,0.49 0.68,0.5 0.65,0.54 0.65,0.56 0.63,0.59 0.61,0.61 0.6,0.64 0.57,0.66 0.56,0.68 0.54,0.7 0.51,0.72 0.49,0.73 0.46,0.76 0.44,0.77 0.41,0.79 0.38,0.8 0.35,0.82 0.32,0.83 0.28,0.84 0.26,0.85 0.21,0.87 0.18,0.87 0.15,0.88 0.1,0.89 0.06,0.89 0.02,0.9 c 0,8.02 -5.28,13.4 -12.7,13.4 l -0.3,-1.25 c 4.98,0 8.62,-3.88 8.62,-10.56 0,-4.98 -2.54,-16.63 -10.91,-21.32 -0.25,1.74 -0.75,5.38 -4.39,5.38 v -1.09 c 2.1,0 3.04,-1.2 3.04,-4.24 0,-0.74 -0.04,-0.79 -0.54,-0.99 -1.3,-0.55 -2.79,-0.9 -4.19,-0.9 v 0 c -0.7,0 -2.29,0 -2.29,2.14 0,2 1.89,3.99 3.98,3.99 v 1.09 c -2.63,0 -5.07,-2.49 -5.07,-5.08 0,-0.99 0.29,-1.54 0.29,-1.59 v 0 c -3.88,1.54 -5.58,5.43 -5.58,9.91 0,3.44 1.3,10.51 5.09,15.89 3.63,5.08 8.31,7.37 11.95,7.37 l 0.3,1.25 c -10.76,0 -21.72,-11.31 -21.72,-22.92 0,-8.27 5.58,-13.3 12.75,-13.3 1.25,0 2.94,0.2 4.88,0.75 -0.19,-3.09 -0.19,-3.19 -0.19,-3.83 0,-1.6 0,-5.48 4.13,-5.48 5.93,0 8.32,9.11 8.32,9.66 0,0.35 -0.35,0.5 -0.55,0.5 -0.4,0 -0.5,-0.25 -0.6,-0.55 -1.19,-3.54 -4.08,-4.78 -5.82,-4.78 -2.3,0 -3.04,1.34 -3.54,5.13 z" /></g>    </g>
+    <g
+       id="g13528-1"
+       transform="matrix(0.14111111,0,0,0.14111111,-8.2469433,9.0695553)"
+       inkscape:export-filename="/home/yky/latex/2020/Venn-diagram.png"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384">
+      <g
+         word-spacing="normal"
+         letter-spacing="normal"
+         font-size-adjust="none"
+         font-stretch="normal"
+         font-weight="normal"
+         font-variant="normal"
+         font-style="normal"
+         stroke-miterlimit="10.433"
+         xml:space="preserve"
+         transform="matrix(1.0629921,0,0,-1.0629921,-186.02362,789.27165)"
+         id="g13530-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"><path
+           id="path13532-7"
+           d="m 477.82,406.3 0.72,0.29 0.72,0.33 0.71,0.36 0.71,0.39 0.7,0.42 0.69,0.45 0.68,0.49 0.68,0.5 0.65,0.54 0.65,0.56 0.63,0.59 0.61,0.61 0.6,0.64 0.57,0.66 0.56,0.68 0.54,0.7 0.51,0.72 0.49,0.73 0.46,0.76 0.44,0.77 0.41,0.79 0.38,0.8 0.35,0.82 0.32,0.83 0.28,0.84 0.26,0.85 0.21,0.87 0.18,0.87 0.15,0.88 0.1,0.89 0.06,0.89 0.02,0.9 c 0,8.02 -5.28,13.4 -12.7,13.4 l -0.3,-1.25 c 4.98,0 8.62,-3.88 8.62,-10.56 0,-4.98 -2.54,-16.63 -10.91,-21.32 -0.25,1.74 -0.75,5.38 -4.39,5.38 v -1.09 c 2.1,0 3.04,-1.2 3.04,-4.24 0,-0.74 -0.04,-0.79 -0.54,-0.99 -1.3,-0.55 -2.79,-0.9 -4.19,-0.9 v 0 c -0.7,0 -2.29,0 -2.29,2.14 0,2 1.89,3.99 3.98,3.99 v 1.09 c -2.63,0 -5.07,-2.49 -5.07,-5.08 0,-0.99 0.29,-1.54 0.29,-1.59 v 0 c -3.88,1.54 -5.58,5.43 -5.58,9.91 0,3.44 1.3,10.51 5.09,15.89 3.63,5.08 8.31,7.37 11.95,7.37 l 0.3,1.25 c -10.76,0 -21.72,-11.31 -21.72,-22.92 0,-8.27 5.58,-13.3 12.75,-13.3 1.25,0 2.94,0.2 4.88,0.75 -0.19,-3.09 -0.19,-3.19 -0.19,-3.83 0,-1.6 0,-5.48 4.13,-5.48 5.93,0 8.32,9.11 8.32,9.66 0,0.35 -0.35,0.5 -0.55,0.5 -0.4,0 -0.5,-0.25 -0.6,-0.55 -1.19,-3.54 -4.08,-4.78 -5.82,-4.78 -2.3,0 -3.04,1.34 -3.54,5.13 z"
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke-width:0" /><path
+           id="path13534-0"
+           d="m 523.73,434.74 -0.03,0.08 -0.04,0.07 -0.04,0.07 -0.03,0.07 -0.04,0.06 -0.03,0.06 -0.04,0.06 -0.03,0.05 -0.03,0.05 -0.04,0.05 -0.03,0.04 -0.04,0.05 -0.03,0.03 -0.03,0.04 -0.04,0.03 -0.03,0.03 -0.03,0.03 -0.04,0.03 -0.03,0.02 -0.04,0.02 -0.03,0.02 -0.04,0.02 -0.03,0.01 -0.04,0.01 -0.04,0.02 -0.04,0.01 h -0.03 l -0.04,0.01 h -0.04 l -0.04,0.01 h -0.04 -0.04 c -0.65,0 -0.8,-0.35 -1.1,-1.05 l -12.4,-27.84 c -0.3,-0.65 -0.35,-0.75 -0.35,-1 0,-0.55 0.45,-1 0.99,-1 0.36,0 0.75,0.1 1.15,1.05 l 11.71,26.4 11.7,-26.4 c 0.45,-1.05 0.95,-1.05 1.15,-1.05 0.55,0 1,0.45 1,1 0,0.1 0,0.2 -0.3,0.8 z"
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke-width:0" /><path
+           id="path13536-9"
+           d="m 565.09,421.74 0.2,1.3 3.39,13.55 c 0.45,1.74 0.55,1.89 2.69,1.89 h 4.78 c 4.13,0 6.78,-1.35 6.78,-4.78 0,-1.95 -1,-6.23 -2.94,-8.02 -2.49,-2.25 -5.48,-2.64 -7.67,-2.64 h -7.03 l -0.2,-1.3 h 8.47 c 7.08,0 14,5.18 14,10.76 0,3.84 -3.29,7.52 -9.81,7.52 H 561.6 c -0.94,0 -1.49,0 -1.49,-0.95 0,-0.59 0.45,-0.59 1.45,-0.59 0.64,0 1.54,-0.05 2.14,-0.1 0.8,-0.1 1.09,-0.25 1.09,-0.8 0,-0.2 -0.04,-0.35 -0.2,-0.94 l -6.67,-26.75 c -0.5,-1.95 -0.6,-2.35 -4.53,-2.35 -0.85,0 -1.4,0 -1.4,-0.94 0,-0.6 0.6,-0.6 0.75,-0.6 h 12.75 c 0.35,0 1,0 1,1 0,0.54 -0.45,0.54 -1.4,0.54 -1.84,0 -3.24,0 -3.24,0.9 0,0.3 0.11,0.55 0.15,0.85 z"
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke-width:0" /></g>    </g>
+    <g
+       id="g3161"
+       transform="translate(-1.0583333,6.3500003)"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384">
+      <text
+         inkscape:export-ydpi="576"
+         inkscape:export-xdpi="576"
+         inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/etale-space.png"
+         id="text14950"
+         y="143.56805"
+         x="157.78139"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.28222224px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="143.56805"
+           x="157.78139"
+           id="tspan14952"
+           sodipodi:role="line"
+           style="stroke-width:0.28222224px">étalé space</tspan></text>
+      <g
+         transform="matrix(0.5,0,0,0.5,127.33234,85.721416)"
+         id="g2817">
+        <g
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           word-spacing="normal"
+           letter-spacing="normal"
+           font-size-adjust="none"
+           font-stretch="normal"
+           font-weight="normal"
+           font-variant="normal"
+           font-style="normal"
+           stroke-miterlimit="10.433"
+           xml:space="preserve"
+           transform="matrix(0.3,0,0,-0.3,-52.5,222.75)"
+           id="content"><path
+             style="fill:#000000;stroke-width:0"
+             inkscape:connector-curvature="0"
+             id="path2814"
+             d="m 468.43,422.93 h 0.12 0.12 0.14 0.13 0.15 0.15 l 0.15,-0.01 h 0.16 l 0.16,-0.01 0.17,-0.01 0.34,-0.02 0.35,-0.03 0.36,-0.05 0.37,-0.05 0.37,-0.07 0.18,-0.04 0.19,-0.05 0.18,-0.04 0.18,-0.06 0.19,-0.06 0.18,-0.06 0.18,-0.06 0.17,-0.08 0.18,-0.08 0.17,-0.08 0.17,-0.09 0.16,-0.09 -0.2,2.04 v 0.05 c 0.79,0.36 1.9,1.09 2.79,2.14 v -4.17 c -1.2,1.34 -2.73,1.98 -2.79,1.98 l 0.2,-2.04 c 2.39,-1.53 2.59,-4.24 2.59,-4.53 0.05,-0.69 0.05,-1.35 0.9,-1.35 0.85,0 0.85,0.7 0.85,1.6 v 13.5 c 0,0.79 0,1.59 -0.85,1.59 -0.85,0 -0.9,-0.75 -0.9,-1.14 -0.29,-6.42 -5.37,-6.78 -7.96,-6.83 v 10.52 c 0,3.34 0.93,3.34 2.14,3.34 h 2.39 c 6.72,0 10.06,-3.44 10.36,-6.88 0.04,-0.4 0.11,-1.15 0.9,-1.15 0.85,0 0.85,0.8 0.85,1.64 v 6.48 c 0,1.55 -0.11,1.64 -1.64,1.64 l -0.11,-1.73 v -2.39 c -0.85,0.94 -1.8,1.73 -2.85,2.39 h 2.85 l 0.11,1.73 h -25.52 c -0.89,0 -1.69,0 -1.69,-0.89 0,-0.84 0.94,-0.84 1.35,-0.84 2.82,0 3.03,-0.41 3.03,-2.84 v -24.97 l 1.75,-0.1 v 25.16 c 0,0.59 0,1.84 -0.41,2.75 h 5.28 c -0.54,-1.16 -0.54,-2.8 -0.54,-3.25 v -24.16 c 0,-1.79 0.36,-2.79 0.54,-3.23 h -5.28 c 0.41,0.89 0.41,2.14 0.41,2.73 l -1.75,0.1 c 0,-2.35 -0.14,-2.83 -2.78,-2.83 -0.75,0 -1.6,0 -1.6,-0.86 0,-0.89 0.8,-0.89 1.69,-0.89 h 26.41 l 0.04,1.75 h -3.48 V 408 c 1.59,0.79 2.94,1.84 3.94,2.73 -0.05,-0.2 -0.41,-2.39 -0.46,-2.78 l -0.04,-1.75 c 0.95,0 1.43,0 1.59,0.7 0.05,0.05 1.44,8.36 1.44,8.61 0,0.55 -0.44,0.91 -0.85,0.91 -0.68,0 -0.89,-0.66 -0.89,-0.71 -0.29,-1.29 -0.79,-3.39 -4.43,-5.53 -2.6,-1.54 -5.13,-2.23 -7.88,-2.23 h -2.73 c -1.21,0 -2.14,0 -2.14,3.33 z" /></g>      </g>
+    </g>
+    <g
+       id="g3011"
+       transform="matrix(0.5,0,0,0.5,42.315585,136.78599)"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384">
+      <g
+         word-spacing="normal"
+         letter-spacing="normal"
+         font-size-adjust="none"
+         font-stretch="normal"
+         font-weight="normal"
+         font-variant="normal"
+         font-style="normal"
+         stroke-miterlimit="10.433"
+         xml:space="preserve"
+         transform="matrix(0.3,0,0,-0.3,-52.5,222.75)"
+         id="g3009"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"><path
+           id="path3007"
+           d="m 479.04,424.48 0.52,0.28 0.52,0.31 0.5,0.34 0.25,0.17 0.25,0.18 0.24,0.19 0.24,0.19 0.23,0.2 0.22,0.2 0.22,0.21 0.22,0.22 0.2,0.22 0.2,0.23 0.19,0.23 0.18,0.24 0.17,0.24 0.16,0.25 0.16,0.26 0.14,0.26 0.13,0.27 0.12,0.27 0.1,0.28 0.1,0.28 0.08,0.29 0.06,0.29 0.06,0.3 0.03,0.3 0.03,0.31 0.01,0.32 c 0,6.92 -5.74,8.51 -11.82,8.51 h -15.09 c -0.89,0 -1.69,0 -1.69,-0.89 0,-0.84 0.85,-0.84 1.64,-0.84 2.99,0 3.14,-0.5 3.14,-2.89 l 1.74,0.09 c 0,0.64 0,1.89 -0.44,2.8 h 5.42 c -0.64,-0.8 -0.64,-1.8 -0.64,-2.55 v -25.56 c 0,-0.75 0,-1.73 0.64,-2.53 h -5.42 c 0.44,0.89 0.44,2.14 0.44,2.78 v 25.06 l -1.74,-0.09 v -24.86 c 0,-2.5 -0.2,-2.89 -3.34,-2.89 -0.55,0 -1.44,0 -1.44,-0.86 0,-0.89 0.8,-0.89 1.69,-0.89 h 14.8 c 6.12,0 14,2.39 14,9.31 h -1.74 c 0,-3.78 -3,-5.97 -7.28,-6.97 v 0 c 1.85,2.1 2.19,4.74 2.19,6.97 0,3.44 -0.75,6.03 -2.74,7.67 l -1.09,-1.34 c 1.94,-1.48 2.09,-4.73 2.09,-6.33 0,-1.94 -0.15,-7.56 -6.37,-7.56 -2.95,0 -2.95,1.73 -2.95,2.69 v 0 12.36 1.73 11.16 c 0,1 0,1.54 0.7,2.09 0.2,0.11 0.95,0.61 2.14,0.61 2.19,0 4.94,-1.75 4.94,-6.98 h 1.73 c 0,3.43 -1.09,5.57 -2.23,6.78 3.44,-0.41 6.97,-1.64 6.97,-6.58 0,-3.19 -3.49,-5.78 -6.77,-6.49 v 0 c 1.64,1.6 2.03,4.14 2.03,6.29 h -1.73 c 0,-5.58 -2.85,-6.77 -7.78,-6.88 V 423 c 3.98,0 5.68,0 7.23,-1.16 l 1.09,1.34 c 4.58,-0.75 7.83,-3.32 7.83,-7.67 h 1.74 c 0,5.19 -3.78,7.97 -7.42,8.97 z"
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke-width:0" /></g>    </g>
+  </g>
+</svg>
