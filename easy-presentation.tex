@@ -290,6 +290,7 @@
 	\vcenter{\hbox{\includegraphics[scale=0.5]{long-term-memory.png}}}
 	\end{equation}
 	\item 这种系统 已非常接近 strong AI
+	\item Content-addressable memory 的想法来自 Alex Graves \textit{et al} 的 Neural Turing Machine [2014]
 	\item 以前 BERT 的隐状态 没有逻辑结构，我们不是很清楚它的内容是什么； 这是有赖 \emp{逻辑化} 才能做到的
 \end{itemize}
 \end{frame}
@@ -323,6 +324,7 @@
 	& \mbox{苏格拉底} \cdot \mbox{会} \cdot \mbox{死}
 	\end{tikzcd}
 	\end{equation}
+	这个做法表面上很「粗暴」，但其实这个映射和 Curry-Howard 对应的映射，在结构上似乎是一样的
 
 	\item 集合元素 $a$ 是 $\exists x. P(x)$ 的证明，例如 Socrates 是 $\exists x. \mbox{mortal}(x)$ 的证明
 	\item 当 神经网络 \emp{调教} 某些元素的 映射 (mapping) 时，它同时在学习某个逻辑的 formula;  换句话说，逻辑 是几何空间中的映射
