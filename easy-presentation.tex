@@ -79,6 +79,7 @@
 
 \usepackage{graphicx} % Allows including images
 \usepackage{tikz-cd}
+\usepackage{tikz}
 \usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
 \usepackage{verbatim} % comments
 % \usepackage{tikz-cd}  % commutative diagrams
@@ -312,14 +313,23 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[plain]
+\begin{frame}[fragile]
 \begin{itemize}
+	\item BERT 似乎是在进行著 句子之间的变换，而这些句子其实是 word embedding 的 concatenation 而已，例如：
+	\begin{equation}
+	\begin{tikzcd}[column sep = large]
+	\mbox{苏格拉底} \cdot \mbox{是} \cdot \mbox{人}
+	\arrow[r, "BERT"]
+	& \mbox{苏格拉底} \cdot \mbox{会} \cdot \mbox{死}
+	\end{tikzcd}
+	\end{equation}
+
 	\item 集合元素 $a$ 是 $\exists x. P(x)$ 的证明，例如 Socrates 是 $\exists x. \mbox{mortal}(x)$ 的证明
 	\item 当 神经网络 \emp{调教} 某些元素的 映射 (mapping) 时，它同时在学习某个逻辑的 formula;  换句话说，逻辑 是几何空间中的映射
 	\item 逻辑的 谓词 (predicates) 是在 基底元素空间上的一个 \emp{纤维丛结构} (fibration)，记作 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle \pi}}$ :
-	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=0.5]{etale-space.png}}}
-	\end{equation}
+	%\begin{equation}
+	%\vcenter{\hbox{\includegraphics[scale=0.5]{etale-space.png}}}
+	%\end{equation}
 	这是从 几何／拓扑 ``借'' 来的概念，演变成 topos（拓扑斯）理论
 	\item 这套漂亮的理论 不是无用的； 长远来说，它可以指导 深度学习 和 逻辑 之间的 融合，例如\emp{诠释}一些 vectors 的逻辑含义
 \end{itemize}
