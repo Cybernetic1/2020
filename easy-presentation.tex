@@ -299,11 +299,12 @@
 \frametitle{再谈一次 逻辑结构}
 \begin{itemize}
 	\item 我发现 逻辑 和 AI 之间 有很漂亮的理论
-	\item 现代逻辑理论 揭示出某种 \emp{几何} (geometry) 结构
-	\item 大家 中／小学 时期 都熟悉 Venn diagrams，其实 命题逻辑 同构于 \emp{拓扑} (topology) 结构：
+	\item 现代逻辑理论 揭示出某些 \emp{几何} (geometry) 与 \emp{拓樸} (topology) 结构
+	\item 大家 中／小学 时期 都熟悉 Venn diagrams，其实 命题逻辑 具有 \emp{拓扑}结构：
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.4]{Venn-diagram.png}}}
 	\end{equation}
+	而 谓词 (predicates) 是在 base set 上面的 纤维化 (fibration), 记作 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle p}}$
 
 	\item 另方面，著名的 Curry-Howard isomorphism 揭示 \emp{逻辑证明} 与 \emp{编程语言} 之间的深刻关系：
 	\begin{eqnarray}
@@ -316,7 +317,7 @@
 
 \begin{frame}[fragile]
 \begin{itemize}
-	\item BERT 似乎是在进行著 句子之间的变换，而这些句子其实是 word embedding 的 concatenation 而已，例如：
+	\item BERT 似乎是在执行 句子之间的变换，而这些句子其实是 word embedding 的 concatenation 而已，例如：
 	\begin{equation}
 	\begin{tikzcd}[column sep = large]
 	\mbox{苏格拉底} \cdot \mbox{是} \cdot \mbox{人}
@@ -324,16 +325,20 @@
 	& \mbox{苏格拉底} \cdot \mbox{会} \cdot \mbox{死}
 	\end{tikzcd}
 	\end{equation}
-	这个做法表面上很「粗暴」，但其实这个映射和 Curry-Howard 对应的映射，在结构上似乎是一样的
+	这个做法看似很「粗暴」，但其实它和逻辑式子的作用一样：
+	\begin{equation}
+	\forall x. \; \mbox{Human}(x) \rightarrow \mbox{Mortal}(x)
+	\end{equation}
+	而这式子根据 Curry-Howard 对应於 上面的函数映射，这个映射保持 逻辑 predicate 的 几何／拓扑 结构
 
-	\item 集合元素 $a$ 是 $\exists x. P(x)$ 的证明，例如 Socrates 是 $\exists x. \mbox{mortal}(x)$ 的证明
-	\item 当 神经网络 \emp{调教} 某些元素的 映射 (mapping) 时，它同时在学习某个逻辑的 formula;  换句话说，逻辑 是几何空间中的映射
-	\item 逻辑的 谓词 (predicates) 是在 基底元素空间上的一个 \emp{纤维丛结构} (fibration)，记作 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle \pi}}$ :
+	% \item 集合元素 $a$ 是 $\exists x. P(x)$ 的证明，例如 Socrates 是 $\exists x. \mbox{mortal}(x)$ 的证明
+	% \item 当 神经网络 \emp{调教} 某些元素的 映射 (mapping) 时，它同时在学习某个逻辑的 formula;  换句话说，逻辑 是几何空间中的映射
+	% \item 逻辑的 谓词 (predicates) 是在 基底元素空间上的一个 \emp{纤维丛结构} (fibration) :
 	%\begin{equation}
 	%\vcenter{\hbox{\includegraphics[scale=0.5]{etale-space.png}}}
 	%\end{equation}
-	这是从 几何／拓扑 ``借'' 来的概念，演变成 topos（拓扑斯）理论
-	\item 这套漂亮的理论 不是无用的； 长远来说，它可以指导 深度学习 和 逻辑 之间的 融合，例如\emp{诠释}一些 vectors 的逻辑含义
+	\item 从 几何／拓扑 ``借'' 来的概念，演变成 topos 理论、HoTT (homotopy type theory) 等
+	\item 这些漂亮的理论 不是无用的； 长远来说，它可以指导 深度学习 和 逻辑 之间的 融合，但暂时来说，我只利用了 commutativity
 \end{itemize}
 \end{frame}
 
