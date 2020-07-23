@@ -293,6 +293,7 @@
 	\item Content-addressable memory 的想法来自 Alex Graves \textit{et al} 的 Neural Turing Machine [2014]
 	\item 以前 BERT 的隐状态 没有逻辑结构，我们不是很清楚它的内容是什么； 这是有赖 \emp{逻辑化} 才能做到的
 \end{itemize}
+\nocite{Graves2014}
 \end{frame}
 
 \begin{frame}
@@ -329,7 +330,9 @@
 	\begin{equation}
 	\forall x. \; \mbox{Human}(x) \rightarrow \mbox{Mortal}(x)
 	\end{equation}
-	而这式子根据 Curry-Howard 对应於 上面的函数映射，这个映射保持 逻辑 predicate 的 几何／拓扑 结构
+	而这式子根据 Curry-Howard 对应於 上面的函数映射
+	
+	\item 这些映射的对象，暂时未有指定（我们只引入了 commutativity），但更进一步可以是 predicates 的几何／拓扑结构
 
 	% \item 集合元素 $a$ 是 $\exists x. P(x)$ 的证明，例如 Socrates 是 $\exists x. \mbox{mortal}(x)$ 的证明
 	% \item 当 神经网络 \emp{调教} 某些元素的 映射 (mapping) 时，它同时在学习某个逻辑的 formula;  换句话说，逻辑 是几何空间中的映射
@@ -338,7 +341,7 @@
 	%\vcenter{\hbox{\includegraphics[scale=0.5]{etale-space.png}}}
 	%\end{equation}
 	\item 从 几何／拓扑 ``借'' 来的概念，演变成 topos 理论、HoTT (homotopy type theory) 等
-	\item 这些漂亮的理论 不是无用的； 长远来说，它可以指导 深度学习 和 逻辑 之间的 融合，但暂时来说，我只利用了 commutativity
+	\item 这些漂亮的理论 不是无用的； 有必要时，可以從 邏輯 那邊借來更多的結構
 \end{itemize}
 \end{frame}
 
