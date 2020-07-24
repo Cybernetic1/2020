@@ -7,6 +7,7 @@
 \newcommand{\cc}[2]{#1}
 \else
 \newcommand{\cc}[2]{#2}
+\renewcommand{\baselinestretch}{0.8} 
 \fi
 
 %\usepackage{newtxtext,newtxmath}	% use Times Roman font
@@ -231,7 +232,7 @@
 
 	\item \cc{我浪费了两年时间试图解决这问题，却发现在3年前已经有两篇论文解决了 [PointNet 2017] [DeepSets 2017]，而且数学水平比我高很多！
 	}
-	{I wasted 2 years trying to solve this problem, but found out that it has been solved 3 years ago:  [PointNet 2017] and [DeepSets 2018] and their mastery of mathematics is significantly above me!}
+	{I wasted 2 years trying to solve this problem, and then find out it has been solved 3 years ago:  [PointNet 2017] and [DeepSets 2017] and their mastery of mathematics is significantly above me!}
 
 	\item Any symmetric function can be represented by the following form (a special case of the Kolmogorov-Arnold representation of functions):
 	\begin{equation}
@@ -259,40 +260,47 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{应用：知识图谱 (knowledge graphs)}
+\frametitle{\cc{应用：知识图谱 (knowledge graphs)}{Application: knowledge graphs}}
 \begin{itemize}
-	\item 知识图谱 不能直接输入神经网络，它必需分拆成很多 edges，每个 edge 是一个 \emp{关系}，也是一个 \emp{逻辑命题} ；也可以说 ``graphs are isomorphic to logic''
+	\item \cc{知识图谱 不能直接输入神经网络，它必需分拆成很多 edges，每个 edge 是一个 \emp{关系}，也是一个 \emp{逻辑命题} ；也可以说 ``graphs are isomorphic to logic''}
+	{One cannot feed a knowledge graph directly into an NN, as its input must be embedded in vector space.  A solution is to break the graph into edges, where each edge is equivalent to a relation or proposition.  One could say that graphs are isomorphic to logic}
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.6]{knowledge-graph.png}}}
 	\end{equation}
-	\item 而这些 edges 似乎必需用 \emp{symmetric} NN 处理，因为它们是 permutation invariant
+	\item \cc{而这些 edges 似乎必需用 \emp{symmetric} NN 处理，因为它们是 permutation invariant}
+	{Since edges are invariant under permutations, it appears that symmetric NNs are required to process them}
 	% \item Sym NNs are required to handle \emp{graph-rewriting}, an essential operation on knowledge graphs
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{\cc{应用：BERT 的逻辑化}{Logicalization of BERT}}
+\frametitle{\cc{应用：BERT 的逻辑化}{Application: logicalization of BERT}}
 \begin{itemize}
-	\item 类似地，可以将 BERT 的 隐状态 变成 ``set of propositions'' 的形式，方法是将 原来的 decoder 变成 sym NN：
+	\item \cc{类似地，可以将 BERT 的 隐状态 变成 ``set of propositions'' 的形式，方法是将 原来的 decoder 变成 sym NN：}
+	{Similarly, we can convert BERT's hidden state into a set of propositions, by replacing the original \emp{decoder} with a sym NN:}
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.6]{new-BERT.png}}}
 	\end{equation}
-	\item 原来的 encoder 可以照旧使用，因为后半部改变了，error propagation 会令 representation 也改变
-	\item 当然，这个想法有待实验证实 \smiley
+	\item \cc{原来的 encoder 可以照旧使用，因为后半部改变了，error propagation 会令 representation 也改变}
+	{The original \emp{encoder} can be retained.  As the \emp{decoder} imposes symmetry on the hidden state, error propagation is expected to cause its representation to change}
+	\item \cc{当然，这个想法有待实验证实 \smiley}
+	{Of course, this remains to be proven by experiment \smiley}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{应用：content-addressable long-term memory}
+\frametitle{\cc{应用：}{Application:} content-addressable long-term memory}
 \begin{itemize}
-	\item 将 BERT 的内部状态 逻辑化之后，可以储存在 \emp{长期记忆} 中：
+	\item \cc{以前 BERT 的隐状态 没有逻辑结构，我们不是很清楚它的内容是什么； 逻辑化之后，BERT 内部的命题可以储存在 \emp{长期记忆} 中：}
+	{The original BERT hidden state lacked a logical structure and it was not clear what exactly it contains.  After logicalization, propositions inside BERT can be stored into \emp{long-term memory}:}
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.5]{long-term-memory.png}}}
 	\end{equation}
-	\item 这种系统 已非常接近 strong AI
-	\item Content-addressable memory 的想法来自 Alex Graves \textit{et al} 的 Neural Turing Machine [2014]
-	\item 以前 BERT 的隐状态 没有逻辑结构，我们不是很清楚它的内容是什么； 这是有赖 \emp{逻辑化} 才能做到的
-\end{itemize}
+	\item \cc{这种系统 已非常接近 strong AI，而这是有赖 \emp{逻辑化} 才能做到的}
+	{These kind of systems are very close to strong AI, and it depends crucially on logicalization}
+	\item \cc{Content-addressable memory 的想法来自 Alex Graves \textit{et al} 的 Neural Turing Machine [2014]}
+	{The content-addressable memory idea came from Alex Graves \textit{et al}'s Neural Turing Machine [2014]}
+ \end{itemize}
 \nocite{Graves2014}
 \end{frame}
 
