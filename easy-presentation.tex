@@ -326,7 +326,7 @@
 
 \begin{frame}[fragile]
 \begin{itemize}
-	\item BERT 似乎是在执行 句子之间的变换，而这些句子其实是 word embedding 的 concatenation 而已，例如：
+	\item BERT 似乎是在执行 句子之间的变换，而这些句子是 word embedding 的 concatenation，例如：
 	\begin{equation}
 	\begin{tikzcd}[column sep = large]
 	\mbox{苏格拉底} \cdot \mbox{是} \cdot \mbox{人}
@@ -334,13 +334,13 @@
 	& \mbox{苏格拉底} \cdot \mbox{会} \cdot \mbox{死}
 	\end{tikzcd}
 	\end{equation}
-	这个做法看似很「粗暴」，但其实它和逻辑式子的作用一样：
+	这个做法看似很「粗暴」，其实它和逻辑式子的作用一样：
 	\begin{equation}
 	\forall x. \; \mbox{Human}(x) \rightarrow \mbox{Mortal}(x)
 	\end{equation}
-	而这式子根据 Curry-Howard 对应於 上面的函数映射
+	而这式子，根据 Curry-Howard 对应，就是上面的函数映射
 	
-	\item 这些映射的对象，暂时未有指定（我们只引入了 commutativity），但更进一步可以是 predicates 的几何／拓扑结构
+	\item 这些映射的对象，是形如 ``$a \in A$'' 这样的物体，它们有 predicates 的几何／拓扑结构，但我们现时未做到这一步，暂时只引入了 commutativity
 
 	% \item 集合元素 $a$ 是 $\exists x. P(x)$ 的证明，例如 Socrates 是 $\exists x. \mbox{mortal}(x)$ 的证明
 	% \item 当 神经网络 \emp{调教} 某些元素的 映射 (mapping) 时，它同时在学习某个逻辑的 formula;  换句话说，逻辑 是几何空间中的映射
@@ -349,7 +349,7 @@
 	%\vcenter{\hbox{\includegraphics[scale=0.5]{etale-space.png}}}
 	%\end{equation}
 	\item 从 几何／拓扑 ``借'' 来的概念，演变成 topos 理论、HoTT (homotopy type theory) 等
-	\item 这些漂亮的理论 不是无用的； 有必要时，可以從 邏輯 那邊借來更多的結構
+	\item 这些漂亮的理论 不是无用的； 有需要时，可以從 邏輯 那邊借來更多的結構
 \end{itemize}
 \end{frame}
 
@@ -360,7 +360,7 @@
 \textbf{Illustration credits:}
 \begin{itemize}
 	\item Translation invariance, from Udacity Course 730, Deep Learning (L3 Convolutional Neural Networks $\rhd$ Convolutional Networks)
-	\item \'{E}tale space, from Topoi -- The Categorical Analysis of Logic [Goldblatt 2006]
+	% \item \'{E}tale space, from Topoi -- The Categorical Analysis of Logic [Goldblatt 2006]
 \end{itemize}
 \end{frame}
 

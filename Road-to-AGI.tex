@@ -444,8 +444,8 @@
 \frametitle{Topos theory and fibrations}
 \begin{itemize}
 	\item Predicate logic （谓词逻辑）和 命题逻辑 之间的差异在於 fibration 结构
-	\item Fibration 通常用 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle \pi}}$ 表示，$\mathbb{B}$ = base space, $\mathbb{E}$ = entire space, $\pi$ = projection
-	\item Base space 是 type 的空间，entire space 是 predicate 的空间
+	\item Fibration 通常用 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle p}}$ 表示，$\mathbb{B}$ = base space, $\mathbb{E}$ = \`{e}tal\`{e} space, $p$ = projection
+	\item Base space 是 type 的空间，\`{e}tale space 是 predicate 的空间
 	\item 由於 Curry-Howard 对应, type = propositions，在 base 空间上只有 命题逻辑
 	\item 例如 $\mathbb{B}$ 空间的一个 type 是 $\mathrm{Human}$，$\mathbb{E}$ 空间的一个谓词是 $\mathrm{Mortal}$
 	\item 於是有以下这个 type inference rule:
@@ -453,17 +453,14 @@
 	i:\mathrm{Human} \vdash \mathrm{Mortal}(i): \mathsf{Prop}
 	\end{equation}
 	意思是说，如果 $i$ 属於 $\mathrm{Human}$ 类型，则 $\mathrm{Mortal}(i)$ 属於 $\mathsf{Prop}$ 类型
-	\item 
 \end{itemize}
 \end{frame}
 
 \begin{frame}[plain,allowframebreaks]
 \begin{itemize}
-	\item Map proofs to proofs, is this OK in the propositional case?
-	\item What is a proof anyway?
-	\item What is the proof of $H(a)$? Is it $a \in H$ or $a:H$?
-	\item $H$ could be a type but it is not a single proposition.  $H(a)$ would be a type.
-	\item Then what is the proof of $H(a)$?  Perhaps the tuple $(H,a)$?
+	\item $H(a)$ is a type.
+	\item $H$ is a prodicate type.
+	\item The proof of $H(a)$ may be the tuple $(a, H)$ or $a \in H$
 \end{itemize}
 \end{frame}
 
