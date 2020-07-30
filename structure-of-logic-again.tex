@@ -166,6 +166,183 @@
 %\end{frame}
 
 \begin{frame}
+\frametitle{Curry-Howard isomorphism}
+\begin{itemize}
+	\item Curry-Howard isomorphism 是现代逻辑的 核心思想，但我初时没有留意，以致很多东西 看不懂，明白之后 豁然开朗
+	
+	\item 它讲的是 \emp{逻辑证明} 与 \emp{计算} 之间的深刻关系：
+	\begin{eqnarray}
+	\mbox{逻辑} & \Leftrightarrow & \mbox{type theory} \\
+	\mbox{逻辑证明} & \Leftrightarrow & \mbox{programs} \nonumber
+	\end{eqnarray}
+	% \item 程式 是一些 \emp{函数}，而 神经网络 也是非线性的函数\emp{映射}，所以 神经网络 也\emp{对应于} 逻辑推理
+	
+	\item 先看 $\Rightarrow$： 逻辑是一些 符号／形式上 的推导，所以 逻辑证明 (derivations) 必然对应於某种 计算 (computation)，这很容易理解
+	
+	\item 再看 $\Leftarrow$： 当人们企图定义 普遍的计算模式 (models of computation) 时，发觉 总是对应於 某些逻辑； 这一点比较神秘，我也不完全了解
+
+	\item 这个关系的 发现者 至少包括:  Brouwer-Heyting-Kolmogorov-Curry-\mbox{de Bruijn}-Howard
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Type theory}
+\begin{itemize}
+	\item 首先了解一下 type theory, 它起源於 Bertrand Russell 为了避开 数理逻辑上的 悖论 (paradox) 的尝试
+
+	\item 后来发现 type thoery 用来定义 \emp{programs} 很有用
+
+	\item 大家都知道 Lisp 语言没有 types，它是一种 untyped $\lambda$-calculus
+
+	\item 在 Lisp 之上引入 type system，衍生成 ML, Caml, OCaml, Haskell, 等 一系列的语言
+
+	\item 每一个 program 属於某个 type，例如 $\mathrm{length}()$ 函数：
+	\begin{equation}
+	\mathrm{length} : \mathsf{String} \rightarrow \mathsf{Integer}
+	\end{equation}
+	它输入一个 字串，输出一个 整数（字串的长度）
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Curry-Howard isomorphism 的一些细节}
+\begin{itemize}
+	\item 例如 我们定义一个函数 $f$, 由 $A$ 类 映射到 $B$ 类：
+	\begin{equation}
+	f: A \rightarrow B
+	\end{equation}
+
+	\item 这对应於 逻辑上「A 蕴涵 B」的关系：
+	\begin{equation}
+	A \Rightarrow B
+	\end{equation}
+	
+	\item \cc{逻辑上，每个命题 $A$ 都有一个 \emp{proof object} 或 \emp{witness}, 记作 $\square : A$}
+	{In logic, for each proposition $A$ would be associated a \emp{proof object} or \emp{witness} $\square : A$}
+
+	\item 而函数 $f$ 就是将 $a:A$ （A 的证明）映射到 $b:B$ （B 的证明）:
+	\begin{equation}
+	f: a \mapsto b
+	\end{equation}
+
+	\item 类似地，有函数可以将 两个分开的命题 $A$ 和 $B$ 的证明 映射到 $A \wedge B$ 的证明，这里不赘述了
+	
+	\item 简言之，可以建立 \emp{命题逻辑} 的 $\Rightarrow, \wedge, \vee, \neg$ 对应到一些函数上，这些函数用 typed $\lambda$-calculus 定义
+	
+	\item 但与 $\lambda$-calculus 对应的逻辑 没有 \emp{排中律}，它是 intuitionistic logic.  这种逻辑 符合 数学上的 构造主义 (constructivism)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{谓词逻辑 (predicate logic)}
+\begin{itemize}
+	\item 刚才说明了，type theory 对应於 命题逻辑
+	
+	\item 如果要处理 predicates，需要一些 特殊的 types
+	
+	\item Predicate 就是一个有「洞」的命题，填入某些 objects 之后变成真正的命题
+	
+	\item 换句话说 predicate $P$ 是一个函数 $P: X \rightarrow \mathcal{U}$，对每个 $x$ 产生 $P(x)$，这 $P(x)$ 也是一个 type, 而 $\mathcal{U}$ 是所有 types 的 universe
+
+	\item 这样会产生一些不是很像「命题」的 types，例如 自然数的类 $\mathbb{N}$, 似乎不是命题； 关於这点我暂时仍不太清楚
+
+	\item 重点是： type theory 很自然地 \emp{同构}於 categories，with objects = types and morphisms = function types ($A \rightarrow B$)
+	
+	\item 而在 categories 中，predicate 的结构可以用 \emp{fibration} 描述，记作
+	$\mathrel{\substack{\mathbf{Pred}\\\downarrow\\\mathbf{Set}}}$
+	
+	\item Fibrations 符合某种 universal property，是从代数几何／拓扑 借来的概念
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Curry-Howard isomorphism 的意义}
+\begin{itemize}
+	\item 有些逻辑学家 察觉到 类型论 的 $\tau_1 \rightarrow \tau_2$ 和逻辑中 $P \rightarrow Q$ 是一模一样的
+	
+	\item 这关系的深刻之处，在於把 符号逻辑上的 proofs 和 程式语言 的 programs 划上等号，前者是 符号／静态的，后者是 程序／动态的
+	
+	\item 每个 proof 就是一个 program，它输入一些 arguments，输出 关於那些 arguments 的证明
+	
+	\item 例如： 「所有人都会死」是一个 program，它输入「苏格拉底」，输出「苏格拉底会死」 
+	
+	\item 这个对应也許可以应用到深度学习： 神经网络 也是一種 函數 / mapping，它将 逻辑前提 map 到结论
+	
+	\item 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Logic's topology and geometry}
+\begin{itemize}
+	\item 总结一下，大家 中／小学 时期 都熟悉 Venn diagrams，其实 命题逻辑 具有 \emp{拓扑}的 open sets 结构：
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.4]{Venn-diagram.png}}}
+	\end{equation}
+	
+	\item 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{和 AI 的关系}
+\begin{itemize}
+	\item 那既然 AI 基於 逻辑，而逻辑的结构 如上所述，则 AI 与逻辑之间 必然存在 精确 (precise) 的联系
+	
+	\item 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{逻辑的 invariance 结构}
+\begin{itemize}
+	\item 以前曾经说过，机器视觉 的成功，有赖於 将 视觉的几何结构 impose 在深度神经网络上
+	\item 这 深度神经网络 原本是 ``free'' 的，但加了限制之后，权重空间 变小了（例如维数降低），所以学习加速了
+	\item 所谓 symmetry 的意义，简单例子：「如果知道左边等於右边，那就只需计算一次」
+	\item 换句话说，数学家喜欢对称性，是因为它经常可以简化计算
+	\item 同理，我们想将 逻辑结构 的对称性 impose 到神经网络
+	\item 实际上，可能只需要逻辑上的交换律，就可以达到 强人工智能，正如 机器视觉的成功，在於引入了 CNN 的 convolution 结构，后者只是 视觉不变性 的其中一个最显著的 invariant
+	\item 现代逻辑理论 非常漂亮，我花了十多年时间才弄懂，我希望将这套 逻辑-学习 理论简单讲解一下，也算功德完满了
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{itemize}
+\item 在经典时代，逻辑的 代数形式 可以用 Boolean algebra 表述，然而这方法只适用於 命题逻辑
+\item Boolean algebra 是中学生熟悉的，类似 Venn diagram 的结构
+\item 这种结构和 拓樸学 的 open sets 结构一样，所以 命题逻辑 也可以看成是一种 topology
+\item 然而 predicate logic 的结构更复杂，直到最近才有比较完善的表述
+\item 现代逻辑结构和 type theory 有深刻的关系，此即 Curry-Howard isomorphism
+\item 现代逻辑也涉及 topos theory，那是一种由 algebraic geometry 引入的结构
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Topos theory and fibrations}
+\begin{itemize}
+\item Predicate logic （谓词逻辑）和 命题逻辑 之间的差异在於 fibration 结构
+\item Fibration 通常用 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle p}}$ 表示，$\mathbb{B}$ = base space, $\mathbb{E}$ = \`{e}tal\`{e} space, $p$ = projection
+\item Base space 是 type 的空间，\`{e}tale space 是 predicate 的空间
+\item 由於 Curry-Howard 对应, type = propositions，在 base 空间上只有 命题逻辑
+\item 例如 $\mathbb{B}$ 空间的一个 type 是 $\mathrm{Human}$，$\mathbb{E}$ 空间的一个谓词是 $\mathrm{Mortal}$
+\item 於是有以下这个 type inference rule:
+\begin{equation}
+i:\mathrm{Human} \vdash \mathrm{Mortal}(i): \mathsf{Prop}
+\end{equation}
+意思是说，如果 $i$ 属於 $\mathrm{Human}$ 类型，则 $\mathrm{Mortal}(i)$ 属於 $\mathsf{Prop}$ 类型
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain,allowframebreaks]
+\begin{itemize}
+\item $H(a)$ is a type.
+\item $H$ is a prodicate type.
+\item The proof of $H(a)$ may be the tuple $(a, H)$ or $a \in H$
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
 \frametitle{「神经」知识表示}
 为什么要研究 神经知识表示？
 \begin{itemize}
@@ -243,69 +420,6 @@
 	\item 一个复杂情境 可以用若干个 特征簇 描述
 	
 	\item Equivalently, 复杂情境 可以用 \emp{逻辑} 表示，就是一大堆 逻辑命题 的 conjunction，这些命题 钜细无遗 地描述该情境
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{再谈一次 逻辑结构}
-\begin{itemize}
-	\item 以前曾经说过，机器视觉 的成功，有赖於 将 视觉的几何结构 impose 在深度神经网络上
-	\item 这 深度神经网络 原本是 ``free'' 的，但加了限制之后，权重空间 变小了（例如维数降低），所以学习加速了
-	\item 所谓 symmetry 的意义，简单例子：「如果知道左边等於右边，那就只需计算一次」
-	\item 换句话说，数学家喜欢对称性，是因为它经常可以简化计算
-	\item 同理，我们想将 逻辑结构 的对称性 impose 到神经网络
-	\item 实际上，可能只需要逻辑上的交换律，就可以达到 强人工智能，正如 机器视觉的成功，在於引入了 CNN 的 convolution 结构，后者只是 视觉不变性 的其中一个最显著的 invariant
-	\item 现代逻辑理论 非常漂亮，我花了十多年时间才弄懂，我希望将这套 逻辑-学习 理论简单讲解一下，也算功德完满了
-\end{itemize}
-\end{frame}
-
-\begin{frame}[plain]
-\begin{itemize}
-	\item 在经典时代，逻辑的 代数形式 可以用 Boolean algebra 表述，然而这方法只适用於 命题逻辑
-	\item Boolean algebra 是中学生熟悉的，类似 Venn diagram 的结构
-	\item 这种结构和 拓樸学 的 open sets 结构一样，所以 命题逻辑 也可以看成是一种 topology
-	\item 然而 predicate logic 的结构更复杂，直到最近才有比较完善的表述
-	\item 现代逻辑结构和 type theory 有深刻的关系，此即 Curry-Howard isomorphism
-	\item 现代逻辑也涉及 topos theory，那是一种由 algebraic geometry 引入的结构
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Type theory and the Curry-Howard isomorphism}
-\begin{itemize}
-	\item 大家都知道 Lisp 语言没有 type，它是一种 untyped $\lambda$-calculus
-	\item 在 Lisp 之上引入 type system，衍生成 ML, Caml, OCaml, Haskell 等 一系列语言
-	\item 每一个 program 属於某个 type，例如 $\mathrm{length}()$ 函数，输入一个字串，输出它的长度； $\mathrm{length} : \mathsf{String} \rightarrow \mathsf{Integer}$
-	\item 有些逻辑学家 察觉到 类型论 的 $\tau_1 \rightarrow \tau_2$ 和逻辑中 $P \rightarrow Q$ 是一模一样的
-	\item 这个关系的发现者至少包括:  Brouwer-Heyting-Kolmogorov-Curry-\mbox{de Bruijn}-Howard
-	\item 这关系的深刻之处，在於把 符号逻辑上的 proofs 和 程式语言 的 programs 划上等号，前者是 符号／静态的，后者是 程序／动态的
-	\item 每个 proof 就是一个 program，它输入一些 arguments，输出 关於那些 arguments 的证明
-	\item 例如： 「所有人都会死」是一个 program，它输入「苏格拉底」，输出「苏格拉底会死」 
-	\item 这个对应也許可以应用到深度学习： 神经网络 也是一種 函數 / mapping，它将 逻辑前提 map 到结论
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Topos theory and fibrations}
-\begin{itemize}
-	\item Predicate logic （谓词逻辑）和 命题逻辑 之间的差异在於 fibration 结构
-	\item Fibration 通常用 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle p}}$ 表示，$\mathbb{B}$ = base space, $\mathbb{E}$ = \`{e}tal\`{e} space, $p$ = projection
-	\item Base space 是 type 的空间，\`{e}tale space 是 predicate 的空间
-	\item 由於 Curry-Howard 对应, type = propositions，在 base 空间上只有 命题逻辑
-	\item 例如 $\mathbb{B}$ 空间的一个 type 是 $\mathrm{Human}$，$\mathbb{E}$ 空间的一个谓词是 $\mathrm{Mortal}$
-	\item 於是有以下这个 type inference rule:
-	\begin{equation}
-	i:\mathrm{Human} \vdash \mathrm{Mortal}(i): \mathsf{Prop}
-	\end{equation}
-	意思是说，如果 $i$ 属於 $\mathrm{Human}$ 类型，则 $\mathrm{Mortal}(i)$ 属於 $\mathsf{Prop}$ 类型
-\end{itemize}
-\end{frame}
-
-\begin{frame}[plain,allowframebreaks]
-\begin{itemize}
-	\item $H(a)$ is a type.
-	\item $H$ is a prodicate type.
-	\item The proof of $H(a)$ may be the tuple $(a, H)$ or $a \in H$
 \end{itemize}
 \end{frame}
 
