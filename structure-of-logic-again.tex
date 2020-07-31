@@ -145,8 +145,8 @@
 \begin{frame}[noframenumbering]
 \frametitle{Table of contents}
 \listofframes
-\vspace*{0.5cm}
-多谢 支持 \smiley
+% \vspace*{0.5cm}
+% 多谢 支持 \smiley
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -307,14 +307,33 @@
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.4]{Voevodsky.jpg}}}
 	\end{equation}
-	
-	\item 
-	
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{itemize}
+	\item HoTT
+
+	\item These levels:
+	\begin{itemize}
+		\item \textbf{Level 0:} up to homotopy equivalence there is just one contractible space that we call ``point'' and denote $pt$
+		
+		\item \textbf{Level 1:} up to homotopy equivalence there are 2 spaces at this level:  the \textbf{empty space} $\varnothing$ and the \textbf{point} $pt$.  We call them \textbf{truth values}.  We also refer to types of this level as \textbf{properties} and \textbf{propositions}.  Propositional logic lives at $h$-level 1
+		
+		\item \textbf{Level 2:}  Types of this level are characterized by the property that their path spaces are with empty or contractible.  So such types are disjoint unions fo contractible components (points), or in other words \textbf{sets} of points.  This will be our working notion of set available in this framework.
+		
+		\item \textbf{Level 3:}  Types of this level are characterized by the property that their path spaces are sets (up to homotopy equivalence).  These are obviously (ordinary flat) \textbf{groupoids} (with path spaces hom-sets)
+		
+		\item \textbf{Level 4:}  Here we get 2-groupoids
+		
+		\tab \vdots
+		\item \textbf{Level $n$ + 2:}  $n$-groupoids
+	\end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{和 AI 的关系}
+\frametitle{逻辑 与 AI 之间的关系}
 \begin{itemize}
 	\item 那既然 AI 基於 逻辑，而逻辑的结构 如上所述，则 AI 与逻辑之间 必然存在 精确 (precise) 的联系
 

@@ -124,7 +124,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Logic BERT]{{\Huge《Logic BERT》}}
+\title[Logic BERT]{Supplement 1: \vspace*{0.3cm} \\ {\Huge《Logic BERT》}}
 \author{YKY} % Your name
 %\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 %{
@@ -337,15 +337,21 @@ c_i = \sum_j \alpha_{ij} h_j
 \begin{frame}
 \frametitle{``Attention is all you need'' ?}
 \begin{itemize}
-\item 逻辑 attention 和 传统 attention 要求略有不同，这是关键的一步
+\item 但逻辑 attention 和一般 attention 要求略有不同
 
 \item 不是「同类映射到同类」，而是要在庞大的 logic rules 空间中找到适用(applicable)的 rules
 
 \item 隐状态 $s_t$ 代表 ``search state''，注意力 的目的是 \emp{选择} $s_t$ 所需要的那些命题，交给 解码器
 
-\item 注意： 逻辑 attention 从 $M$ 个命题中 选择 $N$ 个命题，$M > N$. 这是 inductive bias. \ 而 Symmetric NN 的做法，只是要求 $M$ 个命题 的 \emp{置换不变性}，所以它浪费了资源在很多 ``don't care'' 的命题上
+\item 注意： 逻辑 attention 从 $M$ 个命题中 选择 $N$ 个命题，$M > N$. 这是 inductive bias. \ 而 symmetric NN 的做法，只是要求 $M$ 个命题 的 \emp{置换不变性}，所以它浪费了资源在很多 ``don't care'' 的命题上
 
-\item 换句话说，selection 所带来的 bias 如果足够强，似乎不需要 symmetric. \  很巧合地，再次应验了 ``attention is all you need'' 这句话
+\item 换句话说，attention 或者可以加强 sym NN 的效率，甚至取代 sym NN
+
+\item 假设 $q$ 是（包含多个命题的）逻辑 state，$\bowtie$ 表示 matching by attention:
+	\begin{equation}
+	q \bowtie \mbox{rule} \rightarrow \mbox{conclusion}
+	\end{equation}
+Thus, each row in the attention matrix 对应於一条 logic rule.  这是一种 ``flat'' 的 representation of rules, 但 sym NN 采用的是有「深度」的 representation.  这是值得再思考的问题
 \end{itemize}
 \end{frame}
 
