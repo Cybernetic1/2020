@@ -1,23 +1,27 @@
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}1\hfill }{Curry-Howard isomorphism}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}1\hfill }{背景： 利用 invariance 加速学习}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}2\hfill }{Type theory}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}2\hfill }{逻辑的 几何 与 拓扑 结构}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}3\hfill }{Curry-Howard isomorphism 的一些细节}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}3\hfill }{Curry-Howard isomorphism}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}4\hfill }{谓词逻辑 (predicate logic)}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}4\hfill }{Type theory}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}5\hfill }{Curry-Howard isomorphism 的意义}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}5\hfill }{Curry-Howard isomorphism 的一些细节}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}6\hfill }{Logic's topology and geometry}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}6\hfill }{谓词逻辑 (predicate logic)}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}7\hfill }{HoTT (homotopy type theory)}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}7\hfill }{Curry-Howard isomorphism 的意义}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}9\hfill }{和 AI 的关系}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}8\hfill }{Topos theory and fibrations}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}10\hfill }{逻辑的 invariance 结构}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}9\hfill }{Logic's topology and geometry}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}12\hfill }{Topos theory and fibrations}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}10\hfill }{HoTT (homotopy type theory)}\par }
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}12\hfill }{逻辑 与 AI 之间的关系}\par }
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}13\hfill }{对 逻辑主义 的质疑}\par }
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}14\hfill }{「神经」知识表示}\par }
 \defcounter {refsection}{0}\relax 
@@ -25,8 +29,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}16\hfill }{高阶 特徵}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}17\hfill }{对 逻辑主义 的质疑}\par }
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}18\hfill }{关於 ``model-based reasoning'' 的质疑}\par }
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}19\hfill }{神经 $\leftrightarrow $ 逻辑 correspondence}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}17\hfill }{References}\par }

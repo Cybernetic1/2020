@@ -122,7 +122,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Structure of logic once more]{\cc{再谈一次 AI 的逻辑结构}
+\title[Structure of logic once more]{Supplement 2: \\ \vspace*{0.3cm} \cc{再谈一次 AI 的逻辑结构}
 {\Huge《AI and the structure of logic, once more》}}
 \author{\cc{YKY 甄景贤}{YKY}} % Your name
 %\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -166,6 +166,31 @@
 %	\item 命题空间 $\mathbb{P}\mathrm{rop}$
 %\end{itemize}
 %\end{frame}
+
+\begin{frame}
+\frametitle{背景： 利用 invariance 加速学习}
+\begin{itemize}
+	\item 以前曾经说过，机器视觉 的成功，有赖於 将 视觉的几何结构 impose 在深度神经网络上
+	\item 这 深度神经网络 原本是 ``free'' 的，但加了限制之后，权重空间 变小了（例如维数降低），所以学习加速了
+	\item 所谓 symmetry 的意义，简单例子：「如果知道左边等於右边，那就只需计算一次」
+	\item 换句话说，数学家喜欢对称性，是因为它经常可以简化计算
+	\item 同理，我们想将 逻辑结构 的对称性 impose 到神经网络
+	\item 实际上，可能只需要逻辑上的交换律，就可以达到 强人工智能，正如 机器视觉的成功，在於引入了 CNN 的 convolution 结构，后者只是 视觉不变性 的其中一个最显著的 invariant
+	\item 现代逻辑理论非常漂亮，我花了十多年时间才弄懂，我希望将这套 逻辑-学习 理论简单讲解一下，也算功德完满了
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{逻辑的 几何 与 拓扑 结构}
+\begin{itemize}
+\item 在经典时代，逻辑的 代数形式 可以用 Boolean algebra 表述，然而这方法只适用於 命题逻辑
+\item Boolean algebra 是中学生熟悉的，类似 Venn diagram 的结构
+\item 这种结构和 拓樸学 的 open sets 结构一样，所以 命题逻辑 也可以看成是一种 topology
+\item 然而 predicate logic 的结构更复杂，直到最近才有比较完善的表述
+\item 现代逻辑结构和 type theory 有深刻的关系，此即 Curry-Howard isomorphism
+\item 现代逻辑也涉及 topos theory，那是一种由 algebraic geometry 引入的结构
+\end{itemize}
+\end{frame}
 
 \begin{frame}
 \frametitle{Curry-Howard isomorphism}
@@ -258,19 +283,36 @@
 \begin{frame}
 \frametitle{Curry-Howard isomorphism 的意义}
 \begin{itemize}
-	\item 有些逻辑学家 察觉到 类型论 的 $\tau_1 \rightarrow \tau_2$ 和逻辑中 $P \rightarrow Q$ 是一模一样的
-	
-	\item 这个关系的 发现者 至少包括:  Brouwer-Heyting-Kolmogorov-Curry-\mbox{de Bruijn}-Howard
-	
+	\item 有些逻辑学家 察觉到 类型论 的 $A \rightarrow B$ 和逻辑中 $A \Rightarrow B$ 是一模一样的
+
+	\item 这个关系的 发现者 至少包括:  Brouwer-Heyting-Kolmogorov-Sch\"{o}nfinkel-Curry-Meredith-Kleene-Feys-G\"{o}del-L\"{a}uchli-Kreisel-Tait-Lawvere-Howard-\mbox{de Bruijn}-Scott-Martin-L\"{o}f-Girard-Reynolds-Stenlund-Constable-Coquand-Huet-....
+
 	\item 这关系的深刻之处，在於把 符号逻辑上的 proofs 和 程式语言 的 programs 划上等号，前者是 符号／静态的，后者是 程序／动态的
 	
 	\item 每个 proof 就是一个 program，它输入一些 arguments，输出 关於那些 arguments 的证明
 	
 	\item 例如： 「所有人都会死」是一个 program，它输入「苏格拉底」，输出「苏格拉底会死」 
 	
-	\item 这个对应也許可以应用到深度学习： 神经网络 也是一種 函數 / mapping，它将 逻辑前提 map 到结论
+	\item 我发现 这个对应 也可以应用到 深度学习： 神经网络 也是一種 函數 / mapping，它将 逻辑前提 map 到结论
 \end{itemize}
 \end{frame}
+
+\begin{frame}
+\frametitle{Topos theory and fibrations}
+\begin{itemize}
+	\item Predicate logic （谓词逻辑）和 命题逻辑 之间的差异在於 fibration 结构
+	\item Fibration 通常用 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle \pi}}$ 表示，$\mathbb{B}$ = base space, $\mathbb{E}$ = \`{e}tal\`{e} space, $\pi$ = projection
+	\item 例如 base space 是一个 base set, \`{e}tale space 是这个集合上的 predicates
+	\item 由於 Curry-Howard 对应, type = propositions，在 base 空间上只有 命题逻辑
+	\item 例如 $\mathbb{B}$ 空间的一个 type 是 $\mathrm{Human}$，$\mathbb{E}$ 空间的一个谓词是 $\mathrm{Mortal}$
+	\item 於是有以下这个 type inference rule:
+	\begin{equation}
+	i:\mathsf{Human} \vdash \mathrm{Mortal}(i): \mathsf{Prop}
+	\end{equation}
+	意思是说，如果 $i$ 属於 $\mathsf{Human}$ 类型，则 $\mathrm{Mortal}(i)$ 属於 $\mathsf{Prop}$ 类型
+\end{itemize}
+\end{frame}
+
 
 \begin{frame}[fragile]
 \frametitle{Logic's topology and geometry}
@@ -300,10 +342,11 @@
 \end{itemize}
 \end{frame}
 
+
 \begin{frame}
 \frametitle{HoTT (homotopy type theory)}
 \begin{itemize}
-	\item 2017年，提出 HoTT  的 Voevodsky 以 51岁 英年早逝
+	\item 2017年，提出 HoTT  的 Voevodsky 在 51岁 英年早逝
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.4]{Voevodsky.jpg}}}
 	\end{equation}
@@ -311,23 +354,19 @@
 \end{frame}
 
 \begin{frame}[plain]
+HoTT 理论我不太了解，也未知它对 AGI 有没有用，暂时留下这个 remark：
 \begin{itemize}
-	\item HoTT
-
-	\item These levels:
+	\item HoTT 的作用似乎是对 types 的空间作抽象的描述，例如将 types 空间分成 levels:
 	\begin{itemize}
 		\item \textbf{Level 0:} up to homotopy equivalence there is just one contractible space that we call ``point'' and denote $pt$
 		
 		\item \textbf{Level 1:} up to homotopy equivalence there are 2 spaces at this level:  the \textbf{empty space} $\varnothing$ and the \textbf{point} $pt$.  We call them \textbf{truth values}.  We also refer to types of this level as \textbf{properties} and \textbf{propositions}.  Propositional logic lives at $h$-level 1
 		
-		\item \textbf{Level 2:}  Types of this level are characterized by the property that their path spaces are with empty or contractible.  So such types are disjoint unions fo contractible components (points), or in other words \textbf{sets} of points.  This will be our working notion of set available in this framework.
+		\item \textbf{Level 2:}  Types of this level are characterized by the property that their path spaces are empty or contractible.  So such types are disjoint unions of contractible components (points), or in other words \textbf{sets} of points.  This will be our working notion of sets available in this framework.
 		
 		\item \textbf{Level 3:}  Types of this level are characterized by the property that their path spaces are sets (up to homotopy equivalence).  These are obviously (ordinary flat) \textbf{groupoids} (with path spaces hom-sets)
 		
-		\item \textbf{Level 4:}  Here we get 2-groupoids
-		
-		\tab \vdots
-		\item \textbf{Level $n$ + 2:}  $n$-groupoids
+		\item \textbf{Level 4 $... n+2$:}  Here we get 2-groupoids to $n$-groupoids
 	\end{itemize}
 \end{itemize}
 \end{frame}
@@ -350,65 +389,53 @@
 	\forall x. \; \mbox{Human}(x) \rightarrow \mbox{Mortal}(x)
 	\end{equation}
 	而这式子，根据 Curry-Howard 对应，就是上面的函数映射!
-	
+
 	\item 这些映射的对象，是形如 ``$a \in A$'' 这样的物体，它们有 predicates 的几何／拓扑结构，但我们现时未做到这一步，暂时只引入了 commutativity
 	
-	% \item 集合元素 $a$ 是 $\exists x. P(x)$ 的证明，例如 Socrates 是 $\exists x. \mbox{mortal}(x)$ 的证明
-	% \item 当 神经网络 \emp{调教} 某些元素的 映射 (mapping) 时，它同时在学习某个逻辑的 formula;  换句话说，逻辑 是几何空间中的映射
-	% \item 逻辑的 谓词 (predicates) 是在 基底元素空间上的一个 \emp{纤维丛结构} (fibration) :
-	%\begin{equation}
-	%\vcenter{\hbox{\includegraphics[scale=0.5]{etale-space.png}}}
-	%\end{equation}
-	\item 从 几何／拓扑 ``借'' 来的概念，演变成 topos 理论、HoTT 等
-	\item 这些漂亮的理论 不是无用的； 有需要时，可以從 邏輯 那邊借來更多的結構
+	\begin{comment}
+		\item 集合元素 $a$ 是 $\exists x. P(x)$ 的证明，例如 Socrates 是 $\exists x. \mbox{mortal}(x)$ 的证明
+		\item 当 神经网络 \emp{调教} 某些元素的 映射 (mapping) 时，它同时在学习某个逻辑的 formula;  换句话说，逻辑 是几何空间中的映射
+		\item 逻辑的 谓词 (predicates) 是在 基底元素空间上的一个 \emp{纤维丛结构} (fibration) :
+		\begin{equation}
+		\vcenter{\hbox{\includegraphics[scale=0.5]{etale-space.png}}}
+		\end{equation}
+	\end{comment}
+
+	% \item 从 几何／拓扑 ``借'' 来的概念，演变成 topos 理论、HoTT 等
+
+	% \item 这些漂亮的理论 不是无用的； 有需要时，可以從 邏輯 那邊借來更多的結構
+	
+	\item 可以说，逻辑的 几何结构 是「永恒」的，它可以指示 AGI 的 长远发展
+	
+	% \item $H(a)$ is a type.
+	% \item $H$ is a prodicate type.
+	% \item The proof of $H(a)$ may be the tuple $(a, H)$ or $a \in H$
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{逻辑的 invariance 结构}
+\frametitle{对 逻辑主义 的质疑}
 \begin{itemize}
-	\item 以前曾经说过，机器视觉 的成功，有赖於 将 视觉的几何结构 impose 在深度神经网络上
-	\item 这 深度神经网络 原本是 ``free'' 的，但加了限制之后，权重空间 变小了（例如维数降低），所以学习加速了
-	\item 所谓 symmetry 的意义，简单例子：「如果知道左边等於右边，那就只需计算一次」
-	\item 换句话说，数学家喜欢对称性，是因为它经常可以简化计算
-	\item 同理，我们想将 逻辑结构 的对称性 impose 到神经网络
-	\item 实际上，可能只需要逻辑上的交换律，就可以达到 强人工智能，正如 机器视觉的成功，在於引入了 CNN 的 convolution 结构，后者只是 视觉不变性 的其中一个最显著的 invariant
-	\item 现代逻辑理论 非常漂亮，我花了十多年时间才弄懂，我希望将这套 逻辑-学习 理论简单讲解一下，也算功德完满了
-\end{itemize}
-\end{frame}
-
-\begin{frame}[plain]
-\begin{itemize}
-\item 在经典时代，逻辑的 代数形式 可以用 Boolean algebra 表述，然而这方法只适用於 命题逻辑
-\item Boolean algebra 是中学生熟悉的，类似 Venn diagram 的结构
-\item 这种结构和 拓樸学 的 open sets 结构一样，所以 命题逻辑 也可以看成是一种 topology
-\item 然而 predicate logic 的结构更复杂，直到最近才有比较完善的表述
-\item 现代逻辑结构和 type theory 有深刻的关系，此即 Curry-Howard isomorphism
-\item 现代逻辑也涉及 topos theory，那是一种由 algebraic geometry 引入的结构
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Topos theory and fibrations}
-\begin{itemize}
-\item Predicate logic （谓词逻辑）和 命题逻辑 之间的差异在於 fibration 结构
-\item Fibration 通常用 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle p}}$ 表示，$\mathbb{B}$ = base space, $\mathbb{E}$ = \`{e}tal\`{e} space, $p$ = projection
-\item Base space 是 type 的空间，\`{e}tale space 是 predicate 的空间
-\item 由於 Curry-Howard 对应, type = propositions，在 base 空间上只有 命题逻辑
-\item 例如 $\mathbb{B}$ 空间的一个 type 是 $\mathrm{Human}$，$\mathbb{E}$ 空间的一个谓词是 $\mathrm{Mortal}$
-\item 於是有以下这个 type inference rule:
-\begin{equation}
-i:\mathrm{Human} \vdash \mathrm{Mortal}(i): \mathsf{Prop}
-\end{equation}
-意思是说，如果 $i$ 属於 $\mathrm{Human}$ 类型，则 $\mathrm{Mortal}(i)$ 属於 $\mathsf{Prop}$ 类型
-\end{itemize}
-\end{frame}
-
-\begin{frame}[plain,allowframebreaks]
-\begin{itemize}
-\item $H(a)$ is a type.
-\item $H$ is a prodicate type.
-\item The proof of $H(a)$ may be the tuple $(a, H)$ or $a \in H$
+	\item 很多人怀疑： 人脑真的用 逻辑 思考吗？
+	
+	\item 其实我们每句表达的 \emp{语言}，都是逻辑形式的 (logical form)
+	
+	\item 直觉认为，人脑 构造一些 \emp{models}，再从 model 中「读出」一些结论
+	
+	\item 例如给定一个描述：「已婚妇人出轨，用刀刺死丈夫」
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=1.0]{murder-scene.png}}}
+	\end{equation}
+	
+	\item 那么 妻子穿著什么衣服？ 衣服什么颜色？ 这些都是 \emp{臆想} 出来的细节，是不正确的
+	
+	\item 这个 model 可以有哪些细节？ 答案是： 任何细节都不可以有，除非是 逻辑上蕴含的，或被逻辑 约束
+	
+	% \item 所以，其实所谓 ``model-based reasoning'' 并没有那么神奇，也并不一定正确，它的细节必需被 \emp{逻辑} 约束
+	
+	\item Model 本身可以是一些 抽象的逻辑命题 构成的，这也合理； 反而，一个有很多感官细节的 model 并不合理
+	
+	\item 其实人脑可能比我们想像中更接近逻辑化的结构
 \end{itemize}
 \end{frame}
 
@@ -461,38 +488,7 @@ i:\mathrm{Human} \vdash \mathrm{Mortal}(i): \mathsf{Prop}
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{对 逻辑主义 的质疑}
-\begin{itemize}
-	\item 很多人怀疑： 人脑真的用 逻辑 思考吗？
-	\item 其实我们每句表达的 \emp{语言}，都是逻辑形式的 (logical form)
-	\item 直觉认为，人脑 构造一些 \emp{models}，再从 model 中「读出」一些结论
-	\item 例如给定一个描述：「已婚妇人出轨，用刀刺死丈夫」
-	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=1.0]{murder-scene.png}}}
-	\end{equation}
-	\item 那么 妻子穿著什么衣服？ 衣服什么颜色？ 
-	\item 这个 model 可以有哪些细节？ 答案是： 任何细节都不可以有，除非是 逻辑上蕴含的
-	\item 其实人脑可能比我们想像中更接近逻辑化的结构
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{关於 ``model-based reasoning'' 的质疑}
-\begin{itemize}
-	\item 很多人认为大脑的思考方式是 先在脑中构造 models，然后再从 models 中「读出」一些结论
-	\item 例如给定一个描述：「已婚妇人出轨，用刀刺死丈夫」
-	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=0.7]{murder-scene.png}}}
-	\end{equation}
-	\item 如果假设「妻子有长头发」、「丈夫死时穿著西装」，这些都是 \emp{臆想} 出来的细节，是不正确的
-	\item 那么这 model 可以有哪些细节？ 答案是： 任何细节都不可以有，除非是 逻辑上蕴含的
-	\item 例如我们可以假设妻子 probably 有一双手臂，但也有例外的情况是独臂的，这是一种 逻辑推导
-	\item 所以，其实所谓 ``model-based reasoning'' 并没有那么神奇，也并不一定正确，它的细节必需被 \emp{逻辑} 约束
-	\item 而 model 本身也可以用一些 抽象的逻辑命题 构成，这也是合理的； 反而，一个有很多感官细节的 model 并不合理
-\end{itemize}
-\end{frame}
-
+\begin{comment}
 \begin{frame}
 \frametitle{神经 $\leftrightarrow$ 逻辑 correspondence}
 \begin{itemize}
@@ -509,11 +505,27 @@ i:\mathrm{Human} \vdash \mathrm{Mortal}(i): \mathsf{Prop}
 	\item Equivalently, 复杂情境 可以用 \emp{逻辑} 表示，就是一大堆 逻辑命题 的 conjunction，这些命题 钜细无遗 地描述该情境
 \end{itemize}
 \end{frame}
+\end{comment}
 
-\frame[allowframebreaks]{
-\cc{多谢收看}{Thanks for watching} \smiley
-% \frametitle{References}
+\begin{frame} %[allowframebreaks] this option seems to cause error!!
+\frametitle{References}
+\cc{多谢收看}{Thanks for watching} \smiley \\
+\nocite{Goldblatt1984}
+\nocite{MacLane1992}
+\nocite{Streicher2006}
+\nocite{Awodey2006}
+\nocite{Jacobs1999}
+\nocite{Abramsky2011}
+\nocite{Caramello2018}
+\nocite{Lawvere1997}
+\nocite{Lawvere2003}
+\nocite{Rodin2014}
+\nocite{Vickers1989}
+\nocite{Pitts1991}
+\nocite{Sorensen2006}
+% \nocite{Hindley1997}
+
 \printbibliography
-}
+\end{frame}
 
 \end{document} 
