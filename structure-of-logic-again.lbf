@@ -7,20 +7,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}4\hfill }{谓词逻辑 (predicate logic)}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}5\hfill }{Logic's topology and geometry}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}5\hfill }{Curry-Howard isomorphism 的意义}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}6\hfill }{和 AI 的关系}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}6\hfill }{Logic's topology and geometry}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}7\hfill }{逻辑的 invariance 结构}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}7\hfill }{和 AI 的关系}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}9\hfill }{Topos theory and fibrations}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}8\hfill }{逻辑的 invariance 结构}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}11\hfill }{「神经」知识表示}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}10\hfill }{Topos theory and fibrations}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}12\hfill }{神经 特征簇 (feature clusters)}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}12\hfill }{「神经」知识表示}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}13\hfill }{高阶 特徵}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}13\hfill }{神经 特征簇 (feature clusters)}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}14\hfill }{关於 ``model-based reasoning'' 的质疑}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}14\hfill }{高阶 特徵}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}15\hfill }{神经 $\leftrightarrow $ 逻辑 correspondence}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}15\hfill }{关於 ``model-based reasoning'' 的质疑}\par }
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}16\hfill }{神经 $\leftrightarrow $ 逻辑 correspondence}\par }

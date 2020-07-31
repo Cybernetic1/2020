@@ -1,3 +1,6 @@
+% TO-DO:
+% * slides to mention big achievements, 附件
+
 \documentclass[16pt]{beamer}
 
 \ifdefined\chinchin
@@ -119,7 +122,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Logic route to strong AI]{{\Huge《The logic route to strong AI》} \\ \vspace*{0.4cm} Alibaba HKAI Lab 2020 presentation}
+\title[Logic route to strong AI]{{\Huge《HKAI Lab 2020》 } \\ \vspace*{0.4cm} PRESENTATION \\ \vspace*{0.3cm} The logic route to strong AI}
 \author{\cc{Heelal team}{Heelal team}} % Your name
 %\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 %{
@@ -158,13 +161,21 @@
 \begin{itemize}
 	\item 在几何学上，视觉 具有 \emp{平移 不变性}：
 	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=0.5]{translation-invariance.png}}}
+	\vcenter{\hbox{\includegraphics[scale=0.6]{translation-invariance.png}}}
 	\end{equation}
 	\item Convolution 是一种具有平移不变性的运算：
 	\begin{equation}
 	(T_x \circ f) * g = T_x \circ ( f * g )
 	\end{equation}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{itemize}
 	\item Yann LeCun 等人 利用 CNN 的 \emp{对称性} 加快了学习速度，成功地解决了 机器视觉 的问题
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.3]{Yann-LeCun.jpg}}}
+	\end{equation}
 \end{itemize}
 \end{frame}
 
@@ -184,7 +195,15 @@
 \frametitle{Richard Sutton 的观点}
 \begin{itemize}
 	\item Richard Sutton 认为，我们只需在 强化学习 的框架下 \emp{增加计算力}，就可以找到 strong AI
-	\item 下面描述的只是众多 形式逻辑 之中可能的一种：
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.7]{Richard-Sutton.jpg}}}
+	\end{equation}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{itemize}
+	\item 我們選擇的只是众多 形式逻辑 之中可能的一种：
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.5]{no-free-lunch_Richard-Sutton.png}}}
 	\end{equation}
@@ -195,16 +214,12 @@
 \begin{frame}
 \frametitle{对 逻辑主义 的质疑}
 \begin{itemize}
-	\item 很多人怀疑： 人脑真的用 逻辑 思考吗？
-	\item 其实我们每句表达的 \emp{语言}，都是逻辑形式的 (logical form)
-	\item 直觉认为，人脑 构造一些 \emp{models}，再从 model 中「读出」一些结论
-	\item 例如给定一个描述：「已婚妇人出轨，用刀刺死丈夫」
+	\item 很多人怀疑： 人脑真的用 形式逻辑 思考吗？
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=1.0]{murder-scene.png}}}
 	\end{equation}
-	\item 那么 妻子穿著什么衣服？ 衣服什么颜色？ 
-	\item 这个 model 可以有哪些细节？ 答案是： 任何细节都不可以有，除非是 逻辑上蕴含的
-	\item 其实人脑可能比我们想像中更接近逻辑化的结构
+	其实人脑比我们想像中更接近逻辑 \\
+	请参看附件：《再谈一次 AI 的逻辑结构》
 \end{itemize}
 \end{frame}
 
@@ -273,13 +288,14 @@
 \end{itemize}
 \end{frame}
 
+\renewcommand{\baselinestretch}{0.9} 
 \begin{frame}
 \frametitle{\cc{应用：BERT 的逻辑化}{Application: logicalization of BERT}}
 \begin{itemize}
 	\item \cc{类似地，可以将 BERT 的 隐状态 变成 ``set of propositions'' 的形式，方法是将 原来的 decoder 变成 sym NN：}
 	{Similarly, we can convert BERT's hidden state into a set of propositions, by replacing the original \emp{decoder} with a sym NN:}
 	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=0.6]{new-BERT.png}}}
+	\vcenter{\hbox{\includegraphics[scale=0.6]{sym-BERT.png}}}
 	\end{equation}
 	\item \cc{原来的 encoder 可以照旧使用，因为后半部改变了，error propagation 会令 representation 也改变}
 	{The original \emp{encoder} can be retained.  As the \emp{decoder} imposes symmetry on the hidden state, error propagation is expected to cause its representation to change}
@@ -287,6 +303,7 @@
 	{Of course, this remains to be proven by experiment \smiley}
 \end{itemize}
 \end{frame}
+\renewcommand{\baselinestretch}{1.0} 
 
 \begin{frame}
 \frametitle{\cc{应用：}{Application:} content-addressable long-term memory}
@@ -305,42 +322,54 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{再谈一次 逻辑结构}
+\frametitle{AGI 理论的突破}
 \begin{itemize}
-	\item 我发现 逻辑 和 AI 之间 有很漂亮的理论
-	\item 现代逻辑理论 揭示出某些 \emp{几何} (geometry) 与 \emp{拓樸} (topology) 结构
-	\item 大家 中／小学 时期 都熟悉 Venn diagrams，其实 命题逻辑 具有 \emp{拓扑}结构：
-	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=0.4]{Venn-diagram.png}}}
-	\end{equation}
-	而 谓词 (predicates) 是在 base set 上面的 纤维化 (fibration), 记作 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle p}}$
-
-	\item 另方面，著名的 Curry-Howard isomorphism 揭示 \emp{逻辑证明} 与 \emp{编程语言} 之间的深刻关系：
-	\begin{eqnarray}
-	\mbox{逻辑} & \Leftrightarrow & \mbox{type theory} \\
-	\mbox{逻辑证明} & \Leftrightarrow & \mbox{programs} \nonumber
-	\end{eqnarray}
-	\item 程式 是一些 \emp{函数}，而 神经网络 也是非线性的函数\emp{映射}，所以 神经网络 也\emp{对应于} 逻辑推理
+	\item 最近我成功地描述了 strong AI 和 逻辑之间的数学关系 \\
+	这种数学关系是永恒不变的，它可以指导日后 AGI 的发展 \\
+	请参看附件：《再谈一次 AI 的逻辑结构》
+	
+	\item 关於 Logic BERT 与 attention 的详细理论 \\
+	可参看附件《Logic BERT》
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-\begin{itemize}
-	\item BERT 似乎是在执行 句子之间的变换，而这些句子是 word embedding 的 concatenation，例如：
-	\begin{equation}
-	\begin{tikzcd}[column sep = large]
-	\mbox{苏格拉底} \cdot \mbox{是} \cdot \mbox{人}
-	\arrow[r, "BERT"]
-	& \mbox{苏格拉底} \cdot \mbox{会} \cdot \mbox{死}
-	\end{tikzcd}
-	\end{equation}
-	这个做法看似很「粗暴」，其实它和逻辑式子的作用一样：
-	\begin{equation}
-	\forall x. \; \mbox{Human}(x) \rightarrow \mbox{Mortal}(x)
-	\end{equation}
-	而这式子，根据 Curry-Howard 对应，就是上面的函数映射!
-	
-	\item 这些映射的对象，是形如 ``$a \in A$'' 这样的物体，它们有 predicates 的几何／拓扑结构，但我们现时未做到这一步，暂时只引入了 commutativity
+%\begin{frame}
+%\frametitle{再谈一次 逻辑结构}
+%\begin{itemize}
+%	\item 我发现 逻辑 和 AI 之间 有很漂亮的理论
+%	\item 现代逻辑理论 揭示出某些 \emp{几何} (geometry) 与 \emp{拓樸} (topology) 结构
+%	\item 大家 中／小学 时期 都熟悉 Venn diagrams，其实 命题逻辑 具有 \emp{拓扑}结构：
+%	\begin{equation}
+%	\vcenter{\hbox{\includegraphics[scale=0.4]{Venn-diagram.png}}}
+%	\end{equation}
+%	而 谓词 (predicates) 是在 base set 上面的 纤维化 (fibration), 记作 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle p}}$
+%
+%	\item 另方面，著名的 Curry-Howard isomorphism 揭示 \emp{逻辑证明} 与 \emp{编程语言} 之间的深刻关系：
+%	\begin{eqnarray}
+%	\mbox{逻辑} & \Leftrightarrow & \mbox{type theory} \\
+%	\mbox{逻辑证明} & \Leftrightarrow & \mbox{programs} \nonumber
+%	\end{eqnarray}
+%	\item 程式 是一些 \emp{函数}，而 神经网络 也是非线性的函数\emp{映射}，所以 神经网络 也\emp{对应于} 逻辑推理
+%\end{itemize}
+%\end{frame}
+
+%\begin{frame}[fragile]
+%\begin{itemize}
+%	\item BERT 似乎是在执行 句子之间的变换，而这些句子是 word embedding 的 concatenation，例如：
+%	\begin{equation}
+%	\begin{tikzcd}[column sep = large]
+%	\mbox{苏格拉底} \cdot \mbox{是} \cdot \mbox{人}
+%	\arrow[r, "BERT"]
+%	& \mbox{苏格拉底} \cdot \mbox{会} \cdot \mbox{死}
+%	\end{tikzcd}
+%	\end{equation}
+%	这个做法看似很「粗暴」，其实它和逻辑式子的作用一样：
+%	\begin{equation}
+%	\forall x. \; \mbox{Human}(x) \rightarrow \mbox{Mortal}(x)
+%	\end{equation}
+%	而这式子，根据 Curry-Howard 对应，就是上面的函数映射!
+%	
+%	\item 这些映射的对象，是形如 ``$a \in A$'' 这样的物体，它们有 predicates 的几何／拓扑结构，但我们现时未做到这一步，暂时只引入了 commutativity
 
 	% \item 集合元素 $a$ 是 $\exists x. P(x)$ 的证明，例如 Socrates 是 $\exists x. \mbox{mortal}(x)$ 的证明
 	% \item 当 神经网络 \emp{调教} 某些元素的 映射 (mapping) 时，它同时在学习某个逻辑的 formula;  换句话说，逻辑 是几何空间中的映射
@@ -348,14 +377,15 @@
 	%\begin{equation}
 	%\vcenter{\hbox{\includegraphics[scale=0.5]{etale-space.png}}}
 	%\end{equation}
-	\item 从 几何／拓扑 ``借'' 来的概念，演变成 topos 理论、HoTT (homotopy type theory) 等
-	\item 这些漂亮的理论 不是无用的； 有需要时，可以從 邏輯 那邊借來更多的結構
-\end{itemize}
-\end{frame}
+%	\item 从 几何／拓扑 ``借'' 来的概念，演变成 topos 理论、HoTT (homotopy type theory) 等
+%	\item 这些漂亮的理论 不是无用的； 有需要时，可以從 邏輯 那邊借來更多的結構
+%\end{itemize}
+%\end{frame}
 
 \frameinlbffalse
 \begin{frame}
 \frametitle{References}
+\cc{多谢收看}{Thanks for watching} \smiley \\
 \printbibliography
 \textbf{Illustration credits:}
 \begin{itemize}

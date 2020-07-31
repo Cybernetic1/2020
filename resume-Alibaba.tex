@@ -1,0 +1,234 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.1.4, 27 July 2018) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+% 
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons 
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper]{altacv}
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages. 
+%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols.
+%% 
+%% Compile with LuaLaTeX for best results. If you
+%% want to use XeLaTeX, you may need to install
+%% Academicons.ttf in your operating system's font 
+%% folder.
+
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
+
+% Change the font if you want to.
+
+% If using pdflatex:
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% \usepackage[default]{lato}
+
+\usepackage[document]{ragged2e}
+
+% If using xelatex or lualatex:
+\setmainfont{Alibaba Sans}
+
+\ifdefined\chinchin
+\usepackage[CJKspace]{xeCJK}
+% \setCJKmainfont[BoldFont=AlibabaSans-Light,ItalicFont=AlibabaSans-Light]{AlibabaSans-Light}
+\setCJKmainfont{Alibaba PuHuiTi}
+\newcommand{\cc}[2]{#1}
+\else
+\newcommand{\cc}[2]{#2}
+\fi
+
+% Change the colours if you want to
+\definecolor{LightBlue}{HTML}{883333}
+\definecolor{LightGrey}{HTML}{333333}
+\colorlet{heading}{LightBlue}
+\colorlet{accent}{LightBlue}
+\colorlet{emphasis}{LightGrey}
+\colorlet{body}{black}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\usepackage[colorlinks]{hyperref}
+
+\newcommand{\br}{\vspace*{0.4cm}}
+
+\begin{document}
+
+\name{甄景贤 YKY (Yan King Yin)}
+\tagline{獨立 人工智能 研究者}
+\photo{2.8cm}{John_Grothendieck.png}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \location{香港}    \mailaddress{愉景湾 观景楼 7B} \\
+  \email{general.intelligence@gmail.com } \\
+  \phone{(+86) 1314-755-0504}   \phone{(+852) 6814-5504}
+  % \twitter{@NISZhU}
+  % \linkedin{linkedin.com/in/ulbke-zhanysbek-a17459177/}
+  % \github{github.com/Cybernetic1}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+%   \orcid{orcid.org/0000-0000-0000-0000}
+}
+
+%% Make the header extend all the way to the right, if you want. 
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+\cvsection[page1sidebar]{简介}
+
+% \cvevent{Front-End Developer Assistant}{}{}{}
+
+\begin{itemize}
+\item 我大部份知识是自学而来，加上和学术界交流，还有网上爱好者的帮助
+\item 从小学开始已懂编程，当时用 TRS-80（世界上第一部私人电脑），在香港中大时主修电脑
+\item 在美国留学时对 transhumanism 产生兴趣，故自 2004 年起，开始全力研究 普适人工智能
+\item 我很喜欢以深入浅出的方式教人，所谓「教学相长」，教导别人时自己也有很大的得益
+\item 近年我主要进修高等数学
+\item 可以参考我最新的一些 presentation slides
+\item 目前有 43 个项目在 Github 上： \\
+	{\footnotesize https://github.com/Cybernetic1}
+\item 在 知乎 上有不少人工智能方面的文章： \\
+	{\footnotesize https://www.zhihu.com/people/Cybernetic1}
+\item 我有兴趣开发 gaming environment，可以让 AI 学习一些 physical 或语言上的人类知识
+\end{itemize}
+谢谢您们的考虑！
+
+% \divider
+\medskip
+
+\cvsection{研究兴趣}
+
+\begin{itemize}
+	\item 普适 人工智能 (artificial general intelligence, AGI)
+	\item 人工智能逻辑, logic-based AI
+	\item 自然语言理解, common-sense reasoning
+	\item 神经网络、深度学习
+	\item （深度）强化学习
+	\item 进化算法
+	\item 认知架构，认知神经科学／模拟大脑智能
+\end{itemize}
+
+\medskip
+
+\cvsection{论文}
+
+\begin{itemize}
+	\item Fuzzy-probabilistic logic for common sense \\
+	(AGI 2012 Conference at Oxford UK)
+\end{itemize}
+
+%\cvsection{A Day of My Life}
+%
+%% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+%% \wheelchart{outer radius}{inner radius}{
+%% comma-separated list of value/text width/color/detail}
+%\wheelchart{1.5cm}{0.5cm}{%
+%  6/8em/accent!30/{Sleep and eat}, 
+%  4/8em/accent!8/{Socializing},
+%  3/7em/accent!8/Go for a walk with friends,
+%  8/8em/accent!55/Make my to do list,
+%  2/10em/accent!10/Sports and relaxation,
+%  5/6em/accent!20/Spending time with family
+%}
+
+\medskip
+
+\cvsection{著作／科普文章}
+
+\begin{itemize}
+	\item 什么是 机器学习？
+	\item 什么是 贝叶斯网络？
+	\item 什么是 神经网路？
+	\item 什么是 强化学习？
+	\item 什么是 遗传／进化算法？
+	\item 《计算范畴论》导论
+	\item 范畴逻辑简介
+	\item 《强人工智能导论》（初稿）
+	\item AGI 的一些基本概念
+	\item 论 AGI 架构
+\end{itemize}
+
+\clearpage
+
+\cvsection{Cover letter}
+
+嗨，各位你们好，
+
+\br
+
+我自从 2004年 到现在，16年，几乎没有一天停止过 研究 AI
+
+现在终於等到了..... 武汉肺炎，真是「深度失望」
+
+\br
+
+其实 去年已 申请过这个 accelerator programme
+
+但当时仍然停留在「纯理论」阶段
+
+我自觉 向业界申请一些 ``blue-sky research'' 是不妥的
+
+所以当时也没有很 ``push'' 或 hard-sell 
+
+但今年有了很大的突破（虽然是来自别人 papers 的结果）
+
+现在真的到了需要 accelerator 的时候 
+
+因为需要训练 BERT model，而你们又有很强的电脑，我觉得是很好的配合
+
+\br
+
+% 1. very few AGI researchers in China
+現時，在國內只有很少人研究 AGI
+
+2. Xiao Da, Rainbow Tech
+
+3. 陳代超  and other guy
+
+4. AGI internationally, why AGI in HK?
+
+
+5. 
+
+%% If the NEXT page doesn't start with a \cvsection but you'd
+%% still like to add a sidebar, then use this command on THIS
+%% page to add it. The optional argument lets you pull up the 
+%% sidebar a bit so that it looks aligned with the top of the
+%% main column.
+% \addnextpagesidebar[-1ex]{page3sidebar}
+
+\end{document}

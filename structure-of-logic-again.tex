@@ -1,5 +1,7 @@
 % TO-DO:
-% * 
+% * C-H-i 意义 - update content
+% * relation with AI - stress significance
+% * several slides can be deleted
 
 \documentclass[16pt]{beamer}
 
@@ -180,8 +182,6 @@
 	\item 先看 $\Rightarrow$： 逻辑是一些 符号／形式上 的推导，所以 逻辑证明 (derivations) 必然对应於某种 计算 (computation)，这很容易理解
 	
 	\item 再看 $\Leftarrow$： 当人们企图定义 普遍的计算模式 (models of computation) 时，发觉 总是对应於 某些逻辑； 这一点比较神秘，我也不完全了解
-
-	\item 这个关系的 发现者 至少包括:  Brouwer-Heyting-Kolmogorov-Curry-\mbox{de Bruijn}-Howard
 \end{itemize}
 \end{frame}
 
@@ -236,11 +236,11 @@
 \begin{frame}
 \frametitle{谓词逻辑 (predicate logic)}
 \begin{itemize}
-	\item 刚才说明了，type theory 对应於 命题逻辑
+	\item 刚才说明了，type theory 对应於 \emp{命题逻辑}
 	
 	\item 如果要处理 predicates，需要一些 特殊的 types
 	
-	\item Predicate 就是一个有「洞」的命题，填入某些 objects 之后变成真正的命题
+	\item Predicate 就是有「洞」的命题，填入某些 objects 之后变成真正的命题
 	
 	\item 换句话说 predicate $P$ 是一个函数 $P: X \rightarrow \mathcal{U}$，对每个 $x$ 产生 $P(x)$，这 $P(x)$ 也是一个 type, 而 $\mathcal{U}$ 是所有 types 的 universe
 
@@ -251,7 +251,7 @@
 	\item 而在 categories 中，predicate 的结构可以用 \emp{fibration} 描述，记作
 	$\mathrel{\substack{\mathbf{Pred}\\\downarrow\\\mathbf{Set}}}$
 	
-	\item Fibrations 符合某种 universal property，是从代数几何／拓扑 借来的概念
+	\item Fibrations 符合某种 universal property，是由 代数几何／拓扑 借来的概念
 \end{itemize}
 \end{frame}
 
@@ -260,6 +260,8 @@
 \begin{itemize}
 	\item 有些逻辑学家 察觉到 类型论 的 $\tau_1 \rightarrow \tau_2$ 和逻辑中 $P \rightarrow Q$ 是一模一样的
 	
+	\item 这个关系的 发现者 至少包括:  Brouwer-Heyting-Kolmogorov-Curry-\mbox{de Bruijn}-Howard
+	
 	\item 这关系的深刻之处，在於把 符号逻辑上的 proofs 和 程式语言 的 programs 划上等号，前者是 符号／静态的，后者是 程序／动态的
 	
 	\item 每个 proof 就是一个 program，它输入一些 arguments，输出 关於那些 arguments 的证明
@@ -267,29 +269,79 @@
 	\item 例如： 「所有人都会死」是一个 program，它输入「苏格拉底」，输出「苏格拉底会死」 
 	
 	\item 这个对应也許可以应用到深度学习： 神经网络 也是一種 函數 / mapping，它将 逻辑前提 map 到结论
-	
-	\item 
 \end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{Logic's topology and geometry}
 \begin{itemize}
 	\item 总结一下，大家 中／小学 时期 都熟悉 Venn diagrams，其实 命题逻辑 具有 \emp{拓扑}的 open sets 结构：
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.4]{Venn-diagram.png}}}
 	\end{equation}
+	而 谓词 (predicates) 是在 base set 上面的 纤维化 (fibration), 记作 $\mathrel{\substack{\mathbb{E}\\\downarrow \\\mathbb{B}}  {\scriptstyle \pi}}$
 	
-	\item 
+
+	\item 於是有以下的关系： ($\pi$ = fibration)
+	\begin{equation}
+	\begin{tikzcd}[column sep = large, row sep = large]
+	\mbox{homotopy} \arrow[d, "\pi"]
+	& \stackrel{\mbox{predicate}}{\mbox{logic}} \arrow[d, "\pi"]
+	& \mbox{HoTT} \arrow[d, "\pi"]
+	& \stackrel{\mbox{predicate}}{\mbox{logic}} \arrow[d, "\pi"]
+	\\
+	\mbox{topology} \arrow[r, leftrightarrow, "\cong"]
+	& \stackrel{\mbox{propositional}}{\mbox{logic}} \arrow[leftrightarrow]{r}{Curry}[swap]{Howard}
+	& \stackrel{\mbox{type}}{\mbox{theory}} \arrow[r, leftrightarrow, "\cong"]
+	& \stackrel{\mbox{categorical}}{\mbox{logic}}
+	\end{tikzcd}
+	\end{equation}
+	\item HoTT = homotopy type theory, 是 Voevodsky 等人提出的 非常新的理论
 \end{itemize}
 \end{frame}
 
 \begin{frame}
+\frametitle{HoTT (homotopy type theory)}
+\begin{itemize}
+	\item 2017年，提出 HoTT  的 Voevodsky 以 51岁 英年早逝
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.4]{Voevodsky.jpg}}}
+	\end{equation}
+	
+	\item 
+	
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
 \frametitle{和 AI 的关系}
 \begin{itemize}
 	\item 那既然 AI 基於 逻辑，而逻辑的结构 如上所述，则 AI 与逻辑之间 必然存在 精确 (precise) 的联系
+
+	\item BERT 似乎是在执行 句子之间的变换，而这些句子是 word embedding 的 concatenation，例如：
+	\begin{equation}
+	\begin{tikzcd}[column sep = large]
+	\mbox{苏格拉底} \cdot \mbox{是} \cdot \mbox{人}
+	\arrow[r, "BERT"]
+	& \mbox{苏格拉底} \cdot \mbox{会} \cdot \mbox{死}
+	\end{tikzcd}
+	\end{equation}
+	这个做法看似很「粗暴」，其实它和逻辑式子的作用一样：
+	\begin{equation}
+	\forall x. \; \mbox{Human}(x) \rightarrow \mbox{Mortal}(x)
+	\end{equation}
+	而这式子，根据 Curry-Howard 对应，就是上面的函数映射!
 	
-	\item 
+	\item 这些映射的对象，是形如 ``$a \in A$'' 这样的物体，它们有 predicates 的几何／拓扑结构，但我们现时未做到这一步，暂时只引入了 commutativity
+	
+	% \item 集合元素 $a$ 是 $\exists x. P(x)$ 的证明，例如 Socrates 是 $\exists x. \mbox{mortal}(x)$ 的证明
+	% \item 当 神经网络 \emp{调教} 某些元素的 映射 (mapping) 时，它同时在学习某个逻辑的 formula;  换句话说，逻辑 是几何空间中的映射
+	% \item 逻辑的 谓词 (predicates) 是在 基底元素空间上的一个 \emp{纤维丛结构} (fibration) :
+	%\begin{equation}
+	%\vcenter{\hbox{\includegraphics[scale=0.5]{etale-space.png}}}
+	%\end{equation}
+	\item 从 几何／拓扑 ``借'' 来的概念，演变成 topos 理论、HoTT 等
+	\item 这些漂亮的理论 不是无用的； 有需要时，可以從 邏輯 那邊借來更多的結構
 \end{itemize}
 \end{frame}
 
@@ -387,6 +439,22 @@ i:\mathrm{Human} \vdash \mathrm{Mortal}(i): \mathsf{Prop}
 	\item 这似乎是一个 $\mbox{特征空间} \times \mbox{时间}$ 的映射 $f: X \times T \rightarrow Y$
 	
 	\item {\color{red}关於这部分其实我仍未肯定，或许有其他方法}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{对 逻辑主义 的质疑}
+\begin{itemize}
+	\item 很多人怀疑： 人脑真的用 逻辑 思考吗？
+	\item 其实我们每句表达的 \emp{语言}，都是逻辑形式的 (logical form)
+	\item 直觉认为，人脑 构造一些 \emp{models}，再从 model 中「读出」一些结论
+	\item 例如给定一个描述：「已婚妇人出轨，用刀刺死丈夫」
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=1.0]{murder-scene.png}}}
+	\end{equation}
+	\item 那么 妻子穿著什么衣服？ 衣服什么颜色？ 
+	\item 这个 model 可以有哪些细节？ 答案是： 任何细节都不可以有，除非是 逻辑上蕴含的
+	\item 其实人脑可能比我们想像中更接近逻辑化的结构
 \end{itemize}
 \end{frame}
 
