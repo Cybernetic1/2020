@@ -11,10 +11,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}6\hfill }{Attention 是什么？}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}7\hfill }{Attention 给逻辑 AI 的启发}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}7\hfill }{谓词 (predicates) 与 命题 (propositions)}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}8\hfill }{``Attention is all you need'' ?}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}8\hfill }{Attention 在命题之间的作用}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}9\hfill }{应用：知识图谱 (knowledge graphs)}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}9\hfill }{``Attention is all you need'' ?}\par }
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}10\hfill }{应用： content-addressable long-term memory}\par }
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}11\hfill }{应用：知识图谱 (knowledge graphs)}\par }

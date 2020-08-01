@@ -275,20 +275,6 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{\cc{应用：知识图谱 (knowledge graphs)}{Application: knowledge graphs}}
-\begin{itemize}
-	\item \cc{知识图谱 不能直接输入神经网络，它必需分拆成很多 edges，每个 edge 是一个 \emp{关系}，也是一个 \emp{逻辑命题} ；也可以说 ``graphs are isomorphic to logic''}
-	{One cannot feed a knowledge graph directly into an NN, as its input must be embedded in vector space.  A solution is to break the graph into edges, where each edge is equivalent to a relation or proposition.  One could say that graphs are isomorphic to logic}
-	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=0.6]{knowledge-graph.png}}}
-	\end{equation}
-	\item \cc{而这些 edges 似乎必需用 \emp{symmetric} NN 处理，因为它们是 permutation invariant}
-	{Since edges are invariant under permutations, it appears that symmetric NNs are required to process them}
-	% \item Sym NNs are required to handle \emp{graph-rewriting}, an essential operation on knowledge graphs
-\end{itemize}
-\end{frame}
-
 \renewcommand{\baselinestretch}{0.9} 
 \begin{frame}
 \frametitle{\cc{应用：BERT 的逻辑化}{Application: logicalization of BERT}}
@@ -314,12 +300,27 @@
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.5]{long-term-memory.png}}}
 	\end{equation}
+	例如：「太阳是热的」、「水向下流」是经常正确的命题
 	\item \cc{这种系统 已非常接近 strong AI，而这是有赖 \emp{逻辑化} 才能做到的}
 	{These kind of systems are very close to strong AI, and it depends crucially on logicalization}
 	\item \cc{Content-addressable memory 的想法来自 Alex Graves \textit{et al} 的 Neural Turing Machine [2014]}
 	{The content-addressable memory idea came from Alex Graves \textit{et al}'s Neural Turing Machine [2014]}
  \end{itemize}
 \nocite{Graves2014}
+\end{frame}
+
+\begin{frame}
+\frametitle{\cc{应用：知识图谱 (knowledge graphs)}{Application: knowledge graphs}}
+\begin{itemize}
+	\item \cc{知识图谱 不能直接输入神经网络，它必需分拆成很多 edges，每个 edge 是一个 \emp{关系}，也是一个 \emp{逻辑命题} ；也可以说 ``graphs are isomorphic to logic''}
+	{One cannot feed a knowledge graph directly into an NN, as its input must be embedded in vector space.  A solution is to break the graph into edges, where each edge is equivalent to a relation or proposition.  One could say that graphs are isomorphic to logic}
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.6]{knowledge-graph.png}}}
+	\end{equation}
+	\item \cc{而这些 edges 似乎必需用 \emp{symmetric} NN 处理，因为它们是 permutation invariant}
+	{Since edges are invariant under permutations, it appears that symmetric NNs are required to process them}
+	% \item Sym NNs are required to handle \emp{graph-rewriting}, an essential operation on knowledge graphs
+\end{itemize}
 \end{frame}
 
 \begin{frame}

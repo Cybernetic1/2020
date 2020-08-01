@@ -87,7 +87,7 @@
 \usepackage{tikz-cd}
 \usepackage{tikz}
 \usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
-\usepackage{verbatim} % comments
+\usepackage{verbatim} % for comments
 % \usepackage{tikz-cd}  % commutative diagrams
 % \newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
 % \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
@@ -101,6 +101,7 @@
 \newcommand{\tab}{\hspace*{1cm}}
 \newcommand*\confoundFace{$\vcenter{\hbox{\includegraphics[scale=0.2]{../confounded-face.jpg}}}$}
 \newcommand{\smiley}{$\vcenter{\hbox{\includegraphics[scale=0.05]{../smiling-face.png}}}$}
+\newcommand*\NewSym[2][0.5]{\vcenter{\hbox{\includegraphics[scale=#1]{#2}}}}
 
 %%%%%%%% Make table of contents %%%%%%%
 
@@ -124,7 +125,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Logic BERT]{Supplement 1: \vspace*{0.3cm} \\ {\Huge《Logic BERT》}}
+\title[Logic BERT]{{\Huge《Logic BERT》}}
 \author{YKY} % Your name
 %\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 %{
@@ -169,8 +170,8 @@
 	
 	\item This implies that human-level AI can be \textit{induced} from existing corpora, 而\emp{不需重复 像人类婴儿成长的学习阶段}
 	
-	\item Such corpora can include items such as images, movies with dialogues / subtitles
-	
+	% \item Such corpora can include items such as images, movies with dialogues / subtitles
+
 	\item 这种训练方法是较早的另一篇论文提出，它并不属於 BERT 的内部结构
 \end{itemize}
 \end{frame}
@@ -205,13 +206,15 @@
 	\end{aligned}
 	\end{equation}
 	
-	\item Word2Vec 也是革命性的； 由 Word2Vec 演变成 Sentence2Vec 则比较容易，基本上只是 向量的 \emp{延长} (concatenation)； 逻辑命题 类似於 sentence
+	\item Word2Vec 也是革命性的； 由 Word2Vec 演变成 Sentence2Vec 则比较容易，基本上只是 向量的 \emp{合并} (concatenation)； Sentence 对应於 逻辑命题
+
+	\item 但 命题的 \emp{集合} 需要用 symmetric NN 处理，因为 集合的元素 是\emp{顺序无关}的
+
+	% \item 假设 全体逻辑命题的空间是 $\mathbb{P}$，则 \emp{命题集合} 的空间是 $2^{\mathbb{P}}$，非常庞大
 	
-	\item 假设 全体逻辑命题的空间是 $\mathbb{P}$，则 \emp{命题集合} 的空间是 $2^{\mathbb{P}}$，非常庞大
+	% \item 如果限制 状态 $\vec{x}$ = working memory 只有 10 个命题，$\vec{x}$ 的空间是 $\mathbb{P}^{10}/\sim$ 其中 $\sim$ 是对称群 $\mathfrak{S}_{10}$ 的等价关系。 换句话说 $ 2^{\mathbb{P}} \cong \coprod_{n=0}^{\infty} \; \mathbb{P}^n / \mathfrak{S}_n $
 	
-	\item 如果限制 状态 $\vec{x}$ = working memory 只有 10 个命题，$\vec{x}$ 的空间是 $\mathbb{P}^{10}/\sim$ 其中 $\sim$ 是对称群 $\mathfrak{S}_{10}$ 的等价关系。 换句话说 $ 2^{\mathbb{P}} \cong \coprod_{n=0}^{\infty} \; \mathbb{P}^n / \mathfrak{S}_n $
-	
-	\item $\mathbb{P}^n / \mathfrak{S}_n$ 虽然是 $\mathbb{P}^n$ 的商空间，但 $\mathfrak{S}_n$-不变性 很难用神经网络实现
+	% \item $\mathbb{P}^n / \mathfrak{S}_n$ 虽然是 $\mathbb{P}^n$ 的商空间，但 $\mathfrak{S}_n$-不变性 很难用神经网络实现
 	
 	% \definecolor{darkgreen}{rgb}{0.1, 0.7, 0.2}
 	% \item 现时 比较可行的办法，是将 状态 $\vec{x}$ 实现成 一个时间上的「轮盘」，每个 ${\color{darkgreen}\bullet}$ 表示一个命题：
@@ -226,12 +229,11 @@
 \begin{frame}
 \frametitle{Symmetric neural network}
 \begin{itemize}
-	\item Permutation invariance can be handled by \emp{symmetric} neural networks
-	
-	\item \cc{我浪费了两年时间试图解决这问题，却发现在3年前已经有两篇论文解决了 [PointNet 2017] [DeepSets 2017]，而且数学水平比我高很多
-	}
+	% \item Permutation invariance can be handled by \emp{symmetric} neural networks
+
+	\item \cc{Symmetric NN 问题 已经由 两篇论文解决了： \\ \tab [PointNet 2017] [DeepSets 2017]}
 	{I wasted 2 years trying to solve this problem, and then find out it has been solved 3 years ago:  [PointNet 2017] and [DeepSets 2017] and their mastery of mathematics is significantly above me!}
-	
+
 	\item Any symmetric function can be represented by the following form (a special case of the Kolmogorov-Arnold representation of functions):
 	\begin{equation}
 	f(x, y, ...) = g(h(x) + h(y) + ... )
@@ -244,7 +246,6 @@
 \nocite{Zaheer2017}
 \end{frame}
 
-
 \begin{frame}
 \frametitle{\cc{BERT 的逻辑化}{Logicalization of BERT}}
 \begin{itemize}
@@ -256,7 +257,7 @@
 
 	\item 这时，输出对 $\vcenter{\hbox{\includegraphics[scale=0.4]{proposition.png}}}$ 的交换不变性 is automatically satisfied by the architecture of the decoder
 	
-	\item \cc{原来的 encoder 可以照旧使用，，因为它是一个 universal seq-2-seq mapping}
+	\item \cc{旧的 encoder 可以照旧使用，，因为它是一个 universal seq-2-seq mapping}
 	{The original \emp{encoder} can be retained, as it is a universal seq-2-seq mapping}
 	
 	\item \cc{因为后半部改变了，error propagation 会令 representation 也改变}
@@ -285,33 +286,75 @@
 \begin{itemize}
 \item 注意力 最初起源於 Seq2seq，后来 BERT 引入 self-attention
 
-\item 在 Seq2seq 中，编码器 (encoder) 由下式给出，它将输入的词语 $x_i$ 转化成 一连串的 隐状态 $h_i$：
+\item Attention 的本质就是 \emp{加权}，权值 可以反映 模型 \emp{关注}的点
+
+\item For each input, the attention mechanism weighs the \emp{relevance} of every other input and draws information from them accordingly to produce the output
+
+\item 在 BERT 里，attention 是一种 \emp{words} 之间的关系：
 \begin{equation}
-h_t = \mbox{RNN}_{encode}(x_t, h_{t-1})
+\vcenter{\hbox{\includegraphics[scale=0.5]{attention-among-words.png}}}
 \end{equation}
 
-\item 这些 $h_i$ 可以综合成单一个 隐状态 $c = q(h_1, ..., h_n)$. 
+\item 但，从逻辑的角度看，word $\ne$ 命题
 
-\item 这个 $c$ 被「寄予厚望」，它浓缩了整个句子的意义
+\item 在逻辑学上，必需分清 命题\emp{内部} 与 命题\emp{之间} 这两个层次，非常关键！
 
-\item 解码器 的结构类似，它的隐状态是 $s_t$，输出 $y_t$：
-\begin{equation}
-s_t = \mbox{RNN}_{decode}(y_t, s_{t-1}, c_t)
-\end{equation}
+%\item 在 Seq2seq 中，编码器 (encoder) 由下式给出，它将输入的词语 $x_i$ 转化成 一连串的 隐状态 $h_i$：
+%\begin{equation}
+%h_t = \mbox{RNN}_{encode}(x_t, h_{t-1})
+%\end{equation}
 
-\item 注意最后的 $c_t$ 依赖时间，它是隐状态 $h_j$ 的 \emp{加权平均}：
-\begin{equation}
-c_i = \sum_j \alpha_{ij} h_j
-\end{equation}
+%\item 这些 $h_i$ 可以综合成单一个 隐状态 $c = q(h_1, ..., h_n)$. 
 
-\item 其中 $\alpha_{ij}$ 量度 输入／输出 的隐状态之间的 \emp{相似度}，取其最大值：
-\begin{equation}
-\alpha_{ij} = \mbox{softmax} \{ \langle s_i, h_j \rangle \}
-\end{equation}
-换句话说，$\alpha_{ij}$ \emp{选择} 最接近 $h_j$ 的 $s_i$
+%\item 这个 $c$ 被「寄予厚望」，它浓缩了整个句子的意义
+
+%\item 解码器 的结构类似，它的隐状态是 $s_t$，输出 $y_t$：
+%\begin{equation}
+%s_t = \mbox{RNN}_{decode}(y_t, s_{t-1}, c_t)
+%\end{equation}
+
+%\item 注意最后的 $c_t$ 依赖时间，它是隐状态 $h_j$ 的 \emp{加权平均}：
+%\begin{equation}
+%c_i = \sum_j \alpha_{ij} h_j
+%\end{equation}
+
+%\item 其中 $\alpha_{ij}$ 量度 输入／输出 的隐状态之间的 \emp{相似度}，取其最大值：
+%\begin{equation}
+%\alpha_{ij} = \mbox{softmax} \{ \langle s_i, h_j \rangle \}
+%\end{equation}
+%换句话说，$\alpha_{ij}$ \emp{选择} 最接近 $h_j$ 的 $s_i$
 \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{谓词 (predicates) 与 命题 (propositions)}
+\begin{itemize}
+\item ``Predicate'' 来自拉丁文「断言」的意思
+
+\item 逻辑里，predicate 代表一个 没有主体／客体 的断言，换句话说，是一个有「洞」的命题
+	
+\item \emp{命题} = \emp{谓词} (predicate) + \emp{主体／客体}（统称 objects）
+
+\item 例如： Human(John), Loves(John, Mary)
+
+% \item 命题\emp{内部} 的结构，即 predicate-level 结构，命题\emp{之间} 的结构，即 命题逻辑
+
+\item 从逻辑的角度看，attention 的输出可以看成是 predicate 和 objects 的\emp{结合}：
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.5]{attention-as-predicate.png}}}
+\end{equation}
+
+\item 形象地说：
+\begin{equation}
+\begin{aligned}
+\mbox{predicate} & + \mbox{objects} &&= \mbox{proposition} \\
+\NewSym{predicate.png} &+ \NewSym{object.png} \; \NewSym{object.png} \; \NewSym{object.png} \; .... &&= \NewSym{proposition.png}
+\end{aligned}
+\end{equation}
+\end{itemize}
+\end{frame}
+
+\begin{comment}
 \begin{frame}
 \frametitle{Attention 给逻辑 AI 的启发}
 我这样理解 attention：
@@ -333,28 +376,71 @@ c_i = \sum_j \alpha_{ij} h_j
 
 \end{itemize}
 \end{frame}
+\end{comment}
+
+\begin{frame}
+\frametitle{Attention 在命题之间的作用}
+\begin{itemize}
+\item 类似地，\emp{高层}的 attention 可以处理 \emp{命题之间} 的关系，但这时 attention 机制似乎有 严重的不足之处
+
+\item 我们希望 attention 做到的是 \emp{选择}有关联的命题，去做逻辑推导：
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.5]{attention-in-logic.png}}}
+\end{equation}
+
+\item 但，逻辑上有关联的东西 未必是相似的
+
+\item 例如： 尿急 $\wedge$ 不在厕所 $\Rightarrow$ 忍著； 但「尿急」和「不在厕所」并没有 \mbox{\textit{a priori}} 的关系
+\end{itemize}
+\end{frame}
 
 \begin{frame}
 \frametitle{``Attention is all you need'' ?}
 \begin{itemize}
-\item 但逻辑 attention 和一般 attention 要求略有不同
+\item At the porpositional level, attention 要用 weight matrix 记住各种命题之间的 相关性，这种做法似乎 \emp{缺乏效率}
 
-\item 不是「同类映射到同类」，而是要在 数量庞大的 logic rules 中 找到适用(applicable)的 rule
+% \item 但逻辑 attention 和一般 attention 要求略有不同
 
-\item 隐状态 $s_t$ 代表 ``search state''，注意力 的目的是 \emp{选择} $s_t$ 所需要的那些命题，交给 解码器
+% \item 不是「同类映射到同类」，而是要在 数量庞大的 logic rules 中 找到适用(applicable)的 rule
 
-\item 注意： 逻辑 attention 从 $M$ 个命题中 选择 $N$ 个命题，$M > N$. 这是 inductive bias. \ 而 symmetric NN 的做法，只是要求 $M$ 个命题 的 \emp{置换不变性}，所以它浪费了资源在很多 ``don't care'' 的命题上
+% \item 隐状态 $s_t$ 代表 ``search state''，注意力 的目的是 \emp{选择} $s_t$ 所需要的那些命题，交给 解码器
 
-\item 换句话说，attention 或者可以加强 sym NN 的效率，甚至取代 sym NN
+% \item 注意： 逻辑 attention 从 $M$ 个命题中 选择 $N$ 个命题，$M > N$. 这是 inductive bias. \ 而 symmetric NN 的做法，只是要求 $M$ 个命题 的 \emp{置换不变性}，所以它浪费了资源在很多 ``don't care'' 的命题上
 
-\item 假设 $q$ 是（包含多个命题的）逻辑 state，$\bowtie$ 表示 matching by attention:
+% \item 换句话说，attention 或者可以加强 sym NN 的效率，甚至取代 sym NN
+
+\item 例如，假设 $q$ 是被关注的逻辑命题，$p_1, p_2, .... $ 是一些可能相关的命题，$\bowtie$ 表示 matching by attention，我们希望输出一些 cases：
 	\begin{equation}
-	q \bowtie \mbox{rule} \rightarrow \mbox{conclusion}
+	q \bowtie \; \; p_1, p_2, ... \mapsto \mbox{case}
 	\end{equation}
-Thus, each row in the attention matrix 对应於一条 logic rule.  这是一种 ``flat'' 的 representation of rules, 但 sym NN 采用的是有「深度」的 representation.  这是值得再思考的问题
+但每个 case 需要 矩阵的一行 储存
+
+\item 这是一种 ``flat'' representation of cases
+
+\item 而如果我们企图使用 hierarchical 的方法处理，这个方向 会越来越变得像 deep learning, 还不如干脆使用 神经网络！
+
+\item 换句话说： 直接使用 deep symmetric NN, 在 NN \emp{内部} 学习如何 选择 相关的命题
 \end{itemize}
 \end{frame}
 
+
+\begin{frame}
+\frametitle{\cc{应用：}{Application:} content-addressable long-term memory}
+\begin{itemize}
+	\item \cc{以前 BERT 的隐状态 没有逻辑结构，我们不是很清楚它的内容是什么； 逻辑化之后，BERT 内部的命题可以储存在 \emp{长期记忆} 中：}
+	{The original BERT hidden state lacked a logical structure and it was not clear what exactly it contains.  After logicalization, propositions inside BERT can be stored into \emp{long-term memory}:}
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.5]{long-term-memory.png}}}
+	\end{equation}
+	例如：「太阳是热的」、「水向下流」是经常正确的命题
+
+	\item \cc{这种系统 已非常接近 strong AI，而这是有赖 \emp{逻辑化} 才能做到的}
+	{These kind of systems are very close to strong AI, and it depends crucially on logicalization}
+	\item \cc{Content-addressable memory 的想法来自 Alex Graves \textit{et al} 的 Neural Turing Machine [2014]}
+	{The content-addressable memory idea came from Alex Graves \textit{et al}'s Neural Turing Machine [2014]}
+ \end{itemize}
+\nocite{Graves2014}
+\end{frame}
 
 \begin{frame}
 \frametitle{\cc{应用：知识图谱 (knowledge graphs)}{Application: knowledge graphs}}
@@ -370,21 +456,6 @@ Thus, each row in the attention matrix 对应於一条 logic rule.  这是一种
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{\cc{应用：}{Application:} content-addressable long-term memory}
-\begin{itemize}
-	\item \cc{以前 BERT 的隐状态 没有逻辑结构，我们不是很清楚它的内容是什么； 逻辑化之后，BERT 内部的命题可以储存在 \emp{长期记忆} 中：}
-	{The original BERT hidden state lacked a logical structure and it was not clear what exactly it contains.  After logicalization, propositions inside BERT can be stored into \emp{long-term memory}:}
-	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=0.5]{long-term-memory.png}}}
-	\end{equation}
-	\item \cc{这种系统 已非常接近 strong AI，而这是有赖 \emp{逻辑化} 才能做到的}
-	{These kind of systems are very close to strong AI, and it depends crucially on logicalization}
-	\item \cc{Content-addressable memory 的想法来自 Alex Graves \textit{et al} 的 Neural Turing Machine [2014]}
-	{The content-addressable memory idea came from Alex Graves \textit{et al}'s Neural Turing Machine [2014]}
- \end{itemize}
-\nocite{Graves2014}
-\end{frame}
 
 \frameinlbffalse
 \begin{frame}

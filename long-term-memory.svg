@@ -608,7 +608,7 @@
        height="8.8635368"
        width="1.6536438"
        id="use950"
-       style="opacity:1;vector-effect:none;fill:#0000ff;fill-opacity:0.9885057;stroke:none;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
+       style="opacity:1;vector-effect:none;fill:#00ffff;fill-opacity:0.9885057;stroke:#0000ff;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal;font-variant-east_asian:normal"
        inkscape:tile-cx="69.883064"
        inkscape:tile-cy="129.84948"
        inkscape:tile-w="1.6536438"
@@ -689,70 +689,80 @@
        y="0"
        inkscape:tiled-clone-of="#use950"
        xlink:href="#use950"
-       id="use1128" />
+       id="use1128"
+       style="font-variant-east_asian:normal;opacity:1;vector-effect:none;fill:#00ffff;fill-opacity:0.9885057;stroke:#0000ff;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <use
        x="0"
        y="0"
        inkscape:tiled-clone-of="#use950"
        xlink:href="#use950"
        transform="translate(5.7877533)"
-       id="use1130" />
+       id="use1130"
+       style="font-variant-east_asian:normal;opacity:1;vector-effect:none;fill:#00ffff;fill-opacity:0.9885057;stroke:#0000ff;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <use
        x="0"
        y="0"
        inkscape:tiled-clone-of="#use950"
        xlink:href="#use950"
        transform="translate(11.575507)"
-       id="use1132" />
+       id="use1132"
+       style="font-variant-east_asian:normal;opacity:1;vector-effect:none;fill:#00ffff;fill-opacity:0.9885057;stroke:#0000ff;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <use
        x="0"
        y="0"
        inkscape:tiled-clone-of="#use950"
        xlink:href="#use950"
        transform="translate(17.36326)"
-       id="use1134" />
+       id="use1134"
+       style="font-variant-east_asian:normal;opacity:1;vector-effect:none;fill:#00ffff;fill-opacity:0.9885057;stroke:#0000ff;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <use
        x="0"
        y="0"
        inkscape:tiled-clone-of="#use950"
        xlink:href="#use950"
        transform="translate(23.151013)"
-       id="use1136" />
+       id="use1136"
+       style="font-variant-east_asian:normal;opacity:1;vector-effect:none;fill:#00ffff;fill-opacity:0.9885057;stroke:#0000ff;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <use
        x="0"
        y="0"
        inkscape:tiled-clone-of="#use950"
        xlink:href="#use950"
        transform="translate(28.938767)"
-       id="use1138" />
+       id="use1138"
+       style="font-variant-east_asian:normal;opacity:1;vector-effect:none;fill:#00ffff;fill-opacity:0.9885057;stroke:#0000ff;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <use
        x="0"
        y="0"
        inkscape:tiled-clone-of="#use950"
        xlink:href="#use950"
        transform="translate(34.72652)"
-       id="use1140" />
+       id="use1140"
+       style="font-variant-east_asian:normal;opacity:1;vector-effect:none;fill:#00ffff;fill-opacity:0.9885057;stroke:#0000ff;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <use
        x="0"
        y="0"
        inkscape:tiled-clone-of="#use950"
        xlink:href="#use950"
        transform="translate(40.514273)"
-       id="use1142" />
+       id="use1142"
+       style="font-variant-east_asian:normal;opacity:1;vector-effect:none;fill:#00ffff;fill-opacity:0.9885057;stroke:#0000ff;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <use
        x="0"
        y="0"
        inkscape:tiled-clone-of="#use950"
        xlink:href="#use950"
        transform="translate(46.302027)"
-       id="use1144" />
+       id="use1144"
+       style="font-variant-east_asian:normal;opacity:1;vector-effect:none;fill:#00ffff;fill-opacity:0.9885057;stroke:#0000ff;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <use
        x="0"
        y="0"
        inkscape:tiled-clone-of="#use950"
        xlink:href="#use950"
        transform="translate(52.08978)"
-       id="use1146" />
+       id="use1146"
+       style="font-variant-east_asian:normal;opacity:1;vector-effect:none;fill:#00ffff;fill-opacity:0.9885057;stroke:#0000ff;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <g
        id="g1195"
        transform="translate(12.699998,19.050002)">
