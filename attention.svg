@@ -132,7 +132,7 @@
       <path
          inkscape:connector-curvature="0"
          transform="matrix(-0.4,0,0,-0.4,-4,0)"
-         style="fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:#cccccc;stroke-width:1.00000003pt;stroke-opacity:1"
+         style="fill:#800080;fill-opacity:1;fill-rule:evenodd;stroke:#800080;stroke-width:1.00000003pt;stroke-opacity:1"
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path1094" />
     </marker>
@@ -447,7 +447,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1"
      inkscape:cx="350.09404"
-     inkscape:cy="402.94759"
+     inkscape:cy="882.94759"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
