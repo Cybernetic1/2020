@@ -383,14 +383,19 @@
 \begin{itemize}
 \item 类似地，\emp{高层}的 attention 可以处理 \emp{命题之间} 的关系，但这时 attention 机制似乎有 严重的不足之处
 
+\item 由词语构成句子／命题，通常有少数的 syntax 法则，例如 \\
+\tab subject $\cdot$ verb $\cdot$ object
+
+\item 但由命题构成结论，并没有 \textit{a priori} 的规则； 逻辑上有关联的东西 未必是相似的
+
+\item 例如： 尿急 $\wedge$ 不在厕所 $\Rightarrow$ 忍著； 但「尿急」和「不在厕所」并没有 \mbox{\textit{a priori}} 的关系
+
 \item 我们希望 attention 做到的是 \emp{选择}有关联的命题，去做逻辑推导：
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.5]{attention-in-logic.png}}}
 \end{equation}
 
-\item 但，逻辑上有关联的东西 未必是相似的
-
-\item 例如： 尿急 $\wedge$ 不在厕所 $\Rightarrow$ 忍著； 但「尿急」和「不在厕所」并没有 \mbox{\textit{a priori}} 的关系
+\item 但从 $M$ 个命题中选择 $N$ 个，可以有 $M \choose N$ 个子集，是 exponential
 \end{itemize}
 \end{frame}
 
