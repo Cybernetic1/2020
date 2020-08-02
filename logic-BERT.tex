@@ -300,6 +300,56 @@
 \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]
+\frametitle{\cc{逻辑 与 AI 之间的联系}
+{Connection between AI and logic}}
+\begin{itemize}
+	\item \cc{既然 AI 基於 逻辑，则 AI 与逻辑之间 必然存在 精确 (precise) 的联系}
+	{If AI is based on logic, there must exist a \emp{precise} connection between them}
+
+	\item \cc{BERT 似乎是在执行 句子之间的变换，而这些句子是 word embedding 的 concatenation，例如：}
+	{BERT seems to be performing some kind of \emp{transformations} between sentences, such sentences are simply compositions of word-embedding vectors:}
+	\begin{equation}
+	\begin{tikzcd}[column sep = large]
+	\mbox{\cc{苏格拉底}{Socrates}} \cdot \mbox{\cc{是}{is}} \cdot \mbox{\cc{人}{human}}
+	\arrow[r, "BERT"]
+	& \mbox{\cc{苏格拉底}{Socrates}} \cdot \mbox{\cc{会}{is}} \cdot \mbox{\cc{死}{mortal}}
+	\end{tikzcd}
+	\label{BERT-map}
+	\end{equation}
+	\cc{这个做法看似很「粗暴」，其实它和 \emp{逻辑式子} 的作用一样：}
+	{While this may seem crude, it is effectively the same as a logic formula:}
+	\begin{equation}
+	\forall x. \; \mbox{Human}(x) \rightarrow \mbox{Mortal}(x)
+	\end{equation}
+	\cc{而这式子，根据 Curry-Howard 对应，就是 (\ref{BERT-map}) 的函数映射!}
+	{Surprisingly, by the Curry-Howard correspondence, this formula corresponds to the mapping (\ref{BERT-map}) above!}
+
+	% \item 这些映射的对象，是形如 ``$a \in A$'' 这样的物体，它们有 predicates 的几何／拓扑结构，但我们现时未做到这一步，暂时只引入了 commutativity
+	
+	\begin{comment}
+	\item 集合元素 $a$ 是 $\exists x. P(x)$ 的证明，例如 Socrates 是 $\exists x. \mbox{mortal}(x)$ 的证明
+	\item 当 神经网络 \emp{调教} 某些元素的 映射 (mapping) 时，它同时在学习某个逻辑的 formula;  换句话说，逻辑 是几何空间中的映射
+	\item 逻辑的 谓词 (predicates) 是在 基底元素空间上的一个 \emp{纤维丛结构} (fibration) :
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.5]{etale-space.png}}}
+	\end{equation}
+	\end{comment}
+	
+	% \item 从 几何／拓扑 ``借'' 来的概念，演变成 topos 理论、HoTT 等
+	
+	% \item 这些漂亮的理论 不是无用的； 有需要时，可以從 邏輯 那邊借來更多的結構
+	
+	\item \cc{我在另一篇文章里 将会分析这个联系； 可以说，逻辑的 几何结构 是「永恒」的，它可以指示 AI 的 长远发展}
+	{In another article we shall explore this connection.  One could say the mathematical structure of logic is ``eternal'';  It will provide guidance for the long-term development of AI}
+	
+	% \item $H(a)$ is a type.
+	% \item $H$ is a prodicate type.
+	% \item The proof of $H(a)$ may be the tuple $(a, H)$ or $a \in H$
+\end{itemize}
+\end{frame}
+
+
 \begin{frame}
 \frametitle{\cc{Attention 是什么？}{What is attention?}}
 \begin{itemize}
