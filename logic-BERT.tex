@@ -125,7 +125,8 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Logic BERT]{{\Huge《Logicalization of BERT》}}
+\title[Logic BERT]{\cc{{\Huge《KERMIT: BERT 的逻辑化》}}
+{{\Huge《KERMIT: logicalization of BERT》}}}
 \author{YKY} % Your name
 %\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 %{
@@ -160,55 +161,72 @@
 \frameinlbftrue
 
 \begin{frame}
-\frametitle{BERT 的革命性意义：「闭环路训练」}
+\frametitle{\cc{BERT 的革命性意义：「闭环路训练」}
+	{BERT's ground-breaking significance: closed-loop training}}
 \begin{itemize}
-	\item BERT 利用平常的文本 induce 出知识，而这 representation 具有 \emp{通用性 (universality)} :
+	\item \cc{BERT 利用平常的文本 induce 出知识，而这 representation 具有 \emp{通用性 (universality)} :}
+	{BERT uses ordinary text corpuses to \emp{induce} knowledge, forming representations that have \emp{universality}:}
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.5]{BERT-architecture.png}}}
 	\end{equation}
-	换句话说： 隐状态的 representation 压缩了句子的意思，而它可以应用在别的场景下
+	\cc{换句话说： 隐状态的 representation 压缩了句子的意思，而它可以应用在别的场景下}
+	{In other words, the hidden state compresses the meaning of sentences, that can be used in other scenarios}
 	
-	\item This implies that human-level AI can be \textit{induced} from existing corpora, 而\emp{不需重复 像人类婴儿成长的学习阶段}
-	
+	\item This implies that human-level AI can be \textit{induced} from existing corpora, \cc{而\emp{不需重复 像人类婴儿成长的学习阶段}}
+	{without the need to \emp{retrace human infant development}}
+
 	% \item Such corpora can include items such as images, movies with dialogues / subtitles
 
-	\item 这种训练方法是较早的另一篇论文提出，它并不属於 BERT 的内部结构
+	\item \cc{这种训练方法是较早的另一篇论文提出，它并不属於 BERT 的内部结构}
+	{This training technique came from an earlier paper, unrelated to BERT's internal architecture}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{BERT 的内部结构}
-其实，BERT 也是混合了很多技巧 发展而成的：
+\frametitle{\cc{BERT 的内部结构}
+	{BERT's internal architecture}}
+\cc{其实，BERT 也是混合了很多技巧 发展而成的：}
+{BERT results from combining several ideas:}
 \begin{itemize}
-\item BERT 基本上是一个 seq-to-seq 的运算过程
-\item Seq-to-seq 问题最初是用 RNN 解决的
-\item 但 RNN 速度较慢，有人提出用 CNN 取代：
+\item \cc{BERT 基本上是一个 seq-to-seq 的运算过程}
+{BERT is basically a seq-to-seq transformation}
+\item \cc{Seq-to-seq 问题最初是用 RNN 解决的}
+{Seq-to-seq was originally solved by RNNs}
+\item \cc{但 RNN 速度较慢，有人提出用 CNN 取代：}
+{But RNNs are slow, researchers proposed to replace them with CNNs}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.5]{RNN-2-CNN.png}}}
 \end{equation}
-\item CNN 加上 attention mechanism 变成 Transformer
-\item 我的目标是重复这个思路，但引入 symmetric NN 的结构
+\item \cc{CNN 加上 attention mechanism 变成 Transformer}
+{CNN with \emp{attention mechanism} gives rise to Transformer}
+\item \cc{我的目标是重复这个思路，但引入 symmetric NN 的结构}
+{My idea is to incorporate symmetric NN into BERT while following this line of thinking}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Symmetry in logic}
 \begin{itemize}
-	\item \emp{词语} 组成 \emp{句子}，类比於 逻辑中，\emp{概念} 组成 \emp{逻辑命题}
+	\item \cc{\emp{词语} 组成 \emp{句子}，类比於 逻辑中，\emp{概念} 组成 \emp{逻辑命题}}
+	{\emp{Words} form \emp{sentences}, analogous to \emp{concepts} forming \emp{propositions} in logic}
 	
-	\item 抽象地说，逻辑语言 可以看成是一种有 2个运算的 \emp{代数结构}，可以看成是 加法 $\wedge$ 和 乘法 $\cdot$，其中 乘法 是不可交换的，但加法 可交换
-	
-	\item 例如：
+	\item \cc{抽象地说，逻辑语言 可以看成是一种有 2个运算的 \emp{代数结构}：加法（$\wedge$，合并命题，可交换）和 乘法（$\cdot$，用作概念合成，不可交换）}
+	{From an abstract point of view, logic can be seen as an \emp{algebra} with 2 operations: a non-commutative multiplication ($\cdot$, for composition of concepts) and a commutative addition ($\wedge$, for conjunction of propositions)}
+
+	\item \cc{例如：}{For example:}
 	\begin{equation}
 	\begin{aligned}
 	A &\wedge B & \equiv && B & \wedge A \\
-	\mbox{下雨} &\wedge \mbox{失恋} & \equiv && \mbox{失恋} &\wedge \mbox{下雨}
+	\mbox{\cc{下雨}{it's raining}} &\wedge \mbox{\cc{失恋}{lovesick}} & \equiv && \mbox{\cc{失恋}{lovesick}} &\wedge \mbox{\cc{下雨}{it's raining}}
 	\end{aligned}
 	\end{equation}
-	
-	\item Word2Vec 也是革命性的； 由 Word2Vec 演变成 Sentence2Vec 则比较容易，基本上只是 向量的 \emp{合并} (concatenation)； Sentence 对应於 逻辑命题
 
-	\item 但 命题的 \emp{集合} 需要用 symmetric NN 处理，因为 集合的元素 是\emp{顺序无关}的
+	\item \cc{Word2Vec 也是革命性的； 由 Word2Vec 演变成 Sentence2Vec 则比较容易，基本上只是 向量的 \emp{合并} (concatenation);  Sentence 对应於 逻辑命题}
+	{Word2Vec was also ground-breaking, but it was easy to go from Word2Vec to Sentence2Vec: just concatenate the vectors
+	\\ Sentences correspond to propositional logic}
+
+	\item \cc{但 命题的 \emp{集合} 需要用 symmetric NN 处理，因为 集合的元素 是\emp{顺序无关}的}
+	{A \emp{set} of propositions requires symmetric NN to process, as elements of the set are \emp{permutation invariant}}
 
 	% \item 假设 全体逻辑命题的空间是 $\mathbb{P}$，则 \emp{命题集合} 的空间是 $2^{\mathbb{P}}$，非常庞大
 	
@@ -232,7 +250,7 @@
 	% \item Permutation invariance can be handled by \emp{symmetric} neural networks
 
 	\item \cc{Symmetric NN 问题 已经由 两篇论文解决了： \\ \tab [PointNet 2017] [DeepSets 2017]}
-	{I wasted 2 years trying to solve this problem, and then find out it has been solved 3 years ago:  [PointNet 2017] and [DeepSets 2017] and their mastery of mathematics is significantly above me!}
+	{The symmetric NN problem has been solved by 2 papers: \\ \tab  [PointNet 2017] and [DeepSets 2017]}
 
 	\item Any symmetric function can be represented by the following form (a special case of the Kolmogorov-Arnold representation of functions):
 	\begin{equation}
@@ -250,18 +268,19 @@
 \frametitle{\cc{BERT 的逻辑化}{Logicalization of BERT}}
 \begin{itemize}
 	\item \cc{可以将 BERT 的 隐状态 变成 ``set of propositions'' 的形式，方法是将 原来的 decoder 变成 sym NN：}
-	{Similarly, we can convert BERT's hidden state into a set of propositions, by replacing the original \emp{decoder} with a sym NN:}
+	{We can convert BERT's hidden state into a set of propositions, by replacing the original \emp{decoder} with a sym NN:}
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.5]{sym-BERT.png}}}
 	\end{equation}
 
-	\item 这时，输出对 $\vcenter{\hbox{\includegraphics[scale=0.4]{proposition.png}}}$ 的交换不变性 is automatically satisfied by the architecture of the decoder
-	
-	\item \cc{旧的 encoder 可以照旧使用，，因为它是一个 universal seq-2-seq mapping}
+	\item \cc{这时，输出对 $\NewSym{proposition.png}$ 的交换不变性 is automatically satisfied by the architecture of the decoder}
+	{Permutation invariance of the $\NewSym{proposition.png}$'s is automatically satisfied by the architecture of the new decoder}
+
+	\item \cc{旧的 encoder 可以照旧使用，因为它是一个 universal seq-2-seq mapping}
 	{The original \emp{encoder} can be retained, as it is a universal seq-2-seq mapping}
 	
 	\item \cc{因为后半部改变了，error propagation 会令 representation 也改变}
-	{As the \emp{decoder} imposes symmetry on the hidden state, error propagation is expected to cause its representation to change}
+	{The \emp{decoder} imposes symmetry on the hidden state;  Error propagation is expected to cause its representation to change}
 
 	\item \cc{当然，这个想法有待实验证实 \smiley}
 	{Of course, this remains to be proven by experiment \smiley}
@@ -282,22 +301,27 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Attention 是什么？}
+\frametitle{\cc{Attention 是什么？}{What is attention?}}
 \begin{itemize}
-\item 注意力 最初起源於 Seq2seq，后来 BERT 引入 self-attention
+\item \cc{注意力 最初起源於 Seq2seq，后来 BERT 引入 self-attention}
+{Attention originated with Seq2seq, then BERT introduced self-attention}
 
-\item Attention 的本质就是 \emp{加权}，权值 可以反映 模型 \emp{关注}的点
+\item \cc{Attention 的本质就是 \emp{加权}，权值 可以反映 模型 \emp{关注}的点}
+{The essence of attention is \emp{weighing}}
 
-\item For each input, the attention mechanism weighs the \emp{relevance} of every other input and draws information from them accordingly to produce the output
+\item For each input, attention weighs the \emp{relevance} of every other input and draws information from them accordingly to produce the output
 
-\item 在 BERT 里，attention 是一种 \emp{words} 之间的关系：
+\item \cc{在 BERT 里，attention 是一种 \emp{words} 之间的关系：}
+{In BERT, attention is a relation among \emp{words} in a sentence:}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.5]{attention-among-words.png}}}
 \end{equation}
 
-\item 但，从逻辑的角度看，word $\ne$ 命题
+\item \cc{但，从逻辑的角度看，word $\ne$ 命题}
+{From a logic point of view, words $\ne$ propositions}
 
-\item 在逻辑学上，必需分清 命题\emp{内部} 与 命题\emp{之间} 这两个层次，非常关键！
+\item \cc{在逻辑学上，必需分清 命题\emp{内部} 与 命题\emp{之间} 这两个层次，非常关键！}
+{In logic, the distinction between sub-propositional and propositional levels is of crucial importance!}
 
 %\item 在 Seq2seq 中，编码器 (encoder) 由下式给出，它将输入的词语 $x_i$ 转化成 一连串的 隐状态 $h_i$：
 %\begin{equation}
@@ -327,24 +351,29 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{谓词 (predicates) 与 命题 (propositions)}
+\frametitle{\cc{谓词 (predicates) 与 命题 (propositions)}
+	{Predicates and propositions}}
 \begin{itemize}
-\item ``Predicate'' 来自拉丁文「断言」的意思
+\item \cc{``Predicate'' 来自拉丁文「断言」的意思}
+{The word ``predicate'' comes from Latin ``to declare''}
 
-\item 逻辑里，predicate 代表一个 没有主体／客体 的断言，换句话说，是一个有「洞」的命题
+\item \cc{逻辑里，predicate 代表一个 没有主体／客体 的断言，换句话说，是一个有「洞」的命题}
+{In logic, a predicate is a declaration without a subject or object;  In other words, it is a proposition with ``holes''}
 	
-\item \emp{命题} = \emp{谓词} (predicate) + \emp{主体／客体}（统称 objects）
+\item \cc{\emp{命题} = \emp{谓词} (predicate) + \emp{主体／客体}（统称 objects）}
+{\emp{Proposition} = \emp{predicate} + \emp{objects}}
 
-\item 例如： Human(John), Loves(John, Mary)
+\item \cc{例如：}{Eg:} Human(John), Loves(John, Mary)
 
 % \item 命题\emp{内部} 的结构，即 predicate-level 结构，命题\emp{之间} 的结构，即 命题逻辑
 
-\item 从逻辑的角度看，attention 的输出可以看成是 predicate 和 objects 的\emp{结合}：
+\item \cc{从逻辑的角度看，attention 的输出可以看成是 predicate 和 objects 的\emp{结合}：}
+{From the logic point of view, the output of attention is the \emp{fusion} of a predicate with its objects:}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.5]{attention-as-predicate.png}}}
 \end{equation}
 
-\item 形象地说：
+\item \cc{形象地说：}{Or figuratively:}
 \begin{equation}
 \begin{aligned}
 \mbox{predicate} & + \mbox{objects} &&= \mbox{proposition} \\
@@ -379,30 +408,38 @@
 \end{comment}
 
 \begin{frame}
-\frametitle{Attention 在命题之间的作用}
+\frametitle{\cc{Attention 在命题之间的作用}
+	{Attention at the propositional level}}
 \begin{itemize}
-\item 类似地，\emp{高层}的 attention 可以处理 \emp{命题之间} 的关系，但这时 attention 机制似乎有 严重的不足之处
+\item \cc{类似地，\emp{高层}的 attention 可以处理 \emp{命题之间} 的关系，但这时 attention 机制似乎有 严重的不足之处}
+{Analogously, attention on higher levels may process relations among propositions, but here this mechanism seems rather inadequate}
 
-\item 由词语构成句子／命题，通常有少数的 syntax 法则，例如 \\
-\tab subject $\cdot$ verb $\cdot$ object
+\item \cc{由词语构成句子／命题，通常有少数的 syntax 法则，例如}
+{When forming sentences from words, there are relatively few syntactic patterns, such as:}
+\\ \tab subject $\cdot$ verb $\cdot$ object
 
-\item 但由命题构成结论，并没有 \textit{a priori} 的规则； 逻辑上有关联的东西 未必是相似的
+\item \cc{但由命题构成结论，并没有 \textit{a priori} 的规则； 逻辑上有关联的东西 未必是相似的}
+{But there are no \textit{a priori} patterns for forming deductions from propositions;  Logically related things need not be similar}
 
-\item 例如： 尿急 $\wedge$ 不在厕所 $\Rightarrow$ 忍著； 但「尿急」和「不在厕所」并没有 \mbox{\textit{a priori}} 的关系
+\item \cc{例如： 尿急 $\wedge$ 不在厕所 $\Rightarrow$ 忍著； 但「尿」和「厕所」是 \emp{后天} 学习的关系}
+{Eg: need to pee $\wedge$ not in toilet $\Rightarrow$ hold it \\ But ``pee'' and ``in toilet'' is learned \textit{a posteriori}}
 
-\item 我们希望 attention 做到的是 \emp{选择}有关联的命题，去做逻辑推导：
+\item \cc{我们希望 attention 做到的是 \emp{选择}有关联的命题，去做逻辑推导：}
+{We wish for attention to \emp{select} propositions that are relevant for deduction:}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.5]{attention-in-logic.png}}}
 \end{equation}
 
-\item 但从 $M$ 个命题中选择 $N$ 个，可以有 $M \choose N$ 个子集，是 exponential
+\item \cc{但从 $M$ 个命题中选择 $N$ 个，可以有 $M \choose N$ 个子集，是 exponential}
+{But to choose $N$ propositions from a set of $N$, there would be $M \choose N$ subsets, an \emp{exponential} number}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{``Attention is all you need'' ?}
 \begin{itemize}
-\item At the porpositional level, attention 要用 weight matrix 记住各种命题之间的 相关性，这种做法似乎 \emp{缺乏效率}
+\item \cc{At the porpositional level, attention 要用 weight matrix 记住各种命题之间的 相关性，这种做法似乎 \emp{缺乏效率}}
+{At the propositional level, attention uses a \emp{weight matrix} to memorize the relatedness among propositions, such a method seems \emp{inefficient}}
 
 % \item 但逻辑 attention 和一般 attention 要求略有不同
 
@@ -414,33 +451,42 @@
 
 % \item 换句话说，attention 或者可以加强 sym NN 的效率，甚至取代 sym NN
 
-\item 例如，假设 $q$ 是被关注的逻辑命题，$p_1, p_2, .... $ 是一些可能相关的命题，$\bowtie$ 表示 matching by attention，我们希望输出一些 cases：
+\item \cc{例如，假设 $q$ 是被关注的逻辑命题，$p_1, p_2, .... $ 是一些可能相关的命题，$\bowtie$ 表示 matching by attention，我们希望输出它们的关联性：}
+{Suppose $q$ is the proposition under focus, $p_1, p_2, ....$ are some possibly relevant propositions, $\bowtie$ denotes matching by attention, we want to output their relatedness:}
 	\begin{equation}
-	q \bowtie \; \; p_1, p_2, ... \mapsto \mbox{case}
+	q \bowtie \; \; p_1, p_2, ... \mapsto \mbox{related?}
 	\end{equation}
-但每个 case 需要 矩阵的一行 储存
+\cc{但每个 case 需要 矩阵的一行 储存}
+{but each case takes one row of matrix for storage}
 
-\item 这是一种 ``flat'' representation of cases
+\item \cc{这是一种 ``flat'' representation of cases}
+{This is a ``flat'' representation of cases}
 
-\item 而如果我们企图使用 hierarchical 的方法处理，这个方向 会越来越变得像 deep learning, 还不如干脆使用 神经网络！
+\item \cc{而如果我们企图使用 hierarchical 的方法处理，这个方向 会越来越变得像 deep learning, 还不如干脆使用 神经网络！}
+{If we try to use \emp{hierarchical} techniques to handle this, it becomes more and more like deep learning, we might as well just use a neural network!}
 
-\item 换句话说： 直接使用 deep symmetric NN, 在 NN \emp{内部} 学习如何 选择 相关的命题
+\item \cc{换句话说： 直接使用 deep symmetric NN, 在 NN \emp{内部} 学习如何 选择 相关的命题}
+{In other words, use a deep symmetric NN, let it learn \emp{internally} how to select relevant propositions}
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{\cc{应用：}{Application:} content-addressable long-term memory}
+\frametitle{Content-addressable long-term memory}
 \begin{itemize}
 	\item \cc{以前 BERT 的隐状态 没有逻辑结构，我们不是很清楚它的内容是什么； 逻辑化之后，BERT 内部的命题可以储存在 \emp{长期记忆} 中：}
-	{The original BERT hidden state lacked a logical structure and it was not clear what exactly it contains.  After logicalization, propositions inside BERT can be stored into \emp{long-term memory}:}
+	{The original BERT's hidden state lacked a logical structure;  It was not clear what it contains exactly.  With logicalization, propositions inside BERT can be stored into a \emp{long-term memory}:}
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.5]{long-term-memory.png}}}
 	\end{equation}
-	例如：「太阳是热的」、「水向下流」是经常正确的命题
+	\cc{例如：「太阳是热的」、「水向下流」是经常正确的命题}{Eg. ``The sun is hot'', ``Water flows downhill'' are facts that stay constant}
+
+	% \item 训练的方法，可以将所有 \NewSym{proposition.png} 存进 memory，如果对结论有帮助则加分，错则减分
+	
+	\item \cc{命名：}{Name:} \emp{K}nowledge-\emp{E}nhanced \emp{R}easoning with \emp{M}emorized \emp{It}ems
 
 	\item \cc{这种系统 已非常接近 strong AI，而这是有赖 \emp{逻辑化} 才能做到的}
-	{These kind of systems are very close to strong AI, and it depends crucially on logicalization}
+	{This is getting very close to strong AI, and depends crucially on logicalization}
 	\item \cc{Content-addressable memory 的想法来自 Alex Graves \textit{et al} 的 Neural Turing Machine [2014]}
 	{The content-addressable memory idea came from Alex Graves \textit{et al}'s Neural Turing Machine [2014]}
  \end{itemize}
@@ -448,15 +494,15 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{\cc{应用：知识图谱 (knowledge graphs)}{Application: knowledge graphs}}
+\frametitle{\cc{知识图谱 (knowledge graphs)}{Knowledge graphs}}
 \begin{itemize}
 	\item \cc{知识图谱 不能直接输入神经网络，它必需分拆成很多 edges，每个 edge 是一个 \emp{关系}，也是一个 \emp{逻辑命题} ；也可以说 ``graphs are isomorphic to logic''}
-	{One cannot feed a knowledge graph directly into an NN, as its input must be embedded in vector space.  A solution is to break the graph into edges, where each edge is equivalent to a relation or proposition.  One could say that graphs are isomorphic to logic}
+	{One cannot feed a knowledge graph directly into a neural network, as the input must be a vector.  A solution is to break the graph into edges, where each edge is equivalent to a \emp{relation} or \emp{proposition}.  One could say that graphs are isomorphic to logic}
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.6]{knowledge-graph.png}}}
 	\end{equation}
 	\item \cc{而这些 edges 似乎必需用 \emp{symmetric} NN 处理，因为它们是 permutation invariant}
-	{Since edges are invariant under permutations, it appears that symmetric NNs are required to process them}
+	{As edges are invariant under permutations, it seems that we must use symmetric NNs to process them}
 	% \item Sym NNs are required to handle \emp{graph-rewriting}, an essential operation on knowledge graphs
 \end{itemize}
 \end{frame}

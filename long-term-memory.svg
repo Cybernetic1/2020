@@ -536,7 +536,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1"
      inkscape:cx="363.07526"
-     inkscape:cy="605.42742"
+     inkscape:cy="525.42742"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -584,19 +584,20 @@
        ry="4.2333331" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.26458332;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="167.39656"
-       y="171.05833"
+       y="168.41254"
        id="text868"><tspan
          sodipodi:role="line"
          x="167.39656"
-         y="171.05833"
-         style="text-align:center;text-anchor:middle;stroke-width:0.26458332;fill:#ff0000;"
-         id="tspan870">content-addressable</tspan><tspan
+         y="168.41254"
+         style="text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.26458332"
+         id="tspan870"
+         dy="2">content-addressable</tspan><tspan
          sodipodi:role="line"
          x="167.39656"
-         y="179.87778"
-         style="text-align:center;text-anchor:middle;stroke-width:0.26458332;fill:#ff0000;"
+         y="177.23198"
+         style="text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.26458332"
          id="tspan874">long-term memory</tspan></text>
     <rect
        inkscape:tile-y0="125.41771"
@@ -617,16 +618,17 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="45.686787"
-       y="127.13749"
+       y="126.07915"
        id="text966"><tspan
          sodipodi:role="line"
          id="tspan964"
          x="45.686787"
-         y="127.13749"
-         style="text-align:center;text-anchor:middle;stroke-width:0.26458332">hidden-state</tspan><tspan
+         y="126.07915"
+         style="text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         dy="2">hidden-state</tspan><tspan
          sodipodi:role="line"
          x="45.686787"
-         y="135.95694"
+         y="134.89861"
          style="text-align:center;text-anchor:middle;stroke-width:0.26458332"
          id="tspan968">of BERT</tspan></text>
     <path
@@ -676,12 +678,12 @@
          y="105.48241"
          style="stroke-width:0.26458332">decode</tspan></text>
     <rect
-       style="opacity:1;vector-effect:none;fill:#552200;fill-opacity:0;stroke:#030303;stroke-width:0.26458332;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
+       style="opacity:1;vector-effect:none;fill:#552200;fill-opacity:0;stroke:#b3b3b3;stroke-width:0.79374999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect217"
-       width="108.47916"
-       height="28.574993"
-       x="23.018749"
-       y="114.96667"
+       width="105.83333"
+       height="28.310406"
+       x="25.664583"
+       y="115.23125"
        ry="10.318747"
        rx="0" />
     <use
