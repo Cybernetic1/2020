@@ -458,8 +458,9 @@
 \end{comment}
 
 \begin{frame}
-\frametitle{\cc{Attention 在命题之间的作用}
-	{Attention at the propositional level}}
+\frametitle{``Attention is all you need'' ?}
+% \frametitle{\cc{Attention 在命题之间的作用}
+%	{Attention at the propositional level}}
 \begin{itemize}
 \item \cc{类似地，\emp{高层}的 attention 可以处理 \emp{命题之间} 的关系，但这时 attention 机制似乎有 严重的不足之处}
 {Analogously, attention on higher levels may process relations among propositions, but here this mechanism seems rather inadequate}
@@ -480,13 +481,13 @@
 \vcenter{\hbox{\includegraphics[scale=0.5]{attention-in-logic.png}}}
 \end{equation}
 
-\item \cc{但从 $M$ 个命题中选择 $N$ 个，可以有 $M \choose N$ 个子集，是 exponential}
-{But to choose $N$ propositions from a set of $N$, there would be $M \choose N$ subsets, an \emp{exponential} number}
+\item \cc{但从 $N$ 个命题中选择 $K$ 个，可以有 $N \choose K$ 个子集，是 exponential 的}
+{But to choose $K$ propositions from a set of $N$, there would be $N \choose K$ subsets, an \emp{exponential} number}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{``Attention is all you need'' ?}
+\frametitle{$N$ 个命题选 $K$ 个}
 \begin{itemize}
 \item \cc{At the porpositional level, attention 要用 weight matrix 记住各种命题之间的 相关性，这种做法似乎 \emp{缺乏效率}}
 {At the propositional level, attention uses a \emp{weight matrix} to memorize the relatedness among propositions, such a method seems \emp{inefficient}}
@@ -501,22 +502,29 @@
 
 % \item 换句话说，attention 或者可以加强 sym NN 的效率，甚至取代 sym NN
 
-\item \cc{例如，假设 $q$ 是被关注的逻辑命题，$p_1, p_2, .... $ 是一些可能相关的命题，$\bowtie$ 表示 matching by attention，我们希望输出它们的关联性：}
-{Suppose $q$ is the proposition under focus, $p_1, p_2, ....$ are some possibly relevant propositions, $\bowtie$ denotes matching by attention, we want to output their relatedness:}
-	\begin{equation}
-	q \bowtie \; \; p_1, p_2, ... \mapsto \mbox{related?}
-	\end{equation}
-\cc{但每个 case 需要 矩阵的一行 储存}
-{but each case takes one row of matrix for storage}
+% \item \cc{例如，假设 $q$ 是被关注的逻辑命题，$p_1, p_2, .... $ 是一些可能相关的命题，$\bowtie$ 表示 matching by attention，我们希望输出它们的关联性：}
+% {Suppose $q$ is the proposition under focus, $p_1, p_2, ....$ are some possibly relevant propositions, $\bowtie$ denotes matching by attention, we want to output their relatedness:}
+%	\begin{equation}
+%	q \bowtie \; \; p_1, p_2, ... \mapsto \mbox{related?}
+%	\end{equation}
+% \cc{但每个 case 需要 矩阵的一行 储存}
+% {but each case takes one row of matrix for storage}
 
-\item \cc{这是一种 ``flat'' representation of cases}
-{This is a ``flat'' representation of cases}
+% \item \cc{这是一种 ``flat'' representation of cases}
+% {This is a ``flat'' representation of cases}
 
-\item \cc{而如果我们企图使用 hierarchical 的方法处理，这个方向 会越来越变得像 deep learning, 还不如干脆使用 神经网络！}
-{If we try to use \emp{hierarchical} techniques to handle this, it becomes more and more like deep learning, we might as well just use a neural network!}
+% \item \cc{而如果我们企图使用 hierarchical 的方法处理，这个方向 会越来越变得像 deep learning, 还不如干脆使用 神经网络！}
+% {If we try to use \emp{hierarchical} techniques to handle this, it becomes more and more like deep learning, we might as well just use a neural network!}
 
-\item \cc{换句话说： 直接使用 deep symmetric NN, 在 NN \emp{内部} 学习如何 选择 相关的命题}
-{In other words, use a deep symmetric NN, let it learn \emp{internally} how to select relevant propositions}
+% \item \cc{换句话说： 直接使用 deep symmetric NN, 在 NN \emp{内部} 学习如何 选择 相关的命题}
+% {In other words, use a deep symmetric NN, let it learn \emp{internally} how to select relevant propositions}
+
+\item 我模仿 BERT 的优点（它将 RNN unfold 成 CNN，可以并行处理），从 $N$ 个命题中 预先选出 $N \choose K$ 组，每组尝试进行 推导：
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.5]{N-choose-K.png}}}
+\end{equation}
+
+\item BERT 的 self-attention，根据 Curry-Howard isomorphism 对应於某些另类的逻辑，关於这一点我会再更新....
 \end{itemize}
 \end{frame}
 
@@ -559,7 +567,7 @@
 
 \begin{frame}
 \frametitle{\cc{对 逻辑主义 的质疑}
-{Doubts about logic}}
+{Doubts about logicism}}
 \begin{itemize}
 	\item \cc{很多人怀疑： 人脑真的用 逻辑 思考吗？}
 	{Many people question: Do our brains really use symbolic logic to think?}
