@@ -273,17 +273,19 @@
 	\vcenter{\hbox{\includegraphics[scale=0.5]{sym-BERT.png}}}
 	\end{equation}
 
-	\item \cc{这时，输出对 $\NewSym{proposition.png}$ 的交换不变性 is automatically satisfied by the architecture of the decoder}
-	{Permutation invariance of the $\NewSym{proposition.png}$'s is automatically satisfied by the architecture of the new decoder}
+	\item 下面会看到，其实这个方法也未必需要，因为 BERT 的「注意力机制 」也可以用来做 逻辑推导
 
-	\item \cc{旧的 encoder 可以照旧使用，因为它是一个 universal seq-2-seq mapping}
-	{The original \emp{encoder} can be retained, as it is a universal seq-2-seq mapping}
+	% \item \cc{这时，输出对 $\NewSym{proposition.png}$ 的交换不变性 is automatically satisfied by the architecture of the decoder}
+	% {Permutation invariance of the $\NewSym{proposition.png}$'s is automatically satisfied by the architecture of the new decoder}
+
+	% \item \cc{旧的 encoder 可以照旧使用，因为它是一个 universal seq-2-seq mapping}
+	% {The original \emp{encoder} can be retained, as it is a universal seq-2-seq mapping}
 	
-	\item \cc{因为后半部改变了，error propagation 会令 representation 也改变}
-	{The \emp{decoder} imposes symmetry on the hidden state;  Error propagation is expected to cause its representation to change}
+	% \item \cc{因为后半部改变了，error propagation 会令 representation 也改变}
+	% {The \emp{decoder} imposes symmetry on the hidden state;  Error propagation is expected to cause its representation to change}
 
-	\item \cc{当然，这个想法有待实验证实 \smiley}
-	{Of course, this remains to be proven by experiment \smiley}
+	% \item \cc{当然，这个想法有待实验证实 \smiley}
+	% {Of course, this remains to be proven by experiment \smiley}
 	
 	%（{\color{red}第一层}似乎可以纳入到{\color{darkgreen}第二层}，简化整个模型）
 	
