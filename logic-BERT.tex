@@ -340,7 +340,7 @@
 	
 	% \item 这些漂亮的理论 不是无用的； 有需要时，可以從 邏輯 那邊借來更多的結構
 	
-	\item \cc{我在另一篇文章里 将会分析这个联系； 可以说，逻辑的 几何结构 是「永恒」的，它可以指示 AI 的 长远发展}
+	\item \cc{我会在另一辑 slides 里 简介一下这些理论； 可以说，逻辑的 几何结构 是「永恒」的，它可以指示 AI 的 长远发展}
 	{In another article we shall explore this connection.  One could say the mathematical structure of logic is ``eternal'';  It will provide guidance for the long-term development of AI}
 	
 	% \item $H(a)$ is a type.
@@ -462,18 +462,18 @@
 % \frametitle{\cc{Attention 在命题之间的作用}
 %	{Attention at the propositional level}}
 \begin{itemize}
-\item \cc{类似地，\emp{高层}的 attention 可以处理 \emp{命题之间} 的关系，但这时 attention 机制似乎有 严重的不足之处}
-{Analogously, attention on higher levels may process relations among propositions, but here this mechanism seems rather inadequate}
+\item \cc{类似地，\emp{高层}的 attention 可以处理 \emp{命题之间} 的关系}
+{Analogously, attention on higher levels may process relations among propositions}
 
-\item \cc{由词语构成句子／命题，通常有少数的 syntax 法则，例如}
-{When forming sentences from words, there are relatively few syntactic patterns, such as:}
-\\ \tab subject $\cdot$ verb $\cdot$ object
+% \item \cc{由词语构成句子／命题，通常有少数的 syntax 法则，例如}
+% {When forming sentences from words, there are relatively few syntactic patterns, such as:}
+% \\ \tab subject $\cdot$ verb $\cdot$ object
 
-\item \cc{但由命题构成结论，并没有 \textit{a priori} 的规则； 逻辑上有关联的东西 未必是相似的}
-{But there are no \textit{a priori} patterns for forming deductions from propositions;  Logically related things need not be similar}
+% \item \cc{但由命题构成结论，并没有 \textit{a priori} 的规则； 逻辑上有关联的东西 未必是相似的}
+% {But there are no \textit{a priori} patterns for forming deductions from propositions;  Logically related things need not be similar}
 
-\item \cc{例如： 尿急 $\wedge$ 不在厕所 $\Rightarrow$ 忍著； 但「尿」和「厕所」是 \emp{后天} 学习的关系}
-{Eg: need to pee $\wedge$ not in toilet $\Rightarrow$ hold it \\ But ``pee'' and ``in toilet'' is learned \textit{a posteriori}}
+% \item \cc{例如： 尿急 $\wedge$ 不在厕所 $\Rightarrow$ 忍著； 但「尿」和「厕所」是 \emp{后天} 学习的关系}
+% {Eg: need to pee $\wedge$ not in toilet $\Rightarrow$ hold it \\ But ``pee'' and ``in toilet'' is learned \textit{a posteriori}}
 
 \item \cc{我们希望 attention 做到的是 \emp{选择}有关联的命题，去做逻辑推导：}
 {We wish for attention to \emp{select} propositions that are relevant for deduction:}
@@ -483,14 +483,23 @@
 
 \item \cc{但从 $N$ 个命题中选择 $K$ 个，可以有 $N \choose K$ 个子集，是 exponential 的}
 {But to choose $K$ propositions from a set of $N$, there would be $N \choose K$ subsets, an \emp{exponential} number}
+
+\item BERT 的做法是： 每次只输出 $N$ 个命题，而前提的 ``support'' 也是上一层的 全部 $N$ 个命题，每个前提的「影响力」由 matrix 权重决定
+
+\item 根据 Curry-Howard isomorphism，BERT 的 ``transform'' 其实对应於某种 \emp{另类的逻辑}，这种逻辑的好处是运行\emp{非常快}
+
+\item BERT 的逻辑 看似有局限，但这种表面的局限未必阻止它是 universal 的逻辑
+
+\item 关键是在 速度 与 逻辑的 expressive power 之间 找到平衡； BERT 的设计者可能没有意识到，事实上他们的逻辑已经非常 optimized, 要改进也不易
 \end{itemize}
 \end{frame}
 
+\begin{comment}
 \begin{frame}
 \frametitle{$N$ 个命题选 $K$ 个}
 \begin{itemize}
-\item \cc{At the porpositional level, attention 要用 weight matrix 记住各种命题之间的 相关性，这种做法似乎 \emp{缺乏效率}}
-{At the propositional level, attention uses a \emp{weight matrix} to memorize the relatedness among propositions, such a method seems \emp{inefficient}}
+\item \cc{At the porpositional level, attention 要用 weight matrix 记住各种命题之间的 相关性}
+{At the propositional level, attention uses a \emp{weight matrix} to memorize the relatedness among propositions}
 
 % \item 但逻辑 attention 和一般 attention 要求略有不同
 
@@ -522,12 +531,11 @@
 \item 我模仿 BERT 的优点（它将 RNN unfold 成 CNN，可以并行处理），从 $N$ 个命题中 预先选出 $N \choose K$ 组，每组尝试进行 推导：
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.5]{N-choose-K.png}}}
-\end{equation}
+\end{equation} 
 
-\item BERT 的 self-attention，根据 Curry-Howard isomorphism 对应於某些另类的逻辑，关於这一点我会再更新....
 \end{itemize}
 \end{frame}
-
+\end{comment}
 
 \begin{frame}
 \frametitle{Content-addressable long-term memory}
@@ -562,6 +570,8 @@
 	\item \cc{而这些 edges 似乎必需用 \emp{symmetric} NN 处理，因为它们是 permutation invariant}
 	{As edges are invariant under permutations, it seems that we must use symmetric NNs to process them}
 	% \item Sym NNs are required to handle \emp{graph-rewriting}, an essential operation on knowledge graphs
+	
+	\item 逻辑化 建立了 知识图谱 和 BERT 之间的一道桥梁
 \end{itemize}
 \end{frame}
 
