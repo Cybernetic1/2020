@@ -199,7 +199,7 @@
 \end{equation}
 \item \cc{CNN 加上 attention mechanism 变成 Transformer}
 {CNN with \emp{attention mechanism} gives rise to Transformer}
-\item \cc{我的目标是重复这个思路，但引入 symmetric NN 的结构}
+\item \cc{我的想法是重复这个思路，但引入 symmetric NN 的结构}
 {My idea is to incorporate symmetric NN into BERT while following this line of thinking}
 \end{itemize}
 \end{frame}
@@ -273,7 +273,8 @@
 	\vcenter{\hbox{\includegraphics[scale=0.5]{sym-BERT.png}}}
 	\end{equation}
 
-	\item 下面会看到，其实这个方法也未必需要，因为 BERT 的「注意力机制 」也可以用来做 逻辑推导
+	\item \cc{下面会看到，其实这个方法也未必需要，因为 BERT 的「注意力机制 」也可以用来做 逻辑推导}
+	{Below we'll see that this may not be necessary, as BERT's \emp{attention mechanism} can also be used to perform logic inference}
 
 	% \item \cc{这时，输出对 $\NewSym{proposition.png}$ 的交换不变性 is automatically satisfied by the architecture of the decoder}
 	% {Permutation invariance of the $\NewSym{proposition.png}$'s is automatically satisfied by the architecture of the new decoder}
@@ -343,7 +344,7 @@
 	% \item 这些漂亮的理论 不是无用的； 有需要时，可以從 邏輯 那邊借來更多的結構
 	
 	\item \cc{我会在另一辑 slides 里 简介一下这些理论； 可以说，逻辑的 几何结构 是「永恒」的，它可以指示 AI 的 长远发展}
-	{In another article we shall explore this connection.  One could say the mathematical structure of logic is ``eternal'';  It will provide guidance for the long-term development of AI}
+	{In another set of slides we shall explore this connection.  One could say the mathematical structure of logic is ``eternal'';  It will provide guidance for the long-term development of AI}
 	
 	% \item $H(a)$ is a type.
 	% \item $H$ is a prodicate type.
@@ -465,7 +466,7 @@
 %	{Attention at the propositional level}}
 \begin{itemize}
 \item \cc{类似地，\emp{高层}的 attention 可以处理 \emp{命题之间} 的关系}
-{Analogously, attention on higher levels may process relations among propositions}
+{Analogously, attention on higher levels process relations \emp{among} propositions}
 
 % \item \cc{由词语构成句子／命题，通常有少数的 syntax 法则，例如}
 % {When forming sentences from words, there are relatively few syntactic patterns, such as:}
@@ -486,13 +487,17 @@
 \item \cc{但从 $N$ 个命题中选择 $K$ 个，可以有 $N \choose K$ 个子集，是 exponential 的}
 {But to choose $K$ propositions from a set of $N$, there would be $N \choose K$ subsets, an \emp{exponential} number}
 
-\item BERT 的做法是： 每次只输出 $N$ 个命题，而前提的 ``support'' 也是上一层的 全部 $N$ 个命题，每个前提的「影响力」由 matrix 权重决定
+\item \cc{BERT 的做法是： 每次只输出 $N$ 个命题，而前提的 ``support'' 也是上一层的 全部 $N$ 个命题，每个前提的「影响力」由 matrix 权重决定}
+{BERT's way is to output only $N$ propositions per each layer, each proposition is ``supported'' by all $N$ propositions in the previous layer;  The influence of premises are weighted by a matrix}
 
-\item 根据 Curry-Howard isomorphism，BERT 的 ``transform'' 其实对应於某种 \emp{另类的逻辑}，这种逻辑的好处是运行\emp{非常快}
+\item \cc{根据 Curry-Howard isomorphism，BERT 的 ``transform'' 其实对应於某种 \emp{另类的逻辑}，这种逻辑的好处是运行\emp{非常快}}
+{By the Curry-Howard isomorphism, BERT's ``transform'' corresponds to some kind of \emp{alternative logic}, which has the advantage of \emp{very fast} execution}
 
-\item BERT 的逻辑 看似有局限，但这种表面的局限未必阻止它是 universal 的逻辑
+\item \cc{BERT 的逻辑 看似有局限，但这种表面的局限未必阻止它是 universal 的逻辑}
+{BERT's logic seems highly restricted, but the superficial restrictions may not prevent it from being a \emp{universal} logic}
 
-\item 关键是在 速度 与 逻辑的 expressive power 之间 找到平衡； BERT 的设计者可能没有意识到，事实上他们的逻辑已经非常 optimized, 要改进也不易
+\item \cc{关键是在 速度 与 逻辑的 expressive power 之间 找到平衡； BERT 的设计者可能没有意识到，事实上他们的逻辑已经非常 optimized, 要改进也不易}
+{The key is to find a balance between speed and expressive power of the logic;  BERT's original designers may not have realized they created a very \emp{optimized} logic, and it may be hard to improve further}
 \end{itemize}
 \end{frame}
 
@@ -573,7 +578,8 @@
 	{As edges are invariant under permutations, it seems that we must use symmetric NNs to process them}
 	% \item Sym NNs are required to handle \emp{graph-rewriting}, an essential operation on knowledge graphs
 	
-	\item 逻辑化 建立了 知识图谱 和 BERT 之间的一道桥梁
+	\item \cc{逻辑化 建立了 知识图谱 和 BERT 之间的一道桥梁}
+	{Logicalization provides a bridge between BERT and knowledge graphs}
 \end{itemize}
 \end{frame}
 
