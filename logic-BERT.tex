@@ -267,13 +267,13 @@
 \begin{frame}
 \frametitle{\cc{BERT 的逻辑化}{Logicalization of BERT}}
 \begin{itemize}
-	\item \cc{可以强逼 BERT 的 隐状态 变成 ``set of propositions'' 的形式，方法是将 原来的 Encoder 变成 symmetric：}
+	\item \cc{可以强逼 BERT 的 隐状态 变成 ``set of propositions'' 的形式，方法是将 对称性 施加在 Encoder 上：}
 	{We can force BERT's hidden state to be a set of propositions by imposing permutation symmetry on its Encoder:}
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.5]{sym-BERT.png}}}
 	\end{equation}
 
-	\item \cc{下面会看到，其实这并无需要，因为 BERT 的「注意力机制 」也是对称的，可以做 逻辑推导}
+	\item \cc{下面会看到，其实这并无需要，因为 BERT 的「注意力机制 」已经是对称的，它可以做 逻辑推导}
 	{Below we'll see that this may not be necessary, as BERT's \emp{attention mechanism} is already symmetric and can perform logic inference}
 
 	% \item \cc{这时，输出对 $\NewSym{proposition.png}$ 的交换不变性 is automatically satisfied by the architecture of the decoder}
@@ -500,6 +500,34 @@
 {The key is to find a balance between speed and expressive power of the logic;  BERT's original designers may not have realized they created a very \emp{optimized} logic, and it may be hard to improve further}
 \end{itemize}
 \end{frame}
+
+\begin{frame}[plain]
+\begin{itemize}
+	\item Attention 的输出是（其中 $Q, K, V$ = query, key, value 矩阵）：
+	\begin{equation}
+	\vect{y}_j = \sum_i \langle Q {\color{red}\vect{x}_j} , K \vect{x}_i \rangle V \vect{x}_i
+	\end{equation}
+	而这对应於下面的逻辑式子：
+	\begin{equation}
+	\vect{y}_j \dashv \vect{x}_1 \wedge ... {\color{red}\vect{x}_j} \wedge ... \vect{x}_n
+	\end{equation}
+	亦即是说： $\vect{y}_j$ 是由 $\vect{x}_1, ..., \vect{x}_n$ 得出的逻辑结论，而且注意力在 ${\color{red}\vect{x}_j}$ 上
+
+	\item 容易看到，attention 对於 $\vect{x}_1, ..., \vect{x}_n$ 是 \emp{交换不变}的 (equivariant)，这表示 每层 attention 的输出是一些 \emp{逻辑命题}，和我的理论符合
+	
+	\item Multi-head attention 亦有一个很好的逻辑解释：
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{High-level propositions (features)}
+\begin{itemize}
+	\item 有个疑惑： 6 层的 BERT 只有 $512 \times 6 = 3072$ 个 head，甚至 $8\times$ multi-head 也只是 24576 个，如果每个 head 对应一条 逻辑 formula，这是很少的数目
+	
+	\item 
+\end{itemize}
+\end{frame}
+
 
 \begin{comment}
 \begin{frame}
