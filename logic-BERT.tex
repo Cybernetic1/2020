@@ -125,7 +125,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Logic BERT]{\cc{{\Huge《KERMIT: BERT 的逻辑化》} \vspace*{0.2cm} 2.0 修正版}}
+\title[Logic BERT]{\cc{{\Huge《KERMIT: BERT 的逻辑化》} \vspace*{0.2cm} 2.0 修正版}
 {{\Huge《KERMIT: logicalization of BERT》} \\ \vspace*{0.2cm} revised version 2.0}}
 \author{YKY} % Your name
 %\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -199,8 +199,8 @@
 \end{equation}
 \item \cc{CNN 加上 attention mechanism 变成 Transformer}
 {CNN with \emp{attention mechanism} gives rise to Transformer}
-\item \cc{我的想法是重复这个思路，但引入 symmetric NN 的结构}
-{My idea is to incorporate symmetric NN into BERT while following this line of thinking}
+\item \cc{我的想法是重复这个思路，但引入 逻辑的对称性}
+{My idea is to incorporate logical symmetry into BERT while following this line of thinking}
 \end{itemize}
 \end{frame}
 
@@ -267,14 +267,14 @@
 \begin{frame}
 \frametitle{\cc{BERT 的逻辑化}{Logicalization of BERT}}
 \begin{itemize}
-	\item \cc{可以将 BERT 的 隐状态 变成 ``set of propositions'' 的形式，方法是将 原来的 decoder 变成 sym NN：}
-	{We can convert BERT's hidden state into a set of propositions, by replacing the original \emp{decoder} with a sym NN:}
+	\item \cc{可以强逼 BERT 的 隐状态 变成 ``set of propositions'' 的形式，方法是将 原来的 Encoder 变成 symmetric：}
+	{We can force BERT's hidden state to be a set of propositions by imposing permutation symmetry on its Encoder:}
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.5]{sym-BERT.png}}}
 	\end{equation}
 
-	\item \cc{下面会看到，其实这个方法也未必需要，因为 BERT 的「注意力机制 」也可以用来做 逻辑推导}
-	{Below we'll see that this may not be necessary, as BERT's \emp{attention mechanism} can also be used to perform logic inference}
+	\item \cc{下面会看到，其实这并无需要，因为 BERT 的「注意力机制 」也是对称的，可以做 逻辑推导}
+	{Below we'll see that this may not be necessary, as BERT's \emp{attention mechanism} is already symmetric and can perform logic inference}
 
 	% \item \cc{这时，输出对 $\NewSym{proposition.png}$ 的交换不变性 is automatically satisfied by the architecture of the decoder}
 	% {Permutation invariance of the $\NewSym{proposition.png}$'s is automatically satisfied by the architecture of the new decoder}
@@ -404,8 +404,8 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{\cc{谓词 (predicates) 与 命题 (propositions)}
-	{Predicates and propositions}}
+\frametitle{\cc{谓词 (predicates) vs 命题 (propositions)}
+	{Predicates vs propositions}}
 \begin{itemize}
 \item \cc{``Predicate'' 来自拉丁文「断言」的意思}
 {The word ``predicate'' comes from Latin ``to declare''}
@@ -490,8 +490,8 @@
 \item \cc{BERT 的做法是： 每次只输出 $N$ 个命题，而前提的 ``support'' 也是上一层的 全部 $N$ 个命题，每个前提的「影响力」由 matrix 权重决定}
 {BERT's way is to output only $N$ propositions per each layer, each proposition is ``supported'' by all $N$ propositions in the previous layer;  The influence of premises are weighted by a matrix}
 
-\item \cc{根据 Curry-Howard isomorphism，BERT 的 ``transform'' 其实对应於某种 \emp{另类的逻辑}，这种逻辑的好处是运行\emp{非常快}}
-{By the Curry-Howard isomorphism, BERT's ``transform'' corresponds to some kind of \emp{alternative logic}, which has the advantage of \emp{very fast} execution}
+\item \cc{根据 Curry-Howard isomorphism，BERT 的映射  其实对应於某种 \emp{另类的逻辑}，这种逻辑的好处是运行\emp{非常快}}
+{By the Curry-Howard isomorphism, BERT's mapping corresponds to some kind of \emp{alternative logic}, which has the advantage of \emp{very fast} execution}
 
 \item \cc{BERT 的逻辑 看似有局限，但这种表面的局限未必阻止它是 universal 的逻辑}
 {BERT's logic seems highly restricted, but the superficial restrictions may not prevent it from being a \emp{universal} logic}
