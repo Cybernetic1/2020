@@ -503,15 +503,15 @@
 
 \begin{frame}[plain]
 \begin{itemize}
-	\item Attention 的输出是（其中 $Q, K, V$ = query, key, value 矩阵）：
+	\item 最简单的 attention 公式是（其中 $Q, K, V$ = query, key, value 矩阵）：
 	\begin{equation}
 	\vect{y}_j = \sum_i \langle Q {\color{red}\vect{x}_j} , K \vect{x}_i \rangle V \vect{x}_i
 	\end{equation}
-	而这对应於下面的逻辑式子：
+	（{\color{red}红色} 代表注意力的 focus） 这对应於一个逻辑式子：
 	\begin{equation}
-	\vect{y}_j \dashv \vect{x}_1 \wedge ... {\color{red}\vect{x}_j} \wedge ... \vect{x}_n
+	\vcenter{\hbox{\includegraphics[scale=0.5]{attention-as-propositional-logic.png}}}
 	\end{equation}
-	亦即是说： $\vect{y}_j$ 是由 $\vect{x}_1, ..., \vect{x}_n$ 得出的逻辑结论，而且注意力在 ${\color{red}\vect{x}_j}$ 上
+	亦即是说： $\vect{y}_j$ 是由 $\vect{x}_1, ..., \vect{x}_n$ 得出的逻辑结论 with focus on ${\color{red}\vect{x}_j}$
 
 	\item 容易看到，attention 对於 $\vect{x}_1, ..., \vect{x}_n$ 是 \emp{交换不变}的 (equivariant)，这表示 每层 attention 的输出是一些 \emp{逻辑命题}，和我的理论符合
 	
