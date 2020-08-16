@@ -254,6 +254,7 @@
 
 	\item Any symmetric function can be represented by the following form (a special case of the Kolmogorov-Arnold representation of functions):
 	\begin{equation}
+	\label{symmetric-functions}
 	f(x, y, ...) = g(h(x) + h(y) + ... )
 	\end{equation}
 	\begin{equation}
@@ -263,6 +264,30 @@
 \nocite{Qi2017a}
 \nocite{Zaheer2017}
 \end{frame}
+
+\begin{frame}
+\frametitle{\cc{知识图谱 (knowledge graphs)}{Knowledge graphs}}
+\begin{itemize}
+	\item \cc{知识图谱 不能直接输入神经网络，它必需分拆成很多 edges，每个 edge 是一个 \emp{关系}，也是一个 \emp{逻辑命题} ；也可以说 ``graphs are isomorphic to logic''}
+	{One cannot feed a knowledge graph directly into a neural network, as the input must be a vector.  A solution is to break the graph into edges, where each edge is equivalent to a \emp{relation} or \emp{proposition}.  One could say that graphs are isomorphic to logic}
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.6]{knowledge-graph.png}}}
+	\end{equation}
+	\item \cc{而这些 edges 似乎必需用 \emp{symmetric} NN 处理，因为它们是 permutation invariant}
+	{As edges are invariant under permutations, it seems that we must use symmetric NNs to process them}
+	% \item Sym NNs are required to handle \emp{graph-rewriting}, an essential operation on knowledge graphs
+
+	\item \cc{逻辑化 建立了 知识图谱 和 BERT 之间的一道桥梁}
+	{Logicalization provides a bridge between BERT and knowledge graphs}
+	
+	\cc{
+	接下来讨论 BERT....}{
+	Next we discuss BERT....
+	}
+	
+\end{itemize}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{\cc{BERT 的逻辑化}{Logicalization of BERT}}
@@ -503,21 +528,42 @@
 
 \begin{frame}[plain]
 \begin{itemize}
-	\item 最简单的 attention 公式是（其中 $Q, K, V$ = query, key, value 矩阵）：
+	\item \cc{ 
+	最简单的 attention 公式是（其中 $Q, K, V$ = query, key, value 矩阵）：}{
+	The simplest attention formula is: (where $Q, K, V$ = query, key, and value matrices)
+	}
+	
 	\begin{equation}
+	\label{attention-formula}
 	\vect{y}_j = \sum_i \langle Q {\color{red}\vect{x}_j} , K \vect{x}_i \rangle V \vect{x}_i
 	\end{equation}
-	（{\color{red}红色} 代表注意力的 focus） 这对应於一个逻辑式子：
+	\cc{
+	（{\color{red}红色} 代表注意力的 focus） 这对应於一个逻辑式子：}{
+	({\color{red}red} indicates the focus of attention)  This corresponds to a logic formula:
+	}
+	
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.5]{attention-as-propositional-logic.png}}}
 	\end{equation}
-	亦即是说： $\vect{y}_j$ 是由 $\vect{x}_1, ..., \vect{x}_n$ 得出的逻辑结论 with focus on ${\color{red}\vect{x}_j}$
+	\cc{
+	亦即是说： $\vect{y}_j$ 是由 $\vect{x}_1, ..., \vect{x}_n$ 得出的逻辑结论 with focus on ${\color{red}\vect{x}_j}$}{
+	In other words: $\vect{y}_j$ is the logic conclusion deduced from $\vect{x}_1, ..., \vect{x}_n$ with focus on ${\color{red}\vect{x}_j}$
+	}
 
-	\item 所谓 ``focus'' 并不是 逻辑概念，它只是 BERT 加速的 heuristic
+	\item \cc{
+	所谓 ``focus'' 并不是 逻辑概念，它只是 BERT 加速的 heuristic}{
+	``Focus'' is not a logical concept;  it is just a speed-up heuristic of BERT
+	}
 
-	\item 容易看到，attention 对於 $\vect{x}_1, ..., \vect{x}_n$ 是 \emp{交换不变}的 (equivariant)，这表示 每层 attention 的输出是一些 \emp{逻辑命题}，和我的理论相符
+	\item \cc{
+	容易看到，attention 对於 $\vect{x}_1, ..., \vect{x}_n$ 是 \emp{交换不变}的 (equivariant)，这表示 每层 attention 的输出是一些 \emp{逻辑命题}，和我的理论相符}{
+	Easy to see that attention is permutation \emp{equivariant} over $\vect{x}_1, ..., \vect{x}_n$, implying that its output are \emp{logic propositions}, consistent with my theory
+	}
 	
-	\item \emp{Multi-head} attention 亦有一个很好的逻辑解释： 即使 focus = ${\color{red}\vect{x}_j}$，亦有其他不同的前提，可以导致不同的结论，例如：
+	\item \cc{
+	\emp{Multi-head} attention 亦有一个很好的逻辑解释： 即使 focus = ${\color{red}\vect{x}_j}$，亦有其他不同的前提，可以导致不同的结论，例如：}{
+	We can also give a logical interpretation to \emp{multi-head} attention:  given the focus ${\color{red}\vect{x}_j}$, there could be other premises leading to different conclusions:
+	}
 	\begin{equation}
 	{\color{red}\vect{x}_1} \wedge \vect{x}_2 \wedge \vect{x}_3 \vdash \vect{y}_1
 	\quad , \quad
@@ -529,16 +575,41 @@
 \begin{frame}
 \frametitle{\cc{BERT 为什么成功？}{Why is BERT so successful?}}
 \begin{itemize}
-	\item 6 层的 BERT 只有 $512 \times 6 = 3072$ 个 head，甚至 $8\times$ multi-head 也只是 24576 个，如果每个 head 对应一条 逻辑 formula，这是很少的数目，为什么如此少量的 logic rules 能做到非常成功的效果？
+	\item \cc{6 层的 BERT 只有 $512 \times 6 = 3072$ 个 head，甚至 $8\times$ multi-head 也只是 24576 个，如果每个 head 对应一条 逻辑 formula，这是很少的数目，为什么如此少量的 logic rules 能做到非常成功的效果？}
+	{The 6-layer BERT has $512 \times 6 = 3072$ heads, or 24576 with $8\times$ multi-head attention.  If each head corresponds to 1 logic formula, this is a rather small number.  How could few logic rules perform so successfully? }
 	
-	\item 我的解释是： BERT 的高层 representation 是一些有 ``high-level'' 意义的命题，就像在视觉中，高层特征 代表一些复杂的物体
+	\item \cc{
+	我的解释是： BERT 的高层 representation 是一些有 ``high-level'' 意义的命题，就像在视觉中，高层特征 代表一些复杂的物体}{
+	My explanation: The representation in BERT's higher layers are ``high-level'' propositions similar to the high-level features that represent complex objects in machine vision.
+	}
 	
 	\item The embedding of high-level propositions in vector space may be ``semantically dense'', meaning that slight changes in the vector position may convey many different meanings
 	
-	\item 由於 logic rules 是以 6 层的 hierarchy 组织而成，这些 rules 具有 ``\emp{deep learning}'' 的特性
+	\item \cc{
+	由於 logic rules 是以 6 层的 hierarchy 组织而成，这些 rules 具有 ``\emp{deep learning}'' 的特性}{
+	Because logic rules are organized in 6 layers of \emp{hierarchy}, they have the ``deep learning'' property
+	}
 \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{\cc{}{An improvement of BERT}}
+\begin{itemize}
+	\item The BERT attention formula (\ref{attention-formula}) has some unnecessary restrictions, where generally we just need a symmetric function in the $\vect{x}_i$'s
+	
+	\item The general form of symmetric functions is given by (\ref{symmetric-functions})
+	
+	\item Immitating BERT, we introduce a ``focus'' of attention on ${\color{red}\vect{x}_j}$:
+	\begin{equation}
+	\vect{y}_j = g( \; h({\color{red}\vect{x}_j}, \vect{x}_1) + .... + h({\color{red}\vect{x}_j}, \vect{x}_n) \; )
+	\end{equation}
+	
+	\item We can use this function to replace the entire BERT Encoder:
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[angle=-90,scale=0.5]{BERT-Encoder.png}}}
+	\end{equation}
+\end{itemize}
+\end{frame}
 
 \begin{comment}
 \begin{frame}
@@ -610,30 +681,25 @@
 \begin{itemize}
 	\item \cc{例如：「太阳是热的」、「水向下流」是经常正确的命题}{Eg. ``The sun is hot'', ``Water flows downhill'' are facts that stay constant}
 
-	\item 但这些知识很多是 implicitly 存在於 rules (matrix weights) 之中
+	\item \cc{
+	但这些知识很多是 implicitly 存在於 rules (matrix weights) 之中}{
+	But some of this knowledge is implicitly stored as rules (matrix weights)
+	}
 	
-	\item 也有些知识是 explicit 的，例如：「猫是哺乳类动物」、「吸烟可以致癌」
+	\item \cc{
+	也有些知识是 explicit 的，例如：「猫是哺乳类动物」、「吸烟可以致癌」}{
+	Some knowledge is explicit, eg: ``cats are mammals'', ``Smoking can cause cancer''
+	}
 	
-	\item 逻辑化理论提供一种 诠释 logic rules (weights) 的方法
+	\item \cc{
+	逻辑化理论提供一种 诠释 logic rules (weights) 的方法}{
+	Logicalization provides a way to interpret logic rules (weights)
+	}
 	
-	\item 也可以将 weights 存进 content-addressable memory
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{\cc{知识图谱 (knowledge graphs)}{Knowledge graphs}}
-\begin{itemize}
-	\item \cc{知识图谱 不能直接输入神经网络，它必需分拆成很多 edges，每个 edge 是一个 \emp{关系}，也是一个 \emp{逻辑命题} ；也可以说 ``graphs are isomorphic to logic''}
-	{One cannot feed a knowledge graph directly into a neural network, as the input must be a vector.  A solution is to break the graph into edges, where each edge is equivalent to a \emp{relation} or \emp{proposition}.  One could say that graphs are isomorphic to logic}
-	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=0.6]{knowledge-graph.png}}}
-	\end{equation}
-	\item \cc{而这些 edges 似乎必需用 \emp{symmetric} NN 处理，因为它们是 permutation invariant}
-	{As edges are invariant under permutations, it seems that we must use symmetric NNs to process them}
-	% \item Sym NNs are required to handle \emp{graph-rewriting}, an essential operation on knowledge graphs
-	
-	\item \cc{逻辑化 建立了 知识图谱 和 BERT 之间的一道桥梁}
-	{Logicalization provides a bridge between BERT and knowledge graphs}
+	\item \cc{
+	也可以将 weights 存进 content-addressable memory}{
+	We can also store rules (weights) into content-addressable memory
+	}
 \end{itemize}
 \end{frame}
 
