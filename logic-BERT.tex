@@ -125,7 +125,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Logic BERT]{\cc{{\Huge《KERMIT: BERT 的逻辑化》} \vspace*{0.2cm} 2.0 修正版}
+\title[Logic BERT]{\cc{{\Huge《KERMIT: BERT 的逻辑化》} \\ \vspace*{0.2cm} 2.0 修正版}
 {{\Huge《KERMIT: logicalization of BERT》} \\ \vspace*{0.2cm} revised version 2.0}}
 \author{YKY} % Your name
 %\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -490,14 +490,14 @@
 \item \cc{BERT 的做法是： 每次只输出 $N$ 个命题，而前提的 ``support'' 也是上一层的 全部 $N$ 个命题，每个前提的「影响力」由 matrix 权重决定}
 {BERT's way is to output only $N$ propositions per each layer, each proposition is ``supported'' by all $N$ propositions in the previous layer;  The influence of premises are weighted by a matrix}
 
-\item \cc{根据 Curry-Howard isomorphism，BERT 的映射  其实对应於某种 \emp{另类的逻辑}，这种逻辑的好处是运行\emp{非常快}}
-{By the Curry-Howard isomorphism, BERT's mapping corresponds to some kind of \emp{alternative logic}, which has the advantage of \emp{very fast} execution}
+\item \cc{根据 Curry-Howard isomorphism，BERT 的映射  其实对应於某种 \emp{另类的逻辑}（BERT 的设计者可能没有意识到这点），这种逻辑的好处是运行\emp{非常快}}
+{By the Curry-Howard isomorphism, BERT's mapping corresponds to some kind of \emp{alternative logic} (BERT's creators may not have recognized this), which has \emp{very fast} execution}
 
 \item \cc{BERT 的逻辑 看似有局限，但这种表面的局限未必阻止它是 universal 的逻辑}
 {BERT's logic seems highly restricted, but the superficial restrictions may not prevent it from being a \emp{universal} logic}
 
-\item \cc{关键是在 速度 与 逻辑的 expressive power 之间 找到平衡； BERT 的设计者可能没有意识到，事实上他们的逻辑已经非常 optimized, 要改进也不易}
-{The key is to find a balance between speed and expressive power of the logic;  BERT's original designers may not have realized they created a very \emp{optimized} logic, and it may be hard to improve further}
+\item \cc{关键是在 速度 与 逻辑的 expressive power 之间 找到平衡}
+{The key is to find a balance between speed and expressive power of the logic}
 \end{itemize}
 \end{frame}
 
@@ -513,18 +513,29 @@
 	\end{equation}
 	亦即是说： $\vect{y}_j$ 是由 $\vect{x}_1, ..., \vect{x}_n$ 得出的逻辑结论 with focus on ${\color{red}\vect{x}_j}$
 
-	\item 容易看到，attention 对於 $\vect{x}_1, ..., \vect{x}_n$ 是 \emp{交换不变}的 (equivariant)，这表示 每层 attention 的输出是一些 \emp{逻辑命题}，和我的理论符合
+	\item 所谓 ``focus'' 并不是 逻辑概念，它只是 BERT 加速的 heuristic
+
+	\item 容易看到，attention 对於 $\vect{x}_1, ..., \vect{x}_n$ 是 \emp{交换不变}的 (equivariant)，这表示 每层 attention 的输出是一些 \emp{逻辑命题}，和我的理论相符
 	
-	\item Multi-head attention 亦有一个很好的逻辑解释：
+	\item \emp{Multi-head} attention 亦有一个很好的逻辑解释： 即使 focus = ${\color{red}\vect{x}_j}$，亦有其他不同的前提，可以导致不同的结论，例如：
+	\begin{equation}
+	{\color{red}\vect{x}_1} \wedge \vect{x}_2 \wedge \vect{x}_3 \vdash \vect{y}_1
+	\quad , \quad
+	{\color{red}\vect{x}_1} \wedge \vect{x}_4 \wedge \vect{x}_5 \vdash \vect{y}_2
+	\end{equation}
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{High-level propositions (features)}
+\frametitle{\cc{BERT 为什么成功？}{Why is BERT so successful?}}
 \begin{itemize}
-	\item 有个疑惑： 6 层的 BERT 只有 $512 \times 6 = 3072$ 个 head，甚至 $8\times$ multi-head 也只是 24576 个，如果每个 head 对应一条 逻辑 formula，这是很少的数目
+	\item 6 层的 BERT 只有 $512 \times 6 = 3072$ 个 head，甚至 $8\times$ multi-head 也只是 24576 个，如果每个 head 对应一条 逻辑 formula，这是很少的数目，为什么如此少量的 logic rules 能做到非常成功的效果？
 	
-	\item 
+	\item 我的解释是： BERT 的高层 representation 是一些有 ``high-level'' 意义的命题，就像在视觉中，高层特征 代表一些复杂的物体
+	
+	\item The embedding of high-level propositions in vector space may be ``semantically dense'', meaning that slight changes in the vector position may convey many different meanings
+	
+	\item 由於 logic rules 是以 6 层的 hierarchy 组织而成，这些 rules 具有 ``\emp{deep learning}'' 的特性
 \end{itemize}
 \end{frame}
 
@@ -575,12 +586,14 @@
 \begin{frame}
 \frametitle{Content-addressable long-term memory}
 \begin{itemize}
+	\item \cc{Content-addressable memory 的想法来自 Alex Graves \textit{et al} 的 Neural Turing Machine [2014]}
+	{The content-addressable memory idea came from Alex Graves \textit{et al}'s Neural Turing Machine [2014]}
+
 	\item \cc{以前 BERT 的隐状态 没有逻辑结构，我们不是很清楚它的内容是什么； 逻辑化之后，BERT 内部的命题可以储存在 \emp{长期记忆} 中：}
 	{The original BERT's hidden state lacked a logical structure;  It was not clear what it contains exactly.  With logicalization, propositions inside BERT can be stored into a \emp{long-term memory}:}
 	\begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.5]{long-term-memory.png}}}
 	\end{equation}
-	\cc{例如：「太阳是热的」、「水向下流」是经常正确的命题}{Eg. ``The sun is hot'', ``Water flows downhill'' are facts that stay constant}
 
 	% \item 训练的方法，可以将所有 \NewSym{proposition.png} 存进 memory，如果对结论有帮助则加分，错则减分
 	
@@ -588,10 +601,23 @@
 
 	\item \cc{这种系统 已非常接近 strong AI，而这是有赖 \emp{逻辑化} 才能做到的}
 	{This is getting very close to strong AI, and depends crucially on logicalization}
-	\item \cc{Content-addressable memory 的想法来自 Alex Graves \textit{et al} 的 Neural Turing Machine [2014]}
-	{The content-addressable memory idea came from Alex Graves \textit{et al}'s Neural Turing Machine [2014]}
+
  \end{itemize}
 \nocite{Graves2014}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{itemize}
+	\item \cc{例如：「太阳是热的」、「水向下流」是经常正确的命题}{Eg. ``The sun is hot'', ``Water flows downhill'' are facts that stay constant}
+
+	\item 但这些知识很多是 implicitly 存在於 rules (matrix weights) 之中
+	
+	\item 也有些知识是 explicit 的，例如：「猫是哺乳类动物」、「吸烟可以致癌」
+	
+	\item 逻辑化理论提供一种 诠释 logic rules (weights) 的方法
+	
+	\item 也可以将 weights 存进 content-addressable memory
+\end{itemize}
 \end{frame}
 
 \begin{frame}
