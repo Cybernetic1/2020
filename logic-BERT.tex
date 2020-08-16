@@ -298,8 +298,8 @@
 	\vcenter{\hbox{\includegraphics[scale=0.5]{sym-BERT.png}}}
 	\end{equation}
 
-	\item \cc{下面会看到，其实这并无需要，因为 BERT 的「注意力机制 」已经是对称的，它可以做 逻辑推导}
-	{Below we'll see that this may not be necessary, as BERT's \emp{attention mechanism} is already symmetric and can perform logic inference}
+	\item \cc{下面会看到，BERT 的「注意力机制 」已经是对称的，它可以做 逻辑推导}
+	{Below we'll see that BERT's \emp{attention mechanism} is already symmetric and can perform logic inference}
 
 	% \item \cc{这时，输出对 $\NewSym{proposition.png}$ 的交换不变性 is automatically satisfied by the architecture of the decoder}
 	% {Permutation invariance of the $\NewSym{proposition.png}$'s is automatically satisfied by the architecture of the new decoder}
@@ -577,7 +577,7 @@
 \begin{itemize}
 	\item \cc{6 层的 BERT 只有 $512 \times 6 = 3072$ 个 head，甚至 $8\times$ multi-head 也只是 24576 个，如果每个 head 对应一条 逻辑 formula，这是很少的数目，为什么如此少量的 logic rules 能做到非常成功的效果？}
 	{The 6-layer BERT has $512 \times 6 = 3072$ heads, or 24576 with $8\times$ multi-head attention.  If each head corresponds to 1 logic formula, this is a rather small number.  How could few logic rules perform so successfully? }
-	
+
 	\item \cc{
 	我的解释是： BERT 的高层 representation 是一些有 ``high-level'' 意义的命题，就像在视觉中，高层特征 代表一些复杂的物体}{
 	My explanation: The representation in BERT's higher layers are ``high-level'' propositions similar to the high-level features that represent complex objects in machine vision.
