@@ -575,19 +575,23 @@
 \begin{frame}
 \frametitle{\cc{BERT 为什么成功？}{Why is BERT so successful?}}
 \begin{itemize}
-	\item \cc{6 层的 BERT 只有 $512 \times 6 = 3072$ 个 head，甚至 $8\times$ multi-head 也只是 24576 个，如果每个 head 对应一条 逻辑 formula，这是很少的数目，为什么如此少量的 logic rules 能做到非常成功的效果？}
-	{The 6-layer BERT has $512 \times 6 = 3072$ heads, or 24576 with $8\times$ multi-head attention.  If each head corresponds to 1 logic formula, this is a rather small number.  How could few logic rules perform so successfully? }
+	\item \cc{6 层的 BERT 有 $512 \times 6 = 3072$ 个 head，如果 $8\times$ multi-head 则有 24576 个}
+	{The 6-layer BERT has $512 \times 6 = 3072$ heads, or 24576 with $8\times$ multi-head attention}
+	% 如果每个 head 对应一条 逻辑 formula，这是很少的数目，为什么如此少量的 logic rules 能做到非常成功的效果？		
+	% If each head corresponds to 1 logic formula, this is a rather small number.  How could few logic rules perform so successfully?
+	
+	\item Each head does not simply correspond to 1 formula in conventional logic, may require further in-depth analysis....
 
 	\item \cc{
-	我的解释是： BERT 的高层 representation 是一些有 ``high-level'' 意义的命题，就像在视觉中，高层特征 代表一些复杂的物体}{
-	My explanation: The representation in BERT's higher layers are ``high-level'' propositions similar to the high-level features that represent complex objects in machine vision.
+	我的猜测是： BERT 的高层 representation 是一些有 ``high-level'' 意义的命题，就像在视觉中，高层特征 代表一些复杂的物体}{
+	My guess is that the representation in BERT's higher layers are ``high-level'' propositions similar to the high-level features that represent complex objects in machine vision.
 	}
 	
 	\item The embedding of high-level propositions in vector space may be ``semantically dense'', meaning that slight changes in the vector position may convey many different meanings
 	
 	\item \cc{
-	由於 logic rules 是以 6 层的 hierarchy 组织而成，这些 rules 具有 ``\emp{deep learning}'' 的特性}{
-	Because logic rules are organized in 6 layers of \emp{hierarchy}, they have the ``deep learning'' property
+	由於 logic rules 是以 6 层的 hierarchy 组织而成，这結構具有 ``\emp{deep learning}'' 的特性}{
+	Because logic rules are organized in 6 layers of \emp{hierarchy}, this structure has the ``deep learning'' property
 	}
 \end{itemize}
 \end{frame}
@@ -603,6 +607,7 @@
 	\begin{equation}
 	\vect{y}_j = g( \; h({\color{red}\vect{x}_j}, \vect{x}_1) + .... + h({\color{red}\vect{x}_j}, \vect{x}_n) \; )
 	\end{equation}
+	this preserves \emp{equivariance}
 	
 	\item We can use this function to replace the entire BERT Encoder:
 	\begin{equation}
@@ -688,7 +693,7 @@
 	
 	\item \cc{
 	也有些知识是 explicit 的，例如：「猫是哺乳类动物」、「吸烟可以致癌」}{
-	Some knowledge is explicit, eg: ``cats are mammals'', ``Smoking can cause cancer''
+	Some knowledge is explicit, eg: ``cats are mammals'', ``smoking can cause cancer''
 	}
 	
 	\item \cc{
