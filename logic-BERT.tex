@@ -85,6 +85,9 @@
 
 \usepackage{graphicx} % Allows including images
 \usepackage{tikz-cd}
+\tikzcdset{
+	arrow style=tikz
+}
 \usepackage{tikz}
 \usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
 \usepackage{verbatim} % for comments
@@ -340,7 +343,7 @@
 	\begin{equation}
 	\begin{tikzcd}[column sep = large]
 	\mbox{\cc{苏格拉底}{Socrates}} \cdot \mbox{\cc{是}{is}} \cdot \mbox{\cc{人}{human}}
-	\arrow[r, "BERT"]
+	\arrow[r, maps to, "BERT"]
 	& \mbox{\cc{苏格拉底}{Socrates}} \cdot \mbox{\cc{会}{is}} \cdot \mbox{\cc{死}{mortal}}
 	\end{tikzcd}
 	\label{BERT-map}
@@ -348,7 +351,7 @@
 	\cc{这个做法看似很「粗暴」，其实它和 \emp{逻辑式子} 的作用一样：}
 	{While this may seem crude, it is effectively the same as a logic formula:}
 	\begin{equation}
-	\forall x. \; \mbox{Human}(x) \rightarrow \mbox{Mortal}(x)
+	\forall x. \; \mbox{Human}(x) \Rightarrow \mbox{Mortal}(x)
 	\end{equation}
 	\cc{而这式子，根据 Curry-Howard 对应，就是 (\ref{BERT-map}) 的函数映射!}
 	{Surprisingly, by the Curry-Howard correspondence, this formula corresponds to the mapping (\ref{BERT-map}) above!}
@@ -615,6 +618,37 @@
 	\end{equation}
 \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\cc{捕捉 semantics}{Capturing semantics}}
+\begin{itemize}
+	\item 阅读时，我们（人脑）有时可以预测下个 word（这是 BERT 训练的目标）
+	
+	\item 但有时即使不能预测，但看到 next word 之后，仍然会有种「意料之内」的感觉，我们想 capture 这种感觉
+	
+	\item BERT 的做法是（从逻辑角度看）：
+	\begin{equation}
+	\begin{tikzcd}[column sep = large]
+	\mbox{\cc{前提}{premise}}
+	\arrow[r, maps to, "BERT"]
+	& \mbox{\cc{预测}{prediction}}
+	\end{tikzcd}
+	\end{equation}
+
+	\item 捕捉「既视感」的方法可能是这样：
+	\begin{equation}
+	\begin{tikzcd}
+	\mbox{\cc{前提}{premise}}
+	\arrow[r, maps to]
+	& \mbox{\cc{成千上万的预测}{prediction}}
+	\end{tikzcd}
+	\end{equation}
+	而只要其中一个成立，即给予「奖励」
+
+	\item 这个情况和 \emp{强化学习} 中的 ``continuous actions'' 类似，或者可以用 policy gradient 算法解决？
+\end{itemize}
+\end{frame}
+
 
 \begin{comment}
 \begin{frame}
