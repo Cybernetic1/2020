@@ -619,14 +619,40 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{\cc{捕捉 semantics}{Capturing semantics}}
+\begin{frame}
+\frametitle{\cc{逆因推理 (abduction) 与 自然语言理解}{Abductive interpretation of natural language}}
 \begin{itemize}
-	\item 阅读时，我们（人脑）有时可以预测下个 word（这是 BERT 训练的目标）
+	\item 根据 Jerry Hobbs 的 ``abductive interpretation of natural language'' 理论，语言理解 是一个 \emp{解释} (explain) 的过程
 	
-	\item 但有时即使不能预测，但看到 next word 之后，仍然会有种「意料之内」的感觉，我们想 capture 这种感觉
+	\item \emp{解释} 在逻辑上等同於 \emp{逆因推理} (abduction)，亦即是 \emp{逻辑蕴涵} (implication, $A \Rightarrow B$) 的反方向
+
+	\item 举例来说： 天气热 $\Rightarrow$ 流汗，所以「天气热」就是「流汗」的 \emp{解释}
 	
-	\item BERT 的做法是（从逻辑角度看）：
+	\item 这个理论 今天很少人知道，因为属於 经典逻辑 AI 时期
+	\begin{equation}
+	\parbox{3cm}{2013年 他获得\\计算语言学\\终身成就奖}
+	\quad
+	\vcenter{\hbox{\includegraphics[scale=0.3]{Jerry-Hobbs.png}}}
+	\nonumber
+	\end{equation}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{\cc{捕捉更广泛的 semantics}{Capturing semantics more broadly}}
+\begin{itemize}
+	\item 阅读时，我们（人脑）有时可以预测下个 word（这是 BERT 训练的目标），但有时即使不能预测，但看到 next word 之后，仍会有某种「意料之内」的感觉
+
+	\item 举例来说：
+	\begin{equation}
+	\begin{aligned}
+	& \mbox{「天气热，我不停 \underline{流汗}」} \nonumber \\
+	& \mbox{「天气热，我不停 \underline{吃冰淇淋}」}
+	\end{aligned}
+	\end{equation}
+	第二个例子是比较少见的，但也合理
+
+	\item（从逻辑角度看）BERT 只会预测 \emp{最有可能} 的结论：
 	\begin{equation}
 	\begin{tikzcd}[column sep = large]
 	\mbox{\cc{前提}{premise}}
@@ -634,8 +660,7 @@
 	& \mbox{\cc{预测}{prediction}}
 	\end{tikzcd}
 	\end{equation}
-
-	\item 捕捉「既视感」的方法可能是这样：
+	其实我们想要的是：
 	\begin{equation}
 	\begin{tikzcd}
 	\mbox{\cc{前提}{premise}}
@@ -645,10 +670,9 @@
 	\end{equation}
 	而只要其中一个成立，即给予「奖励」
 
-	\item 这个情况和 \emp{强化学习} 中的 ``continuous actions'' 类似，或者可以用 policy gradient 算法解决？
+	\item 这个情况和 \emp{强化学习} 中的 ``stochastic actions'' 类似，或者可以用 policy gradient 算法解决？（暂时不太肯定）
 \end{itemize}
 \end{frame}
-
 
 \begin{comment}
 \begin{frame}
