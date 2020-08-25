@@ -68,6 +68,7 @@
 %\usecolortheme{whale}
 %\usecolortheme{wolverine}		% Hofstra
 
+\setbeamercolor{page number in head/foot}{fg=black}
 %\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
 \setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
@@ -128,8 +129,8 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Logic BERT]{\cc{{\Huge《KERMIT: BERT 的逻辑化》} \\ \vspace*{0.2cm} 2.0 修正版}
-{{\Huge《KERMIT: logicalization of BERT》} \\ \vspace*{0.2cm} revised version 2.0}}
+\title[Logic BERT]{\cc{{\Huge《BERT 的逻辑化》} \\ \vspace*{0.2cm} 3.0 修正版}
+{{\Huge《Logicalization of BERT》} \\ \vspace*{0.2cm} revised version 3.0}}
 \author{YKY} % Your name
 %\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 %{
@@ -600,7 +601,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{\cc{BERT 的一种可能的改良}{A possible improvement of BERT}}
+\frametitle{\cc{改良 BERT： 类似 attention 的方法}{Modifying BERT with an attention-like mechanism}}
 \begin{itemize}
 	\item The BERT attention formula (\ref{attention-formula}) has some unnecessary restrictions, where generally we just need a symmetric function in the $\vect{x}_i$'s
 	
@@ -665,12 +666,12 @@
 	\begin{tikzcd}
 	\mbox{\cc{前提}{premise}}
 	\arrow[r, maps to]
-	& \mbox{\cc{成千上万的预测}{prediction}}
+	& \mbox{\cc{很多不同的 预测}{many predictions}}
 	\end{tikzcd}
 	\end{equation}
-	而只要其中一个成立，即给予「奖励」
+	而只要其中一个预测成功，即给予「奖励」
 
-	\item 这个情况和 \emp{强化学习} 中的 ``stochastic actions'' 类似，或者可以用 policy gradient 算法解决？（暂时不太肯定）
+	\item 这个情况和 \emp{强化学习} 中的 ``stochastic actions'' 类似，需要的是： stochastic, multi-modal, continuous actions （例如 SAC, soft actor-critic）
 \end{itemize}
 \end{frame}
 
@@ -731,15 +732,17 @@
 
 	% \item 训练的方法，可以将所有 \NewSym{proposition.png} 存进 memory，如果对结论有帮助则加分，错则减分
 	
-	\item \cc{命名：}{Name:} \emp{K}nowledge-\emp{E}nhanced \emp{R}easoning with \emp{M}emorized \emp{It}ems
+	% \item \cc{命名：}{Name:} \emp{K}nowledge-\emp{E}nhanced \emp{R}easoning with \emp{M}emorized \emp{It}ems
 
 	\item \cc{这种系统 已非常接近 strong AI，而这是有赖 \emp{逻辑化} 才能做到的}
 	{This is getting very close to strong AI, and depends crucially on logicalization}
 
+	\item 但这个 idea 暂时仍未成熟，有待更多研究
  \end{itemize}
 \nocite{Graves2014}
 \end{frame}
 
+\begin{comment}
 \begin{frame}[plain]
 \begin{itemize}
 	\item \cc{例如：「太阳是热的」、「水向下流」是经常正确的命题}{Eg. ``The sun is hot'', ``Water flows downhill'' are facts that stay constant}
@@ -765,6 +768,7 @@
 	}
 \end{itemize}
 \end{frame}
+\end{comment}
 
 \begin{frame}
 \frametitle{\cc{对 逻辑主义 的质疑}

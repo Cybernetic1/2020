@@ -21,7 +21,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}12\hfill }{BERT 为什么成功？}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}13\hfill }{BERT 的一种可能的改良}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}13\hfill }{改良 BERT： 类似 attention 的方法}\par }
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}14\hfill }{逆因推理 (abduction) 与 自然语言理解}\par }
 \defcounter {refsection}{0}\relax 
@@ -29,4 +29,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}16\hfill }{Content-addressable long-term memory}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}18\hfill }{对 逻辑主义 的质疑}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}17\hfill }{对 逻辑主义 的质疑}\par }
