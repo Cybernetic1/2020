@@ -74,8 +74,8 @@
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1050"
-     inkscape:window-height="1659"
+     inkscape:window-width="1920"
+     inkscape:window-height="1059"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1" />
@@ -87,7 +87,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -295,7 +295,7 @@
        inkscape:export-ydpi="384" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.52916682;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-1-2-7)"
-       d="M 55.302999,178.4202 V 164.92646"
+       d="M 55.302999,178.94937 V 162.80979"
        id="path6105-20-7-6"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
@@ -303,7 +303,7 @@
        inkscape:export-ydpi="384" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.52916682;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-1-2-7-3)"
-       d="M 60.594667,178.4202 V 164.92646"
+       d="M 60.594667,178.94937 V 162.80979"
        id="path6105-20-7-6-4"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
@@ -322,7 +322,7 @@
          style="stroke-width:0.26458332">encode</tspan></text>
     <path
        style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.52916682;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow2MendSGT-1);paint-order:normal"
-       d="m 59.087547,145.28997 v -3.96877 c 0,-2.05211 1.65206,-3.70417 3.704167,-3.70417 h 24.341663 c 1.02605,0 1.95209,0.41301 2.62162,1.08254 0.66953,0.66953 1.08254,1.59558 1.08254,2.62163 v 37.2401"
+       d="m 59.087547,146.3483 v -5.0271 c 0,-2.05211 1.65206,-3.70417 3.704167,-3.70417 h 24.341663 c 1.02605,0 1.95209,0.41301 2.62162,1.08254 0.66953,0.66953 1.08254,1.59558 1.08254,2.62163 v 37.2401"
        id="rect6161-0"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="csssssc" />
