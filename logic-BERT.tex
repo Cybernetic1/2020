@@ -148,6 +148,19 @@
 \titlepage
 \end{frame}
 
+\begin{frame}[noframenumbering]
+\frametitle{Summary}
+\begin{itemize}
+	\item BERT 在训练过程中「被逼」预测遮掩的词语，由此诱导出人类的知识，这已经具有 AGI 的雏形
+	
+	\item 从经典逻辑 AI 的角度看，BERT 内部可能有符合逻辑思维的结构，而我们很惊讶地发现，透过 Curry-Howard 对应，BERT 可以看成是一种另类的逻辑
+	
+	\item AGI 系统可以和 逻辑结构 （以 范畴论、topos 表述）建立紧密的联系，这个联系可以指导往后的 AGI 发展路线，非常方便
+	
+	\item 我需要一些合作者帮助，特别是 BERT 和 soft Actor-Critic 方面
+\end{itemize}
+\end{frame}
+
 \addtocounter{page}{-1}
 \begin{frame}[noframenumbering]
 \frametitle{Table of contents}
@@ -519,8 +532,8 @@
 \item \cc{BERT 的做法是： 每次只输出 $N$ 个命题，而前提的 ``support'' 也是上一层的 全部 $N$ 个命题，每个前提的「影响力」由 matrix 权重决定}
 {BERT's way is to output only $N$ propositions per each layer, each proposition is ``supported'' by all $N$ propositions in the previous layer;  The influence of premises are weighted by a matrix}
 
-\item \cc{根据 Curry-Howard isomorphism，BERT 的映射  其实对应於某种 \emp{另类的逻辑}（BERT 的设计者可能没有意识到这点），这种逻辑的好处是运行\emp{非常快}}
-{By the Curry-Howard isomorphism, BERT's mapping corresponds to some kind of \emp{alternative logic} (BERT's creators may not have recognized this), which has \emp{very fast} execution}
+\item \cc{根据 Curry-Howard isomorphism，BERT 的映射  其实对应於某种 \emp{另类的逻辑}（BERT 的设计者可能也意识到这点），这种逻辑的好处是运行\emp{非常快}}
+{By the Curry-Howard isomorphism, BERT's mapping corresponds to some kind of \emp{alternative logic} (BERT's creators may also have recognized this), which has \emp{very fast} execution}
 
 \item \cc{BERT 的逻辑 看似有局限，但这种表面的局限未必阻止它是 universal 的逻辑}
 {BERT's logic seems highly restricted, but the superficial restrictions may not prevent it from being a \emp{universal} logic}
