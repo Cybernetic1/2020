@@ -1,85 +1,14 @@
 % TO-DO:
 
-\documentclass[16pt]{beamer}
+\input{../YKY-preamble.tex}
 
-\ifdefined\chinchin
-\usepackage[CJKspace]{xeCJK}
-%\setCJKmainfont[BoldFont=SimHei,ItalicFont=AR PL KaitiM GB]{Alibaba PuHuiTi}
-\setCJKmainfont{Alibaba PuHuiTi}
-\newcommand{\cc}[2]{#1}
-\else
-\newcommand{\cc}[2]{#2}
-\renewcommand{\baselinestretch}{0.8} 
-\fi
-
-%\usepackage{newtxtext,newtxmath}	% use Times Roman font
-%\usepackage{newtxtext}
-%\renewcommand{\familydefault}{\sfdefault}
-%\usefonttheme{serif}
-\usefonttheme{professionalfonts}
-%\setbeamertemplate{theorems}[numbered]
-\setbeamertemplate{caption}{\insertcaption} 	% no `Figure' prefix before caption
-
-\mode<presentation> {
-
-%\usetheme{default}
-%\usetheme{AnnArbor}
-%\usetheme{Antibes}
-%\usetheme{Bergen}
-%\usetheme{Berkeley}
-%\usetheme{Berlin}
-%\usetheme{Boadilla}
-%\usetheme{CambridgeUS}
-%\usetheme{Copenhagen}
-%\usetheme{Darmstadt}
-%\usetheme{Dresden}
-%\usetheme{Frankfurt}
-%\usetheme{Goettingen}
-%\usetheme{Hannover}
-%\usetheme{Ilmenau}
-%\usetheme{JuanLesPins}
-%\usetheme{Luebeck}
-\usetheme{Madrid}
-%\usetheme{Malmoe}
-%\usetheme{Marburg}
-%\usetheme{Montpellier}
-%\usetheme{PaloAlto}
-%\usetheme{Pittsburgh}
-%\usetheme{Rochester}
-%\usetheme{Singapore}
-%\usetheme{Szeged}
-%\usetheme{Warsaw}
-
-%\usecolortheme{albatross}
-%\usecolortheme{beaver}
-%\usecolortheme{beetle}
-%\usecolortheme{crane}
-%\usecolortheme{dolphin}
-%\usecolortheme{dove}
-%\usecolortheme{fly}
-%\usecolortheme{lily}
-\usecolortheme{orchid}
-%\usecolortheme{rose}
-%\usecolortheme{seagull}
-%\usecolortheme{seahorse}
-%\usecolortheme{whale}
-%\usecolortheme{wolverine}		% Hofstra
-
-\setbeamercolor{page number in head/foot}{fg=black}
-%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
-\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
-\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
-}
-
-\setbeamertemplate{headline}{}
-\setbeamersize{text margin left=1mm,text margin right=1mm} 
-\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
-\addtolength{\leftmargini}{\labelsep}
+\usepackage{color}
+\usepackage{mathtools}
+\usepackage{hyperref}
 
 \usepackage[backend=biber,style=numeric]{biblatex}
 \bibliography{../AGI-book}
 % \renewcommand*{\bibfont}{\footnotesize}
-\setbeamertemplate{bibliography item}[text]
 
 \usepackage{graphicx} % Allows including images
 \usepackage{tikz-cd}
@@ -98,35 +27,11 @@
 % \usepackage{sansmath}
 
 \newcommand{\emp}[1]{{\color{violet}#1}}
-\newcommand{\vect}[1]{\boldsymbol{#1}}
-\newcommand{\tab}{\hspace*{1cm}}
 \newcommand*\confoundFace{$\vcenter{\hbox{\includegraphics[scale=0.2]{../confounded-face.jpg}}}$}
-\newcommand{\smiley}{$\vcenter{\hbox{\includegraphics[scale=0.05]{../smiling-face.png}}}$}
-\newcommand*\NewSym[2][0.5]{\vcenter{\hbox{\includegraphics[scale=#1]{#2}}}}
 
-%%%%%%%% Make table of contents %%%%%%%
+\begin{document}
 
-\makeatletter
-\renewcommand{\boxed}[1]{\fbox{\m@th$\displaystyle\scalebox{0.9}{#1}$} \,}
-\makeatother
-\newif\ifframeinlbf
-\frameinlbftrue
-\makeatletter
-\newcommand\listofframes{\@starttoc{lbf}}
-\makeatother
-\addtobeamertemplate{frametitle}{}{%
-	\ifframeinlbf
-	\addcontentsline{lbf}{section}{\protect\makebox[2em][l]{%
-			\protect\usebeamercolor[fg]{structure}\insertframenumber\hfill}%
-		\insertframetitle\par}%
-	\else\fi
-}
-
-%----------------------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------------------
-
-\title[Logic BERT]{\cc{{\Huge《BERT 的逻辑化》} \\ \vspace*{0.2cm} 3.0 修正版}
+\title{\cc{{\Huge《BERT 的逻辑化》} \\ \vspace*{0.2cm} 3.0 修正版}
 {{\Huge《Logicalization of BERT》} \\ \vspace*{0.2cm} revised version 3.0}}
 \author{YKY} % Your name
 %\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -137,16 +42,9 @@
 %}
 \date{\today} % Date, can be changed to a custom date
 
-\begin{document}
+\maketitle
 
-\frameinlbffalse
-\addtocounter{page}{-1}
-\begin{frame}[plain,noframenumbering]
-\titlepage
-\end{frame}
-
-\begin{frame}[noframenumbering]
-\frametitle{Summary}
+\section{Summary}
 \begin{itemize}
 	\item BERT 在训练过程中「被逼」预测遮掩的词语，由此诱导出人类的知识，这已经具有 AGI 的雏形
 	
@@ -156,26 +54,13 @@
 	
 	\item 我需要一些合作者帮助，特别是 BERT 和 soft Actor-Critic 方面
 \end{itemize}
-\end{frame}
 
-\addtocounter{page}{-1}
-\begin{frame}[noframenumbering]
-\frametitle{Table of contents}
-\listofframes
+\tableofcontents
 % \vspace*{0.5cm}
 % 多谢 支持 \smiley
-\end{frame}
 
-%----------------------------------------------------------------------------------------
-%	PRESENTATION SLIDES
-%----------------------------------------------------------------------------------------
 
-%------------------------------------------------
-
-\frameinlbftrue
-
-\begin{frame}
-\frametitle{\cc{BERT 的革命性意义：「闭环路训练」}
+\section{\cc{BERT 的革命性意义：「闭环路训练」}
 	{BERT's ground-breaking significance: closed-loop training}}
 \begin{itemize}
 	\item \cc{BERT 利用平常的文本 induce 出知识，而这 representation 具有 \emp{通用性 (universality)} :}
@@ -194,10 +79,10 @@
 	\item \cc{这种训练方法是较早的另一篇论文提出，它并不属於 BERT 的内部结构}
 	{This training technique came from an earlier paper, unrelated to BERT's internal architecture}
 \end{itemize}
-\end{frame}
 
-\begin{frame}
-\frametitle{\cc{BERT 的内部结构}
+
+
+\section{\cc{BERT 的内部结构}
 	{BERT's internal architecture}}
 \cc{其实，BERT 也是混合了很多技巧 发展而成的：}
 {BERT results from combining several ideas:}
@@ -216,10 +101,10 @@
 \item \cc{我的想法是重复这个思路，但引入 逻辑的对称性}
 {My idea is to incorporate logical symmetry into BERT while following this line of thinking}
 \end{itemize}
-\end{frame}
 
-\begin{frame}
-\frametitle{Symmetry in logic}
+
+
+\section{Symmetry in logic}
 \begin{itemize}
 	\item \cc{\emp{词语} 组成 \emp{句子}，类比於 逻辑中，\emp{概念} 组成 \emp{逻辑命题}}
 	{\emp{Words} form \emp{sentences}, analogous to \emp{concepts} forming \emp{propositions} in logic}
@@ -256,10 +141,10 @@
 	
 	% \item 有趣的是，如果用「轮盘」方法，BERT 的 \emp{注意力机制} 有特殊意义....
 \end{itemize}
-\end{frame}
 
-\begin{frame}
-\frametitle{Symmetric neural network}
+
+
+\section{Symmetric neural network}
 \begin{itemize}
 	% \item Permutation invariance can be handled by \emp{symmetric} neural networks
 
@@ -277,10 +162,10 @@
 \end{itemize}
 \nocite{Qi2017a}
 \nocite{Zaheer2017}
-\end{frame}
 
-\begin{frame}
-\frametitle{\cc{知识图谱 (knowledge graphs)}{Knowledge graphs}}
+
+
+\section{\cc{知识图谱 (knowledge graphs)}{Knowledge graphs}}
 \begin{itemize}
 	\item \cc{知识图谱 不能直接输入神经网络，它必需分拆成很多 edges，每个 edge 是一个 \emp{关系}，也是一个 \emp{逻辑命题} ；也可以说 ``graphs are isomorphic to logic''}
 	{One cannot feed a knowledge graph directly into a neural network, as the input must be a vector.  A solution is to break the graph into edges, where each edge is equivalent to a \emp{relation} or \emp{proposition}.  One could say that graphs are isomorphic to logic}
@@ -300,11 +185,11 @@
 	}
 	
 \end{itemize}
-\end{frame}
 
 
-\begin{frame}
-\frametitle{\cc{BERT 的逻辑化}{Logicalization of BERT}}
+
+
+\section{\cc{BERT 的逻辑化}{Logicalization of BERT}}
 \begin{itemize}
 	\item \cc{可以强逼 BERT 的 隐状态 变成 ``set of propositions'' 的形式，方法是将 对称性 施加在 Encoder 上：}
 	{We can force BERT's hidden state to be a set of propositions by imposing permutation symmetry on its Encoder:}
@@ -340,10 +225,9 @@
 	
 	% \item 现时，所有 知识存在於 BERT 的 weights 里面，可不可以将一部分记忆 转化成 declarative knowledge，储存在 knowledge graph? 这做法有没有好处？ 
 \end{itemize}
-\end{frame}
 
-\begin{frame}[fragile]
-\frametitle{\cc{逻辑 与 AI 之间的联系}
+
+\section{\cc{逻辑 与 AI 之间的联系}
 {Connection between AI and logic}}
 \begin{itemize}
 	\item \cc{既然 AI 基於 逻辑，则 AI 与逻辑之间 必然存在 精确 (precise) 的联系}
@@ -389,11 +273,11 @@
 	% \item $H$ is a prodicate type.
 	% \item The proof of $H(a)$ may be the tuple $(a, H)$ or $a \in H$
 \end{itemize}
-\end{frame}
 
 
-\begin{frame}
-\frametitle{\cc{Attention 是什么？}{What is attention?}}
+
+
+\section{\cc{Attention 是什么？}{What is attention?}}
 \begin{itemize}
 \item \cc{注意力 最初起源於 Seq2seq，后来 BERT 引入 self-attention}
 {Attention originated with Seq2seq, then BERT introduced self-attention}
@@ -440,10 +324,10 @@
 %\end{equation}
 %换句话说，$\alpha_{ij}$ \emp{选择} 最接近 $h_j$ 的 $s_i$
 \end{itemize}
-\end{frame}
 
-\begin{frame}
-\frametitle{\cc{谓词 (predicates) vs 命题 (propositions)}
+
+
+\section{\cc{谓词 (predicates) vs 命题 (propositions)}
 	{Predicates vs propositions}}
 \begin{itemize}
 \item \cc{``Predicate'' 来自拉丁文「断言」的意思}
@@ -473,11 +357,11 @@
 \end{aligned}
 \end{equation}
 \end{itemize}
-\end{frame}
+
 
 \begin{comment}
-\begin{frame}
-\frametitle{Attention 给逻辑 AI 的启发}
+
+\section{Attention 给逻辑 AI 的启发}
 我这样理解 attention：
 \begin{itemize}
 \item 例如，翻译时，输入／输出句子中「动词」的位置可以是不同的
@@ -496,12 +380,12 @@
 \end{equation}
 
 \end{itemize}
-\end{frame}
+
 \end{comment}
 
-\begin{frame}
-\frametitle{``Attention is all you need'' ?}
-% \frametitle{\cc{Attention 在命题之间的作用}
+
+\section{``Attention is all you need'' ?}
+% \section{\cc{Attention 在命题之间的作用}
 %	{Attention at the propositional level}}
 \begin{itemize}
 \item \cc{类似地，\emp{高层}的 attention 可以处理 \emp{命题之间} 的关系}
@@ -538,9 +422,8 @@
 \item \cc{关键是在 速度 与 逻辑的 expressive power 之间 找到平衡}
 {The key is to find a balance between speed and expressive power of the logic}
 \end{itemize}
-\end{frame}
 
-\begin{frame}[plain]
+
 \begin{itemize}
 	\item \cc{ 
 	最简单的 attention 公式是（其中 $Q, K, V$ = query, key, value 矩阵）：}{
@@ -584,10 +467,10 @@
 	{\color{red}\vect{x}_1} \wedge \vect{x}_4 \wedge \vect{x}_5 \vdash \vect{y}_2
 	\end{equation}
 \end{itemize}
-\end{frame}
 
-\begin{frame}
-\frametitle{\cc{BERT 为什么成功？}{Why is BERT so successful?}}
+
+
+\section{\cc{BERT 为什么成功？}{Why is BERT so successful?}}
 \begin{itemize}
 	\item \cc{6 层的 BERT 有 $512 \times 6 = 3072$ 个 head，如果 $8\times$ multi-head 则有 24576 个}
 	{The 6-layer BERT has $512 \times 6 = 3072$ heads, or 24576 with $8\times$ multi-head attention}
@@ -608,10 +491,10 @@
 	Because logic rules are organized in 6 layers of \emp{hierarchy}, this structure has the ``deep learning'' property
 	}
 \end{itemize}
-\end{frame}
 
-\begin{frame}
-\frametitle{\cc{改良 BERT： 类似 attention 的方法}{Modifying BERT with an attention-like mechanism}}
+
+
+\section{\cc{改良 BERT： 类似 attention 的方法}{Modifying BERT with an attention-like mechanism}}
 \begin{itemize}
 	\item The BERT attention formula (\ref{attention-formula}) has some unnecessary restrictions, where generally we just need a symmetric function in the $\vect{x}_i$'s
 	
@@ -628,10 +511,10 @@
 	\vcenter{\hbox{\includegraphics[angle=-90,scale=0.5]{BERT-Encoder.png}}}
 	\end{equation}
 \end{itemize}
-\end{frame}
 
-\begin{frame}
-\frametitle{\cc{逆因推理 (abduction) 与 自然语言理解}{Abductive interpretation of natural language}}
+
+
+\section{\cc{逆因推理 (abduction) 与 自然语言理解}{Abductive interpretation of natural language}}
 \begin{itemize}
 	\item 根据 Jerry Hobbs 的 ``abductive interpretation of natural language'' 理论，语言理解 是一个 \emp{解释} (explain) 的过程
 	
@@ -647,10 +530,9 @@
 	\nonumber
 	\end{equation}
 \end{itemize}
-\end{frame}
 
-\begin{frame}[fragile]
-\frametitle{\cc{捕捉更广泛的 semantics}{Capturing semantics more broadly}}
+
+\section{\cc{捕捉更广泛的 semantics}{Capturing semantics more broadly}}
 \begin{itemize}
 	\item 阅读时，我们（人脑）有时可以预测下个 word（这是 BERT 训练的目标），但有时即使不能预测，但看到 next word 之后，仍会有某种「意料之内」的感觉
 
@@ -683,11 +565,11 @@
 
 	\item 这个情况和 \emp{强化学习} 中的 ``stochastic actions'' 类似，需要的是： stochastic, multi-modal, continuous actions （例如 SAC, soft actor-critic）
 \end{itemize}
-\end{frame}
+
 
 \begin{comment}
-\begin{frame}
-\frametitle{$N$ 个命题选 $K$ 个}
+
+\section{$N$ 个命题选 $K$ 个}
 \begin{itemize}
 \item \cc{At the porpositional level, attention 要用 weight matrix 记住各种命题之间的 相关性}
 {At the propositional level, attention uses a \emp{weight matrix} to memorize the relatedness among propositions}
@@ -725,11 +607,11 @@
 \end{equation} 
 
 \end{itemize}
-\end{frame}
+
 \end{comment}
 
-\begin{frame}
-\frametitle{Content-addressable long-term memory}
+
+\section{Content-addressable long-term memory}
 \begin{itemize}
 	\item \cc{Content-addressable memory 的想法来自 Alex Graves \textit{et al} 的 Neural Turing Machine [2014]}
 	{The content-addressable memory idea came from Alex Graves \textit{et al}'s Neural Turing Machine [2014]}
@@ -750,10 +632,10 @@
 	\item 但这个 idea 暂时仍未成熟，有待更多研究
  \end{itemize}
 \nocite{Graves2014}
-\end{frame}
+
 
 \begin{comment}
-\begin{frame}[plain]
+[plain]
 \begin{itemize}
 	\item \cc{例如：「太阳是热的」、「水向下流」是经常正确的命题}{Eg. ``The sun is hot'', ``Water flows downhill'' are facts that stay constant}
 
@@ -777,11 +659,11 @@
 	We can also store rules (weights) into content-addressable memory
 	}
 \end{itemize}
-\end{frame}
+
 \end{comment}
 
-\begin{frame}
-\frametitle{\cc{对 逻辑主义 的质疑}
+
+\section{\cc{对 逻辑主义 的质疑}
 {Doubts about logicism}}
 \begin{itemize}
 	\item \cc{很多人怀疑： 人脑真的用 逻辑 思考吗？}
@@ -813,14 +695,11 @@
 	\item \cc{其实人脑可能 比我们想像中 更接近逻辑}
 	{Perhaps the brain is much closer to formal logic than we'd thought}
 \end{itemize}
-\end{frame}
 
 
-\frameinlbffalse
-\begin{frame}
-\frametitle{References}
+\section{References}
 \cc{欢迎提问和讨论}{Questions, comments welcome} \smiley \\ \vspace*{0.4cm}
 \printbibliography
-\end{frame}
+
 
 \end{document} 
