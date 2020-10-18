@@ -12,9 +12,7 @@
 
 \usepackage{graphicx} % Allows including images
 \usepackage{tikz-cd}
-\tikzcdset{
-	arrow style=tikz
-}
+\tikzcdset{arrow style=tikz}
 \usepackage{tikz}
 \usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
 \usepackage{verbatim} % for comments
@@ -31,8 +29,8 @@
 
 \begin{document}
 
-\title{\cc{{\Huge《BERT 的逻辑化》} \\ \vspace*{0.2cm} 3.0 修正版}
-{{\Huge《Logicalization of BERT》} \\ \vspace*{0.2cm} revised version 3.0}}
+\title{\cc{\bfseries\color{blue}{\Huge《深度逻辑》} \\ \vspace*{0.2cm} 統一 邏輯、深度學習、與人工智能}
+{{\Huge《Deep Logic》} \\ \vspace*{0.2cm} Unifying deep learning, logic, and AGI}}
 \author{YKY} % Your name
 %\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 %{
@@ -60,7 +58,204 @@
 % 多谢 支持 \smiley
 
 
-\section{\cc{BERT 的革命性意义：「闭环路训练」}
+\section{Top-level structure of AGI}
+
+\section{Structure of logic}
+
+\subsection{Symmetry in logic}
+\begin{itemize}
+	\item \cc{\emp{词语} 组成 \emp{句子}，类比於 逻辑中，\emp{概念} 组成 \emp{逻辑命题}}
+	{\emp{Words} form \emp{sentences}, analogous to \emp{concepts} forming \emp{propositions} in logic}
+	
+	\item \cc{抽象地说，逻辑语言 可以看成是一种有 2个运算的 \emp{代数结构}：加法（$\wedge$，合并命题，可交换）和 乘法（$\cdot$，用作概念合成，不可交换）}
+	{From an abstract point of view, logic can be seen as an \emp{algebra} with 2 operations: a non-commutative multiplication ($\cdot$, for composition of concepts) and a commutative addition ($\wedge$, for conjunction of propositions)}
+	
+	\item \cc{例如：}{For example:}
+	\begin{equation}
+	\begin{aligned}
+	A &\wedge B & \equiv && B & \wedge A \\
+	\mbox{\cc{下雨}{it's raining}} &\wedge \mbox{\cc{失恋}{lovesick}} & \equiv && \mbox{\cc{失恋}{lovesick}} &\wedge \mbox{\cc{下雨}{it's raining}}
+	\end{aligned}
+	\end{equation}
+	
+	\item \cc{Word2Vec 也是革命性的； 由 Word2Vec 演变成 Sentence2Vec 则比较容易，基本上只是 向量的 \emp{合并} (concatenation);  Sentence 对应於 逻辑命题}
+	{Word2Vec was also ground-breaking, but it was easy to go from Word2Vec to Sentence2Vec: just concatenate the vectors
+		\\ Sentences correspond to propositional logic}
+	
+	\item \cc{但 命题的 \emp{集合} 需要用 symmetric NN 处理，因为 集合的元素 是\emp{顺序无关}的}
+	{A \emp{set} of propositions requires symmetric NN to process, as elements of the set are \emp{permutation invariant}}
+	
+	% \item 假设 全体逻辑命题的空间是 $\mathbb{P}$，则 \emp{命题集合} 的空间是 $2^{\mathbb{P}}$，非常庞大
+	
+	% \item 如果限制 状态 $\vec{x}$ = working memory 只有 10 个命题，$\vec{x}$ 的空间是 $\mathbb{P}^{10}/\sim$ 其中 $\sim$ 是对称群 $\mathfrak{S}_{10}$ 的等价关系。 换句话说 $ 2^{\mathbb{P}} \cong \coprod_{n=0}^{\infty} \; \mathbb{P}^n / \mathfrak{S}_n $
+	
+	% \item $\mathbb{P}^n / \mathfrak{S}_n$ 虽然是 $\mathbb{P}^n$ 的商空间，但 $\mathfrak{S}_n$-不变性 很难用神经网络实现
+	
+	% \definecolor{darkgreen}{rgb}{0.1, 0.7, 0.2}
+	% \item 现时 比较可行的办法，是将 状态 $\vec{x}$ 实现成 一个时间上的「轮盘」，每个 ${\color{darkgreen}\bullet}$ 表示一个命题：
+	% \begin{equation}
+	% \vcenter{\hbox{\includegraphics[scale=0.5]{BERT-with-carousel-architecture-1.png}}}
+	% \end{equation}
+	
+	% \item 有趣的是，如果用「轮盘」方法，BERT 的 \emp{注意力机制} 有特殊意义....
+\end{itemize}
+
+\subsection{Symmetric neural network}
+\begin{itemize}
+	% \item Permutation invariance can be handled by \emp{symmetric} neural networks
+	
+	\item \cc{Symmetric NN 问题 已经由 两篇论文解决了： \\ \tab [PointNet 2017] [DeepSets 2017]}
+	{The symmetric NN problem has been solved by 2 papers: \\ \tab  [PointNet 2017] and [DeepSets 2017]}
+	
+	\item Any symmetric function can be represented by the following form (a special case of the Kolmogorov-Arnold representation of functions):
+	\begin{equation}
+	\label{symmetric-functions}
+	f(x, y, ...) = g(h(x) + h(y) + ... )
+	\end{equation}
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.5]{g-and-h-networks.png}}}
+	\end{equation}
+\end{itemize}
+\nocite{Qi2017a}
+\nocite{Zaheer2017}
+
+\subsection{\cc{知识图谱 (knowledge graphs)}{Knowledge graphs}}
+\begin{itemize}
+	\item \cc{知识图谱 不能直接输入神经网络，它必需分拆成很多 edges，每个 edge 是一个 \emp{关系}，也是一个 \emp{逻辑命题} ；也可以说 ``graphs are isomorphic to logic''}
+	{One cannot feed a knowledge graph directly into a neural network, as the input must be a vector.  A solution is to break the graph into edges, where each edge is equivalent to a \emp{relation} or \emp{proposition}.  One could say that graphs are isomorphic to logic}
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.6]{knowledge-graph.png}}}
+	\end{equation}
+	\item \cc{而这些 edges 似乎必需用 \emp{symmetric} NN 处理，因为它们是 permutation invariant}
+	{As edges are invariant under permutations, it seems that we must use symmetric NNs to process them}
+	% \item Sym NNs are required to handle \emp{graph-rewriting}, an essential operation on knowledge graphs
+	
+	\item \cc{逻辑化 建立了 知识图谱 和 BERT 之间的一道桥梁}
+	{Logicalization provides a bridge between BERT and knowledge graphs}
+	
+	\cc{
+		接下来讨论 BERT....}{
+		Next we discuss BERT....
+	}
+	
+\end{itemize}
+
+\subsection{\cc{逻辑 与 AI 之间的联系}
+	{Connection between AI and logic}}
+\begin{itemize}
+	\item \cc{既然 AI 基於 逻辑，则 AI 与逻辑之间 必然存在 精确 (precise) 的联系}
+	{If AI is based on logic, there must exist a \emp{precise} connection between them}
+	
+	\item \cc{BERT 似乎是在执行 句子之间的变换，而这些句子是 word embedding 的 concatenation，例如：}
+	{BERT seems to be performing some kind of \emp{transformations} between sentences, such sentences are simply compositions of word-embedding vectors:}
+	\begin{equation}
+	\begin{tikzcd}[column sep = large]
+	\mbox{\cc{苏格拉底}{Socrates}} \cdot \mbox{\cc{是}{is}} \cdot \mbox{\cc{人}{human}}
+	\arrow[r, maps to, "BERT"]
+	& \mbox{\cc{苏格拉底}{Socrates}} \cdot \mbox{\cc{会}{is}} \cdot \mbox{\cc{死}{mortal}}
+	\end{tikzcd}
+	\label{BERT-map}
+	\end{equation}
+	\cc{这个做法看似很「粗暴」，其实它和 \emp{逻辑式子} 的作用一样：}
+	{While this may seem crude, it is effectively the same as a logic formula:}
+	\begin{equation}
+	\forall x. \; \mbox{Human}(x) \Rightarrow \mbox{Mortal}(x)
+	\end{equation}
+	\cc{而这式子，根据 Curry-Howard 对应，就是 (\ref{BERT-map}) 的函数映射!}
+	{Surprisingly, by the Curry-Howard correspondence, this formula corresponds to the mapping (\ref{BERT-map}) above!}
+	
+	% \item 这些映射的对象，是形如 ``$a \in A$'' 这样的物体，它们有 predicates 的几何／拓扑结构，但我们现时未做到这一步，暂时只引入了 commutativity
+	
+	\begin{comment}
+	\item 集合元素 $a$ 是 $\exists x. P(x)$ 的证明，例如 Socrates 是 $\exists x. \mbox{mortal}(x)$ 的证明
+	\item 当 神经网络 \emp{调教} 某些元素的 映射 (mapping) 时，它同时在学习某个逻辑的 formula;  换句话说，逻辑 是几何空间中的映射
+	\item 逻辑的 谓词 (predicates) 是在 基底元素空间上的一个 \emp{纤维丛结构} (fibration) :
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.5]{etale-space.png}}}
+	\end{equation}
+	\end{comment}
+	
+	% \item 从 几何／拓扑 ``借'' 来的概念，演变成 topos 理论、HoTT 等
+	
+	% \item 这些漂亮的理论 不是无用的； 有需要时，可以從 邏輯 那邊借來更多的結構
+	
+	\item \cc{我会在另一辑 slides 里 简介一下这些理论； 可以说，逻辑的 几何结构 是「永恒」的，它可以指示 AI 的 长远发展}
+	{In another set of slides we shall explore this connection.  One could say the mathematical structure of logic is ``eternal'';  It will provide guidance for the long-term development of AI}
+	
+	% \item $H(a)$ is a type.
+	% \item $H$ is a prodicate type.
+	% \item The proof of $H(a)$ may be the tuple $(a, H)$ or $a \in H$
+\end{itemize}
+
+
+\subsection{\cc{谓词 (predicates) vs 命题 (propositions)}
+	{Predicates vs propositions}}
+\begin{itemize}
+	\item \cc{``Predicate'' 来自拉丁文「断言」的意思}
+	{The word ``predicate'' comes from Latin ``to declare''}
+	
+	\item \cc{逻辑里，predicate 代表一个 没有主体／客体 的断言，换句话说，是一个有「洞」的命题}
+	{In logic, a predicate is a declaration without a subject or object;  In other words, it is a proposition with ``holes''}
+	
+	\item \cc{\emp{命题} = \emp{谓词} (predicate) + \emp{主体／客体}（统称 objects）}
+	{\emp{Proposition} = \emp{predicate} + \emp{objects}}
+	
+	\item \cc{例如：}{Eg:} Human(John), Loves(John, Mary)
+	
+	% \item 命题\emp{内部} 的结构，即 predicate-level 结构，命题\emp{之间} 的结构，即 命题逻辑
+	
+	\item \cc{从逻辑的角度看，attention 的输出可以看成是 predicate 和 objects 的\emp{结合}：}
+	{From the logic point of view, the output of attention is the \emp{fusion} of a predicate with its objects:}
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=0.5]{attention-as-predicate.png}}}
+	\end{equation}
+	
+	\item \cc{形象地说：}{Or figuratively:}
+	\begin{equation}
+	\begin{aligned}
+	\mbox{predicate} & + \mbox{objects} &&= \mbox{proposition} \\
+	\NewSym{predicate.png} &+ \NewSym{object.png} \; \NewSym{object.png} \; \NewSym{object.png} \; .... &&= \NewSym{proposition.png}
+	\end{aligned}
+	\end{equation}
+\end{itemize}
+
+\subsection{\cc{对 逻辑主义 的质疑}
+	{Doubts about logicism}}
+\begin{itemize}
+	\item \cc{很多人怀疑： 人脑真的用 逻辑 思考吗？}
+	{Many people question: Do our brains really use symbolic logic to think?}
+	
+	\item \cc{其实我们每句表达的 \emp{语言}，都是逻辑形式的 (logical form)}
+	{To say the least, all our languages are essentially in \emp{logical form}}
+	
+	\item \cc{直觉认为，人脑 构造一些 \emp{models}，再从 model 中「读出」一些结论}
+	{Our impression is that the brain constructs ``mental models'' of the world and ``reads off'' conclusions from such models}
+	
+	\item \cc{例如给定一个描述：「已婚妇人出轨，用刀刺死丈夫」}
+	{Consider a description: ``Wife cheats on husband, stubs him with knife''}
+	\begin{equation}
+	\vcenter{\hbox{\includegraphics[scale=1.0]{murder-scene.png}}}
+	\end{equation}
+	
+	\item \cc{那么 妻子穿著什么衣服？ 衣服什么颜色？ 这些都是 \emp{臆想} 出来的细节，是不正确的}
+	{What is she wearing? What color is her dress? Such details are \emp{imagined} and unwarranted}
+	
+	\item \cc{这个 model 可以有哪些细节？ 答案是： 任何细节都不可以有，除非是 逻辑上蕴含的，或被 逻辑约束}
+	{So what kind of details can our model have? The answer is: it cannot have ANY detail, except those entailed or constrainted by \emp{logic}}
+	
+	% \item 所以，其实所谓 ``model-based reasoning'' 并没有那么神奇，也并不一定正确，它的细节必需被 \emp{逻辑} 约束
+	
+	\item \cc{Model 本身可以是一些 抽象的逻辑命题 构成的，这也合理； 反而，一个有很多感官细节的 model 并不合理}
+	{Models may be constructed from abstract logic propositions;  Models with a lot of sensory details are implausible}
+	
+	\item \cc{其实人脑可能 比我们想像中 更接近逻辑}
+	{Perhaps the brain is much closer to formal logic than we'd thought}
+\end{itemize}
+
+
+\section{BERT as an alternative logic}
+
+\subsection{\cc{BERT 的革命性意义：「闭环路训练」}
 	{BERT's ground-breaking significance: closed-loop training}}
 \begin{itemize}
 	\item \cc{BERT 利用平常的文本 induce 出知识，而这 representation 具有 \emp{通用性 (universality)} :}
@@ -82,7 +277,7 @@
 
 
 
-\section{\cc{BERT 的内部结构}
+\subsection{\cc{BERT 的内部结构}
 	{BERT's internal architecture}}
 \cc{其实，BERT 也是混合了很多技巧 发展而成的：}
 {BERT results from combining several ideas:}
@@ -104,92 +299,7 @@
 
 
 
-\section{Symmetry in logic}
-\begin{itemize}
-	\item \cc{\emp{词语} 组成 \emp{句子}，类比於 逻辑中，\emp{概念} 组成 \emp{逻辑命题}}
-	{\emp{Words} form \emp{sentences}, analogous to \emp{concepts} forming \emp{propositions} in logic}
-	
-	\item \cc{抽象地说，逻辑语言 可以看成是一种有 2个运算的 \emp{代数结构}：加法（$\wedge$，合并命题，可交换）和 乘法（$\cdot$，用作概念合成，不可交换）}
-	{From an abstract point of view, logic can be seen as an \emp{algebra} with 2 operations: a non-commutative multiplication ($\cdot$, for composition of concepts) and a commutative addition ($\wedge$, for conjunction of propositions)}
-
-	\item \cc{例如：}{For example:}
-	\begin{equation}
-	\begin{aligned}
-	A &\wedge B & \equiv && B & \wedge A \\
-	\mbox{\cc{下雨}{it's raining}} &\wedge \mbox{\cc{失恋}{lovesick}} & \equiv && \mbox{\cc{失恋}{lovesick}} &\wedge \mbox{\cc{下雨}{it's raining}}
-	\end{aligned}
-	\end{equation}
-
-	\item \cc{Word2Vec 也是革命性的； 由 Word2Vec 演变成 Sentence2Vec 则比较容易，基本上只是 向量的 \emp{合并} (concatenation);  Sentence 对应於 逻辑命题}
-	{Word2Vec was also ground-breaking, but it was easy to go from Word2Vec to Sentence2Vec: just concatenate the vectors
-	\\ Sentences correspond to propositional logic}
-
-	\item \cc{但 命题的 \emp{集合} 需要用 symmetric NN 处理，因为 集合的元素 是\emp{顺序无关}的}
-	{A \emp{set} of propositions requires symmetric NN to process, as elements of the set are \emp{permutation invariant}}
-
-	% \item 假设 全体逻辑命题的空间是 $\mathbb{P}$，则 \emp{命题集合} 的空间是 $2^{\mathbb{P}}$，非常庞大
-	
-	% \item 如果限制 状态 $\vec{x}$ = working memory 只有 10 个命题，$\vec{x}$ 的空间是 $\mathbb{P}^{10}/\sim$ 其中 $\sim$ 是对称群 $\mathfrak{S}_{10}$ 的等价关系。 换句话说 $ 2^{\mathbb{P}} \cong \coprod_{n=0}^{\infty} \; \mathbb{P}^n / \mathfrak{S}_n $
-	
-	% \item $\mathbb{P}^n / \mathfrak{S}_n$ 虽然是 $\mathbb{P}^n$ 的商空间，但 $\mathfrak{S}_n$-不变性 很难用神经网络实现
-	
-	% \definecolor{darkgreen}{rgb}{0.1, 0.7, 0.2}
-	% \item 现时 比较可行的办法，是将 状态 $\vec{x}$ 实现成 一个时间上的「轮盘」，每个 ${\color{darkgreen}\bullet}$ 表示一个命题：
-	% \begin{equation}
-	% \vcenter{\hbox{\includegraphics[scale=0.5]{BERT-with-carousel-architecture-1.png}}}
-	% \end{equation}
-	
-	% \item 有趣的是，如果用「轮盘」方法，BERT 的 \emp{注意力机制} 有特殊意义....
-\end{itemize}
-
-
-
-\section{Symmetric neural network}
-\begin{itemize}
-	% \item Permutation invariance can be handled by \emp{symmetric} neural networks
-
-	\item \cc{Symmetric NN 问题 已经由 两篇论文解决了： \\ \tab [PointNet 2017] [DeepSets 2017]}
-	{The symmetric NN problem has been solved by 2 papers: \\ \tab  [PointNet 2017] and [DeepSets 2017]}
-
-	\item Any symmetric function can be represented by the following form (a special case of the Kolmogorov-Arnold representation of functions):
-	\begin{equation}
-	\label{symmetric-functions}
-	f(x, y, ...) = g(h(x) + h(y) + ... )
-	\end{equation}
-	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=0.5]{g-and-h-networks.png}}}
-	\end{equation}
-\end{itemize}
-\nocite{Qi2017a}
-\nocite{Zaheer2017}
-
-
-
-\section{\cc{知识图谱 (knowledge graphs)}{Knowledge graphs}}
-\begin{itemize}
-	\item \cc{知识图谱 不能直接输入神经网络，它必需分拆成很多 edges，每个 edge 是一个 \emp{关系}，也是一个 \emp{逻辑命题} ；也可以说 ``graphs are isomorphic to logic''}
-	{One cannot feed a knowledge graph directly into a neural network, as the input must be a vector.  A solution is to break the graph into edges, where each edge is equivalent to a \emp{relation} or \emp{proposition}.  One could say that graphs are isomorphic to logic}
-	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=0.6]{knowledge-graph.png}}}
-	\end{equation}
-	\item \cc{而这些 edges 似乎必需用 \emp{symmetric} NN 处理，因为它们是 permutation invariant}
-	{As edges are invariant under permutations, it seems that we must use symmetric NNs to process them}
-	% \item Sym NNs are required to handle \emp{graph-rewriting}, an essential operation on knowledge graphs
-
-	\item \cc{逻辑化 建立了 知识图谱 和 BERT 之间的一道桥梁}
-	{Logicalization provides a bridge between BERT and knowledge graphs}
-	
-	\cc{
-	接下来讨论 BERT....}{
-	Next we discuss BERT....
-	}
-	
-\end{itemize}
-
-
-
-
-\section{\cc{BERT 的逻辑化}{Logicalization of BERT}}
+\subsection{\cc{BERT 的逻辑化}{Logicalization of BERT}}
 \begin{itemize}
 	\item \cc{可以强逼 BERT 的 隐状态 变成 ``set of propositions'' 的形式，方法是将 对称性 施加在 Encoder 上：}
 	{We can force BERT's hidden state to be a set of propositions by imposing permutation symmetry on its Encoder:}
@@ -227,57 +337,8 @@
 \end{itemize}
 
 
-\section{\cc{逻辑 与 AI 之间的联系}
-{Connection between AI and logic}}
-\begin{itemize}
-	\item \cc{既然 AI 基於 逻辑，则 AI 与逻辑之间 必然存在 精确 (precise) 的联系}
-	{If AI is based on logic, there must exist a \emp{precise} connection between them}
 
-	\item \cc{BERT 似乎是在执行 句子之间的变换，而这些句子是 word embedding 的 concatenation，例如：}
-	{BERT seems to be performing some kind of \emp{transformations} between sentences, such sentences are simply compositions of word-embedding vectors:}
-	\begin{equation}
-	\begin{tikzcd}[column sep = large]
-	\mbox{\cc{苏格拉底}{Socrates}} \cdot \mbox{\cc{是}{is}} \cdot \mbox{\cc{人}{human}}
-	\arrow[r, maps to, "BERT"]
-	& \mbox{\cc{苏格拉底}{Socrates}} \cdot \mbox{\cc{会}{is}} \cdot \mbox{\cc{死}{mortal}}
-	\end{tikzcd}
-	\label{BERT-map}
-	\end{equation}
-	\cc{这个做法看似很「粗暴」，其实它和 \emp{逻辑式子} 的作用一样：}
-	{While this may seem crude, it is effectively the same as a logic formula:}
-	\begin{equation}
-	\forall x. \; \mbox{Human}(x) \Rightarrow \mbox{Mortal}(x)
-	\end{equation}
-	\cc{而这式子，根据 Curry-Howard 对应，就是 (\ref{BERT-map}) 的函数映射!}
-	{Surprisingly, by the Curry-Howard correspondence, this formula corresponds to the mapping (\ref{BERT-map}) above!}
-
-	% \item 这些映射的对象，是形如 ``$a \in A$'' 这样的物体，它们有 predicates 的几何／拓扑结构，但我们现时未做到这一步，暂时只引入了 commutativity
-	
-	\begin{comment}
-	\item 集合元素 $a$ 是 $\exists x. P(x)$ 的证明，例如 Socrates 是 $\exists x. \mbox{mortal}(x)$ 的证明
-	\item 当 神经网络 \emp{调教} 某些元素的 映射 (mapping) 时，它同时在学习某个逻辑的 formula;  换句话说，逻辑 是几何空间中的映射
-	\item 逻辑的 谓词 (predicates) 是在 基底元素空间上的一个 \emp{纤维丛结构} (fibration) :
-	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=0.5]{etale-space.png}}}
-	\end{equation}
-	\end{comment}
-	
-	% \item 从 几何／拓扑 ``借'' 来的概念，演变成 topos 理论、HoTT 等
-	
-	% \item 这些漂亮的理论 不是无用的； 有需要时，可以從 邏輯 那邊借來更多的結構
-	
-	\item \cc{我会在另一辑 slides 里 简介一下这些理论； 可以说，逻辑的 几何结构 是「永恒」的，它可以指示 AI 的 长远发展}
-	{In another set of slides we shall explore this connection.  One could say the mathematical structure of logic is ``eternal'';  It will provide guidance for the long-term development of AI}
-	
-	% \item $H(a)$ is a type.
-	% \item $H$ is a prodicate type.
-	% \item The proof of $H(a)$ may be the tuple $(a, H)$ or $a \in H$
-\end{itemize}
-
-
-
-
-\section{\cc{Attention 是什么？}{What is attention?}}
+\subsection{\cc{Attention 是什么？}{What is attention?}}
 \begin{itemize}
 \item \cc{注意力 最初起源於 Seq2seq，后来 BERT 引入 self-attention}
 {Attention originated with Seq2seq, then BERT introduced self-attention}
@@ -327,38 +388,6 @@
 
 
 
-\section{\cc{谓词 (predicates) vs 命题 (propositions)}
-	{Predicates vs propositions}}
-\begin{itemize}
-\item \cc{``Predicate'' 来自拉丁文「断言」的意思}
-{The word ``predicate'' comes from Latin ``to declare''}
-
-\item \cc{逻辑里，predicate 代表一个 没有主体／客体 的断言，换句话说，是一个有「洞」的命题}
-{In logic, a predicate is a declaration without a subject or object;  In other words, it is a proposition with ``holes''}
-	
-\item \cc{\emp{命题} = \emp{谓词} (predicate) + \emp{主体／客体}（统称 objects）}
-{\emp{Proposition} = \emp{predicate} + \emp{objects}}
-
-\item \cc{例如：}{Eg:} Human(John), Loves(John, Mary)
-
-% \item 命题\emp{内部} 的结构，即 predicate-level 结构，命题\emp{之间} 的结构，即 命题逻辑
-
-\item \cc{从逻辑的角度看，attention 的输出可以看成是 predicate 和 objects 的\emp{结合}：}
-{From the logic point of view, the output of attention is the \emp{fusion} of a predicate with its objects:}
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.5]{attention-as-predicate.png}}}
-\end{equation}
-
-\item \cc{形象地说：}{Or figuratively:}
-\begin{equation}
-\begin{aligned}
-\mbox{predicate} & + \mbox{objects} &&= \mbox{proposition} \\
-\NewSym{predicate.png} &+ \NewSym{object.png} \; \NewSym{object.png} \; \NewSym{object.png} \; .... &&= \NewSym{proposition.png}
-\end{aligned}
-\end{equation}
-\end{itemize}
-
-
 \begin{comment}
 
 \section{Attention 给逻辑 AI 的启发}
@@ -384,7 +413,7 @@
 \end{comment}
 
 
-\section{``Attention is all you need'' ?}
+\subsection{``Attention is all you need'' ?}
 % \section{\cc{Attention 在命题之间的作用}
 %	{Attention at the propositional level}}
 \begin{itemize}
@@ -470,7 +499,7 @@
 
 
 
-\section{\cc{BERT 为什么成功？}{Why is BERT so successful?}}
+\subsection{\cc{BERT 为什么成功？}{Why is BERT so successful?}}
 \begin{itemize}
 	\item \cc{6 层的 BERT 有 $512 \times 6 = 3072$ 个 head，如果 $8\times$ multi-head 则有 24576 个}
 	{The 6-layer BERT has $512 \times 6 = 3072$ heads, or 24576 with $8\times$ multi-head attention}
@@ -494,7 +523,7 @@
 
 
 
-\section{\cc{改良 BERT： 类似 attention 的方法}{Modifying BERT with an attention-like mechanism}}
+\subsection{\cc{改良 BERT： 类似 attention 的方法}{Modifying BERT with an attention-like mechanism}}
 \begin{itemize}
 	\item The BERT attention formula (\ref{attention-formula}) has some unnecessary restrictions, where generally we just need a symmetric function in the $\vect{x}_i$'s
 	
@@ -514,7 +543,7 @@
 
 
 
-\section{\cc{逆因推理 (abduction) 与 自然语言理解}{Abductive interpretation of natural language}}
+\subsection{\cc{逆因推理 (abduction) 与 自然语言理解}{Abductive interpretation of natural language}}
 \begin{itemize}
 	\item 根据 Jerry Hobbs 的 ``abductive interpretation of natural language'' 理论，语言理解 是一个 \emp{解释} (explain) 的过程
 	
@@ -532,7 +561,7 @@
 \end{itemize}
 
 
-\section{\cc{捕捉更广泛的 semantics}{Capturing semantics more broadly}}
+\subsection{\cc{捕捉更广泛的 semantics}{Capturing semantics more broadly}}
 \begin{itemize}
 	\item 阅读时，我们（人脑）有时可以预测下个 word（这是 BERT 训练的目标），但有时即使不能预测，但看到 next word 之后，仍会有某种「意料之内」的感觉
 
@@ -611,7 +640,7 @@
 \end{comment}
 
 
-\section{Content-addressable long-term memory}
+\subsection{Content-addressable long-term memory}
 \begin{itemize}
 	\item \cc{Content-addressable memory 的想法来自 Alex Graves \textit{et al} 的 Neural Turing Machine [2014]}
 	{The content-addressable memory idea came from Alex Graves \textit{et al}'s Neural Turing Machine [2014]}
@@ -663,38 +692,6 @@
 \end{comment}
 
 
-\section{\cc{对 逻辑主义 的质疑}
-{Doubts about logicism}}
-\begin{itemize}
-	\item \cc{很多人怀疑： 人脑真的用 逻辑 思考吗？}
-	{Many people question: Do our brains really use symbolic logic to think?}
-	
-	\item \cc{其实我们每句表达的 \emp{语言}，都是逻辑形式的 (logical form)}
-	{To say the least, all our languages are essentially in \emp{logical form}}
-
-	\item \cc{直觉认为，人脑 构造一些 \emp{models}，再从 model 中「读出」一些结论}
-	{Our impression is that the brain constructs ``mental models'' of the world and ``reads off'' conclusions from such models}
-	
-	\item \cc{例如给定一个描述：「已婚妇人出轨，用刀刺死丈夫」}
-	{Consider a description: ``Wife cheats on husband, stubs him with knife''}
-	\begin{equation}
-	\vcenter{\hbox{\includegraphics[scale=1.0]{murder-scene.png}}}
-	\end{equation}
-	
-	\item \cc{那么 妻子穿著什么衣服？ 衣服什么颜色？ 这些都是 \emp{臆想} 出来的细节，是不正确的}
-	{What is she wearing? What color is her dress? Such details are \emp{imagined} and unwarranted}
-
-	\item \cc{这个 model 可以有哪些细节？ 答案是： 任何细节都不可以有，除非是 逻辑上蕴含的，或被 逻辑约束}
-	{So what kind of details can our model have? The answer is: it cannot have ANY detail, except those entailed or constrainted by \emp{logic}}
-	
-	% \item 所以，其实所谓 ``model-based reasoning'' 并没有那么神奇，也并不一定正确，它的细节必需被 \emp{逻辑} 约束
-	
-	\item \cc{Model 本身可以是一些 抽象的逻辑命题 构成的，这也合理； 反而，一个有很多感官细节的 model 并不合理}
-	{Models may be constructed from abstract logic propositions;  Models with a lot of sensory details are implausible}
-	
-	\item \cc{其实人脑可能 比我们想像中 更接近逻辑}
-	{Perhaps the brain is much closer to formal logic than we'd thought}
-\end{itemize}
 
 
 \section{References}
