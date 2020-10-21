@@ -12,8 +12,9 @@
 
 \usepackage{graphicx} % Allows including images
 \usepackage{tikz-cd}
-\tikzcdset{arrow style=tikz}
-\usepackage{tikz}
+\tikzcdset{arrow style=tikz,
+diagrams={>={|[scale=3]}}}
+% \usepackage{tikz}
 \usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
 \usepackage{verbatim} % for comments
 % \usepackage{tikz-cd}  % commutative diagrams
@@ -42,7 +43,7 @@
 
 \maketitle
 
-\section{Summary}
+\section*{Summary}
 \begin{itemize}
 	\item BERT 在训练过程中「被逼」预测遮掩的词语，由此诱导出人类的知识，这已经具有 AGI 的雏形
 	
@@ -58,9 +59,33 @@
 % 多谢 支持 \smiley
 
 
-\section{Top-level structure of AGI}
+\section{Structure of AI}
+
+An AI is essentially a dynamical system that constantly updates its ``state'' $\vect{x}$:
+\begin{equation}
+\dot{\vect{x}} = \vect{F}(\vect{x})
+\end{equation}
+
+Part of the state $\vect{x}$ contains \emp{sensory input} and \emp{action output} that allow the AI to interact with the external environment.
+
+
 
 \section{Structure of logic}
+
+The central tenet of my theory is that the state $\vect{x}$ of the AI system is consisted of \emp{logic propositions} and that $\vect{F}$ plays the role of the \emp{logic consequence} operator $\vdash$:
+\begin{equation}
+\begin{tikzcd}
+\boxed{\mbox{propositions}}
+\arrow[r, tail, no head, "\vect{F}"]
+& \boxed{\mbox{propositions}}
+\end{tikzcd}
+\end{equation}
+
+So our goal now is to elucidate the structure of $\vdash$.  Currently the most elegant formulation is given by \emp{categorical logic} or \emp{topos theory}.
+
+\subsection{Curry-Howard correspondence}
+
+
 
 \subsection{Symmetry in logic}
 \begin{itemize}
