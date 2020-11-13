@@ -59,7 +59,7 @@ diagrams={>={|[scale=3]}}}
 % 多谢 支持 \smiley
 
 
-\section{Structure of AI}
+\section{Structure of AI in the framework of reinforcement learning}
 
 An AI is essentially a dynamical system that constantly updates its ``state'' $\vect{x}$:
 \begin{equation}
@@ -83,9 +83,33 @@ The central tenet of my theory is that the state $\vect{x}$ of the AI system is 
 
 So our goal now is to elucidate the structure of $\vdash$.  Currently the most elegant formulation is given by \emp{categorical logic} or \emp{topos theory}.
 
+
 \subsection{Curry-Howard correspondence}
 
+The Curry-Howard correspondence is a deep connection between logic and computation (in the form of type theory).
 
+
+
+\subsection{$\forall$ and $\exists$ as adjunctions}
+
+Let $\mbox{Forms}(\vec{x})$ denote the set of formulas with only the variables $\vec{x}$ free.
+
+Then there is a trivial operation of adding an additional dummy variable $y$:
+\begin{equation}
+* : \mbox{Forms}(\vec{x}) \rightarrow \mbox{Forms}(\vec{x}, y)
+\end{equation}
+taking each formula $\phi(\vec{x})$ to itself.
+
+It turns out that $\exists$ and $\forall$ are adjoints to the map $*$:
+\begin{equation}
+ \exists \dashv * \dashv \forall
+\end{equation}
+
+\subsection{Sheaves and topos}
+
+Some $\mathbf{Set}$-valued functors are \emp{representable}, ie, isomorphic to a hom-functor.
+
+Functors $\mathcal{C} \rightarrow \mathbf{Set}$ are called \textbf{pre-sheaves} on $\mathcal{C}$.
 
 \subsection{Symmetry in logic}
 \begin{itemize}
