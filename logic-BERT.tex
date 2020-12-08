@@ -146,15 +146,30 @@
 \end{frame}
 
 \begin{frame}[noframenumbering]
-\frametitle{Summary}
+\frametitle{Executive summary}
 \begin{itemize}
-	\item BERT 在训练过程中「被逼」预测遮掩的词语，由此诱导出人类的知识，这已经具有 AGI 的雏形
+	\item \cc{
+	BERT 在训练过程中「被逼」预测遮掩的词语，由此诱导出人类的知识，这已经具有 AGI 的雏形}{
+	During training, BERT is ``forced'' to predict masked tokens, which induces it to attain human common-sense knowledge.  This is a precursory form of AGI.
+	}
 	
-	\item 从经典逻辑 AI 的角度看，BERT 内部可能有符合逻辑思维的结构，而我们很惊讶地发现，透过 Curry-Howard 对应，BERT 可以看成是一种另类的逻辑
+	\item \cc{
+	从经典逻辑 AI 的角度看，BERT 内部可能有符合逻辑思维的结构，而我们很惊讶地发现，透过 Curry-Howard 对应，BERT 可以看成是一种另类的逻辑}{
+	Looking from the angle of classical AI, one may suspect BERT to contain structures of logical thinking, and I am surprised to find that this is indeed the case.  Via the Curry-Howard isomorphism, BERT can be regarded as an ``alternative'' logic.
+	}
 	
-	\item AGI 系统可以和 逻辑结构 （以 范畴论、topos 表述）建立紧密的联系，这个联系可以指导往后的 AGI 发展路线，非常方便
 	
-	\item 我需要一些合作者帮助，特别是 BERT 和 soft Actor-Critic 方面
+	\item \cc{
+	AGI 系统可以和 逻辑结构 （以 范畴论、topos 表述）建立紧密的联系，这个联系可以指导往后的 AGI 发展路线，非常方便}{
+	The design of AGI is tightly connected with the mathematical structure of logic (described by category theory and topos theory) which provides crucial guidance for future development.
+	}
+	
+	
+	\item \cc{
+	我需要一些合作者帮助，特别是 BERT 和 soft Actor-Critic 方面}{
+	I am always looking for collaboration partners, in particular I need expertise relating to BERT and soft Actor-Critic, for now.
+	}
+	
 \end{itemize}
 \end{frame}
 
@@ -633,16 +648,31 @@
 \begin{frame}
 \frametitle{\cc{逆因推理 (abduction) 与 自然语言理解}{Abductive interpretation of natural language}}
 \begin{itemize}
-	\item 根据 Jerry Hobbs 的 ``abductive interpretation of natural language'' 理论，语言理解 是一个 \emp{解释} (explain) 的过程
+	\item \cc{
+	根据 Jerry Hobbs 的 ``abductive interpretation of natural language'' 理论，语言理解 是一个 \emp{解释} (explain) 的过程}{
+	According to Jerry Hobbs' ``abductive interpretation of natural language'' theory, language understanding is a process of ``explanation''
+	}
 	
-	\item \emp{解释} 在逻辑上等同於 \emp{逆因推理} (abduction)，亦即是 \emp{逻辑蕴涵} (implication, $A \Rightarrow B$) 的反方向
+	\item \cc{
+	\emp{解释} 在逻辑上等同於 \emp{逆因推理} (abduction)，亦即是 \emp{逻辑蕴涵} (implication, $A \Rightarrow B$) 的反方向}{
+	In logic, to ``explain'' is equivalent to \emp{abduction} which is the reverse of \emp{implication} ($A \Rightarrow B$)
+	}
 
-	\item 举例来说： 天气热 $\Rightarrow$ 流汗，所以「天气热」就是「流汗」的 \emp{解释}
+	\item \cc{
+	举例来说： 天气热 $\Rightarrow$ 流汗，所以「天气热」就是「流汗」的 \emp{解释}}{
+	For example: hot weather $\Rightarrow$ sweating, so ``hot weather'' is an \emp{explantion} of ``sweating''
+	}
 	
-	\item 这个理论 今天很少人知道，因为属於 经典逻辑 AI 时期
+	\item \cc{
+	这个理论 今天很少人知道，因为属於 经典逻辑 AI 时期}{
+	This theory is little known today, as it belonged to the classical AI period
+	}
 	\begin{equation}
+	\cc{
 	\parbox{3cm}{2013年 他获得\\计算语言学\\终身成就奖}
-	\quad
+	\quad}{
+	% no caption needed in English version
+	}
 	\vcenter{\hbox{\includegraphics[scale=0.3]{Jerry-Hobbs.png}}}
 	\nonumber
 	\end{equation}
@@ -652,36 +682,61 @@
 \begin{frame}[fragile]
 \frametitle{\cc{捕捉更广泛的 semantics}{Capturing semantics more broadly}}
 \begin{itemize}
-	\item 阅读时，我们（人脑）有时可以预测下个 word（这是 BERT 训练的目标），但有时即使不能预测，但看到 next word 之后，仍会有某种「意料之内」的感觉
-
-	\item 举例来说：
+	\item \cc{
+	阅读时，我们（人脑）有时可以预测下个 word（这是 BERT 训练的目标），但有时即使不能预测，但看到 next word 之后，仍会有某种「意料之内」的感觉}{
+	When reading texts, the human brain can often predict the next words (like BERT), but sometimes even when failing to do so, we still get a sense that the next word is ``within expectation''
+	}
+	
+	\item \cc{
+	举例来说：}{
+	For example:
+	}
 	\begin{equation}
 	\begin{aligned}
-	& \mbox{「天气热，我不停 \underline{流汗}」} \nonumber \\
-	& \mbox{「天气热，我不停 \underline{吃冰淇淋}」}
+	& \cc{
+	\mbox{「天气热，我不停 \underline{流汗}」}}{
+	\mbox{The weather is hot, I keep \underline{sweating}}
+	}
+	 \nonumber \\
+	& \cc{
+	\mbox{「天气热，我不停 \underline{吃冰淇淋}」}}{
+	\mbox{The weather is hot, I keep \underline{eating icecream}}
+	}
 	\end{aligned}
 	\end{equation}
-	第二个例子是比较少见的，但也合理
+	\cc{
+	第二个例子是比较少见的，但也合理}{
+	The 2nd case is rarer, but still reasonable
+	}
 
-	\item（从逻辑角度看）BERT 只会预测 \emp{最有可能} 的结论：
+	\item\cc{
+	（从逻辑角度看）BERT 只会预测 \emp{最有可能} 的结论：}{
+	From a logical perspective, BERT only predicts the most probable conclusion:
+	}
 	\begin{equation}
 	\begin{tikzcd}[column sep = large]
 	\mbox{\cc{前提}{premise}}
-	\arrow[r, maps to, "BERT"]
+	\arrow[r, maps to, "\mbox{BERT}"]
 	& \mbox{\cc{预测}{prediction}}
 	\end{tikzcd}
 	\end{equation}
-	其实我们想要的是：
+	\cc{
+	其实我们想要的是，只要其中一个预测成功，即给予「奖励」：}{
+	What we want is for it to be ``rewarded'' if any one of several predictions is correct:
+	}
 	\begin{equation}
 	\begin{tikzcd}
 	\mbox{\cc{前提}{premise}}
-	\arrow[r, maps to]
-	& \mbox{\cc{很多不同的 预测}{many predictions}}
+	\arrow[r, maps to, "\mbox{improved BERT}"]
+	&[6em] \mbox{\cc{很多不同的 预测}{multiple predictions}}
 	\end{tikzcd}
 	\end{equation}
-	而只要其中一个预测成功，即给予「奖励」
 
-	\item 这个情况和 \emp{强化学习} 中的 ``stochastic actions'' 类似，需要的是： stochastic, multi-modal, continuous actions （例如 SAC, soft actor-critic）
+	\item \cc{
+	这个情况和 \emp{强化学习} 中的 ``stochastic actions'' 类似，需要的是： stochastic, multi-modal, continuous actions （例如 SAC, Soft Actor-Critic）}{
+	This situation is analogous to ``stochastic actions'' in reinforcement learning.  We need sotchastic, multi-modal, continuous actions (for example, SAC, Soft Actor-Critic)
+	}
+	
 \end{itemize}
 \end{frame}
 
@@ -747,7 +802,11 @@
 	\item \cc{这种系统 已非常接近 strong AI，而这是有赖 \emp{逻辑化} 才能做到的}
 	{This is getting very close to strong AI, and depends crucially on logicalization}
 
-	\item 但这个 idea 暂时仍未成熟，有待更多研究
+	\item \cc{
+	但这个 idea 暂时仍未成熟，有待更多研究}{
+	This idea is still immature and needs more research
+	}
+	
  \end{itemize}
 \nocite{Graves2014}
 \end{frame}
