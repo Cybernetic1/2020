@@ -53,13 +53,7 @@
 
 \section*{Summary}
 \begin{itemize}
-	\item BERT 在训练过程中「被逼」预测遮掩的词语，由此诱导出人类的知识，这已经具有 AGI 的雏形
-	
-	\item 从经典逻辑 AI 的角度看，BERT 内部可能有符合逻辑思维的结构，而我们很惊讶地发现，透过 Curry-Howard 对应，BERT 可以看成是一种另类的逻辑
-	
-	\item AGI 系统可以和 逻辑结构 （以 范畴论、topos 表述）建立紧密的联系，这个联系可以指导往后的 AGI 发展路线，非常方便
-	
-	\item 我需要一些合作者帮助，特别是 BERT 和 soft Actor-Critic 方面
+	\item 描述一种可以完整地解决 AGI 的逻辑
 \end{itemize}
 
 \tableofcontents
@@ -136,7 +130,7 @@ In string theory，它表示上面的 strings 变成下面的 string 的「时�
 
 描述 \emp{program} 或 \emp{computation} 的语言叫 type theory.  例如在一般的 编程语言 里可以有这样的一句：
 \begin{equation}
-\verb!define length(s: String): Integer { .... }!
+\verb!define length(s: String): Integer = { .... }!
 \end{equation}
 意思是说 length() 是一个函数，输入 String，输出 Integer.
 
@@ -190,12 +184,14 @@ Curry-Howard isomorphism 揭示了 type theory 和 \emp{intuitionistic logic} �
 
 排中律 是说： $p \vee \neg p$ 是 恒真命题。 但在 直觉主义 逻辑中，$p \vee \neg p$ 表示 $p$ 的证明 \textbf{或} $\neg p$ 的证明，但有时候这两者都不知道（例如 现时仍未找到证明，或者不可能找到证明）。 
 
+附带一提： 人们惊讶地发现，在直觉主义逻辑下，axiom of choice $\Rightarrow$ law of excluded middle.  换句话说，axiom of choice 和 直觉主义 也有内在的矛盾。 
+
+\subsubsection{Topological interpretation}
+
 在 拓樸学 里，一般用 \emp{open sets} 表示空间中的子集（这习惯起源自 Hausdorff 时期）。  但 $p$ 的 \emp{补集} $\overline{p}$ 并不 open，所以要将 $\neg p$ 定义为 $p$ 的补集的 \emp{interior}，即 $\neg p \triangleq \overline{p}^{\, \circ}$.  於是 $p \cup \neg p \neq \mbox{Universe}$: \footnote{Diagram from the book: \textit{Classical and Non-classical Logics -- an introduction to the mathematics of propositions} [Eric Schechter 2005], p.126.}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.8]{topology-intuitionistic.png}}}
 \end{equation}
-
-附带一提： 人们惊讶地发现，在直觉主义逻辑下，axiom of choice $\Rightarrow$ law of excluded middle.  换句话说，axiom of choice 和 直觉主义 也有内在的矛盾。 
 
 \subsection{Higher-order logic}
 
@@ -229,17 +225,56 @@ Type theory 的历史还可以追溯更早。 它起源於 Russell 为了解决 
 
 在 Curry-Howard isomorphism 未被重视之前，有一种更简单地 用 type theory 定义 逻辑的方法。 在这种方法下，逻辑命题 $p, q, p \wedge q$ 等 \textbf{直接用} terms 定义，而不是像 Curry-Howard 那样，逻辑命题 = types，证明 = terms.
 
-在这情况下 type theory 处理的是 (first- or higher-order) predicate logic 的方面。 
+在这情况下 type theory 处理的是 (first- or higher-order) predicate logic 的方面。 这是说，例如：
+\begin{equation}
+\mbox{IsHuman} (\mbox{John})
+\end{equation}
+里面 IsHuman 是一个 函数 term，它输入一个 物体，输出它是不是「人」的真值 (truth value) $\in \Omega = \{ \top, \bot \}$.  因此 IsHuman 是一个 类型为 $\mbox{Obj} \rightarrow \Omega$ 的 term.
+
+\cc{
+这种做法没有容纳 Curry-Howard isomorphism 的馀地。 如果要做到后者，需要的是 Martin-L\"{o}f type theory....}{
+This approach leaves no room to accommodate Curry-Howard isomorphism.  To do the latter, we would need Martin-L\"{o}f type theory....
+}
 
 \subsection{Martin-L\"{o}f type theory}
 
-Per Martin-L\"{o}f was the first logician to see the full importance of the connection between intuitionistic logic and type theory.
+根据 Curry-Howard, 下面的 $A {\color{blue}\Rightarrow} B$ 是一个 逻辑命题，因而是 type: 
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.8]{why-Martin-Lof.png}}}
+\end{equation}
+但另方面，Human() 和 Mortal() 这两个 predicates 也需要借助 type theory 来构成命题，它们也是 types.  ${\color{red}\mbox{红色} \rightarrow}$ 和 ${\color{blue}\mbox{蓝色} \Rightarrow}$ 的两个层次 是完全不同的 两码子事，但因为 Curry-Howard 而被逼 挤在一起。 这就使得 type theory 好像「一心不能二用」。
+
+在 ``simple'' type theory 里面可以 构造：
+\begin{itemize}
+	\item sum type $A + B$
+	\item product type $A \times B$
+	\item function type $A \rightarrow B$
+\end{itemize}
+分别对应於 直觉主义逻辑的 $\vee, \wedge, {\color{blue}\Rightarrow}$.  这些是在 \textbf{命题逻辑} 层面的，已经「用尽」了 type theory 的法宝。 
+
+但 Human(Socrates) 也是由 Human() 和 Socrates 构成的命题，这构成的方法是用一个 arrow ${\color{red}\rightarrow}$，但已经没有 arrow 可用。 
+
+Martin-L\"{o}f 提出的解决方案是 引入新的 type constructors：
+\begin{itemize}
+	\item \textbf{dependent} sum type $\Sigma$
+	\item \textbf{dependent} product type $\Pi$
+\end{itemize}
+
+Dependent sum $\displaystyle \sum_A B$ 里面 $B$ 的类型 depends on $A$. 整个 family of A 的 + 的结果变成类似 product $A \times B$.
+
+Dependent product $\displaystyle \prod_A B$ 里面 $B$ 的类型 depends on $A$. 整个 family of A 的 $\times$ 的结果变成类似 exponentiation $B^A$.
+
+Dependent products can be used to define \textbf{predicates} such as Human() and Mortal().  They are of type $\displaystyle \mathrm{Obj} \rightarrow \Omega = \Omega^{\mathrm{Obj}} = \prod_{\mathrm{Obj}} \Omega$.  \footnote{Note that ``objects'' here mean logic objects, not objects in category theory.}
+
+一个很漂亮的结果是： 如果用 $\sum_A B$ 和 $\prod_A B$ 定义 逻辑命题，则这些 types 如果被 inhabited 的话，分别对应於 $\exists A. B(A)$ 和 $\forall A. B(A)$. 这是因为： 如果 $A \times B$ inhabited，表示至少存在一个 $B(A)$； 而如果 $B^A$ inhabited，则存在一个函数，将任意的 $A$ send to $B$.
+
+Per Martin-L\"{o}f (1942-) was the first logician to see the full importance of the connection between intuitionistic logic and type theory.
 
 \subsection{Arithmetic-logic correspondence}
 
 很多人都知道，经典逻辑中 $\wedge, \vee$ 对应於 \textbf{算术运算} $\times, +$（也可以看成是 fuzzy logic 的 $\min, \max$.） 其实这就是 George Boole 尝试将 \emp{逻辑} 变成 某种\emp{代数} 的原因。
 
-较少人知道的是 $A \Rightarrow B$ 也对应於 $B^A$：
+较少人知道的是 $A \Rightarrow B$ 也对应於 $B^A$： \footnote{其中 $0^0$ 是「不确定式」，但根据 组合学 惯例可以定义为 1.}
 \begin{equation}
 \begin{tabular}{|c|c|c|c|}
 	\hline 
@@ -255,12 +290,21 @@ Per Martin-L\"{o}f was the first logician to see the full importance of the conn
 	\hline 
 \end{tabular} 
 \end{equation}
-其中 $0^0$ 是「不确定式」，但根据 组合学 惯例可以定义为 1.
+这个惊奇的「巧合」似乎再一次证实 Curry-Howard correspondence 是正确的； 特别地，它意味 $\Rightarrow$ 应该看成是 \textbf{函数}，即所谓 ``functional interpretation of logical deduction.'' 
 
-这个惊奇的「巧合」似乎再一次证实 Curry-Howard correspondence 是正确的。 
+\section{Topos theory}
 
+将 type theory 对应到 category theory，这工作是 Lambek 做的，於是完成了 Curry-Howard-Lambek 的「三位一体」。
 
-\subsection{Internal language and classifying topos}
+想认识一个 \emp{范畴}，最重要的是问： 它的 objects 是啥？ 它的 morphisms 是啥？ 
+
+Lambek 给出的对应是：
+\begin{itemize}
+	\item types $\leftrightsquigarrow$ objects
+	\item terms $\leftrightsquigarrow$ morphisms
+\end{itemize}
+
+\subsection{Classifying topos $\leftrightharpoons$ internal language}
 
 We have the following transformations betweeen two formalisms:
 \begin{equation}
@@ -276,71 +320,7 @@ In other words,
 \mathcal{C} = \mathrm{Cl}(T), \quad T = \mathrm{Th}(\mathcal{C}).
 \end{equation}
 
-\section{Intuitionistic logic}
-
-不要忘记 G\"{o}del`s interpretation of intuitionistic logic using possible-world semantics!
-
-In topos theory $A \Rightarrow B$ is adjoint (via the hom-product adjunction) to $A \vdash B$, which is ``okay'' because it is independent of which implication (material or strict) we are using.
-
-In a topos $\mathbb{E}$, the subobject $\mathrm{Sub}_{\mathbb{E}}(A)$ is a \emp{poset} that admits \emp{Heyting implication}.  The Heyting implication $a \Rightarrow b$ exists for all elements $a, b, x$ such that:
-\begin{equation}
-x \le (a \Rightarrow b) \quad \mbox{iff} \quad (x \wedge a) \le b.
-\end{equation}
-Every Boolean algebra can be a Heyting algebra with the material implication defined as usual: $a \Rightarrow b \equiv \neg a \vee b$.
-
-Heyting algebra is to intuitionistic logic what Boolean algebra is to classical logic.  But this may not jibe with the idea of ``strict implication''.
-
-Under Kripke semantics, the Heyting arrow $\rightarrow$ can be defined by:
-\begin{equation}
-k \Vdash A \rightarrow B \quad \Leftrightarrow \quad \forall \ell \ge k \; (\ell \Vdash A \Rightarrow \ell \Vdash B)
-\end{equation}
-
-Whereas the ``fish-hook'' strict implication can be defined as:
-\begin{equation}
-A \strictif B \quad \equiv \quad \square (A \Rightarrow B) 
-\end{equation}
-
-The two can be regarded as equivalent via:
-\begin{equation}
-\begin{aligned}
-k \Vdash \square (A \Rightarrow B) \quad \Leftrightarrow \quad & \forall \ell \ge k \; (\ell \Vdash (A \Rightarrow B)) \\
-\quad \Leftrightarrow \quad & \forall \ell \ge k \; (\ell \Vdash A \Rightarrow \ell \Vdash B)
-\end{aligned}
-\end{equation}
-
-\section{The problem of ``material implication''}
-
-Material implication 的意思是「实质蕴涵」，亦即是说 $A \Rightarrow B$ 等价於 $\neg A \vee B$，其真值表如下：
-
-\begin{equation}
-\label{eqn:implication-truth-table}
-\begin{tabular}{|c|c|c|}
-	\hline 
-	$A$ & $B$ & $A \Rightarrow B$ \\ 
-	\hline \hline 
-	0 & 0 & 1 \\
-	\hline 
-	0 & 1 & 1 \\ 
-	\hline 
-	1 & 0 & 0 \\ 
-	\hline 
-	1 & 1 & 1 \\ 
-	\hline 
-\end{tabular} 
-\end{equation}
-
-Material implication 的概念向来很有争议，例如，当前提是错误时，它永远是真的： 
-\begin{equation}
-\mbox{瑞士在非洲} \Rightarrow \mbox{猪会飞}
-\end{equation}
-
-透过观察 truth table 可以发现，它的每一列 其实代表一个 \emp{可能世界}，这些 可能世界 是不会 同时发生的。 换句话说，material implication 和 strict implication 本来是一样的，只是前者将 可能世界 的语义 隐蔽到「幕后」。 
-
-For strict implication to make sense, it is always necessary to invoke possible-world semantics.  A strict implication is always \emp{learned} from numerous examples from experience, in accord with the philosophical tradition of ``empiricism''.
-
-Strict implication is equivalent to material implication over multiple instances.  The truth table of material implication agrees with the functional interpretation of implication.  
-
-\section{$\forall$ and $\exists$ as adjunctions}
+\subsection{$\forall$ and $\exists$ as adjunctions}
 
 Let $\mbox{Forms}(\vec{x})$ denote the set of formulas with only the variables $\vec{x}$ free.
 
@@ -352,10 +332,10 @@ taking each formula $\phi(\vec{x})$ to itself.
 
 It turns out that $\exists$ and $\forall$ are adjoints to the map $*$:
 \begin{equation}
- \exists \dashv * \dashv \forall
+\exists \dashv * \dashv \forall
 \end{equation}
 
-\section{Sheaves and topos}
+\subsection{Sheaves and topos}
 
 Some $\mathbf{Set}$-valued functors are \emp{representable}, ie, isomorphic to a hom-functor.
 
@@ -367,11 +347,7 @@ Sheaves capture ``indexing''.
 
 How sheaves gives rise to representables.
 
-\section{Semantics}
-
 \subsection{Model theory / functorial semantics}
-
-\subsection{Topological interpretation (intuitionistic logic)}
 
 \subsection{Generalized elements and forcing}
 
@@ -411,11 +387,101 @@ Continuum hypothesis (CH):
 
 \subsection{Kleene realizability}
 
-\section{Homotopy type theory}
 
-\subsection{What is homotopy?}
+\section{Intuitionistic logic}
 
-\subsection{Univalence axiom}
+不要忘记 G\"{o}del`s interpretation of intuitionistic logic using possible-world semantics!
+
+In topos theory $A \Rightarrow B$ is adjoint (via the hom-product adjunction) to $A \vdash B$, which is ``okay'' because it is independent of which implication (material or strict) we are using.
+
+\subsection{Heyting algebra}
+
+In a topos $\mathbb{E}$, the subobject $\mathrm{Sub}_{\mathbb{E}}(A)$ is a \emp{poset} that admits \emp{Heyting implication}.  The Heyting implication $a \Rightarrow b$ exists for all elements $a, b, x$ such that:
+\begin{equation}
+x \le (a \Rightarrow b) \quad \mbox{iff} \quad (x \wedge a) \le b.
+\end{equation}
+Every Boolean algebra can be a Heyting algebra with the material implication defined as usual: $a \Rightarrow b \equiv \neg a \vee b$.
+
+Heyting algebra is to intuitionistic logic what Boolean algebra is to classical logic.  But this may not jibe with the idea of ``strict implication''.
+
+Under Kripke semantics, the Heyting arrow $\rightarrow$ can be defined by:
+\begin{equation}
+k \Vdash A \rightarrow B \quad \Leftrightarrow \quad \forall \ell \ge k \; (\ell \Vdash A \Rightarrow \ell \Vdash B)
+\end{equation}
+
+Whereas the ``fish-hook'' strict implication can be defined as:
+\begin{equation}
+A \strictif B \quad \equiv \quad \square (A \Rightarrow B) 
+\end{equation}
+
+The two can be regarded as equivalent via:
+\begin{equation}
+\begin{aligned}
+k \Vdash \square (A \Rightarrow B) \quad \Leftrightarrow \quad & \forall \ell \ge k \; (\ell \Vdash (A \Rightarrow B)) \\
+\quad \Leftrightarrow \quad & \forall \ell \ge k \; (\ell \Vdash A \Rightarrow \ell \Vdash B)
+\end{aligned}
+\end{equation}
+
+\section{Modal logic}
+
+Modalities are often conceived in terms of variation over some collection or \textbf{possible worlds}.
+
+A modal operator (such as $\square$) in $\mathrm{Sheaf}(X)$ is a \emp{sheaf morphism} $\square: \Omega \rightarrow \Omega$ satisfying 3 conditions, for all $U \subseteq X$ and $p, q \in \Omega(U)$:
+\begin{equation}
+\begin{aligned}
+& \mbox{a)} \quad p \le \square (p) \\
+& \mbox{b)} \quad (\square ; \square) (p) \le \square (p) \\
+& \mbox{c)} \quad \square (p \wedge q) = \square (p) \wedge \square (q)
+\end{aligned}
+\end{equation}
+
+\subsection{Possible-world semantics}
+
+Possible-world semantics is also called \emp{intensional semantics}, as opposed to \emp{extensional semantics} where truth values are directly assigned to propositions.  Does this idea jibe with the other definition of ``intension'', ie, as opposed to Leibniz extensionality and also related to intensional logic?
+
+要在电脑上实现 possible-world semantics 是不是很麻烦？
+
+\subsection{Intensional vs extensional}
+
+``Beethoven's 9th symphony'' and ``Beethoven's choral symphony'' has the same \emp{extension} but different \emp{intensions}.
+
+\subsection{Intensional logic}
+
+Possible-world semantics is also called \emp{intensional semantics}, as opposed to \emp{extensional semantics} where truth values are directly assigned to propositions.
+
+Logic terms differ in intension if and only if it is \textbf{possible} for them to differ in extension.  Thus, \emp{intensional logic} interpret its terms using possible-world semantics.
+
+\subsection{The problem of ``material implication''}
+
+Material implication 的意思是「实质蕴涵」，亦即是说 $A \Rightarrow B$ 等价於 $\neg A \vee B$，其真值表如下：
+
+\begin{equation}
+\label{eqn:implication-truth-table}
+\begin{tabular}{|c|c|c|}
+\hline 
+$A$ & $B$ & $A \Rightarrow B$ \\ 
+\hline \hline 
+0 & 0 & 1 \\
+\hline 
+0 & 1 & 1 \\ 
+\hline 
+1 & 0 & 0 \\ 
+\hline 
+1 & 1 & 1 \\ 
+\hline 
+\end{tabular} 
+\end{equation}
+
+Material implication 的概念向来很有争议，例如，当前提是错误时，它永远是真的： 
+\begin{equation}
+\mbox{瑞士在非洲} \Rightarrow \mbox{猪会飞}
+\end{equation}
+
+透过观察 truth table 可以发现，它的每一列 其实代表一个 \emp{可能世界}，这些 可能世界 是不会 同时发生的。 换句话说，material implication 和 strict implication 本来是一样的，只是前者将 可能世界 的语义 隐蔽到「幕后」。 
+
+For strict implication to make sense, it is always necessary to invoke possible-world semantics.  A strict implication is always \emp{learned} from numerous examples from experience, in accord with the philosophical tradition of ``empiricism''.
+
+Strict implication is equivalent to material implication over multiple instances.  The truth table of material implication agrees with the functional interpretation of implication.  
 
 \section{Fuzzy logic}
 
@@ -452,35 +518,13 @@ Implication 能不能 generalize 到 fuzzy logic 的情况？
 
 What are fuzzy functions?
 
-\section{Modal logic}
+\section{Homotopy type theory}
 
-A modal operator (such as $\square$) in $\mathrm{Sheaf}(X)$ is a \emp{sheaf morphism} $\square: \Omega \rightarrow \Omega$ satisfying 3 conditions, for all $U \subseteq X$ and $p, q \in \Omega(U)$:
-\begin{equation}
-\begin{aligned}
-& \mbox{a)} \quad p \le \square (p) \\
-& \mbox{b)} \quad (\square ; \square) (p) \le \square (p) \\
-& \mbox{c)} \quad \square (p \wedge q) = \square (p) \wedge \square (q)
-\end{aligned}
-\end{equation}
+\subsection{What is homotopy?}
 
-\subsection{Possible-world semantics}
+\subsection{Univalence axiom}
 
-Possible-world semantics is also called \emp{intensional semantics}, as opposed to \emp{extensional semantics} where truth values are directly assigned to propositions.  Does this idea jibe with the other definition of ``intension'', ie, as opposed to Leibniz extensionality and also related to intensional logic?
-
-要在电脑上实现 possible-world semantics 是不是很麻烦？
-
-\subsection{Intensional vs extensional}
-
-``Beethoven's 9th symphony'' and ``Beethoven's choral symphony'' has the same \emp{extension} but different \emp{intensions}.
-
-\subsection{Intensional logic}
-
-Possible-world semantics is also called \emp{intensional semantics}, as opposed to \emp{extensional semantics} where truth values are directly assigned to propositions.
-
-Logic terms differ in intension if and only if it is \textbf{possible} for them to differ in extension.  Thus, \emp{intensional logic} interpret its terms using possible-world semantics.
-
-
-\section{References}
+\section*{References}
 \cc{欢迎提问和讨论}{Questions, comments welcome} \smiley \\ \vspace*{0.4cm}
 \printbibliography
 
