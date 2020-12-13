@@ -393,7 +393,11 @@ C \stackrel{x}{\rightarrow} A \stackrel{\phi}{\rightarrow} \Omega.
 
 \subsection{Kripke-Joyal semantics}
 
+An ``internal'' way to interpret type theory in a topos is where a formula $\phi$ in context $x_1: A_1, ... , x_n: A_n$ is interpreted as a subobject of $A_1 \times ... \times A_n$.  This has the disadvantage that the most pleasant illusion of ``elements'' is totally lost.
 
+用 Kripke-Joyal semantics 可以挽回 generalized elements 的诠释方法。 
+
+Generalized element 的意思是 $I \stackrel{a}{\rightarrow} A \stackrel{\phi}{\rightarrow} \Omega$ 记作 $a \Vdash \phi$.
 
 \subsection{Cohen's (dis)proof of Continuum Hypothesis}
 
@@ -464,6 +468,8 @@ A modal operator (such as $\square$) in $\mathrm{Sheaf}(X)$ is a \emp{sheaf morp
 
 Possible-world semantics is also called \emp{intensional semantics}, as opposed to \emp{extensional semantics} where truth values are directly assigned to propositions.  Does this idea jibe with the other definition of ``intension'', ie, as opposed to Leibniz extensionality and also related to intensional logic?
 
+\subsection{Computer implementation of possible worlds}
+
 要在电脑上实现 possible-world semantics 是不是很麻烦？
 
 \subsection{Intensional vs extensional}
@@ -476,8 +482,10 @@ Possible-world semantics is also called \emp{intensional semantics}, as opposed 
 
 Logic terms differ in intension if and only if it is \textbf{possible} for them to differ in extension.  Thus, \emp{intensional logic} interpret its terms using possible-world semantics.
 
-\subsection{The problem of ``material implication''}
+\subsection{Strict implication}
 \label{sec:strict-implication}
+
+\subsubsection{The problem of ``material implication''}
 
 Material implication 的意思是「实质蕴涵」，亦即是说 $A \Rightarrow B$ 等价於 $\neg A \vee B$，其真值表如下：
 
@@ -502,6 +510,10 @@ Material implication 的概念向来很有争议，例如，当前提是错误�
 \begin{equation}
 \mbox{瑞士在非洲} \Rightarrow \mbox{猪会飞}
 \end{equation}
+
+\begin{center}
+\rule{0.8\textwidth}{1pt}
+\end{center}
 
 透过观察 truth table 可以发现，它的每一列 其实代表一个 \emp{可能世界}，这些 可能世界 是不会 同时发生的。 换句话说，material implication 和 strict implication 本来是一样的，只是前者将 可能世界 的语义 隐蔽到「幕后」。 
 
