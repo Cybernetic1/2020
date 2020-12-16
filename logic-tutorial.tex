@@ -419,7 +419,7 @@ Continuum hypothesis (CH):
 
 \section{Intuitionistic logic}
 
-G\"{o}del proposed an interpretation of intuitionistic logic using possible-world semantics.
+In 1933, G\"{o}del proposed an interpretation of intuitionistic logic using possible-world semantics.
 
 In topos theory $A \Rightarrow B$ is adjoint (via the hom-product adjunction) to $A \vdash B$, which is ``okay'' because it is independent of which implication (material or strict) we are using.
 
@@ -438,7 +438,7 @@ Under Kripke semantics, the Heyting arrow $\rightarrow$ can be defined by:
 k \Vdash A \rightarrow B \quad \Leftrightarrow \quad \forall \ell \ge k \; (\ell \Vdash A \Rightarrow \ell \Vdash B)
 \end{equation}
 
-Whereas the ``fish-hook'' strict implication can be defined as:
+Whereas the ``fish-hook'' \emp{strict implication} can be defined as ``A implies B necessarily'':
 \begin{equation}
 A \strictif B \quad \equiv \quad \square (A \Rightarrow B) 
 \end{equation}
@@ -455,7 +455,7 @@ k \Vdash \square (A \Rightarrow B) \quad \Leftrightarrow \quad & \forall \ell \g
 
 Modalities are often conceived in terms of variation over some collection or \textbf{possible worlds}.
 
-A modal operator (such as $\square$) in $\mathrm{Sheaf}(X)$ is a \emp{sheaf morphism} $\square: \Omega \rightarrow \Omega$ satisfying 3 conditions, for all $U \subseteq X$ and $p, q \in \Omega(U)$:
+A modal operator (such as $\square$) in the category $\mathbf{Sheaf}(X)$ is a \emp{sheaf morphism} $\square: \Omega \rightarrow \Omega$ satisfying 3 conditions, $\forall U \subseteq X$ and $p, q \in \Omega(U)$:
 \begin{equation}
 \begin{aligned}
 & \mbox{a)} \quad p \le \square (p) \\
@@ -470,7 +470,27 @@ Possible-world semantics is also called \emp{intensional semantics}, as opposed 
 
 \subsection{Computer implementation of possible worlds}
 
-要在电脑上实现 possible-world semantics 是不是很麻烦？
+要詮釋 modal logic，需要引入 frame $F = \langle W, R, D, H \rangle$, 其中：
+\begin{itemize}
+	\item $W$ = set of possible worlds = $\{ w_1, w_2, ... \}$
+	\item $R$ = a relation between worlds, $w_i R w_j$
+	\item $D$ = domain of first-order objects
+	\item $H: W \rightarrow \powerset(D)$, for each world specify a subset of objects
+\end{itemize}
+
+To interpret formulas with $\square$:
+\begin{equation}
+M \Vdash \square A \; [w] \quad \Leftrightarrow \quad \forall w' \succeq w. \; M \Vdash A \; [w']
+\end{equation}
+這牽涉到要 quantify over all $w$'s.
+
+重點是 inference 需要什麼 data？
+
+顯然需要決定在某 $w$ 中 $p$ 是否成立，甚至需要判斷 $\forall w. p [w]$.
+
+之前，只需要 implicitly 知道 $\forall$ statement 然後 apply 之
+
+
 
 \subsection{Intensional vs extensional}
 
@@ -559,7 +579,26 @@ What are fuzzy functions?
 
 \section{Homotopy type theory (HoTT)}
 
-HoTT 的中心思想是将 types 看成是某些 空间 (spaces)，而这些空间可以被赋予 topological 特别是 homotopy 结构。 在 homotopy 而言，关键是 将 type $A$ 里面两个元素的 \textbf{相等} $id_A$ 看成是 homotopy 的 \textbf{path}.
+HoTT 的中心思想是将 types 看成是某些 空间 (spaces)，而这些空间可以被赋予 topological 特别是 homotopy 结构。 在 homotopy 而言，关键是 将 type $A$ 里面两个元素的 \textbf{相等} $\mathrm{id}_A$ 看成是 homotopy 的 \textbf{path}.
+
+\subsection{HoT levels}
+
+\begin{equation}
+\begin{tabular}{|c|c|}
+	... & ... \\ 
+	\hline 
+	2 & 2-groupoids \\ 
+	\hline 
+	1 & groupoids \\ 
+	\hline 
+	0 & sets \\ 
+	\hline 
+	-1 & (mere) propositions \\ 
+	\hline 
+	-2 & contractable spaces \\ 
+	\hline 
+\end{tabular} 
+\end{equation}
 
 \subsection{What is homotopy?}
 
