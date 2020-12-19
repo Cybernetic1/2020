@@ -301,7 +301,25 @@ Per Martin-L\"{o}f (1942-) was the first logician to see the full importance of 
 
 \section{Topos theory}
 
-将 type theory 对应到 category theory，这工作是 Lambek 做的，於是完成了 Curry-Howard-Lambek 的「三位一体」。
+将 type theory 对应到 category theory，这工作是 Lambek 做的，於是完成了 Curry-Howard-Lambek 的「三位一体」：
+\begin{equation}
+\begin{tikzcd}[column sep = small]
+\boxed{\mbox{logic}} \arrow[rr, dash] \arrow[dr, dash]
+&& \boxed{\mbox{type theory}} \arrow[dl, dash] \\
+& \boxed{\mbox{computation}}
+\end{tikzcd}
+\end{equation}
+
+Topos 的重要意义在於 它是一个可以用来 \textbf{进行逻辑运算} 的范畴，关键在於它可以表达 \textbf{子集} 的概念，或更一般地叫作 \emp{sub-objects}.
+
+一个 topos $\mathcal{C}$ 里面存在 sub-object classifer $\Omega$ 使得 $X \rightarrow \Omega \cong \mbox{sub-objects of } X$.  换句话说 $X$ 的 子集 可以用 $X \rightarrow \Omega$ 这个映射来 \emp{represent}.
+
+在 $\mathbf{Set}$ 这个 topos 里面，$\Omega$ 是一个有\textbf{两个}元素的集合，可以记作 $\{ \top, \bot \}$.  那么 $X \rightarrow \Omega$ 就是一些 \emp{命题}，例如 $X$ 是人的集合，则 $\begin{tikzcd}[column sep = 12ex]
+X \arrow[r, "\mathrm{mathematician}"] & \Omega \end{tikzcd}$ 定义哪些人是数学家。 
+
+Topos 的好处是它可以将这些逻辑概念 \textbf{generalize} 到比 $\mathbf{Set}$ 更一般的范畴。 
+
+
 
 想认识一个 \emp{范畴}，最重要的是问： 它的 objects 是啥？ 它的 morphisms 是啥？ 
 
@@ -488,9 +506,7 @@ M \Vdash \square A \; [w] \quad \Leftrightarrow \quad \forall w' \succeq w. \; M
 
 顯然需要決定在某 $w$ 中 $p$ 是否成立，甚至需要判斷 $\forall w. p [w]$.
 
-之前，只需要 implicitly 知道 $\forall$ statement 然後 apply 之
-
-
+後者似乎需要將所有 有關的可能世界（或至少是其 summary）放到 working memory 再 quantify.  
 
 \subsection{Intensional vs extensional}
 
