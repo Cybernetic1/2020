@@ -63,22 +63,48 @@
 
 \section{Background}
 
-An AI is essentially a dynamical system that constantly updates its ``state'' $\vect{x}$:
+我们想 \textbf{训练} 一个智能系统，训练 是一个 \textbf{机器学习} 的过程，也是一个 \emp{optimization} problem, 目标是将 \textbf{长期的奖励总和} 最大化：
 \begin{equation}
-\dot{\vect{x}} = \vect{F}(\vect{x})
+\label{eqn:time-horizon}
+\mbox{maximize: } \int_0^{\infty} R \, dt
 \end{equation}
+where $R(t)$ = reward at time $t$.  $\int_0^{\infty}$ 表示 计算 累积奖励的 \emp{time horizon}.  （我使用了微分的形式，实际应用通常是离散形式，但两者基本一样，不必深究）
 
-Part of the state $\vect{x}$ contains \emp{sensory input} and \emp{action output} that allow the AI to interact with the external environment.
+俗语说「棋屎贪吃卒」，在开局初期吃卒，可能导致 $N$步之后被将死，这是\textbf{愚蠢}的行为。 所以 (\ref{eqn:time-horizon})式 令 系统必需顾及长远的利益，遂迫使它学习 \textbf{智慧}。
 
+Architecturally, the AI is a \emp{dynamical system} that constantly updates its ``state'' $\vect{x}$ via: \footnote{Part of the state $\vect{x}$ contains \emp{sensory input} and \emp{action output} that allow the AI to interact with the external environment.}
+\begin{equation}
+\dot{\vect{x}} = \vect{f}(\vect{x})
+\end{equation}
+或者用离散形式表示：
+\begin{equation}
+\vect{x}_{t+1} = \vect{F}(\vect{x}_t)
+\end{equation}
+$\vect{F}$ 叫作 transition function.  或者更形象地表示：
+\begin{equation}
+\label{eqn:AGI-architecture}
+\begin{tikzcd}
+\vect{x} \arrow[in=160,out=20,loop,looseness=5,swap,"\vect{F}"]
+\end{tikzcd}
+\end{equation}
+Our goal is to \textbf{learn} the function $\vect{F}$, implemented as a \emp{deep neural network}.  $\vect{F}$ 包含智能系统内的所有\textbf{知识}。 
 
+深度学习是现时最强的学习算法，它可以学习非常复杂的\textbf{非线性函数}。 问题是怎样使用这件「武器」。 我提出的 architecture 就是 (\ref{eqn:AGI-architecture})，这也是 Richard Sutton 提出的基於 \emp{强化学习} 的模型。 \footnote{AGI 的架构还可以包括 episodic memory 等部分，现在我们考虑的是 minimalist architecture.  如果不用高度抽象的理论，很多时会迷失在支节里。 }
+
+同时，我提议 利用 \textbf{逻辑结构}，\textbf{约束 $\vect{F}$ 的搜寻空间}（这叫 inductive bias），令它可以更快地学习到人类水平的智能。 这是不是达到 AGI 的最好的方法呢？ 不实践是无法知晓的。 Sutton 甚至认为，不需要人为的 bias，纯粹增加\textbf{计算力}就可以了。 
+\begin{equation}
+\nonumber
+\mbox{Richard Sutton (1949-)} \quad \vcenter{\hbox{\includegraphics[scale=0.7]{Sutton.jpg}}}
+\end{equation}
 
 \section{Structure of logic}
 
 The central tenet of my theory is that the state $\vect{x}$ of the AI system is consisted of \emp{logic propositions} and that $\vect{F}$ plays the role of the \emp{logic consequence} operator $\vdash$:
 \begin{equation}
-\begin{tikzcd}
+\begin{tikzcd}[| /.tip = {Bar[scale=3]}]
+% \begin{tikzcd}[arrow style = tikz, diagrams = {>={|[scale=2]}}]
 \boxed{\mbox{propositions}}
-\arrow[r, tail, no head, "\vect{F}"]
+\arrow[r, |-, "\vect{F}"]
 & \boxed{\mbox{propositions}}
 \end{tikzcd}
 \end{equation}
@@ -87,7 +113,7 @@ So our goal now is to elucidate the structure of $\vdash$.  Currently the most e
 
 我发觉 我是一个擅长於 ``synthesize'' 的人，意思是我会看很多书，然后将各种 分散的 ideas 融合成一个 内部协调 的理论（当中大部分 ideas 不是我原创的）。
 
-在接下来的篇幅，我会勾划一个 对於 AGI 来说是完整的 逻辑理论，而这理论 最中心的思想 是 Curry-Howard isomorphism....
+在接下来的篇幅，我会勾划一个 对於 AGI 来说是完整的 逻辑理论，而这理论 的中心思想 就是 Curry-Howard isomorphism....
 
 \section{Curry-Howard correspondence}
 
@@ -95,9 +121,11 @@ Curry-Howard isomorphism 是一个很深刻的思想，如果不小心的话 甚
 
 %The Curry-Howard correspondence is a deep connection between logic and computation (in the form of type theory).
 
-它已经被发现了很多次，实际上它的发现者包括： Brouwer-Heyting-Kolmogorov-Sch\"{o}nfinkel-Curry-Meredith-Kleene-Feys-G\"{o}del-L\"{a}uchli-Kreisel-Tait-Lawvere-Howard-\mbox{de Bruijn}-Scott-Martin-L\"{o}f-Girard-Reynolds-Stenlund-Constable-Coquand-Huet-\-Lambek ....
+它已经被发现了很多次，实际上它的发现者包括： Brouwer-Heyting-Kolmogorov-Sch\"{o}nfinkel-Curry-Meredith-Kleene-Feys-G\"{o}del-L\"{a}uchli-Kreisel-Tait-Lawvere-\\
+Howard-\mbox{de Bruijn}-Scott-Martin-L\"{o}f-Girard-Reynolds-Stenlund-Constable-\\
+Coquand-Huet-Lambek ....
 
-Curry-Howard isomorphism 讲的是 \emp{逻辑} 与 \emp{计算} 之间的同构，但在 1990s Lambek 加上了 \emp{category theory}，所以现在不少人会讲 Curry-Howard- Lambek.  事实上，逻辑-计算-范畴论 这个「三角关系」之间的相互作用非常丰富，人们认为是未来发展的思想泉源。 
+Curry-Howard isomorphism 讲的是 \emp{逻辑} 与 \emp{计算} 之间的同构，但在 1990s Lambek 加上了 \emp{category theory}，所以现在不少人会讲 Curry-Howard- Lambek.  事实上，\textbf{逻辑-计算-范畴论} 这个「三角关系」之间的相互作用非常丰富，人们认为是未来发展的思想泉源。 
 
 简单来说： 当我们做 逻辑思考时，表面上有一种语法上 (syntax) 的形式，即 $A \Rightarrow B$：
 \begin{equation}
@@ -240,7 +268,7 @@ This approach leaves no room to accommodate Curry-Howard isomorphism.  To do the
 
 \subsection{Martin-L\"{o}f type theory}
 
-根据 Curry-Howard, 下面的 $A {\color{blue}\Rightarrow} B$ 是一个 逻辑命题，因而是 type: 
+根据 Curry-Howard, 下面的 $A {\color{blue}\Rightarrow} B$ 是一个 逻辑命题，因而是一个 type: 
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.8]{why-Martin-Lof.png}}}
 \end{equation}
@@ -256,7 +284,7 @@ This approach leaves no room to accommodate Curry-Howard isomorphism.  To do the
 
 但 Human(Socrates) 也是由 Human() 和 Socrates 构成的命题，这构成的方法是用一个 arrow ${\color{red}\rightarrow}$，但已经没有 arrow 可用。 
 
-Martin-L\"{o}f 提出的解决方案是 引入新的 type constructors：
+Martin-L\"{o}f 提出的解决方案是 引入新的 \emp{type constructors}：
 \begin{itemize}
 	\item \textbf{dependent} sum type $\Sigma$
 	\item \textbf{dependent} product type $\Pi$
@@ -271,12 +299,16 @@ Dependent products can be used to define \textbf{predicates} such as Human() and
 一个很漂亮的结果是： 如果用 $\sum_A B$ 和 $\prod_A B$ 定义 逻辑命题，则这些 types 如果被 inhabited 的话，分别对应於 $\exists A. B(A)$ 和 $\forall A. B(A)$. 这是因为： 如果 $A \times B$ inhabited，表示至少存在一个 $B(A)$； 而如果 $B^A$ inhabited，则存在一个函数，将任意的 $A$ send to $B$.
 
 Per Martin-L\"{o}f (1942-) was the first logician to see the full importance of the connection between intuitionistic logic and type theory.
+\begin{equation}
+\nonumber
+\mbox{Per Martin-L\"{o}f (1942-)} \quad \vcenter{\hbox{\includegraphics[scale=0.5]{Martin-Lof.jpg}}}
+\end{equation}
 
 \subsection{Arithmetic-logic correspondence}
 
 很多人都知道，经典逻辑中 $\wedge, \vee$ 对应於 \textbf{算术运算} $\times, +$（也可以看成是 fuzzy logic 的 $\min, \max$.） 其实这就是 George Boole 尝试将 \emp{逻辑} 变成 某种\emp{代数} 的原因。
 
-较少人知道的是 $A \Rightarrow B$ 也对应於 $B^A$： \footnote{其中 $0^0$ 是「不确定式」，但根据 组合学 惯例可以定义为 1.}
+较少人知道的是 $A \Rightarrow B$ 也对应於 $B^A$： \footnote{其中 $0^0$ 是「不确定式」，但按照 组合学 惯例可以定义为 1.}
 \begin{equation}
 \label{truth-table:material-implication}
 \begin{tabular}{|c|c|c|c|}
@@ -295,7 +327,7 @@ Per Martin-L\"{o}f (1942-) was the first logician to see the full importance of 
 \end{equation}
 这个惊奇的「巧合」似乎再一次证实 Curry-Howard correspondence 是正确的； 特别地，它意味 $\Rightarrow$ 应该看成是 \textbf{函数}，即所谓 ``functional interpretation of logical deduction.'' 
 
-更详细观察，table (\ref{truth-table:material-implication}) 里面 $A$ 和 $B$ 的 truth values 可以看成是它们的 types 有没有 \textbf{inhabitants}. Type $A$ 的 inhabitant 就是它的证明 $\square$，没有证明就是 $\emptyset$.  或者推广到：命题 $A$ 的真值 = $A$ 的 type 作为 集合 的 \textbf{cardinality}, $V(A) = |A|$.  这样看，$\Rightarrow$ 的真值 就是 $|B^A|$, 亦即是从 $\{\square\}$ 或 $\emptyset$ 到 $\{\square\}$ 或 $\emptyset$ 的 map, 而这个 map 只有在 $\emptyset \mapsto \{\square\}$ 的时候是空集（不可能）。
+更详细观察，table (\ref{truth-table:material-implication}) 里面 $A$ 和 $B$ 的 truth values 可以看成是它们的 types 有没有 \textbf{inhabitants}. Type $A$ 的 inhabitant 就是它的证明 $\square$，没有证明就是 $\emptyset$.  或者推广到：命题 $A$ 的真值 = $A$ 的 type 作为 集合 的 \textbf{cardinality}; The truth valuation of $A = |A|$.  这样看，$A \Rightarrow B$ 的真值 就是 $|B^A|$, 亦即是从 $\{\square\}$ 或 $\emptyset$ 到 $\{\square\}$ 或 $\emptyset$ 的 map, 而这个 map 只有在 $\emptyset \mapsto \{\square\}$ 的时候是空集（不可能）。
 
 这个观察 可以推广到 fuzzy logic (\S\ref{sec:fuzzy-implication}) 和 strict implication $A \strictif B$ (\S\ref{sec:strict-implication}).
 
@@ -305,9 +337,12 @@ Per Martin-L\"{o}f (1942-) was the first logician to see the full importance of 
 \begin{equation}
 \begin{tikzcd}[column sep = small]
 \boxed{\mbox{logic}} \arrow[rr, dash] \arrow[dr, dash]
-&& \boxed{\mbox{type theory}} \arrow[dl, dash] \\
-& \boxed{\mbox{computation}}
+&& \boxed{\mbox{programming}} \arrow[dl, dash] \\
+& \boxed{\mbox{category theory}}
 \end{tikzcd}
+\end{equation}
+\begin{equation}
+\mbox{Joachim Lambek (1922-2014)} \quad \vcenter{\hbox{\includegraphics[scale=0.5]{Lambek.jpg}}}
 \end{equation}
 
 Topos 的重要意义在於 它是一个可以用来 \textbf{进行逻辑运算} 的范畴，关键在於它可以表达 \textbf{子集} 的概念，或更一般地叫作 \emp{sub-objects}.
@@ -317,32 +352,32 @@ Topos 的重要意义在於 它是一个可以用来 \textbf{进行逻辑运算}
 在 $\mathbf{Set}$ 这个 topos 里面，$\Omega$ 是一个有\textbf{两个}元素的集合，可以记作 $\{ \top, \bot \}$.  那么 $X \rightarrow \Omega$ 就是一些 \emp{命题}，例如 $X$ 是人的集合，则 $\begin{tikzcd}[column sep = 12ex]
 X \arrow[r, "\mathrm{mathematician}"] & \Omega \end{tikzcd}$ 定义哪些人是数学家。 
 
-Topos 的好处是它可以将这些逻辑概念 \textbf{generalize} 到比 $\mathbf{Set}$ 更一般的范畴。 
-
-
-
-想认识一个 \emp{范畴}，最重要的是问： 它的 objects 是啥？ 它的 morphisms 是啥？ 
-
-Lambek 给出的对应是：
-\begin{itemize}
-	\item types $\leftrightsquigarrow$ objects
-	\item terms $\leftrightsquigarrow$ morphisms
-\end{itemize}
-
-\subsection{Classifying topos $\leftrightharpoons$ internal language}
-
-We have the following transformations betweeen two formalisms:
+Topos theory 里面最重要的 commutative diagram 是这个：
 \begin{equation}
-\begin{tikzcd}[column sep = 20ex]
-\boxed{\mbox{topos}} \; \mathcal{C}
-\arrow[r, shift left, "\mbox{internal language}"]
-& T \; \boxed{\mbox{type theory}}
-\arrow[l, shift left, "\mbox{classifying topos}"]
-\end{tikzcd}.
+\begin{tikzcd}[column sep = normal]
+X \arrow[r, "!"] \arrow[d, tail, "m"] & 1 \arrow[d, "\mathrm{true}"] \\
+Y \arrow[r, "\Chi_m"] & \Omega
+\end{tikzcd}
 \end{equation}
-In other words,
+其中：
+\begin{itemize}
+	\item $X \stackrel{!}{\longrightarrow} 1$ 是个 unique arrow，它将 集合 $X$ \textbf{整个地}映射到 1. 而 1 是 terminal object，它的定义就是说，通向它的箭咀只能有一个。
+
+	\item $\begin{tikzcd}1 \arrow[r, "\mathrm{true}"] & \Omega \end{tikzcd}$ 在 $\top$ 和 $\bot$ 之间选择 $\top$, 因此叫 ``true'' arrow.
+
+	\item $\begin{tikzcd}X \arrow[r, tail, "m"] & Y \end{tikzcd}$ 是 \emp{monic} arrow，特别地，在 $\mathbf{Set}$ 里面它就是 \emp{inclusion} map，即 $\begin{tikzcd}X \arrow[r, hook, "m"] & Y \end{tikzcd}$.  它表示 $X$ 是 $Y$ 的\textbf{子集}，$X \subseteq Y$.
+
+	\item $\begin{tikzcd}Y \arrow[r, "\Chi_m"] & \Omega \end{tikzcd}$ 是集合论中熟悉的 \emp{characteristic function}, 当元素 $e \in X \subseteq Y$ 时，$\Chi(e)$ 取值 1，否则为 0.  正是 $\Chi_m$ 的存在令这幅图 commute.  $\Chi_m$ 也记作 $\ulcorner m \urcorner$.
+\end{itemize}
+不熟悉基本范畴论的读者，我非常推荐看一看《Conceptual Mathematics》这本书，写得连中学生也可以看懂，而作者之一的 Lawvere 正是 topos 理论的创始人。 
+
+从 $\mathbf{Set}$ 的角度看，这个 diagram 很易理解，但 topos 的好处是它可以将这些逻辑概念 \textbf{generalize} 到比 $\mathbf{Set}$ 更一般的范畴。 
+
+Topos 理论的重要性 在於 它用 category 的语言 \textbf{重新表述}了 集合论的整个基础。 特别地，逻辑学中的符号，例如 $P(x), \forall x, \exists x,$ 表面上看似无法用范畴论表示，这正是 Lawvere 惊人的成就。 
 \begin{equation}
-\mathcal{C} = \mathrm{Cl}(T), \quad T = \mathrm{Th}(\mathcal{C}).
+\nonumber
+\mbox{William Lawvere (1937-)} \quad 
+\vcenter{\hbox{\includegraphics[scale=1.0]{Lawvere.jpg}}}
 \end{equation}
 
 \subsection{$\forall$ and $\exists$ as adjunctions}
@@ -360,6 +395,30 @@ It turns out that $\exists$ and $\forall$ are adjoints to the map $*$:
 \exists \dashv * \dashv \forall
 \end{equation}
 
+\subsection{Classifying topos $\leftrightharpoons$ internal language}
+
+想认识一个\textbf{范畴}，最重要的是问： 它的 objects 是啥？ 它的 morphisms 是啥？ 
+
+Lambek 给出的对应是：
+\begin{itemize}
+	\item types $\leftrightsquigarrow$ objects
+	\item terms $\leftrightsquigarrow$ morphisms
+\end{itemize}
+
+We have the following transformations betweeen two formalisms:
+\begin{equation}
+\begin{tikzcd}[column sep = 20ex]
+\boxed{\mbox{topos}} \; \mathcal{C}
+\arrow[r, shift left, "\mbox{internal language}"]
+& T \; \boxed{\mbox{type theory}}
+\arrow[l, shift left, "\mbox{classifying topos}"]
+\end{tikzcd}.
+\end{equation}
+In other words,
+\begin{equation}
+\mathcal{C} = \mathcal{C}\ell(T), \quad T = \mathrm{Th}(\mathcal{C}).
+\end{equation}
+
 \subsection{Sheaves and topos}
 
 Some $\mathbf{Set}$-valued functors are \emp{representable}, ie, isomorphic to a hom-functor.
@@ -369,6 +428,13 @@ Functors $\mathcal{C} \rightarrow \mathbf{Set}$ are called \emp{pre-sheaves} on 
 Sheaves capture ``indexing''.
 
 \subsection{Yoneda lemma}
+
+\begin{equation}
+\nonumber
+\mbox{\cc{米田 信夫}{Nobuo Yoneda} (1930-1996)} \quad 
+\vcenter{\hbox{\includegraphics[scale=0.2]{Yoneda.jpg}}}
+\end{equation}
+
 
 在一个范畴 $\mathcal{C}$ 里面，考虑 其中一个物体 $A$ 到其他物体的 morphism, $A \rightarrow \bullet$.  这可以说是，透过 $A$「看」其他物体的方法。
 
@@ -415,9 +481,11 @@ An ``internal'' way to interpret type theory in a topos is where a formula $\phi
 
 用 Kripke-Joyal semantics 可以挽回 generalized elements 的诠释方法。 
 
-Generalized element 的意思是 $I \stackrel{a}{\rightarrow} A \stackrel{\phi}{\rightarrow} \Omega$ 记作 $a \Vdash \phi$.
+Generalized element 的意思是 $I \stackrel{a}{\rightarrow} A \stackrel{\phi}{\rightarrow} \Omega$, 记作 $a \Vdash \phi$.
 
 \subsection{Cohen's (dis)proof of Continuum Hypothesis}
+
+这一节和 AGI 无关，但因为数学上有趣所以写一下。
 
 Continuum hypothesis (CH):
 \begin{equation}
@@ -431,9 +499,12 @@ Continuum hypothesis (CH):
 1938 年，G\"{o}del 证明 ZF + CH is consistent，换句话说：ZF cannot disprove CH \\
 1963 年，Paul Cohen 证明 ZF cannot prove CH \\
 \tab 他用的方法叫 ``forcing''
+\begin{equation}
+\mbox{Paul Cohen (1934-2007)} \quad \vcenter{\hbox{\includegraphics[scale=0.5]{Paul-Cohen.jpg}}}
+\nonumber
+\end{equation}
 
 \subsection{Kleene realizability}
-
 
 \section{Intuitionistic logic}
 
@@ -485,6 +556,12 @@ A modal operator (such as $\square$) in the category $\mathbf{Sheaf}(X)$ is a \e
 \subsection{Possible-world semantics}
 
 Possible-world semantics is also called \emp{intensional semantics}, as opposed to \emp{extensional semantics} where truth values are directly assigned to propositions.  Does this idea jibe with the other definition of ``intension'', ie, as opposed to Leibniz extensionality and also related to intensional logic?
+
+\begin{equation}
+\nonumber
+\mbox{Saul Kripke (1940-)} \quad 
+\vcenter{\hbox{\includegraphics[scale=0.6]{Kripke.jpg}}}
+\end{equation}
 
 \subsection{Computer implementation of possible worlds}
 
@@ -594,6 +671,12 @@ Implication 能不能 generalize 到 fuzzy logic 的情况？
 What are fuzzy functions?
 
 \section{Homotopy type theory (HoTT)}
+
+\begin{equation}
+\nonumber
+\mbox{Vladimir Voevodsky (1966-2017)} \quad 
+\vcenter{\hbox{\includegraphics[scale=0.5]{Voevodsky.jpg}}}
+\end{equation}
 
 HoTT 的中心思想是将 types 看成是某些 空间 (spaces)，而这些空间可以被赋予 topological 特别是 homotopy 结构。 在 homotopy 而言，关键是 将 type $A$ 里面两个元素的 \textbf{相等} $\mathrm{id}_A$ 看成是 homotopy 的 \textbf{path}.
 
