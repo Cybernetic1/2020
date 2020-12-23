@@ -355,9 +355,10 @@ X \arrow[r, "\mathrm{mathematician}"] & \Omega \end{tikzcd}$ 定义哪些人是�
 
 Topos theory 里面最重要的 commutative diagram 是这个：
 \begin{equation}
+\label{eqn:subobject-classifier}
 \begin{tikzcd}[column sep = normal]
-X \arrow[r, "!"] \arrow[d, tail, "m"] & 1 \arrow[d, "\mathrm{true}"] \\
-Y \arrow[r, "\Chi_m"] & \Omega
+X \arrow[r, "!"] \arrow[d, tail, swap, "m"] & 1 \arrow[d, "\mathrm{true}"] \\
+Y \arrow[r, swap, "\Chi_m"] & \Omega
 \end{tikzcd}
 \end{equation}
 其中：
@@ -380,6 +381,21 @@ Topos 理论的重要性 在於 它用 category 的语言 \textbf{重新表述}�
 \mbox{William Lawvere (1937-)} \quad 
 \vcenter{\hbox{\includegraphics[scale=1.0]{Lawvere.jpg}}}
 \end{equation}
+
+再看一次 图 (\ref{eqn:subobject-classifier}):
+\begin{equation}
+\begin{tikzcd}[column sep = normal]
+X \arrow[r, "!"] \arrow[d, tail, swap, "m"] \arrow[dr, phantom, "\lrcorner", red, very near start] & {\color{red}1} \arrow[d, red, "\mathrm{true}"] \\
+Y \arrow[r, swap, "\ulcorner m \urcorner"] & {\color{red}\Omega}
+\end{tikzcd}
+\end{equation}
+右边的 ${\color{red}\mathrel{\substack{1\\\downarrow\\\Omega}}}$ 称为 \emp{generic subobject}.  它的 \emp{pull back} square 用 ${\color{red}\lrcorner}$ 记号表示。 而左边的 $\mathrel{\substack{X\\\downarrow\\Y}}$ 则是一般的 sub-object. We say that the \textbf{property} of being a sub-object is \emp{stable under pullbacks}.
+
+\subsection{$\wedge$ and $\Rightarrow$ in a topos}
+
+Material implication 纯粹 compare truth values, 呢样嘢 fuzzy 之后 唔妥。
+
+Exponentiation $B^A$ 去咗边？
 
 \subsection{$\forall$ and $\exists$ as adjunctions}
 
@@ -451,11 +467,18 @@ Sheaves capture ``indexing''.
 
 \textbf{例：} 在 $\mathbf{Top}$ 里面，2 包含一个 open set 和一个 closed set，$X \rightarrow 2$ 得出的是 $X$ 的\textbf{开子集}，$\mathrm{Opens}(X)$.
 
-
-
 How sheaves gives rise to representables.
 
 \subsection{Model theory, functorial semantics}
+
+\begin{equation}
+\tikzmark{a1} a \tikzmark{c1} \cdot \tikzmark{b1} b \longmapsto \llbracket \tikzmark{a2} a \rrbracket \tikzmark{c2} \cdot  \llbracket \tikzmark{b2} b \rrbracket
+\begin{tikzpicture}[overlay, remember picture, distance=1.1cm]
+\draw[->, out=45, in=135, transform canvas={shift={(4pt,15pt)}}] (a1.center) to (a2.center);
+\draw[->, out=45, in=135, transform canvas={shift={(4pt,15pt)}}] (b1.center) to (b2.center);
+\draw[->, out=-45, in=-135, transform canvas={shift={(6pt,-2pt)}}] (c1.center) to (c2.center);
+\end{tikzpicture}
+\end{equation}
 
 \subsection{Generalized elements and forcing}
 
