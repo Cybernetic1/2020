@@ -12,7 +12,7 @@
 
 \usepackage{graphicx} % Allows including images
 \usepackage{tikz-cd}
-% \usepackage{tikz}
+\usepackage{tikz}
 \usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
 \usepackage{verbatim} % for comments
 % \usepackage{tikz-cd}  % commutative diagrams
@@ -35,6 +35,10 @@
 
 \newcommand{\emp}[1]{{\color{violet}\textbf{#1}}}
 \newcommand*\confoundFace{$\vcenter{\hbox{\includegraphics[scale=0.2]{../confounded-face.jpg}}}$}
+
+\newcommand{\witness}{\scalebox{0.6}{$\blacksquare$}}
+% \newcommand{\Heytingarrow}{\mathrel{-}\mathrel{\triangleright}}
+\providecommand\Heytingarrow{\relbar\joinrel\mathrel{\vcenter{\hbox{\scalebox{0.75}{$\rhd$}}}}}
 
 \begin{document}
 
@@ -72,7 +76,7 @@ where $R(t)$ = reward at time $t$.  $\int_0^{\infty}$ 表示 计算 累积奖励
 
 俗语说「棋屎贪吃卒」，在开局初期吃卒，可能导致 $N$步之后被将死，这是\textbf{愚蠢}的行为。 所以 (\ref{eqn:time-horizon})式 令 系统必需顾及长远的利益，遂迫使它学习 \textbf{智慧}。
 
-Architecturally, the AI is a \emp{dynamical system} that constantly updates its ``state'' $\vect{x}$ via: \footnote{Part of the state $\vect{x}$ contains \emp{sensory input} and \emp{action output} that allow the AI to interact with the external environment.}
+Architecturally, the AI is a \emp{dynamical system} that constantly updates its ``state'' $\vect{x}$ via: \footnote{Part of the state $\vect{x}$ contains \textbf{sensory input} and \textbf{action output} that allow the AI to interact with the external environment.}
 \begin{equation}
 \dot{\vect{x}} = \vect{f}(\vect{x})
 \end{equation}
@@ -89,9 +93,20 @@ $\vect{F}$ 叫作 transition function.  或者更形象地表示：
 \end{equation}
 Our goal is to \textbf{learn} the function $\vect{F}$, implemented as a \emp{deep neural network}.  $\vect{F}$ 包含智能系统内的所有\textbf{知识}。 
 
-深度学习是现时最强的学习算法，它可以学习非常复杂的\textbf{非线性函数}。 问题是怎样使用这件「武器」。 我提出的 architecture 就是 (\ref{eqn:AGI-architecture})，这也是 Richard Sutton 提出的基於 \emp{强化学习} 的模型。 \footnote{AGI 的架构还可以包括 episodic memory 等部分，现在我们考虑的是 minimalist architecture.  如果不用高度抽象的理论，很多时会迷失在支节里。 }
+\subsection{飞机比喻}
 
-同时，我提议 利用 \textbf{逻辑结构}，\textbf{约束 $\vect{F}$ 的搜寻空间}（这叫 inductive bias），令它可以更快地学习到人类水平的智能。 这是不是达到 AGI 的最好的方法呢？ 不实践是无法知晓的。 Sutton 甚至认为，不需要人为的 bias，纯粹增加\textbf{计算力}就可以了。 
+最早的飞机，使用 \textbf{平面} 做机翼，而不是模仿\textbf{飞鸟}的拍翼。 它使用 \textbf{螺旋桨} 作为动力，因为当时最强的动力装置 是\textbf{内燃引擎}：
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.3]{Wright-flyer.jpg}}}
+\quad \neq \quad
+\vcenter{\hbox{\includegraphics[scale=0.4]{bird.png}}}
+\end{equation}
+深度学习是现时\textbf{最强}的学习算法，它可以学习非常复杂的 非线性函数。 问题是怎样利用这件「武器」。 我提出的 architecture 就是 (\ref{eqn:AGI-architecture})，这也是 Richard Sutton 提出的基於 \emp{强化学习} 的模型。 \footnote{AGI 的架构还可以包括 episodic memory 等部分，现在我们考虑的是 minimalist architecture.  如果不用高度抽象的理论，很多时会迷失在支节里。 }
+
+% 为了能控制飞机的方向，Wright brothers 发明了 ``wing warping'' 改变机翼的形状。
+时至今日，飞机仍然叫 ``plane''，而这个设计基本上奠定了 100多年以来 飞机的模式。在技术的进化上，这种主导模式的现象称为 dominant design.
+
+我提议 利用 \textbf{逻辑结构}，\textbf{约束 $\vect{F}$ 的搜寻空间}（这叫 inductive bias），令它可以更快地学习到人类水平的智能。 这是不是达到 AGI 的最好的方法呢？ 不实践是无法知晓的。 Sutton 甚至认为，不需要人为的 bias，纯粹增加\textbf{计算力}就可以了。 
 \begin{equation}
 \nonumber
 \mbox{Richard Sutton (1949-)} \quad \vcenter{\hbox{\includegraphics[scale=0.7]{Sutton.jpg}}}
@@ -121,21 +136,45 @@ Curry-Howard isomorphism 是一个很深刻的思想，如果不小心的话 甚
 
 %The Curry-Howard correspondence is a deep connection between logic and computation (in the form of type theory).
 
-它已经被发现了很多次，实际上它的发现者包括： Brouwer-Heyting-Kolmogorov-Sch\"{o}nfinkel-Curry-Meredith-Kleene-Feys-G\"{o}del-L\"{a}uchli-Kreisel-Tait-Lawvere-\\
-Howard-\mbox{de Bruijn}-Scott-Martin-L\"{o}f-Girard-Reynolds-Stenlund-Constable-\\
-Coquand-Huet-Lambek ....
-
-Curry-Howard isomorphism 讲的是 \emp{逻辑} 与 \emp{计算} 之间的同构，但在 1990s Lambek 加上了 \emp{category theory}，所以现在不少人会讲 Curry-Howard- Lambek.  事实上，\textbf{逻辑-计算-范畴论} 这个「三角关系」之间的相互作用非常丰富，人们认为是未来发展的思想泉源。 
-
 简单来说： 当我们做 逻辑思考时，表面上有一种语法上 (syntax) 的形式，即 $A \Rightarrow B$：
 \begin{equation}
 \begin{aligned}
-\boxed{\mbox{logic}} \quad \quad \underdash{$A \Rightarrow B$} & \\
-\boxed{\mbox{program}} \quad \quad \square \stackrel{f}{\mapsto} \square \hspace{10pt} &
+\boxed{\mbox{logic}} \quad \quad \underdash{$A \Longrightarrow B$} & \\
+\boxed{\mbox{program}} \quad \quad \witness \; \stackrel{f}{\longmapsto} \; \witness \hspace*{10pt} &
 \end{aligned}
 \end{equation}
-而在这 语法「底下」，还有一个 \emp{运算}，它可以看成是执行 \emp{证明} (proof) 的工作，它将 $A$ 的证明 map 到 $B$ 的证明 （为了避免符号累赘，我将这些 ``proof witness'' 都记作 $\square$，但它们每个是不同的）.
+而在这 语法「底下」，还有一个 \emp{运算}，它可以看成是执行 \emp{证明} (proof) 的工作，它将 $A$ 的证明 map 到 $B$ 的证明 （为了避免符号累赘，我将这些 ``proof witness'' 都记作 $\witness$，但它们每个是不同的）.
 
+一个传统的数学函数，例如 $f(x) = x + 2$ 用我们惯常的符号表示为：
+\begin{equation}
+\begin{aligned}
+& \underdash{$f: \mathbb{R} \longrightarrow \mathbb{R}$} \\
+& \hspace{2em} x \longmapsto x + 2
+\end{aligned}
+\end{equation}
+这不是新的。 类似地，一个逻辑式子：
+\begin{equation}
+x \mbox{ 是偶数} \Longrightarrow x + 2 \mbox{ 是偶数}
+\end{equation}
+也不是新的。 但如果将「$x$是偶数」这个\textbf{命题}，看成是一个\textbf{类型}或\textbf{集合}，里面有个\textbf{证明} (witness)，这个看法是新的： 
+\begin{equation}
+\begin{aligned}
+& \underdash{$\boxed{x \mbox{ 是偶数}}$} \\
+& \hspace*{45pt} \witness
+\end{aligned}
+\end{equation}
+\tolerance=99999
+This is called the \emp{Brouwer-Heyting-Kolmogorov (BHT) interpretation}.  由於这个想法比较 subtle，它不断被重复发现很多次，命名者可以包括： Brouwer-Heyting-Kolmogorov-Sch\"{o}nfinkel-Curry-Meredith-Kleene-Feys-G\"{o}del-L\"{a}uchli-Kreisel-Tait-Lawvere-Howard-\mbox{de Bruijn}-Scott-Martin-L\"{o}f-Girard-Reynolds-Stenlund-Constable-Coquand-Huet-Lambek ....
+
+根据 HoTT (homotopy type theory)，一个命题 可以\textbf{有}或\textbf{没有}证明； 如果有，则它的证明都是一样的，所以 经典逻辑命题 只可以取值 \textbf{真}或\textbf{假}。 我的理论推断： 模糊逻辑的取值 $\in [ 0,1 ]$ 是因为 fuzzy 命题的「证明」可以有很多个，而 fuzzy 命题的 \textbf{真值}是由 支持／反对 的证明的\textbf{比例}决定的（见 \S\ref{sec:fuzzy-logic}）。 
+
+% Curry-Howard isomorphism 讲的是 \emp{逻辑} 与 \emp{计算} 之间的同构，但在 1990s Lambek 加上了 \emp{category theory}，所以现在不少人会讲 Curry-Howard-Lambek.  事实上，\textbf{逻辑-计算-范畴论} 这个「三角关系」之间的相互作用非常丰富，人们认为是未来发展的思想泉源。 
+
+\begin{equation}
+\nonumber
+\mbox{John Baez (1961-)} \quad 
+\vcenter{\hbox{\includegraphics[scale=0.5]{Baez.jpg}}}
+\end{equation}
 从另一角度看，Curry-Howard isomorphism 可以看成是 某些 \emp{状态}（states，例如 $A$）和状态之间的 \emp{转换} （transitions，例如 $\stackrel{f}{\mapsto}$）之间的 \textbf{对偶}。 而这种 对偶 不断在 截然不同的范畴里出现：
 \begin{equation}
 \begin{tabular}{|c|c|c|c|c|}
@@ -296,7 +335,7 @@ Dependent product $\displaystyle \prod_A B$ 里面 $B$ 的类型 depends on $A$.
 
 Dependent products can be used to define \textbf{predicates} such as Human() and Mortal().  They are of type $\displaystyle \mathrm{Obj} \rightarrow \Omega = \Omega^{\mathrm{Obj}} = \prod_{\mathrm{Obj}} \Omega$.  \footnote{Note that ``objects'' here mean logic objects, not objects in category theory.}
 
-一个很漂亮的结果是： 如果用 $\sum_A B$ 和 $\prod_A B$ 定义 逻辑命题，则这些 types 如果被 inhabited 的话，分别对应於 $\exists A. B(A)$ 和 $\forall A. B(A)$. 这是因为： 如果 $A \times B$ inhabited，表示至少存在一个 $B(A)$； 而如果 $B^A$ inhabited，则存在一个函数，将任意的 $A$ send to $B$.
+一个很漂亮的结果是： 如果用 $\sum_A B$ 和 $\prod_A B$ 定义 逻辑命题，则这些 types 如果被 inhabited 的话，分别对应於 $\exists A. B(A)$ 和 $\forall A. B(A)$. 这是因为： 如果 $A \times B$ inhabited，表示\textbf{至少存在}一个 $B(A)$； 而如果 $B^A$ inhabited，则存在一个函数，将\textbf{任意的} $A$ send to $B$.
 
 Per Martin-L\"{o}f (1942-) was the first logician to see the full importance of the connection between intuitionistic logic and type theory.
 \begin{equation}
@@ -327,7 +366,7 @@ Per Martin-L\"{o}f (1942-) was the first logician to see the full importance of 
 \end{equation}
 这个惊奇的「巧合」似乎再一次证实 Curry-Howard correspondence 是正确的； 特别地，它意味 $\Rightarrow$ 应该看成是 \textbf{函数}，即所谓 ``functional interpretation of logical deduction.'' 
 
-更详细观察，table (\ref{truth-table:material-implication}) 里面 $A$ 和 $B$ 的 truth values 可以看成是它们的 types 有没有 \textbf{inhabitants}. Type $A$ 的 inhabitant 就是它的证明 $\square$，没有证明就是 $\emptyset$.  或者推广到：命题 $A$ 的真值 = $A$ 的 type 作为 集合 的 \textbf{cardinality}; The truth valuation of $A = |A|$.  这样看，$A \Rightarrow B$ 的真值 就是 $|B^A|$, 亦即是从 $\{\square\}$ 或 $\emptyset$ 到 $\{\square\}$ 或 $\emptyset$ 的 map, 而这个 map 只有在 $\emptyset \mapsto \{\square\}$ 的时候是空集（不可能）。
+更详细观察，table (\ref{truth-table:material-implication}) 里面 $A$ 和 $B$ 的 truth values 可以看成是它们的 types 有没有 \textbf{inhabitants}. Type $A$ 的 inhabitant 就是它的证明 $\witness$，没有证明就是 $\emptyset$.  或者推广到：命题 $A$ 的真值 = $A$ 的 type 作为 集合 的 \textbf{cardinality}; The truth valuation of $A = |A|$.  这样看，$A \Rightarrow B$ 的真值 就是 $|B^A|$, 亦即是从 $\{\witness\}$ 或 $\emptyset$ 到 $\{\witness\}$ 或 $\emptyset$ 的 map, 而这个 map 只有在 $\emptyset \mapsto \{\witness\}$ 的时候是空集（不可能）。
 
 这个观察 可以推广到 fuzzy logic (\S\ref{sec:fuzzy-implication}) 和 strict implication $A \strictif B$ (\S\ref{sec:strict-implication}).
 
@@ -335,14 +374,15 @@ Per Martin-L\"{o}f (1942-) was the first logician to see the full importance of 
 
 \begin{equation}
 \nonumber
-\mbox{Joachim Lambek (1922-2014)} \quad \vcenter{\hbox{\includegraphics[scale=0.45]{Lambek.jpg}}}
+\mbox{Joachim Lambek (1922-2014)} \quad \vcenter{\hbox{\includegraphics[scale=0.4]{Lambek.jpg}}}
 \end{equation}
 将 type theory 对应到 category theory，这工作是 Lambek 做的，於是完成了 Curry-Howard-Lambek 的「三位一体」：
+% \tikzcdset{arrows={line width=3pt}}
 \begin{equation}
-\begin{tikzcd}[column sep = small]
-\boxed{\mbox{logic}} \arrow[rr, dash] \arrow[dr, dash]
-&& \boxed{\mbox{programming}} \arrow[dl, dash] \\
-& \boxed{\mbox{category theory}}
+\begin{tikzcd}[column sep = -1em]
+\mbox{logic} \arrow[-,rr,line width=1.5pt] \arrow[-,dr]
+&& \mbox{programming} \arrow[-,dl] \\
+& \mbox{category theory}
 \end{tikzcd}
 \end{equation}
 
@@ -538,15 +578,47 @@ In topos theory $A \Rightarrow B$ is adjoint (via the hom-product adjunction) to
 
 \subsection{Heyting algebra}
 
-In a topos $\mathbb{E}$, the subobject $\mathrm{Sub}_{\mathbb{E}}(A)$ is a \emp{poset} that admits \emp{Heyting implication}.  The Heyting implication $a \Rightarrow b$ exists for all elements $a, b, x$ such that:
 \begin{equation}
-x \le (a \Rightarrow b) \quad \mbox{iff} \quad (x \wedge a) \le b.
+\mbox{Arend Heyting (1898-1980)} \quad 
+\vcenter{\hbox{\includegraphics[scale=0.3]{Heyting.jpg}}}
 \end{equation}
+1930 年，Heyting 给出了 constructive mathematics 的一种 axiomatization, called \emp{intuitionistic logic} (IL).  Heyting algebra 是一种 IL 的 \emp{代数模型}，正如 Boolean algebra 是 经典逻辑的 代数模型。 
+
+例如，以下的 \emp{拓樸}模型 和 \emp{格} (lattice) 模型，都是 Heyting algebra 的模型：
+\begin{equation}
+\boxed{
+\begin{aligned}
+\mbox{下雨} & \\
+& \hspace*{1em} \boxed{\mbox{草地湿}} \\
+& \boxed{\mbox{没得打网球}} \; 
+\end{aligned}
+} \quad \quad
+\vcenter{\hbox{
+\begin{tikzpicture}[scale=0.8]
+\node[label={[xshift=0em, yshift=-0.5em]\mbox{下雨}}] (a) at (1,0) {\textbullet};
+\node[label={[xshift=-0.5em, yshift=-2em]\mbox{草地湿}}, swap] (b) at (0,-2) {\textbullet};
+\node[label={[xshift=1.5em, yshift=-2em]\mbox{没得打网球}}, swap] (c) at (2,-2) {\textbullet};
+\draw[-,shorten <=-10pt, shorten >=-10pt] (a) to (b);
+\draw[-,shorten <=-10pt, shorten >=-10pt] (a) to (c);
+\end{tikzpicture}
+}}
+\end{equation}
+两者之间是等价的，起源於 \emp{Stone duality} (every Boolean algebra is isomorphic to a topology of open sets)，其后再被推广到 \emp{Priestley} 拓扑对偶 等，都是大同小异的。
+
+注意： $\mbox{下雨} \Heytingarrow \mbox{草地湿}$ 是 Heyting implication，这个 $\Heytingarrow$ 的存在 并不是因为「下雨」的\textbf{真值} 比「草地湿」的\textbf{真值 小}。 
+
+The Heyting implication $a \Heytingarrow b$ exists for all elements $a, b, x$ such that:
+\begin{equation}
+x \le (a \Heytingarrow b) \quad \mbox{iff} \quad (x \wedge a) \le b.
+\end{equation}
+
 Every Boolean algebra can be a Heyting algebra with the material implication defined as usual: $a \Rightarrow b \equiv \neg a \vee b$.
 
 Heyting algebra is to intuitionistic logic what Boolean algebra is to classical logic.  But this may not jibe with the idea of ``strict implication''.
 
-Under Kripke semantics, the Heyting arrow $\rightarrow$ can be defined by:
+In a topos $\mathbb{E}$, the subobject $\mathrm{Sub}_{\mathbb{E}}(A)$ is a \emp{poset} that admits \emp{Heyting implication}.  
+
+Using Kripke semantics, the Heyting arrow $\rightarrow$ can be defined by:
 \begin{equation}
 k \Vdash A \rightarrow B \quad \Leftrightarrow \quad \forall \ell \ge k \; (\ell \Vdash A \Rightarrow \ell \Vdash B)
 \end{equation}
@@ -584,7 +656,7 @@ Possible-world semantics is also called \emp{intensional semantics}, as opposed 
 \begin{equation}
 \nonumber
 \mbox{Saul Kripke (1940-)} \quad 
-\vcenter{\hbox{\includegraphics[scale=0.6]{Kripke.jpg}}}
+\vcenter{\hbox{\includegraphics[scale=0.5]{Kripke.jpg}}}
 \end{equation}
 
 \subsection{Computer implementation of possible worlds}
@@ -659,6 +731,14 @@ For strict implication to make sense, it is always necessary to invoke possible-
 Strict implication is equivalent to material implication over multiple instances.  The truth table of material implication agrees with the functional interpretation of implication.  
 
 \section{Fuzzy logic}
+\label{sec:fuzzy-logic}
+
+\begin{equation}
+\nonumber
+\mbox{Lotfi Zadeh (1921-2017)} \quad 
+\vcenter{\hbox{\includegraphics[scale=2.5]{Zadeh.jpg}}}
+\end{equation}
+Iranian-Jewish
 
 首先是 implication 的问题，fuzzy implication 并不对应於 material implication in Boolean algebra.
 
@@ -699,7 +779,7 @@ What are fuzzy functions?
 \begin{equation}
 \nonumber
 \mbox{Vladimir Voevodsky (1966-2017)} \quad 
-\vcenter{\hbox{\includegraphics[scale=0.35]{Voevodsky.jpg}}}
+\vcenter{\hbox{\includegraphics[scale=0.25]{Voevodsky.jpg}}}
 \end{equation}
 
 HoTT 的中心思想是将 types 看成是某些 空间 (spaces)，而这些空间可以被赋予 topological 特别是 homotopy 结构。 在 homotopy 而言，关键是 将 type $A$ 里面两个元素的 \textbf{相等} $\mathrm{id}_A$ 看成是 homotopy 的 \textbf{path}.
