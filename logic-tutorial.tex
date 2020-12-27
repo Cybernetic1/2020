@@ -454,6 +454,10 @@ It turns out that $\exists$ and $\forall$ are adjoints to the map $*$:
 
 \subsection{Classifying topos $\leftrightharpoons$ internal language}
 
+问题是 witness 是什么？  例如「匙羹在杯内」是因为其他 视觉 propositions 得到的结论。 它是 true 这一点是重要的，但它的 ``intension'' 更重要。  或者说 proof 过程中处理的是 proof objects.  
+
+这个 proof object 它除了是一件 syntactic 的东西之外还可以是什么？  或者说 map 的 \textbf{domain} 是命题，但被 map 映射的是 evidence?
+
 想认识一个\textbf{范畴}，最重要的是问： 它的 objects 是啥？ 它的 morphisms 是啥？ 
 
 Lambek 给出的对应是：
@@ -511,6 +515,8 @@ How sheaves gives rise to representables.
 
 \subsection{Model theory, functorial semantics}
 
+We interpret formulas in a topos $\mathcal{E}$ by assigning each an \emp{extension}.  This is called \emp{internal} semantics.
+
 \begin{equation}
 \tikzmark{a1} a \tikzmark{c1} \cdot \tikzmark{b1} b \longmapsto \llbracket \tikzmark{a2} a \rrbracket \tikzmark{c2} \cdot  \llbracket \tikzmark{b2} b \rrbracket
 \begin{tikzpicture}[overlay, remember picture, distance=1.1cm]
@@ -539,7 +545,9 @@ C \stackrel{x}{\rightarrow} A \stackrel{\phi}{\rightarrow} \Omega.
 另一个术语是： $C$ \emp{forces} $\phi(x)$, notation $C \Vdash \phi(x)$. \\
 或者说 $\phi(x)$ is true \emp{at stage} $C$ （这术语来自 possible-world semantics）.
 
-\subsection{Kripke-Joyal semantics}
+\subsection{Kripke-Joyal / external semantics}
+
+External semantics describe which generalized elements satisfy each formula.
 
 An ``internal'' way to interpret type theory in a topos is where a formula $\phi$ in context $x_1: A_1, ... , x_n: A_n$ is interpreted as a subobject of $A_1 \times ... \times A_n$.  This has the disadvantage that the most pleasant illusion of ``elements'' is totally lost.
 
