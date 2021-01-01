@@ -138,6 +138,7 @@ Curry-Howard isomorphism 是一个很深刻的思想，如果不小心的话 甚
 
 简单来说： 当我们做 逻辑思考时，表面上有一种语法上 (syntax) 的形式，即 $A \Rightarrow B$：
 \begin{equation}
+\label{eqn:Curry-Howard}
 \begin{aligned}
 \boxed{\mbox{logic}} \quad \quad \underdash{$A \Longrightarrow B$} & \\
 \boxed{\mbox{program}} \quad \quad \witness \; \stackrel{f}{\longmapsto} \; \witness \hspace*{10pt} &
@@ -309,6 +310,7 @@ This approach leaves no room to accommodate Curry-Howard isomorphism.  To do the
 
 根据 Curry-Howard, 下面的 $A {\color{blue}\Rightarrow} B$ 是一个 逻辑命题，因而是一个 type: 
 \begin{equation}
+\label{eqn:2-levels-of-TT}
 \vcenter{\hbox{\includegraphics[scale=0.8]{why-Martin-Lof.png}}}
 \end{equation}
 但另方面，Human() 和 Mortal() 这两个 predicates 也需要借助 type theory 来构成命题，它们也是 types.  ${\color{red}\mbox{红色} \rightarrow}$ 和 ${\color{blue}\mbox{蓝色} \Rightarrow}$ 的两个层次 是完全不同的 两码子事，但因为 Curry-Howard 而被逼 挤在一起。 这就使得 type theory 好像「一心不能二用」。
@@ -811,6 +813,8 @@ HoTT 的中心思想是将 types 看成是某些 空间 (spaces)，而这些空�
 \end{tabular} 
 \end{equation}
 
+``Truncation''
+
 \subsection{What is homotopy?}
 
 \subsection{Univalence axiom}
@@ -818,6 +822,65 @@ HoTT 的中心思想是将 types 看成是某些 空间 (spaces)，而这些空�
 在 HoTT 的 set 的层次，``='' 是一个 predicate, 根据我的理论可以看成是 fuzzy predicate.
 
 如果我没理解错误，univalence axiom 的意思 似乎是将 = 的 fuzzy truth value「强制」成 binary.
+
+\section{Transfer to deep learning}
+
+这一节讨论 如何将上面提到的 logic structure 转移到 深度学习的 神经网络 (neural network, NN)。  一般来说，很难将 额外的结构 impose 在 神经网络上，因为 NN 本身已经有很 ``rigid'' 的结构。 在这方向上成功的例子是 CNN (convolutional NN)，其中 convolution $f * g$ 是由 ``weight sharing'' 模拟。 但除此之外，一般很难在 NN 上添加结构。
+
+\emp{Symmetric NN} 是一种 在输入变量的 \textbf{置换}下 不变 (permutation invariant) 的神经网络。 其解决 办法 是利用以下的 函数形式：
+\begin{equation}
+\label{symmetric-functions}
+f(x, y, ...) = g(h(x) + h(y) + ... )
+\end{equation}
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.5]{g-and-h-networks.png}}}
+\end{equation}
+注意在这个方案下，NN 是以 ``black box'' 作为 building blocks； 内部结构不变。 
+
+范畴论 的好处是，将一切用 morphisms, compositions, pullbacks, adjunctions, 等 表示； 这种做法 很容易用 NN implement.
+
+\subsection{Propositional aspect}
+
+在命题逻辑的层次上，我选择了最简单的特性，亦即是命题之间的 commutativity:
+\begin{equation}
+\begin{aligned}
+A &\wedge B & \equiv && B & \wedge A \\
+\mbox{\cc{下雨}{it's raining}} &\wedge \mbox{\cc{失恋}{lovesick}} & \equiv && \mbox{\cc{失恋}{lovesick}} &\wedge \mbox{\cc{下雨}{it's raining}}
+\end{aligned}
+\end{equation}
+但我没有 fully exploit Heyting algebra or Boolean algebra 的结构，因为可以预见 将来是会 推广到 fuzzy-probabilistic logic，而后者的结构只需要 $\wedge$ 和 $\Rightarrow$，和 binary logic 有些不同。
+
+\subsection{Predicate aspect}
+
+目前，一般的深度学习模型是比较 简单／粗暴 地作用在 自然语言句子的 \textbf{syntax} 层面，例如： 
+\begin{equation}
+\mbox{``Je {\small\textbullet}
+	suis {\small\textbullet}
+	\'{e}tudiant'' } \stackrel{f}{\Longrightarrow} \mbox{``I {\small\textbullet}
+	am {\small\textbullet}
+	student''}
+\end{equation}
+句子中的 words 是用 \textbf{Word2Vec} 方式 embed 到向量空间。 但如果用了 Curry-Howard 对应，则会有些微不同，而这个微妙的差异 在数学上比较完美，实际上 implementation 也可能较优胜。 再看一次 Curry-Howard correspondence:
+\begin{equation}
+\tag{\ref{eqn:Curry-Howard}}
+\begin{aligned}
+\underdash{$A \Longrightarrow B$} & \\
+\witness \; \stackrel{f}{\longmapsto} \; \witness \hspace*{10pt} &
+\end{aligned}
+\end{equation}
+这里 $A$ 和 $B$ 是\textbf{逻辑命题}，例如「我是学生」； $f$ 将 $A$命题里面的 witness $\witness$ 映射到$B$命题里面。 注意：「我是学生」这些\textbf{语法}上的信息，是以 $f$ 的 \emp{domain} 和 \emp{co-domain} 表示的。 
+
+这一节 我们要讨论的是 命题及其内部 在计算机上的 implementation 问题。 再看一次 图 (\ref{eqn:2-levels-of-TT}) 的 两个层次：
+\begin{equation}
+\tag{\ref{eqn:2-levels-of-TT}}
+\vcenter{\hbox{\includegraphics[scale=0.8]{why-Martin-Lof.png}}}
+\end{equation}
+{\color{red}红色 $\rightarrow$} 是 \textbf{predicates} 形成的层次。 $A$ 和 $B$ 是两个不同的\textbf{空间}。 在 $A$ \textbf{内部}，Socrates 也是一个空间，Human 是另一个空间，而 Human(Socrates) 构成新的空间（透过 dependent type constructor $\Sigma$）。 
+\begin{equation}
+\mathcal{U}_3 = \mathcal{U}_1 \times \mathcal{U}_2
+\end{equation}
+
+\subsection{Modal aspect}
 
 \section*{References}
 \cc{欢迎提问和讨论}{Questions, comments welcome} \smiley \\ \vspace*{0.4cm}
