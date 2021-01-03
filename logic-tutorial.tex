@@ -307,6 +307,7 @@ This approach leaves no room to accommodate Curry-Howard isomorphism.  To do the
 }
 
 \subsection{Martin-L\"{o}f type theory}
+\label{sec:Martin-Lof-TT}
 
 根据 Curry-Howard, 下面的 $A {\color{blue}\Rightarrow} B$ 是一个 逻辑命题，因而是一个 type: 
 \begin{equation}
@@ -848,7 +849,13 @@ A &\wedge B & \equiv && B & \wedge A \\
 \mbox{\cc{下雨}{it's raining}} &\wedge \mbox{\cc{失恋}{lovesick}} & \equiv && \mbox{\cc{失恋}{lovesick}} &\wedge \mbox{\cc{下雨}{it's raining}}
 \end{aligned}
 \end{equation}
-但我没有 fully exploit Heyting algebra or Boolean algebra 的结构，因为可以预见 将来是会 推广到 fuzzy-probabilistic logic，而后者的结构只需要 $\wedge$ 和 $\Rightarrow$，和 binary logic 有些不同。
+但我没有 fully exploit Heyting algebra or Boolean algebra 的结构，因为可以预见 将来是会 推广到 fuzzy-probabilistic logic，而后者的结构只需要 $\wedge$ 和 $\Rightarrow$，和 binary logic 有些不同（迟些解释....）
+
+在 命题层面 还有一个很重要的 \emp{product-hom adjunction},  它说的是 $A \wedge B$ 和 $A \Rightarrow B$ 之间的邻接：
+\begin{equation}
+(A \times B) \rightarrow C \quad \simeq \quad A \rightarrow (B \rightarrow C)
+\end{equation}
+这在逻辑上 是见惯的，没有什么稀奇，但它推论 $A \Rightarrow B$ 可以替代 $A \vdash B$，由於 $\vdash$ 在我们的 AI 系统中是 \textbf{神经网络}，这表示 神经网络中的「黑箱」知识可以「外在化」(externalize) 成 \textbf{逻辑命题}，这一点 在智能系统中 是有关键的重要性，因为它表示 知识可以透过语言学习得到（虽然这也不是必需 范畴论 才可以看得出来。） 
 
 \subsection{Predicate aspect}
 
@@ -860,7 +867,7 @@ A &\wedge B & \equiv && B & \wedge A \\
 	am {\small\textbullet}
 	student''}
 \end{equation}
-句子中的 words 是用 \textbf{Word2Vec} 方式 embed 到向量空间。 但如果用了 Curry-Howard 对应，则会有些微不同，而这个微妙的差异 在数学上比较完美，实际上 implementation 也可能较优胜。 再看一次 Curry-Howard correspondence:
+句子中的 words 是用 \textbf{Word2Vec} 方式 embed 到向量空间。 但如果用了 Curry-Howard 对应，则会有些微不同，而这个微妙的差异 在数学上比较完美，实际上 computer implementation 会不会比较优胜？ 再看一次 Curry-Howard correspondence:
 \begin{equation}
 \tag{\ref{eqn:Curry-Howard}}
 \begin{aligned}
@@ -876,9 +883,14 @@ A &\wedge B & \equiv && B & \wedge A \\
 \vcenter{\hbox{\includegraphics[scale=0.8]{why-Martin-Lof.png}}}
 \end{equation}
 {\color{red}红色 $\rightarrow$} 是 \textbf{predicates} 形成的层次。 $A$ 和 $B$ 是两个不同的\textbf{空间}。 在 $A$ \textbf{内部}，Socrates 也是一个空间，Human 是另一个空间，而 Human(Socrates) 构成新的空间（透过 dependent type constructor $\Sigma$）。 
+
+假设 $X \in \mathcal{U}_1, P \in \mathcal{U}_2, P(X) \in \mathcal{U}_3$，（这些 $\mathcal{U}_i$ 是 type universes）, 在计算机上最简单的做法是令：
 \begin{equation}
 \mathcal{U}_3 = \mathcal{U}_1 \times \mathcal{U}_2
 \end{equation}
+这和 \S\ref{sec:Martin-Lof-TT} 说的 $\Sigma$ type constructor 本质上是 Cartesian product 的说法吻合。
+
+到此，我们发现，用 Curry-Howard 的做法 和「粗暴」的 syntactic 做法其实是一模一样的！ 有点失望，但我希望这些 漂亮的数学 不会是完全无用的....
 
 \subsection{Modal aspect}
 
