@@ -33,6 +33,8 @@
 \DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
 \DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
 
+\newcommand{\highlight}[1]{\colorbox{yellow}{$\displaystyle #1$}}
+
 \newcommand{\emp}[1]{{\color{violet}\textbf{#1}}}
 \newcommand*\confoundFace{$\vcenter{\hbox{\includegraphics[scale=0.2]{../confounded-face.jpg}}}$}
 
@@ -618,6 +620,13 @@ In topos theory $A \Rightarrow B$ is adjoint (via the hom-product adjunction) to
 
 注意： $\mbox{下雨} \Heytingarrow \mbox{草地湿}$ 是 Heyting implication，这个 $\Heytingarrow$ 的存在 并不是因为「下雨」的\textbf{真值} 比「草地湿」的\textbf{真值 小}。 
 
+\begin{equation}
+\forall X. \quad X \subseteq (\highlight{\mbox{下雨} \Heytingarrow \mbox{草地湿}}) \quad \mbox{iff} \quad (X \wedge \mbox{下雨}) \subseteq \mbox{草地湿}
+\end{equation}
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.75]{Heyting-arrow-rain-wet.png}}}
+\end{equation}
+
 The Heyting implication $a \Heytingarrow b$ exists for all elements $a, b, x$ such that:
 \begin{equation}
 x \le (a \Heytingarrow b) \quad \mbox{iff} \quad (x \wedge a) \le b.
@@ -650,6 +659,8 @@ k \Vdash \square (A \Rightarrow B) \quad \Leftrightarrow \quad & \forall \ell \g
 问题是将 Heyting implication 定义 by possible worlds semantics 有什么好处？  从 machine learning 角度可能更合理。  但其实也好像包含 classical implication 所以是循环的？  
 
 根据 topos 理论，Heyting implication 的出现是因为 sub-objects 的 Heyting algebra.  但我希望 implication arrow 纯粹是因为 BHK interpretation 而出现的。 
+
+Heyting implication 的问题是它产生自 sub-object 概念。 Material truth will cause an implication to exist.  What does that mean?  
 
 \section{Modal logic}
 

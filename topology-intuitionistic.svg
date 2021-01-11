@@ -27,8 +27,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="429.81846"
-     inkscape:cy="712.92893"
+     inkscape:cx="365.53822"
+     inkscape:cy="545.21672"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -55,6 +55,13 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <path
+       style="opacity:1;vector-effect:none;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m 104.54422,182.40452 c 7.01404,-4e-5 12.70007,5.9821 12.70007,13.36146 0,7.37936 -5.68603,13.3615 -12.70007,13.36146 -7.014057,5e-5 -12.700084,-5.9821 -12.700084,-13.36146 0,-7.37936 5.686027,-13.36151 12.700084,-13.36146 z"
+       id="rect12-75-1-9-7-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384" />
     <path
        inkscape:connector-curvature="0"
        style="opacity:1;vector-effect:none;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.5875, 1.58749999999999991;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
@@ -222,5 +229,61 @@
        d="m 106.36258,94.064541 v 44.979169 h 42.86274 V 94.064541 Z"
        id="rect12-75-2-0"
        sodipodi:nodetypes="ccccc" />
+    <path
+       inkscape:connector-curvature="0"
+       style="opacity:1;vector-effect:none;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.58750002, 1.58750002;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m 68.560748,176.05452 v 39.6875 h 56.621072 v -39.6875 z m 20.108469,6.35 c 7.014041,-4e-5 12.700073,5.9821 12.700073,13.36146 0,7.37936 -5.686032,13.3615 -12.700073,13.36146 -7.014049,5e-5 -12.700079,-5.9821 -12.700079,-13.36146 0,-7.37936 5.68603,-13.36151 12.700079,-13.36146 z"
+       id="rect12-75-2-3"
+       sodipodi:nodetypes="ccccccscsc"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384" />
+    <path
+       inkscape:connector-curvature="0"
+       style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m 68.560748,176.05452 v 39.6875 h 56.621072 v -39.6875 z"
+       id="rect12-75-2-0-6"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="85.328133"
+       y="188.45468"
+       id="text967"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         sodipodi:role="line"
+         x="188.98384"
+         y="84.798965"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:tb-rl;text-anchor:start;stroke-width:0.26458332"
+         id="tspan969">下雨</tspan></text>
+    <path
+       style="opacity:1;vector-effect:none;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:0.99999995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999981,3.99999981;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       d="M 395.12695 689.40234 C 383.77234 689.40226 373.34761 693.56007 365.12891 700.49414 C 376.09789 709.74919 383.12891 723.95839 383.12891 739.90234 C 383.12891 755.84662 376.09828 770.05746 365.12891 779.3125 C 373.34751 786.24623 383.77265 790.40242 395.12695 790.40234 C 421.63671 790.40249 443.12891 767.79284 443.12891 739.90234 C 443.12891 712.01185 421.63671 689.40219 395.12695 689.40234 z "
+       transform="scale(0.26458333)"
+       id="rect12-75-1-9-7"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:1.25;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:tb-rl;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="106.49479"
+       y="185.74269"
+       id="text975"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384"><tspan
+         sodipodi:role="line"
+         id="tspan973"
+         x="185.21353"
+         y="107.02396"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;font-family:'Alibaba Sans';-inkscape-font-specification:'Alibaba Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:tb-rl;text-anchor:start;stroke-width:0.26458332">草地湿</tspan></text>
+    <path
+       style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.00157476;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00629907,4.00629907;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       d="M 335.12695 689.40234 C 308.61715 689.40215 287.12695 712.01185 287.12695 739.90234 C 287.12695 767.79284 308.61715 790.40253 335.12695 790.40234 C 346.48175 790.40241 356.91014 786.24682 365.12891 779.3125 C 354.15887 770.05748 347.12695 755.84718 347.12695 739.90234 C 347.12695 723.95783 354.15925 709.74917 365.12891 700.49414 C 356.91003 693.55948 346.48206 689.40228 335.12695 689.40234 z "
+       transform="scale(0.26458333)"
+       id="rect12-75-1-9-7-0-1"
+       inkscape:export-xdpi="384"
+       inkscape:export-ydpi="384" />
   </g>
 </svg>
