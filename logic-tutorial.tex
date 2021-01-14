@@ -371,9 +371,37 @@ Per Martin-L\"{o}f (1942-) was the first logician to see the full importance of 
 \end{equation}
 这个惊奇的「巧合」似乎再一次证实 Curry-Howard correspondence 是正确的； 特别地，它意味 $\Rightarrow$ 应该看成是 \textbf{函数}，即所谓 ``functional interpretation of logical deduction.'' 
 
+\subsection{The problem of material implication}
+\label{sec:material-implication}
+
 更详细观察，table (\ref{truth-table:material-implication}) 里面 $A$ 和 $B$ 的 truth values 可以看成是它们的 types 有没有 \textbf{inhabitants}. Type $A$ 的 inhabitant 就是它的证明 $\witness$，没有证明就是 $\emptyset$.  或者推广到：命题 $A$ 的真值 = $A$ 的 type 作为 集合 的 \textbf{cardinality}; The truth valuation of $A = |A|$.  这样看，$A \Rightarrow B$ 的真值 就是 $|B^A|$, 亦即是从 $\{\witness\}$ 或 $\emptyset$ 到 $\{\witness\}$ 或 $\emptyset$ 的 map, 而这个 map 只有在 $\emptyset \mapsto \{\witness\}$ 的时候是空集（不可能）。
 
 这个观察 可以推广到 fuzzy logic (\S\ref{sec:fuzzy-implication}) 和 strict implication $A \strictif B$ (\S\ref{sec:strict-implication}).
+
+但 material implication 导致某种悖论：
+\begin{equation}
+A \wedge B \quad \vdash \quad A \Rightarrow B
+\end{equation}
+例如
+\begin{equation}
+\mbox{看见黑猫} \wedge \mbox{发生车祸} \quad \vdash \quad \mbox{看见黑猫} \Rightarrow \mbox{发生车祸}
+\end{equation}
+即任何两件\textbf{同时}发生的事件，会导致类似\textbf{因果}的结论，然而这因果关系未必成立。 这个谬误出现的原因，似乎是因为混淆了不同时间的 \emp{cases}.  换句话说： 我们应该验证了 table (\ref{truth-table:material-implication}) 的所有 cases，然后才下结论说 $A \Rightarrow B$； 然而根据 经典逻辑的 material implication，只需要一个 case 就可以下结论说 $A \Rightarrow B$.
+
+那么，这个谬误 为什么没有在 经典逻辑 AI 系统中被发现？
+
+所谓 \emp{inductive learning of logic rules}，其原理是根据以下的「生成模型」： 
+\begin{equation}
+\begin{tikzcd}[| /.tip = {Bar[scale=3]}, column sep = large]
+\mbox{generators} \arrow[|-,r, "\mathrm{generate}"]
+& \mbox{data of the world}
+\end{tikzcd}
+\end{equation}
+这种 generators 的思想，和 数学中 generators of ideals, groups, function fields, 等 是一样的。 
+
+Machine learning 的目的，是求得一组这样的 generators，而它生成的\textbf{机制}，即是逻辑推导 $\vdash$.
+
+但由於在 learning 的过程中，需要验证 \textbf{不同时间}的 cases，因此避免了 太轻易接受 $A \Rightarrow B$ 的问题。 
 
 \section{Topos theory}
 
@@ -638,7 +666,7 @@ x \le (a \Heytingarrow b) \quad \mbox{iff} \quad (x \wedge a) \le b.
 
 Every Boolean algebra can be a Heyting algebra with the material implication defined as usual: $a \Rightarrow b \equiv \neg a \vee b$.
 
-Heyting implication $\Heytingarrow$ 是这样定义的：
+可以用以下例子说明 Heyting implication $\Heytingarrow$ 的定义：
 \begin{equation}
 \forall X. \quad X \subseteq (\highlight{\mbox{下雨} \Heytingarrow \mbox{草地湿}}) \quad \mbox{iff} \quad (X \wedge \mbox{下雨}) \subseteq \mbox{草地湿}
 \end{equation}
@@ -662,6 +690,12 @@ Heyting implication $\Heytingarrow$ 是这样定义的：
 \vcenter{\hbox{\includegraphics[scale=1]{topology-implication-2.png}}}
 \end{align}
 这可以看成是 将白色部分不断 缩小并「消灭掉」的结果。 
+
+根据 Stone duality, 既然可以用 Boolean 或 Heyting algebra 做逻辑推导，因此 也可以用 toplogy of (open) sets 做逻辑推导。 其根据的就是：
+\begin{equation}
+A \vdash B \quad \mbox{和} \quad A \subseteq B
+\end{equation}
+之间的 等价。
 
 这种 topology 可以视为 \textbf{truth table} 的一种形式，如下图所示，每个\textbf{区域}代 表 真值表的\textbf{一行}：
 \begin{equation}
@@ -690,7 +724,9 @@ Heyting implication $\Heytingarrow$ 是这样定义的：
 \vcenter{\hbox{\includegraphics[scale=1]{topology-ABC.png}}}
 \end{equation}
 
-有了这些 Heyting 的知识后，我们再考虑之前提到过的 material implication 的问题。 
+之所以讲这么多，目的是想说明，Heyting algebra 和我们熟悉的 Boolean algebra 其实有很多共通点。 
+
+另一点发现是，在 \S\ref{sec:material-implication} 所说的 material implication 问题，在 intuitionistic logic 里仍然存在。
 
 In a topos $\mathbb{E}$, the subobject $\mathrm{Sub}_{\mathbb{E}}(A)$ is a \emp{poset} that admits \emp{Heyting implication}.  
 
