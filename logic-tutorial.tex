@@ -33,7 +33,7 @@
 \DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
 \DeclareMathSymbol{\strictif}{\mathrel}{symbolsC}{74}
 
-\newcommand{\highlight}[1]{\colorbox{yellow}{$\displaystyle #1$}}
+\newcommand{\highlight}[1]{\colorbox{pink}{$\displaystyle #1$}}
 
 \newcommand{\emp}[1]{{\color{violet}\textbf{#1}}}
 \newcommand*\confoundFace{$\vcenter{\hbox{\includegraphics[scale=0.2]{../confounded-face.jpg}}}$}
@@ -436,6 +436,8 @@ Y \arrow[r, swap, "\ulcorner m \urcorner"] & {\color{red}\Omega}
 \end{equation}
 右边的 ${\color{red}\mathrel{\substack{1\\\downarrow\\\Omega}}}$ 称为 \emp{generic subobject}.  它的 \emp{pull back} square 用 ${\color{red}\lrcorner}$ 记号表示。 而左边的 $\mathrel{\substack{X\\\downarrow\\Y}}$ 则是一般的 sub-object. We say that the \textbf{property} of being a sub-object is \emp{stable under pullbacks}.
 
+\subsection{The idea of classifying spaces}
+
 \subsection{$\wedge$ and $\Rightarrow$ in a topos}
 
 Material implication 纯粹 compare truth values, 呢样嘢 fuzzy 之后 唔妥。
@@ -446,16 +448,23 @@ Exponentiation $B^A$ 去咗边？
 
 Let $\mbox{Forms}(\vec{x})$ denote the set of formulas with only the variables $\vec{x}$ free.
 
-Then there is a trivial operation of adding an additional dummy variable $y$:
+Then one can always trivially add an additional \textbf{dummy} variable $y$:
 \begin{equation}
 * : \mbox{Forms}(\vec{x}) \rightarrow \mbox{Forms}(\vec{x}, y)
 \end{equation}
 taking each formula $\phi(\vec{x})$ to itself.
 
-It turns out that $\exists$ and $\forall$ are adjoints to the map $*$:
+It turns out that $\exists$ and $\forall$ are \textbf{adjoints} to the map $*$:
 \begin{equation}
-\exists \dashv * \dashv \forall
+\begin{tikzcd}[column sep = large]
+\mbox{Forms}(\vec{x}) 
+\arrow[r, "*"]
+& \mbox{Forms}(\vec{x},y) 
+\arrow[l, shift right=1.2em, "\exists y"'] % "\bot"
+\arrow[l, shift left=1em, "\forall y"] % "\bot"'
+\end{tikzcd}
 \end{equation}
+or simply, $\exists \dashv * \dashv \forall$.  而这是 makes sense 的，因为 一个 $\phi(\vec{x},y)$ 的式子，经过 $\forall y. \; \phi(\vec{x},y)$ 之后，就变成一个和 $y$ \textbf{无关}的式子。
 
 \subsection{Classifying topos $\leftrightharpoons$ internal language}
 
@@ -597,6 +606,8 @@ In topos theory $A \Rightarrow B$ is adjoint (via the hom-product adjunction) to
 \end{equation}
 1930 年，Heyting 给出了 constructive mathematics 的一种 axiomatization, called \emp{intuitionistic logic} (IL).  Heyting algebra 是一种 IL 的 \emp{代数模型}，正如 Boolean algebra 是 经典逻辑的 代数模型。 
 
+Heyting algebra is to intuitionistic logic what Boolean algebra is to classical logic.
+
 例如，以下的 \emp{拓樸}模型 和 \emp{格} (lattice) 模型，都是 Heyting algebra 的模型：
 \begin{equation}
 \boxed{
@@ -620,16 +631,6 @@ In topos theory $A \Rightarrow B$ is adjoint (via the hom-product adjunction) to
 
 注意： $\mbox{下雨} \Heytingarrow \mbox{草地湿}$ 是 Heyting implication，这个 $\Heytingarrow$ 的存在 并不是因为「下雨」的\textbf{真值} 比「草地湿」的\textbf{真值 小}。 
 
-Heyting implication $\Heytingarrow$ 是这样定义的：
-\begin{equation}
-\forall X. \quad X \subseteq (\highlight{\mbox{下雨} \Heytingarrow \mbox{草地湿}}) \quad \mbox{iff} \quad (X \wedge \mbox{下雨}) \subseteq \mbox{草地湿}
-\end{equation}
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.75]{Heyting-arrow-rain-wet.png}}}
-\end{equation}
-
-Venn diagram 和 truth table 之间的关系。
-
 The Heyting implication $a \Heytingarrow b$ exists for all elements $a, b, x$ such that:
 \begin{equation}
 x \le (a \Heytingarrow b) \quad \mbox{iff} \quad (x \wedge a) \le b.
@@ -637,7 +638,59 @@ x \le (a \Heytingarrow b) \quad \mbox{iff} \quad (x \wedge a) \le b.
 
 Every Boolean algebra can be a Heyting algebra with the material implication defined as usual: $a \Rightarrow b \equiv \neg a \vee b$.
 
-Heyting algebra is to intuitionistic logic what Boolean algebra is to classical logic.  But this may not jibe with the idea of ``strict implication''.
+Heyting implication $\Heytingarrow$ 是这样定义的：
+\begin{equation}
+\forall X. \quad X \subseteq (\highlight{\mbox{下雨} \Heytingarrow \mbox{草地湿}}) \quad \mbox{iff} \quad (X \wedge \mbox{下雨}) \subseteq \mbox{草地湿}
+\end{equation}
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.8]{topology-Heyting-rain-wet.png}}}
+\end{equation}
+
+经典逻辑的 $\Rightarrow$ 和 直觉主义逻辑 $\Heytingarrow$ 只有 在\textbf{边界}上的 微小差异：
+\begin{align}
+\mbox{classical $A \Rightarrow B$} \qquad & \qquad
+\mbox{Heyting $A \Heytingarrow B$} \nonumber \\
+\vcenter{\hbox{\includegraphics[scale=1]{topology-classical-implication.png}}}
+\qquad & \qquad
+\vcenter{\hbox{\includegraphics[scale=1]{topology-Heyting-implication.png}}}
+\end{align}
+无论是何种逻辑，以下的两边是 \textbf{等价}的：
+\begin{align}
+\mbox{$A \Rightarrow B$} \quad & \Longleftrightarrow \quad \mbox{$A \vdash B$ or $A \subseteq B$} \\
+\vcenter{\hbox{\includegraphics[scale=1]{topology-Heyting-implication.png}}}
+\quad & \Longleftrightarrow \quad 
+\vcenter{\hbox{\includegraphics[scale=1]{topology-implication-2.png}}}
+\end{align}
+这可以看成是 将白色部分不断 缩小并「消灭掉」的结果。 
+
+这种 topology 可以视为 \textbf{truth table} 的一种形式，如下图所示，每个\textbf{区域}代 表 真值表的\textbf{一行}：
+\begin{equation}
+\begin{tabular}{|c|c|c|c|}
+	\hline 
+	{\color{red}$A$} & {\color{red}$B$} & {\color{red}$C$} & \# \\ 
+	\hline 
+	$\top$ & $\top$ & $\top$ & 1 \\ 
+	\hline 
+	$\top$ & $\top$ & $\bot$ & 2 \\ 
+	\hline 
+	$\top$ & $\bot$ & $\top$ & 3 \\ 
+	\hline 
+	$\top$ & $\bot$ & $\bot$ & 4 \\ 
+	\hline 
+	$\bot$ & $\top$ & $\top$ & 5 \\ 
+	\hline 
+	$\bot$ & $\top$ & $\bot$ & 6 \\ 
+	\hline 
+	$\bot$ & $\bot$ & $\top$ & 7 \\ 
+	\hline 
+	$\bot$ & $\bot$ & $\bot$ & 8 \\ 
+	\hline 
+\end{tabular}
+\quad \Longleftrightarrow \quad
+\vcenter{\hbox{\includegraphics[scale=1]{topology-ABC.png}}}
+\end{equation}
+
+有了这些 Heyting 的知识后，我们再考虑之前提到过的 material implication 的问题。 
 
 In a topos $\mathbb{E}$, the subobject $\mathrm{Sub}_{\mathbb{E}}(A)$ is a \emp{poset} that admits \emp{Heyting implication}.  
 
