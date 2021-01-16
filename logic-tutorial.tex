@@ -59,7 +59,7 @@
 
 \section*{Summary}
 \begin{itemize}
-	\item 描述一种可以完整地解决 AGI 的逻辑
+	\item 描述一种可以完整地解决 AGI 的 univeral logic
 \end{itemize}
 
 \tableofcontents
@@ -902,7 +902,29 @@ What are fuzzy functions?
 
 HoTT 的中心思想是将 types 看成是某些 空间 (spaces)，而这些空间可以被赋予 topological 特别是 homotopy 结构。 在 homotopy 而言，关键是 将 type $A$ 里面两个元素的 \textbf{相等} $\mathrm{id}_A$ 看成是 homotopy 的 \textbf{path}.
 
-\subsection{HoT levels}
+\subsection{Why HoTT may be useful}
+
+在 topos 上 $A \subseteq B$ 或 $a \in A$ 是一种 subset 关系，或者可以说是 topological 关系。  在计算机上，将这个 topology 赋予更多「空间」的特性，例如 vector space, metric space 等，似乎会是很 powerful 的。 
+
+但问题是： 如果 $A$ 是 拓扑空间中某个（形状已知的）region，而 entity $a$ 的位置也是知道的，则 $a \in A$ 这个命题的真假 也立即可以知道。 但这是非常有问题的，例如「$e \in?$ 无理数」这个命题，必需复杂的证明，而不是瞬间可以判断。 又或者「OJ Simpson $\in?$ 杀人凶手」。
+
+换句话说，似乎不可能将 命题空间 实现成某种有 \textbf{具体位置}的空间。  因此 $a \in A$ 这种命题，似乎 只能够表述成 ordered pair $(a, A)$，然后用\textbf{代数方法} 模拟 abstract topology.  这 其实就是我在 (\ref{eqn:brutal-syntactic-method}) 提到的「粗暴」syntactic 方法。 
+
+挽救「位置空间」的一个办法是： 容许 OJ Simpson $\in$「黑人、男性、演员、球员」等，但保证他不属於其他（未被验证的）集合，后者是\textbf{未知}的。 但这样导致要 验证 潜在无穷多个集合，并不可行。
+
+除非在 逻辑空间中 预先保证 每个集合 \textbf{并不相交}，而如果 $x \in A \; \wedge \; x \in B$，则 设定 $x_1 \in A, \; x_2 \in B, \; x_1 = x_2$, and $x_1, x_2$ are \textbf{path-connected}.  所以这需要用到 HoTT.
+
+暂时 仍未知道 这种做法 是不是比「粗暴」法更有效率。 
+
+根据 paths 可以有如下的 topological「变形」：
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.9]{path-morphing-1.png}}}
+\quad \Longleftrightarrow \quad
+\vcenter{\hbox{\includegraphics[scale=0.9]{path-morphing-2.png}}}
+\end{equation}
+但右边 仍是会出现 $x \in A$ accidentally 导致 $x \in B$ 的情况。
+
+\subsection{HoTT levels}
 
 \begin{equation}
 \begin{tabular}{|c|c|}
@@ -921,7 +943,9 @@ HoTT 的中心思想是将 types 看成是某些 空间 (spaces)，而这些空�
 \end{tabular} 
 \end{equation}
 
-``Truncation''
+\subsubsection{Truncation}
+
+$||A||$ is a way to obtain the \textbf{truth value} of a type $A$, known as \textbf{truncation}.  For Voevodsky, the truth value is always binary, the type of ``mere propositions''.  I propose that it can be generalized such that, on HoTT level 0, it provides the \textbf{fuzzy} truth value $\in [0,1]$.
 
 \subsection{What is homotopy?}
 
@@ -968,6 +992,7 @@ A &\wedge B & \equiv && B & \wedge A \\
 
 目前，一般的深度学习模型是比较 简单／粗暴 地作用在 自然语言句子的 \textbf{syntax} 层面，例如： 
 \begin{equation}
+\label{eqn:brutal-syntactic-method}
 \mbox{``Je {\small\textbullet}
 	suis {\small\textbullet}
 	\'{e}tudiant'' } \stackrel{f}{\Longrightarrow} \mbox{``I {\small\textbullet}
