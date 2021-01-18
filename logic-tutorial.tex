@@ -924,6 +924,8 @@ HoTT 的中心思想是将 types 看成是某些 空间 (spaces)，而这些空�
 \end{equation}
 但右边 仍是会出现 $x \in A$ accidentally 导致 $x \in B$ 的情况。
 
+如果 neural network map $F$ 的对象不是 ordered pairs ($x \in A$), 可以是什么？  A \textbf{proposition} can be regarded as a set of points $x_i$ connected by paths.  
+
 \subsection{HoTT levels}
 
 \begin{equation}
@@ -1023,6 +1025,16 @@ A &\wedge B & \equiv && B & \wedge A \\
 这和 \S\ref{sec:Martin-Lof-TT} 说的 $\Sigma$ type constructor 本质上是 Cartesian product 的说法吻合。
 
 到此，我们发现，用 Curry-Howard 的做法 和「粗暴」的 syntactic 做法其实是一模一样的！ 有点失望，但我希望这些 漂亮的数学 不会是完全无用的....
+
+\subsection{Topological aspects}
+
+是不是所有命题都 embed 到 命题空间 $\mathbb{P}\mathrm{rop}$？  还是有某种 working-space embedding？
+
+这意思是说，从 long-term memory recall 进来，只要保证 inference makes sense 就行，constants 不必有长期的不变的位置。
+
+或者可不可以说，是 constant 的 predicates 特性 决定其位置？
+
+但 深度学习 似乎对 absolute positions 有优势。 例如「嫲嫲」的位置。
 
 \subsection{Modal aspect}
 
