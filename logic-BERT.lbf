@@ -1,32 +1,32 @@
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}1\hfill }{BERT's ground-breaking significance: closed-loop training}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}1\hfill }{BERT 的革命性意义：「闭环路训练」}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}2\hfill }{BERT's internal architecture}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}2\hfill }{BERT 的内部结构}\par }
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}3\hfill }{Symmetry in logic}\par }
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}4\hfill }{Symmetric neural network}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}5\hfill }{Knowledge graphs}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}5\hfill }{知识图谱 (knowledge graphs)}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}6\hfill }{Logicalization of BERT}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}6\hfill }{BERT 的逻辑化}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}7\hfill }{Connection between AI and logic}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}7\hfill }{逻辑 与 AI 之间的联系}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}8\hfill }{What is attention?}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}8\hfill }{Attention 是什么？}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}9\hfill }{Predicates vs propositions}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}9\hfill }{谓词 (predicates) vs 命题 (propositions)}\par }
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}10\hfill }{``Attention is all you need'' ?}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}12\hfill }{Why is BERT so successful?}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}12\hfill }{BERT 为什么成功？}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}13\hfill }{Modifying BERT with an attention-like mechanism}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}13\hfill }{改良 BERT： 类似 attention 的方法}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}14\hfill }{Abductive interpretation of natural language}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}14\hfill }{逆因推理 (abduction) 与 自然语言理解}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}15\hfill }{Capturing semantics more broadly}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}15\hfill }{捕捉更广泛的 semantics}\par }
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}16\hfill }{Content-addressable long-term memory}\par }
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}17\hfill }{Doubts about logicism}\par }
+\contentsline {section}{\makebox [2em][l]{\usebeamercolor [fg]{structure}17\hfill }{对 逻辑主义 的质疑}\par }
