@@ -1042,6 +1042,9 @@ A &\wedge B & \equiv && B & \wedge A \\
 
 Reshape topology 带来 generalization 但也引入 errors.  
 
+问题是如果用了 topology 那么 $F$ 会有哪些改变？  命题是 $P(a) = 1$.  它的信息 似乎无论如何也是一个 tuple $(P,a)$.  这会是一个 tuples to tuple 的 map，而这也就是 brutal syntactics.  但重点是： $P(a)$ 应该是一个\textbf{空间}。 这空间的构成是透过 type constructor $\displaystyle \sum_a P(a)$.  这构成一个空间，而 $F$ 是由 此空间到 彼空间 的一个映射。 於是 $F$ 并不是 tuples to tuple 的映射，而是 spaces to space 的映射。 
+但这个映射是 witness 的映射，有点奇怪。 换句话说，要用 记忆体 记住 witnesses，它们代表每一个命题。 它们的位置就是命题的 syntax.  
+
 \subsection{Modal aspect}
 
 \section*{References}
