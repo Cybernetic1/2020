@@ -23,6 +23,8 @@
 % \usepackage{newtxtext,newtxmath}	% Times New Roman font
 % \usepackage{sansmath}
 
+\numberwithin{equation}{subsection}
+
 \newcommand{\underdash}[1]{%
 	\tikz[baseline=(toUnderline.base)]{
 		\node[inner sep=1pt,outer sep=10pt] (toUnderline) {#1};
@@ -66,7 +68,7 @@
 % \vspace*{0.5cm}
 % 多谢 支持 \smiley
 
-
+ \setcounter{section}{-1}
 \section{Background}
 
 我们想 \textbf{训练} 一个智能系统，训练 是一个 \textbf{机器学习} 的过程，也是一个 \emp{optimization} problem, 目标是将 \textbf{长期的奖励总和} 最大化：
@@ -492,7 +494,7 @@ It turns out that $\exists$ and $\forall$ are \textbf{adjoints} to the map $*$:
 \arrow[l, shift left=1em, "\forall y"] % "\bot"'
 \end{tikzcd}
 \end{equation}
-or simply, $\exists \dashv * \dashv \forall$.  而这是 makes sense 的，因为 一个 $\phi(\vec{x},y)$ 的式子，经过 $\forall y. \; \phi(\vec{x},y)$ 之后，就变成一个和 $y$ \textbf{无关}的式子。
+or simply, $\exists \dashv * \dashv \forall$.  而这是十分 makes sense 的，因为 一个 $\phi(\vec{x},y)$ 的式子，经过 $\forall y. \; \phi(\vec{x},y)$ 之后，就变成一个和 $y$ \textbf{无关}的式子。
 
 \subsection{Classifying topos $\leftrightharpoons$ internal language}
 
@@ -1044,6 +1046,16 @@ Reshape topology 带来 generalization 但也引入 errors.
 
 问题是如果用了 topology 那么 $F$ 会有哪些改变？  命题是 $P(a) = 1$.  它的信息 似乎无论如何也是一个 tuple $(P,a)$.  这会是一个 tuples to tuple 的 map，而这也就是 brutal syntactics.  但重点是： $P(a)$ 应该是一个\textbf{空间}。 这空间的构成是透过 type constructor $\displaystyle \sum_a P(a)$.  这构成一个空间，而 $F$ 是由 此空间到 彼空间 的一个映射。 於是 $F$ 并不是 tuples to tuple 的映射，而是 spaces to space 的映射。 
 但这个映射是 witness 的映射，有点奇怪。 换句话说，要用 记忆体 记住 witnesses，它们代表每一个命题。 它们的位置就是命题的 syntax.  
+
+在空间中有某个 witness, 它的位置 正是 $P(a)$ 的 positional tuple，它被映射到新位置也是 $Q(a)$ 的 positional tuple，这岂不是和 tuple to tuple 一模一样？？  换句话说，无论怎样看，$F$ 的映射\textbf{必然是从 positional tuple to positional tuple}.
+
+$P(a)$ 就是 $(P,a)$，syntactic mapping 是必然的。
+
+那么 topology 又是什么？  $a$ 的位置是 $a$ 作为 Atom 的位置，它本身可以看成是一个 predicate.  但，个别的 constants 有没有永久的 位置？  如果位置是永久的，则 recall 非常容易（直接 recall）。 问题是要不要 reshape topology？  
+
+另一个问题是： 开始时，一个 \textbf{新} constant 的位置是怎样 assign 的？  这显然和 \textbf{遗忘} 有关。  一个简单的做法就是有 \emp{constant 空间}，而这些 constants \textbf{位置是永久的}。
+
+所以又回到问题： 既然可以有 tuple-to-tuple, 那么 topological membership 要来做什么？  似乎就是用来 impose topological-metric \textbf{regularity} (ie, smoothness).
 
 \subsection{Modal aspect}
 
