@@ -496,6 +496,27 @@ It turns out that $\exists$ and $\forall$ are \textbf{adjoints} to the map $*$:
 \end{equation}
 or simply, $\exists \dashv * \dashv \forall$.  而这是十分 makes sense 的，因为 一个 $\phi(\vec{x},y)$ 的式子，经过 $\forall y. \; \phi(\vec{x},y)$ 之后，就变成一个和 $y$ \textbf{无关}的式子。
 
+In cylindric algebra, the quantifiers $\forall$ and $\exists$ can be interpreted as \textbf{projections} to a component ($X_2$) of the domain：
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{cylindrification-projected.png}}}
+\end{equation}
+
+The following 2 formulas are from \parencite{Abramsky2011}.  For all $S \subseteq X, T \subseteq Y$:
+\begin{eqnarray}
+&S \subseteq f^{-1} T \quad \quad \Longleftrightarrow \quad \quad \exists {}_f  S \subseteq T& \\
+&\vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-quantifier-exists.png}}}& \nonumber
+\end{eqnarray}
+
+\begin{eqnarray}
+&f^{-1} T \subseteq S \quad \quad \Longleftrightarrow \quad \quad T \subseteq \forall {}_f  S& \\
+&\vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-quantifier-forall.png}}}& \nonumber
+\end{eqnarray}
+
+They can be interpreted in a ``cylindrical'' way:  Let $X = X_1 \times X_2$ and $Y = X_2$.  Then $f$ is a projection $X_1 \times X_2 \rightarrow X_2$:
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-cylindrification.png}}}
+\end{equation}
+
 \subsection{Classifying topos $\leftrightharpoons$ internal language}
 
 问题是 witness 是什么？  例如「匙羹在杯内」是因为其他 视觉 propositions 得到的结论。 它是 true 这一点是重要的，但它的 ``intension'' 更重要。  或者说 proof 过程中处理的是 proof objects.  
@@ -555,7 +576,28 @@ Sheaves capture ``indexing''.
 
 \textbf{例：} 在 $\mathbf{Top}$ 里面，2 包含一个 open set 和一个 closed set，$X \rightarrow 2$ 得出的是 $X$ 的\textbf{开子集}，$\mathrm{Opens}(X)$.
 
+A functor $X: \mathcal{A} \rightarrow \mathbf{Set}$ is \emp{representable} if $X \cong H^A$ for some $A \in \mathcal{A}$.
+
+$H^A$ 的意思是 $\mathcal{A}(A, -)$, 这是一个集合。 
+
+A \emp{representation} of $X$ is a choice of an object $A \in \mathcal{A}$ and an isomorphism between $H^A$ and $X$. 
+
 How sheaves gives rise to representables.
+
+\subsubsection{Application: symmetric neural networks}
+
+The \textbf{Kolmogorov–Arnold representation theorem} states that every multivariate continuous function can be represented as a sum of continuous functions of one variable:
+\begin{equation}
+f(x_1,... ,x_n) = \sum_{q=0}^{2n}\Phi_{q} \left(\sum_{p=1}^n \phi_{q,p}(x_p) \right)
+\end{equation}
+It can be specialized to such that every symmetric multivariate function can be represented as a sum of (the same) functions of one variable:
+\begin{equation}
+\label{symmetric-functions}
+f(x_1, ..., x_n) = g(h(x_1) + ... + h(x_n))
+\end{equation}
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.5]{g-and-h-networks.png}}}
+\end{equation}
 
 \subsection{Model theory, functorial semantics}
 
@@ -965,8 +1007,7 @@ $||A||$ is a way to obtain the \textbf{truth value} of a type $A$, known as \tex
 
 \emp{Symmetric NN} 是一种 在输入变量的 \textbf{置换}下 不变 (permutation invariant) 的神经网络。 其解决 办法 是利用以下的 函数形式：
 \begin{equation}
-\label{symmetric-functions}
-f(x, y, ...) = g(h(x) + h(y) + ... )
+f(x_1, ..., x_n) = g(h(x_1) + ... + h(x_n))
 \end{equation}
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.5]{g-and-h-networks.png}}}
@@ -1028,7 +1069,7 @@ A &\wedge B & \equiv && B & \wedge A \\
 
 到此，我们发现，用 Curry-Howard 的做法 和「粗暴」的 syntactic 做法其实是一模一样的！ 有点失望，但我希望这些 漂亮的数学 不会是完全无用的....
 
-\subsection{Topological aspects}
+\subsection{Implementation of topology (points and sets)}
 
 是不是所有命题都 embed 到 命题空间 $\mathbb{P}\mathrm{rop}$？  还是有某种 working-space embedding？
 
