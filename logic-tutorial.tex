@@ -587,16 +587,24 @@ A \emp{representation} of $X$ is a choice of an object $A \in \mathcal{A}$ and a
 H_{\bullet}: \mathcal{A} \rightarrow [\mathcal{A}^{\mathrm{op}} , \mathbf{Set}]
 \end{equation}
 
-For each $A \in \mathcal{A}$ , we have a functor $\mathcal{A} \rightarrow \mathbf{Set}$. \\
-Putting them all together gives a functor $\mathcal{A}^{\mathrm{op}} \rightarrow [\mathcal{A} , \mathbf{Set}]$. \\
-For each $A \in \mathcal{A}$ , we have a functor $\mathcal{A}^{\mathrm{op}} \rightarrow \mathbf{Set}$. \\
-Putting them all together gives a functor $\mathcal{A} \rightarrow [\mathcal{A}^{\mathrm{op}} , \mathbf{Set}]$. 
+\begin{align}
+\mbox{For each } A \in \mathcal{A} \mbox{, we have a functor} \quad
+& \mathcal{A} \stackrel{H^A}{\longrightarrow} \mathbf{Set} \nonumber \\
+\mbox{Putting them all together gives a functor} \quad
+& \mathcal{A}^{\mathrm{op}} \stackrel{H^{\bullet}}{\longrightarrow} [\mathcal{A} , \mathbf{Set}] \\
+\vspace{0.5em}
+\mbox{For each } A \in \mathcal{A} \mbox{, we have a functor} \quad
+& \mathcal{A}^{\mathrm{op}} \stackrel{H_A}{\longrightarrow} \mathbf{Set} \nonumber \\
+\mbox{Putting them all together gives a functor} \quad
+& \mathcal{A} \stackrel{H_{\bullet}}{\longrightarrow} [\mathcal{A}^{\mathrm{op}} , \mathbf{Set}] \nonumber
+\end{align}
 
 \begin{equation}
-\begin{tikzcd}[column sep = 20ex]
+\begin{tikzcd}
 \mathcal{A}^{\mathrm{op}} 
-\arrow[r, shift left, "H_A"]
-\arrow[r, shift right, swap, "X"]
+\arrow[r, bend left=30, "H_A"]
+\arrow[r, bend right=30, swap, "X"]
+\arrow[r, phantom, "\Downarrow"]
 & \mathbf{Set}
 \end{tikzcd}
 \end{equation}
