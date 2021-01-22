@@ -582,9 +582,39 @@ $H^A$ 的意思是 $\mathcal{A}(A, -)$, 这是一个集合。
 
 A \emp{representation} of $X$ is a choice of an object $A \in \mathcal{A}$ and an isomorphism between $H^A$ and $X$. 
 
+\emp{Yoneda embedding} of $\mathcal{A}$:
+\begin{equation}
+H_{\bullet}: \mathcal{A} \rightarrow [\mathcal{A}^{\mathrm{op}} , \mathbf{Set}]
+\end{equation}
+
+For each $A \in \mathcal{A}$ , we have a functor $\mathcal{A} \rightarrow \mathbf{Set}$. \\
+Putting them all together gives a functor $\mathcal{A}^{\mathrm{op}} \rightarrow [\mathcal{A} , \mathbf{Set}]$. \\
+For each $A \in \mathcal{A}$ , we have a functor $\mathcal{A}^{\mathrm{op}} \rightarrow \mathbf{Set}$. \\
+Putting them all together gives a functor $\mathcal{A} \rightarrow [\mathcal{A}^{\mathrm{op}} , \mathbf{Set}]$. 
+
+\begin{equation}
+\begin{tikzcd}[column sep = 20ex]
+\mathcal{A}^{\mathrm{op}} 
+\arrow[r, shift left, "H_A"]
+\arrow[r, shift right, swap, "X"]
+& \mathbf{Set}
+\end{tikzcd}
+\end{equation}
+
+\emp{Yoneda lemma}:
+\begin{equation}
+[\mathcal{A}^{\mathrm{op}} , \mathbf{Set}] (H_A, X) \cong X(A)
+\end{equation}
+
 How sheaves gives rise to representables.
 
 \subsubsection{Application: symmetric neural networks}
+
+category of functions $\mathcal{F}$, category of symmetric functions $\hat{\mathcal{F}}$.  What are morphisms in this category?  Probably an inner product?  Or composition of functions?
+
+functor $\mathcal{F} \rightarrow \mathbf{Set} = \mathcal{F}(F, -)$.  The set of $F$ composed with other functions.  
+
+$H_F$ would be some functions composed with $F$.  $X$ would be some other functor from $\mathcal{F} \rightarrow \mathbf{Set}$.  $X(F)$ would be the functor $X$ acting on $F$ which is the composition of some function with $F$. 
 
 The \textbf{Kolmogorov–Arnold representation theorem} states that every multivariate continuous function can be represented as a sum of continuous functions of one variable:
 \begin{equation}
@@ -1027,11 +1057,13 @@ A &\wedge B & \equiv && B & \wedge A \\
 \end{equation}
 但我没有 fully exploit Heyting algebra or Boolean algebra 的结构，因为可以预见 将来是会 推广到 fuzzy-probabilistic logic，而后者的结构只需要 $\wedge$ 和 $\Rightarrow$，和 binary logic 有些不同（迟些解释....）
 
+\subsection{Product-hom adjunction}
+
 在 命题层面 还有一个很重要的 \emp{product-hom adjunction},  它说的是 $A \wedge B$ 和 $A \Rightarrow B$ 之间的邻接：
 \begin{equation}
 (A \times B) \rightarrow C \quad \simeq \quad A \rightarrow (B \rightarrow C)
 \end{equation}
-这在逻辑上 是见惯的，没有什么稀奇，但它推论 $A \Rightarrow B$ 可以替代 $A \vdash B$，由於 $\vdash$ 在我们的 AI 系统中是 \textbf{神经网络}，这表示 神经网络中的「黑箱」知识可以「外在化」(externalize) 成 \textbf{逻辑命题}，这一点 在智能系统中 是有关键的重要性，因为它表示 知识可以透过语言学习得到（虽然这也不是必需 范畴论 才可以看得出来。） 
+这在逻辑上 是见惯的，没有什么稀奇，它推论 $A \Rightarrow B$ 可以替代 $A \vdash B$.  由於 $\vdash$ 在我们的 AI 系统中是 \textbf{神经网络}，这表示 神经网络中的「黑箱」知识可以「外在化」(externalize) 成 \textbf{逻辑命题}，这一点 在智能系统中 是有关键的重要性，因为它表示 知识可以透过语言学习得到（虽然这也不是必需 范畴论 才可以看得出来。） 
 
 \subsection{Predicate aspect}
 
