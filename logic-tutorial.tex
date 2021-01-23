@@ -468,54 +468,63 @@ Y \arrow[r, swap, "\ulcorner m \urcorner"] & {\color{red}\Omega}
 
 \subsection{The idea of classifying spaces}
 
-\subsection{$\wedge$ and $\Rightarrow$ in a topos}
-
-Material implication 纯粹 compare truth values, 呢样嘢 fuzzy 之后 唔妥。
-
-Exponentiation $B^A$ 去咗边？
-
 \subsection{$\forall$ and $\exists$ as adjunctions}
 
-Let $\mbox{Forms}(\vec{x})$ denote the set of formulas with only the variables $\vec{x}$ free.
+Let $\mbox{Forms}(\bar{X})$ denote the set of formulas with only the variables $\bar{X}$ free. ($\bar{X}$ may contain multiple variables.)
 
-Then one can always trivially add an additional \textbf{dummy} variable $y$:
+Then one can always trivially add an additional \textbf{dummy} variable $Y$:
 \begin{equation}
-* : \mbox{Forms}(\vec{x}) \rightarrow \mbox{Forms}(\vec{x}, y)
+\delta : \mbox{Forms}(\bar{X}) \rightarrow \mbox{Forms}(\bar{X}, Y)
 \end{equation}
-taking each formula $\phi(\vec{x})$ to itself.
+taking each formula $\Phi(\bar{X})$ to itself.
 
-It turns out that $\exists$ and $\forall$ are \textbf{adjoints} to the map $*$:
+It turns out that $\exists$ and $\forall$ are \textbf{adjoints} to the map $\delta$:
 \begin{equation}
 \begin{tikzcd}[column sep = large]
-\mbox{Forms}(\vec{x}) 
-\arrow[r, "*"]
-& \mbox{Forms}(\vec{x},y) 
-\arrow[l, shift right=1.2em, "\exists y"'] % "\bot"
-\arrow[l, shift left=1em, "\forall y"] % "\bot"'
+\mbox{Forms}(\bar{X}) 
+\arrow[r, "\delta"]
+& \mbox{Forms}(\bar{X},Y) 
+\arrow[l, shift right=1.2em, "\exists_Y"'] % "\bot"
+\arrow[l, shift left=1em, "\forall_Y"] % "\bot"'
 \end{tikzcd}
 \end{equation}
-or simply, $\exists \dashv * \dashv \forall$.  而这是十分 makes sense 的，因为 一个 $\phi(\vec{x},y)$ 的式子，经过 $\forall y. \; \phi(\vec{x},y)$ 之后，就变成一个和 $y$ \textbf{无关}的式子。
+or simply, $\exists \dashv \delta \dashv \forall$.  而这是十分 makes sense 的，因为 一个 $\Phi(\bar{X},Y)$ 的式子，经过 $\forall Y. \; \Phi(\bar{X},Y)$ 之后，就变成一个和 $Y$ \textbf{无关}的式子。
 
-In cylindric algebra, the quantifiers $\forall$ and $\exists$ can be interpreted as \textbf{projections} to a component ($X_2$) of the domain：
+In \textbf{cylindric algebra}, the quantifiers $\forall_Y$ and $\exists_Y$ can be interpreted as \textbf{projections} where $Y$ is the component that is ``killed'' by the projections:
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{cylindrification-projected.png}}}
 \end{equation}
 
-The following 2 formulas are from \parencite{Abramsky2011}.  For all $S \subseteq X, T \subseteq Y$:
+另一个方法是 借助 $T$ 定义\footnote{This formula is taken from \parencite{Abramsky2011} }： （注意 在下图中 $\bar{X}$ 和 $Y$ 变成平面）
+% \color[rgb]{0.0,0.5,0.0}  %% dark blue
 \begin{eqnarray}
-&S \subseteq f^{-1} T \quad \quad \Longleftrightarrow \quad \quad \exists {}_f  S \subseteq T& \\
+\label{eqn:Abramsky-1}
+\forall T \subseteq \bar{X}: \qquad 
+&S \subseteq \delta^{-1} (T) \qquad \Longleftrightarrow \qquad \exists {}_Y  S \subseteq T& \\
 &\vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-quantifier-exists.png}}}& \nonumber
 \end{eqnarray}
-
+上式可以这样理解： （下图中 $\delta$ 是「杀掉」$Y$ 的 projection）
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-cylindrification-exists.png}}}
+\end{equation}
+但 (\ref{eqn:Abramsky-1}) 似乎比较 general，因为 $\delta$ 可以是任何 $Y \rightarrow X$ 的映射。 这或许可以帮助我们 推广到更为一般的 quantifiers，但我暂时未有考虑。 \\
+类似地：
 \begin{eqnarray}
-&f^{-1} T \subseteq S \quad \quad \Longleftrightarrow \quad \quad T \subseteq \forall {}_f  S& \\
+\forall T \subseteq \bar{X}: \qquad 
+&\delta^{-1} (T) \subseteq S \qquad \Longleftrightarrow \qquad T \subseteq \forall {}_Y S& \\
 &\vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-quantifier-forall.png}}}& \nonumber
 \end{eqnarray}
-
-They can be interpreted in a ``cylindrical'' way:  Let $X = X_1 \times X_2$ and $Y = X_2$.  Then $f$ is a projection $X_1 \times X_2 \rightarrow X_2$:
 \begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-cylindrification.png}}}
+\vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-cylindrification-forall.png}}}
 \end{equation}
+
+\subsection{$\wedge$ and $\Rightarrow$ as product-hom adjunction}
+
+在 topos 里有一个很重要的 \emp{product-hom adjunction},  它说的是 $A \wedge B$ 和 $A \Rightarrow B$ 之间的邻接：
+\begin{equation}
+(A \times B) \rightarrow C \quad \simeq \quad A \rightarrow (B \rightarrow C)
+\end{equation}
+这在逻辑上 是见惯的，没有什么稀奇，它推论 $A \Rightarrow B$ 可以替代 $A \vdash B$.  由於 $\vdash$ 在我们的 AI 系统中是 \textbf{神经网络}，这表示 神经网络中的「黑箱」知识可以「外在化」(externalize) 成 \textbf{逻辑命题}，这一点 在智能系统中 是有关键的重要性，因为它表示 知识可以透过语言学习得到（虽然这也不是必需 范畴论 才可以看得出来。） 
 
 \subsection{Classifying topos $\leftrightharpoons$ internal language}
 
@@ -544,14 +553,6 @@ In other words,
 \begin{equation}
 \mathcal{C} = \mathcal{C}\ell(T), \quad T = \mathrm{Th}(\mathcal{C}).
 \end{equation}
-
-\subsection{Sheaves and topos}
-
-Some $\mathbf{Set}$-valued functors are \emp{representable}, ie, isomorphic to a hom-functor.
-
-Functors $\mathcal{C} \rightarrow \mathbf{Set}$ are called \emp{pre-sheaves} on $\mathcal{C}$.
-
-Sheaves capture ``indexing''.
 
 \subsection{Yoneda lemma}
 
@@ -592,7 +593,7 @@ H_{\bullet}: \mathcal{A} \rightarrow [\mathcal{A}^{\mathrm{op}} , \mathbf{Set}]
 & \mathcal{A} \stackrel{H^A}{\longrightarrow} \mathbf{Set} \nonumber \\
 \mbox{Putting them all together gives a functor} \quad
 & \mathcal{A}^{\mathrm{op}} \stackrel{H^{\bullet}}{\longrightarrow} [\mathcal{A} , \mathbf{Set}] \\
-\vspace{0.5em}
+\vspace*{1em}
 \mbox{For each } A \in \mathcal{A} \mbox{, we have a functor} \quad
 & \mathcal{A}^{\mathrm{op}} \stackrel{H_A}{\longrightarrow} \mathbf{Set} \nonumber \\
 \mbox{Putting them all together gives a functor} \quad
@@ -618,11 +619,7 @@ How sheaves gives rise to representables.
 
 \subsubsection{Application: symmetric neural networks}
 
-category of functions $\mathcal{F}$, category of symmetric functions $\hat{\mathcal{F}}$.  What are morphisms in this category?  Probably an inner product?  Or composition of functions?
-
-functor $\mathcal{F} \rightarrow \mathbf{Set} = \mathcal{F}(F, -)$.  The set of $F$ composed with other functions.  
-
-$H_F$ would be some functions composed with $F$.  $X$ would be some other functor from $\mathcal{F} \rightarrow \mathbf{Set}$.  $X(F)$ would be the functor $X$ acting on $F$ which is the composition of some function with $F$. 
+（这个可能是 Yoneda lemma 的一个应用，但我未详细检证）
 
 The \textbf{Kolmogorov–Arnold representation theorem} states that every multivariate continuous function can be represented as a sum of continuous functions of one variable:
 \begin{equation}
@@ -633,9 +630,12 @@ It can be specialized to such that every symmetric multivariate function can be 
 \label{symmetric-functions}
 f(x_1, ..., x_n) = g(h(x_1) + ... + h(x_n))
 \end{equation}
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.5]{g-and-h-networks.png}}}
-\end{equation}
+
+category of functions $\mathcal{F}$, category of symmetric functions $\hat{\mathcal{F}}$.  What are morphisms in this category?  Probably an inner product?  Or composition of functions?
+
+functor $\mathcal{F} \rightarrow \mathbf{Set} = \mathcal{F}(F, -)$.  The set of $F$ composed with other functions.  
+
+$H_F$ would be some functions composed with $F$.  $X$ would be some other functor from $\mathcal{F} \rightarrow \mathbf{Set}$.  $X(F)$ would be the functor $X$ acting on $F$ which is the composition of some function with $F$. 
 
 \subsection{Model theory, functorial semantics}
 
@@ -699,6 +699,14 @@ Continuum hypothesis (CH):
 \mbox{Paul Cohen (1934-2007)} \quad \vcenter{\hbox{\includegraphics[scale=0.5]{Paul-Cohen.jpg}}}
 \nonumber
 \end{equation}
+
+\subsection{Sheaves and topos}
+
+Some $\mathbf{Set}$-valued functors are \emp{representable}, ie, isomorphic to a hom-functor.
+
+Functors $\mathcal{C} \rightarrow \mathbf{Set}$ are called \emp{pre-sheaves} on $\mathcal{C}$.
+
+Sheaves capture ``indexing''.
 
 \subsection{Kleene realizability}
 
@@ -1064,14 +1072,6 @@ A &\wedge B & \equiv && B & \wedge A \\
 \end{aligned}
 \end{equation}
 但我没有 fully exploit Heyting algebra or Boolean algebra 的结构，因为可以预见 将来是会 推广到 fuzzy-probabilistic logic，而后者的结构只需要 $\wedge$ 和 $\Rightarrow$，和 binary logic 有些不同（迟些解释....）
-
-\subsection{Product-hom adjunction}
-
-在 命题层面 还有一个很重要的 \emp{product-hom adjunction},  它说的是 $A \wedge B$ 和 $A \Rightarrow B$ 之间的邻接：
-\begin{equation}
-(A \times B) \rightarrow C \quad \simeq \quad A \rightarrow (B \rightarrow C)
-\end{equation}
-这在逻辑上 是见惯的，没有什么稀奇，它推论 $A \Rightarrow B$ 可以替代 $A \vdash B$.  由於 $\vdash$ 在我们的 AI 系统中是 \textbf{神经网络}，这表示 神经网络中的「黑箱」知识可以「外在化」(externalize) 成 \textbf{逻辑命题}，这一点 在智能系统中 是有关键的重要性，因为它表示 知识可以透过语言学习得到（虽然这也不是必需 范畴论 才可以看得出来。） 
 
 \subsection{Predicate aspect}
 
