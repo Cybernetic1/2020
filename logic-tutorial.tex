@@ -495,7 +495,7 @@ In \textbf{cylindric algebra}, the quantifiers $\forall_Y$ and $\exists_Y$ can b
 \vcenter{\hbox{\includegraphics[scale=0.7]{cylindrification-projected.png}}}
 \end{equation}
 
-另一个方法是 借助 $T$ 定义\footnote{This formula is taken from \parencite{Abramsky2011} }： （注意 在下图中 $\bar{X}$ 和 $Y$ 变成平面）
+另一个方法是 借助 $T$ 定义\footnote{This formula is from \parencite{Abramsky2011} }： （注意 在下图中 $\bar{X}$ 和 $Y$ 变成平面）
 % \color[rgb]{0.0,0.5,0.0}  %% dark blue
 \begin{eqnarray}
 \label{eqn:Abramsky-1}
@@ -503,12 +503,14 @@ In \textbf{cylindric algebra}, the quantifiers $\forall_Y$ and $\exists_Y$ can b
 &S \subseteq \delta^{-1} (T) \qquad \Longleftrightarrow \qquad \exists {}_Y  S \subseteq T& \\
 &\vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-quantifier-exists.png}}}& \nonumber
 \end{eqnarray}
-上式可以这样理解： （下图中 $\delta$ 是「杀掉」$Y$ 的 projection）
+熟悉 Galois theory 的读者 可以理解 adjunction 是 \textbf{Galois connection} 的推广形式。 上式可以这样理解： （下图中 $\delta$ 是「杀掉」$Y$ 的 projection）
 \begin{equation}
+\label{fig:Lawvere-cylindrification-exists}
 \vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-cylindrification-exists.png}}}
 \end{equation}
-但 (\ref{eqn:Abramsky-1}) 似乎比较 general，因为 $\delta$ 可以是任何 $Y \rightarrow X$ 的映射。 这或许可以帮助我们 推广到更为一般的 quantifiers，但我暂时未有考虑。 \\
-类似地：
+注意： (\ref{fig:Lawvere-cylindrification-exists}) 的 $\delta$ 是 $\bar{X} \times Y \rightarrow X$ 的 projection，但 (\ref{eqn:Abramsky-1}) 的 $\delta$ 可以是\textbf{任何} $Y \rightarrow X$ 的映射，这似乎是 $\forall$ 和 $\exists$ 的最一般的定义。 范畴论 定义 的好处是 方便推广到其他逻辑「模型」，例如 过渡到 Banach space.
+
+类似地有 $\forall$ 的定义：
 \begin{eqnarray}
 \forall T \subseteq \bar{X}: \qquad 
 &\delta^{-1} (T) \subseteq S \qquad \Longleftrightarrow \qquad T \subseteq \forall {}_Y S& \\
@@ -519,6 +521,38 @@ In \textbf{cylindric algebra}, the quantifiers $\forall_Y$ and $\exists_Y$ can b
 \end{equation}
 
 \subsection{$\wedge$ and $\Rightarrow$ as product-hom adjunction}
+
+一个只有原子命题的逻辑系统是「静止」的，不能推出新的结论： 
+\begin{eqnarray}
+A & \qquad & A \nonumber \\
+B & \quad \vdash \quad & B \\
+C & \qquad & C \nonumber
+\end{eqnarray}
+但如果左边加多一个式子 $A \Rightarrow D$，则可以推出新的结论 $D$：
+\begin{eqnarray}
+\label{eqn:deduction}
+A & \qquad & A \nonumber \\
+B & \quad \vdash \quad & B \\
+C & \qquad & C \nonumber \\
+& \hspace*{-3em} {\color{red}A \Rightarrow D} \qquad & D \nonumber
+\end{eqnarray}
+换句话说，$\Rightarrow$ 算符 是逻辑引擎的「燃料」，没有它不能推动逻辑 inference 的过程。 
+
+$\vdash$ 的功能和 $\Rightarrow$ 类似，但 $\vdash$ 是 \textbf{元逻辑} (meta-logic) 的符号，而 $\Rightarrow$ 是逻辑\textbf{之内}的算符。
+
+在 (\ref{eqn:deduction}) 中，${\color{red} A \Rightarrow D}$ 导致了 $A \vdash D$ 的出现。
+
+记得在我的 AGI 架构中，$\vdash$ 是用 神经网络 $F$ 实现的。 
+
+一般来说，$\Delta \Rightarrow \Gamma$ 就是 $\vdash$ 这个映射 对於 $\Delta$ 的一个 \emp{截面} (a restriction of the $\vdash$ map to the domain $\Delta$).  这一点很重要： 一个 map 作用在某些元素上，但这些元素 和那个 map 是「同类」的。 这其实是逻辑结构的一个 defining characteristic.
+
+The map $\vdash$ 存在於某 infinite-dimensional Hilbert space $\mathcal{H}$.  所以 逻辑命题 也应该存在於同一空间内，而且 空间内的 元素可以 act on 自身。 一般来说这是没有可能的，因为 Cantor's theorem 说 $A \neq 2^A$.  但如果符合某些 domain theory 的条件则可以有 $A \cong 2^A$.
+
+这个做法有两个问题：
+\begin{itemize}
+	\item 如何定义 $f(e)$ where $f, e \in \mathcal{H}$
+	\item given an element $e \in \mathcal{H}$, translate it to a (syntactic) logic formula
+\end{itemize}
 
 在 topos 里有一个很重要的 \emp{product-hom adjunction},  它说的是 $A \wedge B$ 和 $A \Rightarrow B$ 之间的邻接：
 \begin{equation}
@@ -592,8 +626,7 @@ H_{\bullet}: \mathcal{A} \rightarrow [\mathcal{A}^{\mathrm{op}} , \mathbf{Set}]
 \mbox{For each } A \in \mathcal{A} \mbox{, we have a functor} \quad
 & \mathcal{A} \stackrel{H^A}{\longrightarrow} \mathbf{Set} \nonumber \\
 \mbox{Putting them all together gives a functor} \quad
-& \mathcal{A}^{\mathrm{op}} \stackrel{H^{\bullet}}{\longrightarrow} [\mathcal{A} , \mathbf{Set}] \\
-\vspace*{1em}
+& \mathcal{A}^{\mathrm{op}} \stackrel{H^{\bullet}}{\longrightarrow} [\mathcal{A} , \mathbf{Set}] \\[10pt]
 \mbox{For each } A \in \mathcal{A} \mbox{, we have a functor} \quad
 & \mathcal{A}^{\mathrm{op}} \stackrel{H_A}{\longrightarrow} \mathbf{Set} \nonumber \\
 \mbox{Putting them all together gives a functor} \quad
