@@ -29,7 +29,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1"
      inkscape:cx="283.92199"
-     inkscape:cy="-281.60392"
+     inkscape:cy="-241.60392"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -286,7 +286,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#c6e9af;fill-opacity:0.98275864;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#b3ff80;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98431373;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;font-variant-east_asian:normal"
        id="rect6834-27-6-0-9-6"
        width="296.07266"
        height="98.544556"
@@ -746,7 +746,7 @@
        inkscape:export-ydpi="576"
        inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/cylindrification-forall.png" />
     <path
-       style="fill:#d5fff6;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#00ffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 272.06886,715.17092 c 0,0 -31.59387,-13.03703 -65.1,-9.1 -53.21069,6.25235 -72.85457,19.38885 -115.5,22.4 -50.48484,3.56468 -76.3,-47.6 -126.7,-23.8 l 0.3519,52.13542 c 80.5,0 63.7,13.3 147.7,18.9 84,5.6 78.54449,31.98387 107.1,35.7 34.06667,4.43333 52.5,-30.1 52.5,-30.1"
        id="path3336-1"
        inkscape:connector-curvature="0"
@@ -774,7 +774,7 @@
        inkscape:export-xdpi="384"
        inkscape:export-ydpi="384" />
     <path
-       style="fill:#d5fff6;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#00ffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 639.54045,715.8194 c 0,0 -31.59387,-13.0371 -65.1,-9.1 -53.21068,6.2523 -72.85456,19.3888 -115.5,22.4 -50.48483,3.5647 -76.3,-47.6 -126.7,-23.8 l 0.35191,52.1354 c 80.5,0 63.7,13.3 147.7,18.9 84,5.6 78.54448,31.9839 107.1,35.7 34.06667,4.4333 52.5,-30.1 52.5,-30.1"
        id="path3336-8-2"
        inkscape:connector-curvature="0"
@@ -1225,7 +1225,7 @@
            d="m 571.4,418.45 -0.01,0.37 v 0.39 l -0.01,0.39 -0.01,0.41 -0.04,0.84 -0.06,0.88 -0.09,0.92 -0.1,0.94 -0.14,0.98 -0.16,1 -0.2,1.02 -0.23,1.04 -0.27,1.05 -0.3,1.06 -0.35,1.06 -0.39,1.07 -0.22,0.53 -0.22,0.54 -0.24,0.53 -0.25,0.53 c -2.99,6.12 -7.27,9.36 -7.77,9.36 -0.3,0 -0.5,-0.2 -0.5,-0.5 0,-0.15 0,-0.25 0.94,-1.15 4.89,-4.92 7.73,-12.85 7.73,-23.26 0,-8.52 -1.85,-17.28 -8.02,-23.56 -0.65,-0.6 -0.65,-0.69 -0.65,-0.85 0,-0.29 0.2,-0.49 0.5,-0.49 0.5,0 4.98,3.38 7.92,9.71 2.54,5.48 3.14,11.01 3.14,15.19 z"
            id="path4741" /></g>    </g>
     <path
-       style="display:inline;fill:#d5fff6;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#00ffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 257.19288,1262.7283 c 0,0 -31.59387,-11.1621 -65.1,-7.225 -53.21069,6.2523 -72.85458,9.3509 -115.500009,12.3621 -50.484836,3.5646 -76.299996,-37.5621 -126.699998,-13.7621 l 0.3519,76.5104 c 80.499998,0 63.700002,-18.575 147.700008,-12.975 83.999999,5.6 78.544489,28.2338 107.099999,31.95 34.06667,4.4333 52.5,-26.35 52.5,-26.35"
        id="path3336-1-35"
        inkscape:connector-curvature="0"
@@ -1234,7 +1234,7 @@
        inkscape:export-ydpi="384"
        inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/cylindrification-projected.png" />
     <rect
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffadad;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;font-variant-east_asian:normal"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;font-variant-east_asian:normal"
        id="rect6834-27-6-0-0"
        width="301.31424"
        height="48.180309"
@@ -1696,7 +1696,7 @@
        sodipodi:nodetypes="cc"
        inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/cylindrification-projected.png" />
     <rect
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffadad;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffaaaa;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;font-variant-east_asian:normal"
        id="rect6834-27-6-0"
        width="298.66257"
        height="69.724976"
@@ -1706,7 +1706,7 @@
        inkscape:export-ydpi="384"
        inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/cylindrification-projected.png" />
     <path
-       style="display:inline;fill:#d5fff6;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;opacity:1;font-variant-east_asian:normal;vector-effect:none;stroke-dashoffset:0"
+       style="display:inline;fill:#00ffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;opacity:1;font-variant-east_asian:normal;vector-effect:none;stroke-dashoffset:0"
        d="m 624.69289,1272.1034 c 0,0 -31.59388,-11.1621 -65.1,-7.225 -53.21069,6.2523 -72.85459,11.2259 -115.50001,14.2371 -50.48484,3.5646 -77.2375,-30.9996 -126.70001,-12.8246 l 0.3519,30.1041 c 80.5,0 63.70001,5.8 147.70003,11.4 83.99999,5.6 78.54448,17.4526 107.09999,21.1688 34.06667,4.4333 52.5,-18.85 52.5,-18.85"
        id="path3336-1-35-1"
        inkscape:connector-curvature="0"
@@ -1715,7 +1715,7 @@
        inkscape:export-ydpi="384"
        inkscape:export-filename="/home/yky/latex/intro-2-strong-AI/cylindrification-projected.png" />
     <rect
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#c6e9af;fill-opacity:0.98275865;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;font-variant-east_asian:normal"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#b3ff80;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98431373;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;font-variant-east_asian:normal"
        id="rect6834-27-6-0-9"
        width="300.29141"
        height="28.700806"
@@ -1896,33 +1896,6 @@
            d="m 487.66,440.82 v 0.02 0.02 0.01 l -0.01,0.02 v 0.02 0.02 l -0.01,0.02 v 0.02 l -0.01,0.02 -0.01,0.02 -0.01,0.02 -0.01,0.02 -0.01,0.02 -0.01,0.02 -0.01,0.02 -0.02,0.02 -0.02,0.02 -0.01,0.02 -0.02,0.02 -0.02,0.02 -0.02,0.01 -0.03,0.02 -0.02,0.01 -0.03,0.02 -0.02,0.01 -0.03,0.01 -0.02,0.01 h -0.01 l -0.02,0.01 h -0.02 -0.01 l -0.02,0.01 h -0.02 -0.02 -0.02 -0.02 -0.02 -0.02 c -0.25,0 -0.31,-0.04 -0.9,-0.75 l -2.39,-2.84 c -1.3,2.34 -3.89,3.59 -7.13,3.59 -6.33,0 -12.3,-5.73 -12.3,-11.76 0,-4.03 2.65,-6.33 5.18,-7.06 l 5.32,-1.41 c 1.85,-0.44 4.6,-1.19 4.6,-5.28 0,-4.49 -4.1,-9.16 -8.97,-9.16 -3.19,0 -8.72,1.1 -8.72,7.27 0,1.2 0.25,2.39 0.3,2.69 0.04,0.2 0.09,0.25 0.09,0.35 0,0.5 -0.34,0.55 -0.59,0.55 -0.25,0 -0.35,-0.05 -0.5,-0.2 -0.21,-0.2 -2.99,-11.56 -2.99,-11.7 0,-0.3 0.25,-0.5 0.55,-0.5 0.25,0 0.3,0.04 0.89,0.75 l 2.45,2.82 c 2.14,-2.89 5.52,-3.57 8.41,-3.57 6.78,0 12.66,6.62 12.66,12.79 0,3.44 -1.69,5.14 -2.44,5.83 -1.14,1.16 -1.89,1.34 -6.33,2.5 -1.09,0.3 -2.89,0.8 -3.34,0.89 -1.35,0.45 -3.03,1.89 -3.03,4.53 0,4.05 3.98,8.28 8.71,8.28 4.15,0 7.18,-2.14 7.18,-7.73 0,-1.59 -0.21,-2.49 -0.21,-2.78 0,-0.05 0,-0.5 0.61,-0.5 0.5,0 0.55,0.15 0.74,1 z"
            inkscape:connector-curvature="0"
            style="fill:#0000ff;stroke:#0000ff;stroke-width:0" /></g>    </g>
-    <ellipse
-       ry="29"
-       rx="26.0625"
-       cy="1236.3466"
-       cx="-135.04691"
-       id="path3336-6-9-7-9"
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#d5ffd5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98431373;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       inkscape:export-xdpi="384"
-       inkscape:export-ydpi="384" />
-    <ellipse
-       ry="33"
-       rx="40"
-       cy="1323.9716"
-       cx="-156.85938"
-       id="path3336-2"
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#d5f6ff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98431373;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       inkscape:export-xdpi="384"
-       inkscape:export-ydpi="384" />
-    <ellipse
-       ry="33"
-       rx="40"
-       cy="1240.4091"
-       cx="-204.48438"
-       id="path3336-3-2"
-       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffd5d5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98431373;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       inkscape:export-xdpi="384"
-       inkscape:export-ydpi="384" />
     <path
        style="display:inline;fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:9.375;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 353.74008,1259.6193 v 69.8392"
