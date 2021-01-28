@@ -169,7 +169,7 @@ x \mbox{ 是偶数} \Longrightarrow x + 2 \mbox{ 是偶数}
 \end{aligned}
 \end{equation}
 \tolerance=99999
-This is called the \emp{Brouwer-Heyting-Kolmogorov (BHT) interpretation}.  由於这个想法比较 subtle，它不断被重复发现很多次，命名者可以包括： Brouwer-Heyting-Kolmogorov-Sch\"{o}nfinkel-Curry-Meredith-Kleene-Feys-G\"{o}del-L\"{a}uchli-Kreisel-Tait-Lawvere-Howard-\mbox{de Bruijn}-Scott-Martin-L\"{o}f-Girard-Reynolds-Stenlund-Constable-Coquand-Huet-Lambek ....
+This is called the \emp{Brouwer-Heyting-Kolmogorov (BHK) interpretation}.  由於这个想法比较 subtle，它不断被重复发现很多次，命名者可以包括： Brouwer-Heyting-Kolmogorov-Sch\"{o}nfinkel-Curry-Meredith-Kleene-Feys-G\"{o}del-L\"{a}uchli-Kreisel-Tait-Lawvere-Howard-\mbox{de Bruijn}-Scott-Martin-L\"{o}f-Girard-Reynolds-Stenlund-Constable-Coquand-Huet-Lambek ....
 
 根据 HoTT (homotopy type theory)，一个命题 可以\textbf{有}或\textbf{没有}证明； 如果有，则它的证明都是一样的，所以 经典逻辑命题 只可以取值 \textbf{真}或\textbf{假}。 我的理论推断： 模糊逻辑的取值 $\in [ 0,1 ]$ 是因为 fuzzy 命题的「证明」可以有很多个，而 fuzzy 命题的 \textbf{真值}是由 支持／反对 的证明的\textbf{比例}决定的（见 \S\ref{sec:fuzzy-logic}）。 
 
@@ -541,24 +541,6 @@ C & \qquad & C \nonumber \\
 $\vdash$ 的功能和 $\Rightarrow$ 类似，但 $\vdash$ 是 \textbf{元逻辑} (meta-logic) 的符号，而 $\Rightarrow$ 是逻辑\textbf{之内}的算符。
 
 在 (\ref{eqn:deduction}) 中，${\color{red} A \Rightarrow D}$ 导致了 $A \vdash D$ 的出现。
-
-记得在我的 AGI 架构中，$\vdash$ 是用 神经网络 $F$ 实现的。 
-
-一般来说，$\Delta \Rightarrow \Gamma$ 就是 $\vdash$ 这个映射 对於 $\Delta$ 的一个 \emp{截面} (a restriction of the $\vdash$ map to the domain $\Delta$).  这一点很重要： 一个 map 作用在某些元素上，但这些元素 和那个 map 是「同类」的。 这其实是逻辑结构的一个 defining characteristic.
-
-The map $\vdash$ 存在於某 infinite-dimensional Hilbert space $\mathcal{H}$.  所以 逻辑命题 也应该存在於同一空间内，而且 空间内的 元素可以 act on 自身。 一般来说这是没有可能的，因为 Cantor's theorem 说 $A \neq 2^A$.  但如果符合某些 domain theory 的条件则可以有 $A \cong 2^A$.
-
-这个做法有两个问题：
-\begin{itemize}
-	\item 如何定义 $f(e)$ where $f, e \in \mathcal{H}$
-	\item given an element $e \in \mathcal{H}$, translate it to a (syntactic) logic formula
-\end{itemize}
-
-Need:
-\begin{itemize}
-	\item family of maps that is dense
-	\item self-application:  maps can act on maps
-\end{itemize}
 
 
 在 topos 里有一个很重要的 \emp{product-hom adjunction},  它说的是 $A \wedge B$ 和 $A \Rightarrow B$ 之间的邻接：
