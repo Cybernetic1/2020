@@ -658,7 +658,11 @@ The family of all symmetric functions.  The family of sum of functions.  All sym
 
 Cayley's theorem:  Any group can be represented as a subgroup of a permutation group.
 
-Any sym function can be represented as a function composed with a sum of functions.
+Any sym function can be represented as a sub-function of a special sym function, namely the sum.
+
+Proof:  Regard a group $G$ as a one-object category $BG$.  The object in the image of the covariant Yoneda embedding $BG \hookrightarrow \mathbf{Set}^{BG^{\mathrm{op}}}$ is the right $G$-set $G$, with $G$ acting by right multiplication.   The only $G$-equivariant endomorphisms of the right $G$-set $G$ are those maps defined by left multiplication with a fixed element of $G$.  In particular, any $G$-equivariant endomorphism of $G$ must be an automorphism, a fact that is not otherwise obvious.
+
+In this way, the Yoneda embedding defines an isomorphism between $G$ and the automorphism group in the right $G$-set $G$, an object in $\mathbf{Set}^{BG^{\mathrm{op}}}$.  Composing with the faithful forgetful functor $\mathbf{Set}^{BG^{\mathrm{op}}} \rightarrow \mathbf{Set}$, we obtain an isomorphism between $G$ and a subgroup of the automorphism group $\mathrm{Sym}(G)$ of the set $G$.  $\blacksquare$
 
 Define a category of symmetric functions $\hat{\mathcal{F}}$.  What are morphisms in this category?  Probably an inner product?  Or composition of functions?
 
