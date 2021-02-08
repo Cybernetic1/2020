@@ -1,4 +1,14 @@
 % TO-DO:
+% 1 classifying spaces
+% 2 Yoneda lemma finish
+% 3 functorial semantics
+% 4 Kripke-Joyal semantics
+% 5 Cohen forcing
+% 6 Sheaves and topos
+% 7 Heyting algebra revise
+% 8 fuzzy logic re-write
+% 9 implementation of topology
+% 10 model-based approach
 
 \input{../YKY-preamble.tex}
 
@@ -96,25 +106,6 @@ $\vect{F}$ 叫作 transition function.  或者更形象地表示：
 \end{tikzcd}
 \end{equation}
 Our goal is to \textbf{learn} the function $\vect{F}$, implemented as a \emp{deep neural network}.  $\vect{F}$ 包含智能系统内的所有\textbf{知识}。 
-
-\subsection{飞机比喻}
-
-最早的飞机，使用 \textbf{平面} 做机翼，而不是模仿\textbf{飞鸟}的拍翼。 它使用 \textbf{螺旋桨} 作为动力，因为当时最强的动力装置 是\textbf{内燃引擎}：
-\begin{equation}
-\vcenter{\hbox{\includegraphics[scale=0.3]{Wright-flyer.jpg}}}
-\quad \neq \quad
-\vcenter{\hbox{\includegraphics[scale=0.4]{bird.png}}}
-\end{equation}
-深度学习是现时\textbf{最强}的学习算法，它可以学习非常复杂的 非线性函数。 问题是怎样利用这件「武器」。 我提出的 architecture 就是 (\ref{eqn:AGI-architecture})，这也是 Richard Sutton 提出的基於 \emp{强化学习} 的模型。 \footnote{AGI 的架构还可以包括 episodic memory 等部分，现在我们考虑的是 minimalist architecture.  如果不用高度抽象的理论，很多时会迷失在支节里。 }
-
-% 为了能控制飞机的方向，Wright brothers 发明了 ``wing warping'' 改变机翼的形状。
-时至今日，飞机仍然叫 ``plane''，而这个设计基本上奠定了 100多年以来 飞机的模式。在技术的进化上，这种主导模式的现象称为 dominant design.
-
-我提议 利用 \textbf{逻辑结构}，\textbf{约束 $\vect{F}$ 的搜寻空间}（这叫 inductive bias），令它可以更快地学习到人类水平的智能。 这是不是达到 AGI 的最好的方法呢？ 不实践是无法知晓的。 Sutton 甚至认为，不需要人为的 bias，纯粹增加\textbf{计算力}就可以了。 
-\begin{equation}
-\nonumber
-\mbox{Richard Sutton (1949-)} \quad \vcenter{\hbox{\includegraphics[scale=0.7]{Sutton.jpg}}}
-\end{equation}
 
 \section{Structure of logic}
 
@@ -468,6 +459,28 @@ Y \arrow[r, swap, "\ulcorner m \urcorner"] & {\color{red}\Omega}
 
 \subsection{The idea of classifying spaces}
 
+Topos 中 $\rightarrow \Omega$ 这个箭头，是 \emp{classifying space} 或 \emp{moduli space} 的一个特例。  这方面我不太熟悉。
+
+A moduli space is a manifold, or variety, which parametrises some class of
+geometric objects.  For example:
+\begin{equation}
+\mathcal{M} = 
+ \Big\{ \begin{tabular}{l}
+ equivalence classes of objects such as \\
+ Reimann surfaces, algebraic curves, etc
+ \end{tabular}
+ \Big\}.
+\end{equation}
+
+Every family over $B$ is the pullback of $\mathcal{C}$ via a unique map from $B$ to $\mathcal{M}$:
+\begin{equation}
+\label{eqn:moduli-space}
+\begin{tikzcd}[column sep = normal]
+\mathcal{D} \arrow[r] \arrow[d, swap, "\phi"] & \mathcal{C} \arrow[d, "1"] \\
+B \arrow[r, swap, "\Chi"] & \mathcal{M}
+\end{tikzcd}
+\end{equation}
+
 \subsection{$\forall$ and $\exists$ as adjunctions}
 
 Let $\mbox{Forms}(\bar{X})$ denote the set of formulas with only the variables $\bar{X}$ free. ($\bar{X}$ may contain multiple variables.)
@@ -654,42 +667,20 @@ It can be specialized to such that every symmetric multivariate function can be 
 f(x_1, ..., x_n) = g(h(x_1) + ... + h(x_n))
 \end{equation}
 
-The family of all symmetric functions.  The family of sum of functions.  All symmetric functions can be represented as a function composed with a sum of functions.
+Cayley's theorem:  Any group can be represented as a sub-group of a special group, namely the permutation group.
 
-Cayley's theorem:  Any group can be represented as a subgroup of a permutation group.
-
-Any sym function can be represented as a sub-function of a special sym function, namely the sum.
-
-A symmetric functions in $n$ arguments as a category?  A symmetric function is a map $f: X_n \rightarrow \mathbb{R}$ satisfying $f (\sigma x) = f(x)$.  Or perhaps as a group $G$ such that $f(g \cdot x) = f(x)$.  It's a sheaf of functions over the symmetric group $G$.  Perhaps identify with the equivalence class of functions invariant under $G$?
-
-Functions invariant under $G$ can be represented sub-functions of special invariant functions under $G$, namely sum.
-
-Or the category of equivariant functions which is a group...?
-
-A symmetric function is a category with morphisms that are group elements $g \in G$.  All symmetric functions can be represented as sub-functions of a special symmetric function, namely sum.
-
-Yoneda embedding:  $F \hookrightarrow (F^{\mathrm{op}} \rightarrow \mathbf{Set})$ is the right G-set G.
-
-Proof:  Regard a group $G$ as a one-object category $BG$.  The object in the image of the covariant Yoneda embedding $BG \hookrightarrow \mathbf{Set}^{BG^{\mathrm{op}}}$ is the right $G$-set $G$, with $G$ acting by right multiplication.   The only $G$-equivariant endomorphisms of the right $G$-set $G$ are those maps defined by left multiplication with a fixed element of $G$.  In particular, any $G$-equivariant endomorphism of $G$ must be an automorphism, a fact that is not otherwise obvious.
-
-In this way, the Yoneda embedding defines an isomorphism between $G$ and the automorphism group in the right $G$-set $G$, an object in $\mathbf{Set}^{BG^{\mathrm{op}}}$.  Composing with the faithful forgetful functor $\mathbf{Set}^{BG^{\mathrm{op}}} \rightarrow \mathbf{Set}$, we obtain an isomorphism between $G$ and a subgroup of the automorphism group $\mathrm{Sym}(G)$ of the set $G$.  $\blacksquare$
-
-Define a category of symmetric functions $\hat{\mathcal{F}}$.  What are morphisms in this category?  Probably an inner product?  Or composition of functions?
-
-A functor $\mathcal{F} \rightarrow \mathbf{Set} = \mathcal{F}(F, -)$.  The set of $F$ composed with other functions.  
-
-$H_F$ would be some functions composed with $F$.  $X$ would be some other functor from $\mathcal{F} \rightarrow \mathbf{Set}$.  $X(F)$ would be the functor $X$ acting on $F$ which is the composition of some function with $F$. 
+Any symmetric function can be represented as a sub-function of a special symmetric function, namely the sum.
 
 \subsection{Model theory, functorial semantics}
 
 We interpret formulas in a topos $\mathcal{E}$ by assigning each an \emp{extension}.  This is called \emp{internal} semantics.
 
 \begin{equation}
-\tikzmark{a1} a \tikzmark{c1} \cdot \tikzmark{b1} b \longmapsto \llbracket \tikzmark{a2} a \rrbracket \tikzmark{c2} \cdot  \llbracket \tikzmark{b2} b \rrbracket
+\tikzmark{a1} a \tikzmark{c1} {\color{red}\cdot} \tikzmark{b1} b \longmapsto \llbracket \tikzmark{a2} a \rrbracket \tikzmark{c2} {\color{red}\cdot}  \llbracket \tikzmark{b2} b \rrbracket
 \begin{tikzpicture}[overlay, remember picture, distance=1.1cm]
 \draw[->, out=45, in=135, transform canvas={shift={(4pt,15pt)}}] (a1.center) to (a2.center);
 \draw[->, out=45, in=135, transform canvas={shift={(4pt,15pt)}}] (b1.center) to (b2.center);
-\draw[->, out=-45, in=-135, transform canvas={shift={(6pt,-2pt)}}] (c1.center) to (c2.center);
+\draw[->, out=-45, in=-135, transform canvas={shift={(6pt,-2pt)}}, red] (c1.center) to (c2.center);
 \end{tikzpicture}
 \end{equation}
 
