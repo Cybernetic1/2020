@@ -1,14 +1,18 @@
 % TO-DO:
-% 1 classifying spaces
+% 1 classifying spaces *
 % 2 Yoneda lemma finish
-% 3 functorial semantics
+% 3 functorial semanticss
 % 4 Kripke-Joyal semantics
-% 7 Heyting algebra revise
+% 5 Cohen forcing *
+% 6 Sheaves and topos *
+% 7 Heyting algebra revise *
 % 8 fuzzy logic re-write
+
 % 9 implementation of topology ***
 % 10 model-based approach ***
-% 6 Sheaves and topos *
-% 5 Cohen forcing *
+% The model is only for working memory.  
+% Even so, what does the model offer that syntax does not have?
+
 
 \input{../YKY-preamble.tex}
 
@@ -676,7 +680,7 @@ Any symmetric function can be represented as a sub-function of a special symmetr
 We interpret formulas in a topos $\mathcal{E}$ by assigning each an \emp{extension}.  This is called \emp{internal} semantics.
 
 \begin{equation}
-\tikzmark{a1} a \tikzmark{c1} {\color{red}\cdot} \tikzmark{b1} b \longmapsto \llbracket \tikzmark{a2} a \rrbracket \tikzmark{c2} {\color{red}\cdot}  \llbracket \tikzmark{b2} b \rrbracket
+\tikzmark{a1} a \tikzmark{c1} \; {\color{red}\cdot} \; \tikzmark{b1} b \longmapsto \llbracket \tikzmark{a2} a \rrbracket \tikzmark{c2} \; {\color{red}\cdot} \; \llbracket \tikzmark{b2} b \rrbracket
 \begin{tikzpicture}[overlay, remember picture, distance=1.1cm]
 \draw[->, out=45, in=135, transform canvas={shift={(4pt,15pt)}}] (a1.center) to (a2.center);
 \draw[->, out=45, in=135, transform canvas={shift={(4pt,15pt)}}] (b1.center) to (b2.center);
@@ -684,7 +688,8 @@ We interpret formulas in a topos $\mathcal{E}$ by assigning each an \emp{extensi
 \end{tikzpicture}
 \end{equation}
 
-\subsection{Generalized elements and forcing}
+
+\subsection{Generalized elements}
 
 一个 逻辑命题 $\phi$ 可以看成是由 某论域 $A \stackrel{\phi}{\rightarrow} \Omega$ 的函数，其中 $\Omega = \{ \top, \bot \}$.
 
@@ -700,22 +705,40 @@ C \stackrel{x}{\rightarrow} A \stackrel{\phi}{\rightarrow} \Omega.
 \end{equation}
 这样的 $x: C \rightarrow A$ 叫作 $A$ 的 \emp{generalized element}.
 
-另一个术语是： $C$ \emp{forces} $\phi(x)$, notation $C \Vdash \phi(x)$. \\
-或者说 $\phi(x)$ is true \emp{at stage} $C$ （这术语来自 possible-world semantics）.
+另一个术语是： $C$ \emp{forces} $\phi(x)$, notation: $C \Vdash \phi(x)$.  这术语来自 Paul Cohen 为了解决 Continuum Hypothesis 而提出的 forcing 技巧，见 \S\ref{sec:forcing}.
+
+另一个说法是： $\phi(x)$ is true \emp{at stage} $C$. （这术语来自 possible-world semantics）
+
+\subsection{Internal vs external semantics}
+
+假设 $\phi(\bullet)$ 是一个谓词，$\phi$ 的论域 (domain) 是 $A$.  例如 $\phi(x)$ 表示 $x$ 是男性，$x \in$ 人。  则 $\phi(x)$ 这个命题的 \emp{extension}（外延）就是在「人」的集合中属於「男性」的元素。 
+
+知道了 $\phi$ 的 extension 就可以判断，对每一个 $x \in A, \phi(x)$ 的真假。  换句话说，提供了一种 \emp{interpretation} 的方法。 
+
+The ``internal'' way to interpret type theory in a topos is where a formula $\phi$ in context $x_1: A_1, ... , x_n: A_n$ is interpreted as a \textbf{subobject} of $A_1 \times ... \times A_n$.
+
+这个方法叫 \emp{internal semantics}.（注意 extension 的概念是 internal 的，有点混淆）
+
+另一种方法是： 指定 哪些 generalized elements 符合某个 谓词。  后者叫 \emp{external semantics}：
 
 \subsection{Kripke-Joyal / external semantics}
 
 External semantics describe which generalized elements satisfy each formula.
 
-An ``internal'' way to interpret type theory in a topos is where a formula $\phi$ in context $x_1: A_1, ... , x_n: A_n$ is interpreted as a subobject of $A_1 \times ... \times A_n$.  This has the disadvantage that the most pleasant illusion of ``elements'' is totally lost.
-
-用 Kripke-Joyal semantics 可以挽回 generalized elements 的诠释方法。 
-
 Generalized element 的意思是 $I \stackrel{a}{\rightarrow} A \stackrel{\phi}{\rightarrow} \Omega$, 记作 $a \Vdash \phi$.
 
-\subsection{Cohen's (dis)proof of Continuum Hypothesis}
+\subsection{Cohen's method of forcing}
+\label{sec:forcing}
 
-这一节和 AGI 无关，但因为数学上有趣所以写一下。
+在 数理逻辑／集合论 里，forcing 指的是一些 加在某 集合 $G$ 上的 \textbf{条件}，说某些 元素 属於 或不属於 $G$.  这些 条件 用逻辑表达，例如：
+\begin{equation}
+\{ 3 \in G, 57 \notin G, 873 \notin G \}
+\end{equation}
+is a condition.
+
+这样的一个条件 $c$ 可以「强迫」集合 $G$ 里面至少有 100 个质数，或至少有 1万个质数。 
+
+以下内容和 AGI 无关，但因为数学上有趣所以写一下。
 
 Continuum hypothesis (CH):
 \begin{equation}
