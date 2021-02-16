@@ -12,7 +12,7 @@
 % 10 model-based approach ***
 % The model is only for working memory.  
 % Even so, what does the model offer that syntax does not have?
-
+% Need a simple semantic model to begin thinkinssg....
 
 \input{../YKY-preamble.tex}
 
@@ -53,7 +53,7 @@
 
 \newcommand{\emp}[1]{{\color{violet}\textbf{#1}}}
 \newcommand*\confoundFace{$\vcenter{\hbox{\includegraphics[scale=0.2]{../confounded-face.jpg}}}$}
-
+\newcommand{\underconst}{\includegraphics[scale=0.5]{UnderConst.png}}
 \newcommand{\witness}{\scalebox{0.6}{$\blacksquare$}}
 % \newcommand{\Heytingarrow}{\mathrel{-}\mathrel{\triangleright}}
 \providecommand\Heytingarrow{\relbar\joinrel\mathrel{\vcenter{\hbox{\scalebox{0.75}{$\rhd$}}}}}
@@ -371,7 +371,7 @@ Per Martin-L\"{o}f (1942-) was the first logician to see the full importance of 
 \subsection{The problem of material implication}
 \label{sec:material-implication}
 
-更详细观察，table (\ref{truth-table:material-implication}) 里面 $A$ 和 $B$ 的 truth values 可以看成是它们的 types 有没有 \textbf{inhabitants}. Type $A$ 的 inhabitant 就是它的证明 $\witness$，没有证明就是 $\emptyset$.  或者推广到：命题 $A$ 的真值 = $A$ 的 type 作为 集合 的 \textbf{cardinality}; The truth valuation of $A = |A|$.  这样看，$A \Rightarrow B$ 的真值 就是 $|B^A|$, 亦即是从 $\{\witness\}$ 或 $\emptyset$ 到 $\{\witness\}$ 或 $\emptyset$ 的 map, 而这个 map 只有在 $\emptyset \mapsto \{\witness\}$ 的时候是空集（不可能）。
+更详细观察，table (\ref{truth-table:material-implication}) 里面 $A$ 和 $B$ 的 truth values 可以看成是它们的 types 有没有 \textbf{inhabitants}. Type $A$ 的 inhabitant 就是它的证明 $\witness$，没有证明就是 $\emptyset$.  或者推广到：命题 $A$ 的真值 = $A$ 的 type 作为 集合 的 \textbf{cardinality}; The truth valuation of $A = |A|$.  这样看，$A \Rightarrow B$ 的真值 就是 $|B^A|$, 亦即是从 $\{\witness\}$ 或 $\emptyset$ 到 $\{\witness\}$ 或 $\emptyset$ 的 map 的个数, 而这个 map 只有在 $\emptyset \mapsto \{\witness\}$ 的时候是空集（不可能）。
 
 这个观察 可以推广到 fuzzy logic (\S\ref{sec:fuzzy-implication}) 和 strict implication $A \strictif B$ (\S\ref{sec:strict-implication}).
 
@@ -401,6 +401,8 @@ Machine learning 的目的，是求得一组这样的 generators，而它生成�
 但由於在 learning 的过程中，需要验证 \textbf{不同时间}的 cases，因此避免了 太轻易接受 $A \Rightarrow B$ 的问题。 
 
 \section{Topos theory}
+
+\section{Basics}
 
 \begin{equation}
 \nonumber
@@ -463,7 +465,9 @@ Y \arrow[r, swap, "\ulcorner m \urcorner"] & {\color{red}\Omega}
 
 \subsection{The idea of classifying spaces}
 
-Topos 中 $\rightarrow \Omega$ 这个箭头，是 \emp{classifying space} 或 \emp{moduli space} 的一个特例。  这方面我不太熟悉。
+Topos 中 $Y \rightarrow \Omega$ 这个箭头，是 \emp{classifying space} 或 \emp{moduli space} 的一个特例。  这方面我不太熟悉。
+
+A moduli space is a space whose points can be put in a 1-to-1 correspondence with the objects we are interested in.
 
 A moduli space is a manifold, or variety, which parametrises some class of
 geometric objects.  For example:
@@ -482,6 +486,13 @@ Every family over $B$ is the pullback of $\mathcal{C}$ via a unique map from $B$
 \begin{tikzcd}[column sep = normal]
 \mathcal{D} \arrow[r] \arrow[d, swap, "\phi"] & \mathcal{C} \arrow[d, "1"] \\
 B \arrow[r, swap, "\Chi"] & \mathcal{M}
+\end{tikzcd}
+\end{equation}
+Classifying space for principal $G$-bundles:
+\begin{equation}
+\begin{tikzcd}[column sep = normal]
+Y \arrow[r] \arrow[d, swap, "\gamma"] & EG \arrow[d, "\pi"] \\
+Z \arrow[r, swap, "\phi"] & BG
 \end{tikzcd}
 \end{equation}
 
@@ -520,7 +531,7 @@ In \textbf{cylindric algebra}, the quantifiers $\forall_Y$ and $\exists_Y$ can b
 &S \subseteq \delta^{-1} (T) \qquad \Longleftrightarrow \qquad \exists {}_Y  S \subseteq T& \\
 &\vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-quantifier-exists.png}}}& \nonumber
 \end{eqnarray}
-熟悉 Galois theory 的读者 可以理解 adjunction 是 \textbf{Galois connection} 的推广形式。 上式可以这样理解： （下图中 $\delta$ 是「杀掉」$Y$ 的 projection）
+熟悉 Galois theory 的读者 可以理解 adjunction 是 \textbf{Galois connection} 的推广形式。 用日常语言讲： 我们知道 $S$，想定义 $\exists S$； $S$ 存在於论域 $Y$，$\exists S$ 存在於 论域 $\bar{X}$； 借助「影子」$T$ 在 论域 $\bar{X}$ 夹著 $\exists S$，则影子的「原象」在论域 $Y$ 夹著 $S$.  下图是 $\delta$ 是 projection 的特例， $\delta$ 是「杀掉」$Y$ 的 projection： 
 \begin{equation}
 \label{fig:Lawvere-cylindrification-exists}
 \vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-cylindrification-exists.png}}}
@@ -727,16 +738,18 @@ External semantics describe which generalized elements satisfy each formula.
 
 Generalized element 的意思是 $I \stackrel{a}{\rightarrow} A \stackrel{\phi}{\rightarrow} \Omega$, 记作 $a \Vdash \phi$.
 
+A generalized element satisfies a formula iff it is a member of the formula's \textbf{extension}.
+
 \subsection{Cohen's method of forcing}
 \label{sec:forcing}
 
-在 数理逻辑／集合论 里，forcing 指的是一些 加在某 集合 $G$ 上的 \textbf{条件}，说某些 元素 属於 或不属於 $G$.  这些 条件 用逻辑表达，例如：
+在 数理逻辑／集合论 里，forcing 指的是一些 加在某 集合 $G$ 上的 \emp{条件}，说某些 元素 属於 或不属於 $G$.  这些 条件 用逻辑表达，例如：
 \begin{equation}
-\{ 3 \in G, 57 \notin G, 873 \notin G \}
+c = \{ 3 \in G, 57 \notin G, 873 \notin G \}
 \end{equation}
 is a condition.
 
-这样的一个条件 $c$ 可以「强迫」集合 $G$ 里面至少有 100 个质数，或至少有 1万个质数。 
+例如，条件 $c$ 可以「强迫」集合 $G$ 里面至少有 100 个质数、或至少有 1万个质数。 记作 $c \Vdash P$, $P$ 是某个逻辑命题。
 
 以下内容和 AGI 无关，但因为数学上有趣所以写一下。
 
@@ -757,15 +770,34 @@ Continuum hypothesis (CH):
 \nonumber
 \end{equation}
 
-\subsection{Sheaves and topos}
+\subsection{Sheaves}
+
+Sheaves capture the idea of ``indexing''.
+
+Functors $\mathcal{C}^{\mathrm{op}} \rightarrow \mathbf{Set}$ are called \emp{pre-sheaves} on $\mathcal{C}$.
+
+Pre-sheaf 要变成 sheaf 还需符合 sheaf condition，这是一种典型的 gluing condition, 意思是在 $U_i \cap U_j$ 这些重合的邻域上，presheaf 的 sections 是\textbf{一致}的。 
+
+当 $\mathcal{C}^{\mathrm{op}}$ = topology of open sets 时，我觉得下图特别容易理解：
+\begin{equation}
+\vcenter{\hbox{\includegraphics[scale=0.7]{sheaf.png}}}
+\end{equation}
 
 Some $\mathbf{Set}$-valued functors are \emp{representable}, ie, isomorphic to a hom-functor.
 
-Functors $\mathcal{C} \rightarrow \mathbf{Set}$ are called \emp{pre-sheaves} on $\mathcal{C}$.
+For an object $S$ of a category $\mathcal{C}$, the functor
+\begin{equation}
+H^S : \mathcal{C} \rightarrow \mathbf{Set}
+\end{equation}
+sends an object to its set of generalized elements of shape $S$.  The functoriality tells us that any map $A \rightarrow B$ in $\mathcal{C}$ transforms $S$-elements of $A$ into $S$-elements of $B$.  For example, taking $\mathcal{C} = \mathbf{Top}$ and $S = S^1$, any continuous map $A \rightarrow B$ transforms loops in $A$ into loops in $B$.
 
-Sheaves capture ``indexing''.
+In logic, the category of predicates can be regarded as a sheaf over its domain $\mathrel{\substack{\mathbf{Pred}\\\downarrow\\\mathbf{Set}}}$.
+
+我暂时还不太清楚 sheaf 理论对 AI 来说有什么重大意义。 
 
 \subsection{Kleene realizability}
+
+\underconst
 
 \section{Intuitionistic logic}
 
@@ -1196,6 +1228,32 @@ $P(a)$ 就是 $(P,a)$，syntactic mapping 是必然的。
 所以又回到问题： 既然可以有 tuple-to-tuple, 那么 topological membership 要来做什么？  似乎就是用来 impose topological-metric \textbf{regularity} (ie, smoothness).
 
 \subsection{Modal aspect}
+
+\section{Model-based AI}
+
+我提出的 BERT 的「逻辑化」AGI 模型 是基於 逻辑 syntax 的，换句话说是 用神经网络 模拟 $\vdash$，而这个 $\vdash$ 是 syntactic consequence.  现在考虑 $\models$，即 model-theoretic consequence.
+
+最简单的 model 就是 point-set topology.  有如下对应：
+\begin{eqnarray}
+\mbox{propositions} & \Leftrightarrow & \mbox{points} \in \mbox{regions or product of domains} \\
+\forall \mbox{ formulas} & \Leftrightarrow & \mbox{sub-regions} \nonumber
+\end{eqnarray}
+
+Model-based (logic-based) AI 的其中一个主要问题是： 在 syntax-based 情况下，我们可以在 working memory 引入一个命题 $P(a)$, 例如 $P =$「$a$ 是不是质数」，而可以暂时不理会 $P(x)$ 在其他点上的真值； 但在 model-based 情况下，model 包含了 $P$ 的 extension（= 一个点集 或 区域），这表示我们立即知道每一个数是不是质数，这是不切实际的。 这个问题或许可以称之为 ``\emp{omniscient predicates}'' 的问题。
+
+Then what is inference?  What kind of changes would occur to the model?
+
+Appearance of new propositions = appearance of new points / change of shape of regions.
+
+\begin{equation}
+\begin{tikzpicture}[overlay]
+% \draw  plot[smooth, tension=.9] coordinates {(-2,0) (0,1) (2,0) (0,-1)  (-2,0)};
+\draw (0,0) ellipse (3cm and 1cm);
+\end{tikzpicture}
+\bullet \mathrm{John}
+\end{equation}
+
+Then how is the spatial model better than a syntactic representation (bunch of propositions)?
 
 \section*{References}
 \cc{欢迎提问和讨论}{Questions, comments welcome} \smiley \\ \vspace*{0.4cm}
