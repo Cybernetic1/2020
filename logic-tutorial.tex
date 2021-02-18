@@ -516,14 +516,18 @@ It turns out that $\exists$ and $\forall$ are \textbf{adjoints} to the map $\del
 \arrow[l, shift left=1em, "\forall_Y"] % "\bot"'
 \end{tikzcd}
 \end{equation}
-or simply, $\exists \dashv \delta \dashv \forall$.  而这是十分 makes sense 的，因为 一个 $\Phi(\bar{X},Y)$ 的式子，经过 $\forall Y. \; \Phi(\bar{X},Y)$ 之后，就变成一个和 $Y$ \textbf{无关}的式子。
+or simply denoted as $\exists \dashv \delta \dashv \forall$.  \cc{而这是十分 makes sense 的，因为 一个 $\Phi(\bar{X},Y)$ 的式子，经过 $\forall Y. \; \Phi(\bar{X},Y)$ 之后，就变成一个和 $Y$ \textbf{无关}的式子。}
+{This makes a lot of sense, because a formula $\Phi(\bar{X},Y)$, after being quantified as $\forall Y. \; \Phi(\bar{X},Y)$, turns into a formula that is \textbf{independent} of $Y$.}
 
 In \textbf{cylindric algebra}, the quantifiers $\forall_Y$ and $\exists_Y$ can be interpreted as \textbf{projections} where $Y$ is the component that is ``killed'' by the projections:
 \begin{equation}
 \vcenter{\hbox{\includegraphics[scale=0.7]{cylindrification-projected.png}}}
 \end{equation}
 
-另一个方法是 借助 $T$ 定义\footnote{This formula is from \parencite{Abramsky2011} }： （注意 在下图中 $\bar{X}$ 和 $Y$ 变成平面）
+\cc{另一个方法是 借助 $T$ 定义}
+{Another way is to define with the help of a variable set $T$}
+\footnote{This formula is from \parencite{Abramsky2011} } （\cc{注意 在下图中 $\bar{X}$ 和 $Y$ 变成平面）：}
+{(Note that $\bar{X}$ and $Y$ are show as 2D domains below) :}
 % \color[rgb]{0.0,0.5,0.0}  %% dark blue
 \begin{eqnarray}
 \label{eqn:Abramsky-1}
@@ -531,14 +535,17 @@ In \textbf{cylindric algebra}, the quantifiers $\forall_Y$ and $\exists_Y$ can b
 &S \subseteq \delta^{-1} (T) \qquad \Longleftrightarrow \qquad \exists {}_Y  S \subseteq T& \\
 &\vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-quantifier-exists.png}}}& \nonumber
 \end{eqnarray}
-熟悉 Galois theory 的读者 可以理解 adjunction 是 \textbf{Galois connection} 的推广形式。 用日常语言讲： 我们知道 $S$，想定义 $\exists S$； $S$ 存在於论域 $Y$，$\exists S$ 存在於 论域 $\bar{X}$； 借助「影子」$T$ 在 论域 $\bar{X}$ 夹著 $\exists S$，则影子的「原象」在论域 $Y$ 夹著 $S$.  下图是 $\delta$ 是 projection 的特例， $\delta$ 是「杀掉」$Y$ 的 projection： 
+\cc{熟悉 Galois theory 的读者 可以理解 adjunction 是 \textbf{Galois connection} 的推广形式。 用日常语言讲： 我们知道 $S$，想定义 $\exists S$； $S$ 存在於论域 $Y$，$\exists S$ 存在於 论域 $\bar{X}$； 借助「影子」$T$ 在 论域 $\bar{X}$ 夹著 $\exists S$，则影子的「原象」在论域 $Y$ 夹著 $S$.  下图是 $\delta$ 是 projection 的特例， $\delta$ 是「杀掉」$Y$ 的 projection：}
+{Readers familiar with Galois theory may understand adjunctions as a generalization of \textbf{Galois connections}.  In everyday language:  We know $S$, and would like to define $\exists S$.  $S$ lives in the domain  $Y$, $\exists S$ in the domain $\bar{X}$.  We seek the help of a ``shadow'' $T$ in domain $\bar{X}$ to get ahold of $\exists S$, and the shadow's ``original'' in domain $Y$ would be holding $S$.  The following is a special case where $\delta$ is a projection, one that ``kills'' the dimension $Y$:}
 \begin{equation}
 \label{fig:Lawvere-cylindrification-exists}
 \vcenter{\hbox{\includegraphics[scale=0.7]{Lawvere-cylindrification-exists.png}}}
 \end{equation}
-注意： (\ref{fig:Lawvere-cylindrification-exists}) 的 $\delta$ 是 $\bar{X} \times Y \rightarrow X$ 的 projection，但 (\ref{eqn:Abramsky-1}) 的 $\delta$ 可以是\textbf{任何} $Y \rightarrow X$ 的映射，这似乎是 $\forall$ 和 $\exists$ 的最一般的定义。 范畴论 定义 的好处是 方便推广到其他逻辑「模型」，例如 过渡到 Banach space.
+\cc{注意： (\ref{fig:Lawvere-cylindrification-exists}) 的 $\delta$ 是 $\bar{X} \times Y \rightarrow X$ 的 projection，但 (\ref{eqn:Abramsky-1}) 的 $\delta$ 可以是\textbf{任何} $Y \rightarrow X$ 的映射，这似乎是 $\forall$ 和 $\exists$ 的最一般的定义。 范畴论 定义 的好处是 方便推广到其他逻辑「模型」，例如 过渡到 Banach space.}
+{Note that in (\ref{fig:Lawvere-cylindrification-exists}), $\delta$ is a projection from $\bar{X} \times Y \rightarrow X$, but the $\delta$ in (\ref{eqn:Abramsky-1}) can be \textbf{any} map $Y \rightarrow X$, and this seems to be the most general definition of $\forall$ and $\exists$.  The advantage of using categorical definitions is that they can be easily transferred to other categories, such as Hilbert space.}
 
-类似地有 $\forall$ 的定义：
+\cc{类似地有 $\forall$ 的定义：}
+{Similarly we have the definition of $\forall$:}
 \begin{eqnarray}
 \forall T \subseteq \bar{X}: \qquad 
 &\delta^{-1} (T) \subseteq S \qquad \Longleftrightarrow \qquad T \subseteq \forall {}_Y S& \\
