@@ -1248,19 +1248,33 @@ $P(a)$ 就是 $(P,a)$，syntactic mapping 是必然的。
 
 Model-based (logic-based) AI 的其中一个主要问题是： 在 syntax-based 情况下，我们可以在 working memory 引入一个命题 $P(a)$, 例如 $P =$「$a$ 是不是质数」，而可以暂时不理会 $P(x)$ 在其他点上的真值； 但在 model-based 情况下，model 包含了 $P$ 的 extension（= 一个点集 或 区域），这表示我们立即知道每一个数是不是质数，这是不切实际的。 这个问题或许可以称之为 ``\emp{omniscient predicates}'' 的问题。
 
+We need a quick way to instantiate a new object (point) but we don't want it to accidentally acquire some unwarranted properties.  How to achieve this?  Maybe maintain a discipline such that general predicates are located near the ``top'' position, they would not be contaminated with more specific predicates.  
+
 Then what is inference?  What kind of changes would occur to the model?
 
 Appearance of new propositions = appearance of new points / change of shape of regions.
 
 \begin{equation}
-\begin{tikzpicture}[overlay]
-% \draw  plot[smooth, tension=.9] coordinates {(-2,0) (0,1) (2,0) (0,-1)  (-2,0)};
-\draw (0,0) ellipse (3cm and 1cm);
-\end{tikzpicture}
-\bullet \mathrm{John}
+\vcenter{\hbox{\includegraphics[scale=0.5]{floating-sets-1.png}}}
+\qquad
+\vcenter{\hbox{\includegraphics[scale=0.5]{floating-sets-2.png}}}
 \end{equation}
 
+%\begin{equation}
+%\begin{tikzpicture}[overlay]
+%% \draw  plot[smooth, tension=.9] coordinates {(-2,0) (0,1) (2,0) (0,-1)  (-2,0)};
+%\draw (0,0) ellipse (3cm and 1cm);
+%\end{tikzpicture}
+%\bullet \mathrm{John}
+%\end{equation}
+
 Then how is the spatial model better than a syntactic representation (bunch of propositions)?
+
+\newtheorem{thm}{Definition}
+\begin{thm}
+	\emp{Deep learning} consists of a \textbf{hierarchical} structure with many levels (hence ``deep'') where the structure is learned to fit data.  Such a learning algorithm must be \textbf{efficient}.
+\end{thm}
+第二个条件加上去是因为，「经典」逻辑AI的 学习算法 也符合「深度」条件，但它不够效率。 
 
 \section*{References}
 \cc{欢迎提问和讨论}{Questions, comments welcome} \smiley \\ \vspace*{0.4cm}
