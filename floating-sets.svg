@@ -35,8 +35,8 @@
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1059"
+     inkscape:window-width="1080"
+     inkscape:window-height="1899"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1" />
@@ -253,7 +253,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -326,7 +326,7 @@
            height="138"
            x="-252"
            y="477.51968" /></flowRegion><flowPara
-         id="flowPara1194"></flowPara></flowRoot>    <path
+         id="flowPara1194" /></flowRoot>    <path
        style="fill:url(#linearGradient1178);fill-opacity:1;stroke:#ff0000;stroke-width:0.5291667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 115.35833,120.52293 c 0,0 -47.983586,59.38141 -34.924996,70.11457 13.05859,10.73317 79.639586,-17.4625 79.639586,-17.4625"
        id="path1155"
@@ -403,7 +403,7 @@
          y="161.79791"
          style="font-style:italic;font-size:9.87777805px;stroke-width:0.26458332">Q</tspan></text>
     <path
-       style="opacity:0.49599998;fill:url(#linearGradient1186-6);fill-opacity:1;stroke:#008000;stroke-width:0.52916676;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:0.49599998;fill:url(#linearGradient1186-6);fill-opacity:1;stroke:#008000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 152.32138,162.45572 c 0,0 -29.77733,25.21467 -25.4,33.60207 4.37733,8.38741 27.51667,1.58749 27.51667,1.58749"
        id="path1155-3-3"
        inkscape:connector-curvature="0"
