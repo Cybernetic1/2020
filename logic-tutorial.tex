@@ -1,18 +1,20 @@
 % TO-DO:
-% 1 classifying spaces *
-% 2 Yoneda lemma finish
-% 3 functorial semanticss
-% 4 Kripke-Joyal semantics
-% 5 Cohen forcing *
-% 6 Sheaves and topos *
-% 7 Heyting algebra revise *
-% 8 fuzzy logic re-write
+% * fuzzy logic re-write
+% * classifying spaces *
+% * Yoneda lemma finish
+% * functorial semanticss
+% * Kripke-Joyal semantics
+% * Cohen forcing *
+% * Sheaves and topos *
+% * Heyting algebra revise *
 
-% 9 implementation of topology ***
-% 10 model-based approach ***
-% The model is only for working memory.  
-% Even so, what does the model offer that syntax does not have?
-% Need a simple semantic model to begin thinkinssg....
+% * implementation of topology ***
+% * model-based approach
+
+% DONE:
+% * The model is only for working memory.  
+% * Even so, what does the model offer that syntax does not have?
+% * Need a simple semantic model to begin thinking....
 
 \input{../YKY-preamble.tex}
 
@@ -29,13 +31,7 @@
 \usepackage{tikz}
 \usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
 \usepackage{verbatim} % for comments
-% \usepackage{tikz-cd}  % commutative diagrams
-% \newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
-% \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
-% \usepackage{amssymb}  % \leftrightharpoons
-% \usepackage{wasysym} % frownie face
 % \usepackage{newtxtext,newtxmath}	% Times New Roman font
-% \usepackage{sansmath}
 
 \numberwithin{equation}{subsection}
 
@@ -1039,35 +1035,41 @@ Strict implication is equivalent to material implication over multiple instances
 
 \begin{equation}
 \nonumber
-\mbox{Lotfi Zadeh (1921-2017)} \quad 
+\parbox{7cm}{
+\mbox{Lotfi Zadeh (1921-2017)} \\
+\mbox{[Iranian-Jewish]}} \qquad 
 \vcenter{\hbox{\includegraphics[scale=2.5]{Zadeh.jpg}}}
 \end{equation}
-Iranian-Jewish
 
-首先是 implication 的问题，fuzzy implication 并不对应於 material implication in Boolean algebra.
+首先考察一下 fuzzy truth value 在各种情况下的正确性：
+\begin{itemize}
+\setlength{\itemsep}{0.2ex}  % this works locally
+	\item 每个 fuzzy proposition 是一个 set, 里面有 该命题的「证明」
+	\item 例如「人类」的集合是「有人类」这个命题的证明
+	\item 而，「数学家」作为「人类」的子集，等於命题「所有人都是数学家」的证明
+\end{itemize}
+而这和 fuzzy value 的诠释是一致的。
 
-另外有个问题就是要考察一下 fuzzy truth value 在各种情况下的正确性。 
+\begin{itemize}
+	\item 但为什么「John 是人」这个命题有点怪怪的？
+	\item 如果它有 fuzzy value，应该是某集合的子集
+	\item 有些元素证明 John 是人，有些证明他不是人
+	\item 或者是 John 的\emp{属性}的集合？
+	\item 而其中有些属性 imply 他是人？
+	\item 或者有些属性 $\subseteq$ 人的属性？
+\end{itemize}
 
-例如假设 set 里面有 fuzzy proposition 的「证明」\\
-又或者「人类」的集合是「有人类」这个命题的证明 \\
-而，「数学家」作为「人类」的子集，等於命题「所有人都是数学家」的证明 \\
-而这和 fuzzy value 是一致的
+\begin{itemize}
+	\item 还有这跟 ``Marilyn Monroe is sexy'' 是不是一致？
+	\item Marilyn 的所有属性集合，其中 imply sexy 的 subset 
+	\item 还是 sexy 的所有属性集合，其中 Marilyn 也有的？
+\end{itemize}
 
-但为什么「John 是人」这个命题有点怪怪的？ \\
-如果它有 fuzzy value，应该是某集合的子集 \\
-有些元素证明 John 是人，有些证明他不是人 \\
-或者是 John 的\emp{属性}的集合？ \\
-而其中有些属性 imply 他是人？ \\
-或者有些属性 $\subseteq$ 人的属性？
-
-还有这跟 ``Marilyn Monroe is sexy'' 是不是一致？
-Marilyn 的所有属性集合，其中 imply sexy 的 subset \\
-还是 sexy 的所有属性集合，其中 Marilyn 也有的？
-
-Sexy(marilyn), Human(john), vs Human(Mathematicians).
-
+Sexy(marilyn), Human(john), vs Human(Mathematicians)
 
 What kind of mapping does this require?
+
+其次是 implication 的问题，fuzzy implication 并不对应於 material implication in Boolean algebra.
 
 \subsection{Fuzzy implication}
 \label{sec:fuzzy-implication}
