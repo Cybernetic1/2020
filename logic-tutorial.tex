@@ -1041,47 +1041,39 @@ Strict implication is equivalent to material implication over multiple instances
 \vcenter{\hbox{\includegraphics[scale=2.5]{Zadeh.jpg}}}
 \end{equation}
 
-首先考察一下 fuzzy truth value 在各种情况下的正确性：
-\begin{itemize}
-\setlength{\itemsep}{0.2ex}  % this works locally
-	\item 每个 fuzzy proposition 是一个 set, 里面有 该命题的「证明」
-	\item 例如「人类」的集合是「有人类」这个命题的证明
-	\item 而，「数学家」作为「人类」的子集，等於命题「所有人都是数学家」的证明
-\end{itemize}
-而这和 fuzzy value 的诠释是一致的。
-
-「人」的概念由若干个 \emp{属性} (properties) 表示：
+举例来说，「人」的概念由若干个 \emp{属性} (properties) 表示：
 \begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.7]{properties-of-human.png}}}
 \end{equation}
+例如说： 人是动物的一种、人有智慧、人有某些感情、人有某些道德观念、等。 这些属性是「人」这个概念的 \emp{intension}.  但「人」这个概念的 \emp{extension} 是这个 \textbf{集合}的\textbf{元素}，例如 John 等。
+
 而「John」的属性是更为 \textbf{特殊} (specific) 的：
 \begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.7]{properties-of-John.png}}}
 \end{equation}
+问题是怎样决定 \ ``{\color{red} John} is {\color{blue}human}'' = {\color{blue}human}({\color{red}john}) 这个命题的 fuzzy truth value.
 
+类似地，当我们说「玛丽莲梦露 很性感」，这个命题的 fuzzy truth value 就是「Marilyn 的属性」和「性感的属性」之间的某种 \textbf{共同性}的量度。  这种 truth value 的定义 是基於 \textbf{intension} 而不是 \textbf{extension}.
+
+如果用 extension 的角度定义 truth value:
+\begin{itemize}
+	\setlength{\itemsep}{0.1ex}  % this works locally
+	\item 每个 fuzzy proposition 是一个 set, 里面有 该命题的「证明」
+	\item 例如「人类」的集合是「有人类」这个命题的证明
+	\item 而，「数学家」作为「人类」的子集，等於命题「所有人都是数学家」的证明
+\end{itemize}
 
 \begin{itemize}
 	\item 但为什么「John 是人」这个命题有点怪怪的？
 	\item 根据上一段所讲，「人」的集合 里面的 元素 是不同的人，其中包括 John.
 	\item John 作为命题，等於「所有人都是 John」的证明。
 	\item John 作为集合，它的元素 或许是 John 的\emp{属性}？ 正如「人」作为集合，元素是「个人」？
-	\item 
 	\item 如果它有 fuzzy value，应该是某集合的子集
 	\item 有些元素证明 John 是人，有些证明他不是人
 	\item 或者是 John 的\emp{属性}的集合？
 	\item 而其中有些属性 imply 他是人？
 	\item 或者有些属性 $\subseteq$ 人的属性？
 \end{itemize}
-
-\begin{itemize}
-	\item 还有这跟 ``Marilyn Monroe is sexy'' 是不是一致？
-	\item Marilyn 的所有属性集合，其中 imply sexy 的 subset 
-	\item 还是 sexy 的所有属性集合，其中 Marilyn 也有的？
-\end{itemize}
-
-Sexy(marilyn), Human(john), vs Human(Mathematicians)
-
-What kind of mapping does this require?
 
 其次是 implication 的问题，fuzzy implication 并不对应於 material implication in Boolean algebra.
 
