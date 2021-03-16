@@ -1053,32 +1053,23 @@ Strict implication is equivalent to material implication over multiple instances
 \end{equation}
 问题是怎样决定 \ ``{\color{red} John} is {\color{blue}human}'' = {\color{blue}human}({\color{red}john}) 这个命题的 fuzzy truth value.
 
-类似地，当我们说「玛丽莲梦露 很性感」，这个命题的 fuzzy truth value 就是「Marilyn 的属性」和「性感的属性」之间的某种 \textbf{共同性}的量度。  这种 truth value 的定义 是基於 \textbf{intension} 而不是 \textbf{extension}.
+或者用一个男人更容易想像的例子： 当我们说「玛丽莲梦露 很性感」，这个命题的 fuzzy truth value 就是「Marilyn 的属性」和「性感的属性」之间的某种 \textbf{共同性}的量度。  这种 truth value 的定义 是基於 \textbf{intension} 而不是 \textbf{extension}.
 
 如果用 extension 的角度定义 truth value:
 \begin{itemize}
 	\setlength{\itemsep}{0.1ex}  % this works locally
-	\item 每个 fuzzy proposition 是一个 set, 里面有 该命题的「证明」
+	\item 每个 fuzzy proposition 看成是一个 set, 里面有 该命题的「证明」
 	\item 例如「人类」的集合是「有人类」这个命题的证明
 	\item 而，「数学家」作为「人类」的子集，等於命题「所有人都是数学家」的证明
 \end{itemize}
+但在某些情况下，$A \mbox{ is } B$ 但 $A$ 不是\textbf{集合}（例如 John 或 Marilyn 不是集合），则 extensional 的诠释 不适用。 
 
-\begin{itemize}
-	\item 但为什么「John 是人」这个命题有点怪怪的？
-	\item 根据上一段所讲，「人」的集合 里面的 元素 是不同的人，其中包括 John.
-	\item John 作为命题，等於「所有人都是 John」的证明。
-	\item John 作为集合，它的元素 或许是 John 的\emp{属性}？ 正如「人」作为集合，元素是「个人」？
-	\item 如果它有 fuzzy value，应该是某集合的子集
-	\item 有些元素证明 John 是人，有些证明他不是人
-	\item 或者是 John 的\emp{属性}的集合？
-	\item 而其中有些属性 imply 他是人？
-	\item 或者有些属性 $\subseteq$ 人的属性？
-\end{itemize}
-
-其次是 implication 的问题，fuzzy implication 并不对应於 material implication in Boolean algebra.
+关於 fuzzy truth value 还有个问题： 一个对象的 \textbf{属性} 在某程度上可以随意增加或减少，因此纯粹 计算 属性的\textbf{数量}，并不能客观地决定 truth value.  似乎每个 属性 应该有某种 \emp{测度} (measure) 或 \emp{权重} (weight), 这样在改变 属性 的描述时，fuzzy truth value 保持\textbf{不变}。
 
 \subsection{Fuzzy implication}
 \label{sec:fuzzy-implication}
+
+Implication 问题: fuzzy implication 并不对应於 material implication in Boolean algebra.
 
 Implication 能不能 generalize 到 fuzzy logic 的情况？
 
