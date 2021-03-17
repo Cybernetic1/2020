@@ -367,7 +367,7 @@ Per Martin-L\"{o}f (1942-) was the first logician to see the full importance of 
 \subsection{The problem of material implication}
 \label{sec:material-implication}
 
-更详细观察，table (\ref{truth-table:material-implication}) 里面 $A$ 和 $B$ 的 truth values 可以看成是它们的 types 有没有 \textbf{inhabitants}. Type $A$ 的 inhabitant 就是它的证明 $\witness$，没有证明就是 $\emptyset$.  或者推广到：命题 $A$ 的真值 = $A$ 的 type 作为 集合 的 \textbf{cardinality}; The truth valuation of $A = |A|$.  这样看，$A \Rightarrow B$ 的真值 就是 $|B^A|$, 亦即是从 $\{\witness\}$ 或 $\emptyset$ 到 $\{\witness\}$ 或 $\emptyset$ 的 map 的个数, 而这个 map 只有在 $\emptyset \mapsto \{\witness\}$ 的时候是空集（不可能）。
+更详细观察，table (\ref{truth-table:material-implication}) 里面 $A$ 和 $B$ 的 truth values 可以看成是它们的 types 有没有 \textbf{inhabitants}. Type $A$ 的 inhabitant 就是它的证明 $\witness$，没有证明就是 $\emptyset$.  或者推广到：命题 $A$ 的真值 = $A$ 的 type 作为 集合 的 \textbf{cardinality}; The truth valuation of $A = |A|$.  这样看，$A \Rightarrow B$ 的真值 就是 $|B^A|$, 亦即是从 $\{\witness\}$ 或 $\emptyset$ 到 $\{\witness\}$ 或 $\emptyset$ 的 map 的\textbf{个数}, 而这个 map 只有在 $\emptyset \mapsto \{\witness\}$ 的时候是空集（不可能）。
 
 这个观察 可以推广到 fuzzy logic (\S\ref{sec:fuzzy-implication}) 和 strict implication $A \strictif B$ (\S\ref{sec:strict-implication}).
 
@@ -383,7 +383,7 @@ A \wedge B \quad \vdash \quad A \Rightarrow B
 
 那么，这个谬误 为什么没有在 经典逻辑 AI 系统中被发现？
 
-所谓 \emp{inductive learning of logic rules}，其原理是根据以下的「生成模型」： 
+所谓 \textbf{inductive learning of logic rules}，其原理是根据以下的「生成模型」： 
 \begin{equation}
 \begin{tikzcd}[| /.tip = {Bar[scale=3]}, column sep = large]
 \mbox{generators} \arrow[|-,r, "\mathrm{generate}"]
@@ -1045,7 +1045,7 @@ Strict implication is equivalent to material implication over multiple instances
 \begin{equation}
 	\vcenter{\hbox{\includegraphics[scale=0.7]{properties-of-human.png}}}
 \end{equation}
-例如说： 人是动物的一种、人有智慧、人有某些感情、人有某些道德观念、等。 这些属性是「人」这个概念的 \emp{intension}.  但「人」这个概念的 \emp{extension} 是这个 \textbf{集合}的\textbf{元素}，例如 John 等。
+例如说： 人是动物的一种、人有智慧、人有某些感情、人有某些道德观念、等。 这些属性是「人」这个概念的 \emp{intension}.  但「人」这个概念的 \emp{extension} 是这个 \textbf{集合}的\textbf{元素}，例如 John, Mary 等。
 
 而「John」的属性是更为 \textbf{特殊} (specific) 的：
 \begin{equation}
@@ -1053,31 +1053,40 @@ Strict implication is equivalent to material implication over multiple instances
 \end{equation}
 问题是怎样决定 \ ``{\color{red} John} is {\color{blue}human}'' = {\color{blue}human}({\color{red}john}) 这个命题的 fuzzy truth value.
 
-或者用一个男人更容易想像的例子： 当我们说「玛丽莲梦露 很性感」，这个命题的 fuzzy truth value 就是「Marilyn 的属性」和「性感的属性」之间的某种 \textbf{共同性}的量度。  这种 truth value 的定义 是基於 \textbf{intension} 而不是 \textbf{extension}.
+或者用一个男人更容易明白的例子： 当我们说「玛丽莲梦露 很性感」，这个命题的 fuzzy truth value 就是「Marilyn 的属性」和「性感的属性」之间的某种 \textbf{共同性}的量度。  这种 truth value 的定义 是基於 \textbf{intension} 而不是 extension.
 
-如果用 extension 的角度定义 truth value:
+但 dually，用 \textbf{extension} 的角度定义 truth value 也未尝不可：
 \begin{itemize}
 	\setlength{\itemsep}{0.1ex}  % this works locally
 	\item 每个 fuzzy proposition 看成是一个 set, 里面有 该命题的「证明」
 	\item 例如「人类」的集合是「有人类」这个命题的证明
 	\item 而，「数学家」作为「人类」的子集，等於命题「所有人都是数学家」的证明
 \end{itemize}
-但在某些情况下，$A \mbox{ is } B$ 但 $A$ 不是\textbf{集合}（例如 John 或 Marilyn 不是集合），则 extensional 的诠释 不适用。 
+但在某些情况下，``A is B'' 但 $A$ 不是\textbf{集合}（例如 John 或 Marilyn 不是集合），则 extensional 的诠释 不适用。 
+
+无论 intensional 或 extensional, 这种诠释方法 跟 HoTT 理论 (\S\ref{sec:HoTT}) 是融洽的： 概念「John」的 \textbf{证明} 是 $J_1 \wedge J_2 ... \wedge J_n \Rightarrow$ John, 其中 $J_i$ 是 John 的 \textbf{属性}。  同理，「handsome」的证明是 $H_1 \wedge H_2 ... \wedge H_n \Rightarrow$ handsome.  因此 ``John is handsome`` 的 fuzzy truth value 是 $\{ J_i \}$ 和 $\{ H_i \}$ 的共通性（例如交集或并集）的某种量度。
 
 关於 fuzzy truth value 还有个问题： 一个对象的 \textbf{属性} 在某程度上可以随意增加或减少，因此纯粹 计算 属性的\textbf{数量}，并不能客观地决定 truth value.  似乎每个 属性 应该有某种 \emp{测度} (measure) 或 \emp{权重} (weight), 这样在改变 属性 的描述时，fuzzy truth value 保持\textbf{不变}。
 
 \subsection{Fuzzy implication}
 \label{sec:fuzzy-implication}
 
-Implication 问题: fuzzy implication 并不对应於 material implication in Boolean algebra.
+本节 考察一下 fuzzy implication $A \stackrel{\sim}{\Rightarrow} B$ 的真值是如何确定的？  在  \S\ref{sec:material-implication} 已经分析过 经典 material implication 的性质。
 
-Implication 能不能 generalize 到 fuzzy logic 的情况？
+From above analysis, material implication seems to be a statistical result.  Some cases cause the implication to be true, some cases cause it to be false.  Overall, it's truth value would have to be consistent with \textbf{all} cases;  which (under binary logic) is feasible.
+
+So, is this saying that the TV of (binary) implication is statistically determined?  If so, can we just do the same for fuzzy implication?  Sure, why not?
+
+But then do we still have a ``truth table'' of fuzzy implication?  What exactly is a ``truth table'', anyway?
+
+If $A \stackrel{\sim}{\Rightarrow} B$ is a proposition, then what are its \textbf{proofs}?  This should be interpreted as ``the number of maps from $A$ to $B$''.  关键是利用这一点来定义 fuzzy implication 的 truth value.
 
 \subsection{Fuzzy functions?}
 
-What are fuzzy functions?
+What are fuzzy functions?  \underconst
 
 \section{Homotopy type theory (HoTT)}
+\label{sec:HoTT}
 
 \begin{equation}
 \nonumber
