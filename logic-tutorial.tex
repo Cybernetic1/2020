@@ -1083,6 +1083,14 @@ If $A \stackrel{\sim}{\Rightarrow} B$ is a proposition, then what are its \textb
 
 Fuzzy truth values arise from imperfect proofs.  Fuzzy implication arises from maps between imperfect proofs.  Why does a map between proofs become less than 1?  
 
+首先，number of maps 其实都有问题。  根据 fuzzy intension, 其实不是 number of proofs 而是 proof 的 imperfect.  The measure of whether one proof is a subset of another proof.  This forms the basis of a ``predication'' proposition.  But what if the proposition is an implicational one?  Then it would be a map from the proof of one proposition to the proof of another.
+
+Rethink the binary case.  There exist (or not) proofs of A, B.  From which we establish a map from proof of A to proof of B.  But when the proof of A is empty then there could be no such map.  The truth value of the implication statement must somehow be \textbf{consistent} with the \textbf{existence} of such maps.  So there is a case where such a map is impossible and thus the implication would be false.
+
+如果 A 的 proof fuzzy 到几乎唔存在，（而B的proof is true），咁 $A \Rightarrow B$ 的 fuzzy TV 是不是应该接近 false?  Well, there is the possibility of probabilistic.  Suppose we assume that it is deterministic but fuzzy.  Then the above requirement is clearly correct (if we just think of a simple example).  So the fuzzy implication's TV is just a generalization of the binary \textbf{truth table}.
+
+But how can we interpret the fuzzy implication's TV as a measure (perhaps the cardinality) of its \textbf{map}?  According to the binary view, it is a measure of the existence of maps between A and B.  In which case, a weak proof of A means that the map from A to B would be weak also.
+
 \subsection{Fuzzy functions?}
 
 What are fuzzy functions?  \underconst
