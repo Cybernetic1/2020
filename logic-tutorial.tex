@@ -1091,6 +1091,24 @@ Rethink the binary case.  There exist (or not) proofs of A, B.  From which we es
 
 But how can we interpret the fuzzy implication's TV as a measure (perhaps the cardinality) of its \textbf{map}?  According to the binary view, it is a measure of the existence of maps between A and B.  In which case, a weak proof of A means that the map from A to B would be weak also.
 
+Looking at the following table from a ``conditional'' view, it seems reasonable:
+\begin{equation}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+$A$ & $B$ & $A \stackrel{\sim}{\Rightarrow} B$ & $B^A$ \\ 
+\hline \hline 
+\mbox{weak} & \mbox{weak} & \mbox{strong} & $0^0 = 1$ \\
+\hline 
+\mbox{weak} & \mbox{strong} & \mbox{strong} & $1^0 = 1$ \\ 
+\hline 
+\mbox{strong} & \mbox{weak} & \mbox{weak} & $0^1 = 0$ \\ 
+\hline 
+\mbox{strong} & \mbox{strong} & \mbox{strong} & $1^1 = 1$ \\ 
+\hline 
+\end{tabular} 
+\end{equation}
+but the problem is how to interpret the truth value of $A \stackrel{\sim}{\Rightarrow} B$ as \textbf{counting} the number of maps?
+
 \subsection{Fuzzy functions?}
 
 What are fuzzy functions?  \underconst
